@@ -1,0 +1,18 @@
+{
+  "id": "leather",
+  "idx": 0,
+  "helmet": 1,
+  "chestplate": 1,
+  "leggings": 1,
+  "boots": 1,
+  "toughness": 0,
+  "armor_durability": 80,
+  "sword_damage": 4.0,
+  "tool_durability": 80,
+  "mob_hp_mult": 1.0,
+  "mob_dmg_mult": 1.0,
+  "mob_bypass_mult": 1.0,
+  "ref_health": 20,
+  "ref_bonus": 0.0,
+  "ref_epf": 0
+}

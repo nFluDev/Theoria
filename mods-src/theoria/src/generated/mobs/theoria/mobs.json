@@ -1,0 +1,2113 @@
+{
+  "species": [
+    {
+      "id": "mud_walker",
+      "family": "swamp",
+      "archetype": "humanoid",
+      "rig": "biped",
+      "tier": 1,
+      "cls": "normal",
+      "boss": false,
+      "hp": 20.0,
+      "dmg": 3.0,
+      "armor": 0.0,
+      "speed": 0.23,
+      "follow": 24.0,
+      "kb_res": 0.0,
+      "scale": 1.0,
+      "width": 0.6,
+      "height": 1.95,
+      "color": "#6b5a3a",
+      "accent": "#3f4a2c",
+      "biomes": [
+        "#c:is_swamp"
+      ],
+      "min_y": 40,
+      "max_y": 120,
+      "weight": 40,
+      "group_min": 1,
+      "group_max": 2,
+      "params": {},
+      "xp": 5,
+      "drops": [
+        {
+          "item": "minecraft:leather",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2,
+          "looting": true
+        },
+        {
+          "item": "theoria:raw_tin",
+          "chance": 0.12,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.12,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Mud Walker",
+      "tr": "Çamur Gezgini"
+    },
+    {
+      "id": "tin_gnawer",
+      "family": "swamp",
+      "archetype": "swarm",
+      "rig": "quad",
+      "tier": 1,
+      "cls": "weak",
+      "boss": false,
+      "hp": 8.0,
+      "dmg": 2.0,
+      "armor": 0.0,
+      "speed": 0.34,
+      "follow": 16.0,
+      "kb_res": 0.0,
+      "scale": 0.6,
+      "width": 0.7,
+      "height": 0.9,
+      "color": "#9aa5ad",
+      "accent": "#5b4a3a",
+      "biomes": [
+        "#c:is_swamp",
+        "#c:is_hill"
+      ],
+      "min_y": 40,
+      "max_y": 120,
+      "weight": 60,
+      "group_min": 3,
+      "group_max": 5,
+      "params": {
+        "alert": "1"
+      },
+      "xp": 3,
+      "drops": [
+        {
+          "item": "theoria:raw_tin",
+          "chance": 0.45,
+          "min": 1,
+          "max": 2,
+          "looting": true
+        },
+        {
+          "item": "minecraft:leather",
+          "chance": 0.15,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.06,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Tin Gnawer",
+      "tr": "Kalay Kemirgen"
+    },
+    {
+      "id": "reed_serpent",
+      "family": "swamp",
+      "archetype": "serpent",
+      "rig": "serpent",
+      "tier": 2,
+      "cls": "normal",
+      "boss": false,
+      "hp": 16.0,
+      "dmg": 3.0,
+      "armor": 0.0,
+      "speed": 0.3,
+      "follow": 20.0,
+      "kb_res": 0.0,
+      "scale": 0.9,
+      "width": 0.8,
+      "height": 0.6,
+      "color": "#4f7a3a",
+      "accent": "#d6c24a",
+      "biomes": [
+        "#c:is_swamp"
+      ],
+      "min_y": 40,
+      "max_y": 100,
+      "weight": 30,
+      "group_min": 1,
+      "group_max": 1,
+      "params": {
+        "hit_effect": "minecraft:poison:120:0",
+        "hit_run": "1"
+      },
+      "xp": 5,
+      "drops": [
+        {
+          "item": "minecraft:leather",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2,
+          "looting": true
+        },
+        {
+          "item": "minecraft:spider_eye",
+          "chance": 0.35,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.12,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Reed Serpent",
+      "tr": "Sazlık Yılanı"
+    },
+    {
+      "id": "bog_witch",
+      "family": "swamp",
+      "archetype": "caster",
+      "rig": "biped",
+      "tier": 2,
+      "cls": "normal",
+      "boss": false,
+      "hp": 22.0,
+      "dmg": 2.0,
+      "armor": 0.0,
+      "speed": 0.25,
+      "follow": 20.0,
+      "kb_res": 0.0,
+      "scale": 1.0,
+      "width": 0.6,
+      "height": 1.95,
+      "color": "#3a4a3a",
+      "accent": "#a0d060",
+      "biomes": [
+        "#c:is_swamp"
+      ],
+      "min_y": 40,
+      "max_y": 100,
+      "weight": 20,
+      "group_min": 1,
+      "group_max": 1,
+      "params": {
+        "cast": "minecraft:slowness:100:1",
+        "range": "14",
+        "cooldown": "70"
+      },
+      "xp": 5,
+      "drops": [
+        {
+          "item": "minecraft:spider_eye",
+          "chance": 0.3,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        },
+        {
+          "item": "minecraft:moss_block",
+          "chance": 0.25,
+          "min": 1,
+          "max": 2,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.12,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Bog Witch",
+      "tr": "Sis Cadısı"
+    },
+    {
+      "id": "mud_king",
+      "family": "swamp",
+      "archetype": "giant",
+      "rig": "golem",
+      "tier": 3,
+      "cls": "boss",
+      "boss": true,
+      "hp": 220.0,
+      "dmg": 6.0,
+      "armor": 4.0,
+      "speed": 0.22,
+      "follow": 32.0,
+      "kb_res": 1.0,
+      "scale": 2.0,
+      "width": 1.2,
+      "height": 2.4,
+      "color": "#5a4a30",
+      "accent": "#7fa040",
+      "biomes": [],
+      "min_y": -64,
+      "max_y": 320,
+      "weight": 0,
+      "group_min": 1,
+      "group_max": 1,
+      "params": {
+        "slam_radius": "5",
+        "slam_cd": "80",
+        "hit_effect": "minecraft:slowness:60:1",
+        "adds": "tin_gnawer",
+        "add_count": "4",
+        "phases": "0.66|0.33"
+      },
+      "xp": 40,
+      "drops": [
+        {
+          "item": "theoria:catalyst_core",
+          "chance": 1.0,
+          "min": 1,
+          "max": 2,
+          "looting": false
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 1.0,
+          "min": 3,
+          "max": 5,
+          "looting": false
+        },
+        {
+          "item": "theoria:heart_crystal",
+          "chance": 1.0,
+          "min": 1,
+          "max": 1,
+          "looting": false
+        },
+        {
+          "item": "theoria:raw_tin",
+          "chance": 1.0,
+          "min": 6,
+          "max": 10,
+          "looting": false
+        },
+        {
+          "item": "minecraft:leather",
+          "chance": 1.0,
+          "min": 4,
+          "max": 8,
+          "looting": false
+        }
+      ],
+      "en": "Mud King",
+      "tr": "Çamur Kralı"
+    },
+    {
+      "id": "steel_wolf",
+      "family": "wild",
+      "archetype": "predator",
+      "rig": "quad",
+      "tier": 4,
+      "cls": "normal",
+      "boss": false,
+      "hp": 18.0,
+      "dmg": 4.0,
+      "armor": 0.0,
+      "speed": 0.38,
+      "follow": 28.0,
+      "kb_res": 0.0,
+      "scale": 1.0,
+      "width": 0.7,
+      "height": 0.9,
+      "color": "#7d8794",
+      "accent": "#2b3038",
+      "biomes": [
+        "#minecraft:is_forest",
+        "#minecraft:is_taiga",
+        "#c:is_plains"
+      ],
+      "min_y": 40,
+      "max_y": 200,
+      "weight": 30,
+      "group_min": 2,
+      "group_max": 4,
+      "params": {
+        "leap": "0.45"
+      },
+      "xp": 5,
+      "drops": [
+        {
+          "item": "theoria:carbon_dust",
+          "chance": 0.6,
+          "min": 1,
+          "max": 3,
+          "looting": true
+        },
+        {
+          "item": "minecraft:leather",
+          "chance": 0.4,
+          "min": 1,
+          "max": 2,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.12,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Steel Wolf",
+      "tr": "Çelik Kurt"
+    },
+    {
+      "id": "antlered_stag",
+      "family": "wild",
+      "archetype": "charger",
+      "rig": "quad_heavy",
+      "tier": 3,
+      "cls": "normal",
+      "boss": false,
+      "hp": 24.0,
+      "dmg": 4.0,
+      "armor": 0.0,
+      "speed": 0.26,
+      "follow": 20.0,
+      "kb_res": 0.0,
+      "scale": 1.0,
+      "width": 0.9,
+      "height": 1.5,
+      "color": "#8a6a43",
+      "accent": "#e8dcc0",
+      "biomes": [
+        "#minecraft:is_forest",
+        "#c:is_taiga"
+      ],
+      "min_y": 50,
+      "max_y": 200,
+      "weight": 25,
+      "group_min": 1,
+      "group_max": 3,
+      "params": {
+        "neutral": "1",
+        "charge_cd": "100",
+        "charge_speed": "1.6"
+      },
+      "xp": 5,
+      "drops": [
+        {
+          "item": "minecraft:leather",
+          "chance": 0.8,
+          "min": 2,
+          "max": 3,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.12,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Antlered Stag",
+      "tr": "Boynuzlu Geyik"
+    },
+    {
+      "id": "thorn_boar",
+      "family": "wild",
+      "archetype": "charger",
+      "rig": "quad_heavy",
+      "tier": 3,
+      "cls": "normal",
+      "boss": false,
+      "hp": 22.0,
+      "dmg": 4.0,
+      "armor": 0.0,
+      "speed": 0.28,
+      "follow": 22.0,
+      "kb_res": 0.0,
+      "scale": 0.9,
+      "width": 0.9,
+      "height": 1.0,
+      "color": "#6b4a3a",
+      "accent": "#9fb08a",
+      "biomes": [
+        "#minecraft:is_forest",
+        "#minecraft:is_jungle",
+        "#c:is_savanna"
+      ],
+      "min_y": 40,
+      "max_y": 200,
+      "weight": 25,
+      "group_min": 1,
+      "group_max": 3,
+      "params": {
+        "charge_cd": "80",
+        "charge_speed": "1.5"
+      },
+      "xp": 5,
+      "drops": [
+        {
+          "item": "minecraft:leather",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2,
+          "looting": true
+        },
+        {
+          "item": "minecraft:cactus",
+          "chance": 0.3,
+          "min": 1,
+          "max": 2,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.12,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Thorn Boar",
+      "tr": "Dikenli Yaban Domuzu"
+    },
+    {
+      "id": "mountain_bear",
+      "family": "wild",
+      "archetype": "predator",
+      "rig": "quad_heavy",
+      "tier": 5,
+      "cls": "strong",
+      "boss": false,
+      "hp": 34.0,
+      "dmg": 6.0,
+      "armor": 2.0,
+      "speed": 0.26,
+      "follow": 24.0,
+      "kb_res": 0.3,
+      "scale": 1.25,
+      "width": 1.2,
+      "height": 1.4,
+      "color": "#5a4638",
+      "accent": "#cbb9a0",
+      "biomes": [
+        "#minecraft:is_mountain",
+        "#minecraft:is_taiga"
+      ],
+      "min_y": 60,
+      "max_y": 300,
+      "weight": 15,
+      "group_min": 1,
+      "group_max": 1,
+      "params": {
+        "leap": "0.3"
+      },
+      "xp": 10,
+      "drops": [
+        {
+          "item": "minecraft:leather",
+          "chance": 0.8,
+          "min": 2,
+          "max": 4,
+          "looting": true
+        },
+        {
+          "item": "theoria:carbon_dust",
+          "chance": 0.3,
+          "min": 1,
+          "max": 2,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.25,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Mountain Bear",
+      "tr": "Dağ Ayısı"
+    },
+    {
+      "id": "cave_crawler",
+      "family": "underground",
+      "archetype": "swarm",
+      "rig": "arachnid",
+      "tier": 5,
+      "cls": "weak",
+      "boss": false,
+      "hp": 10.0,
+      "dmg": 2.0,
+      "armor": 0.0,
+      "speed": 0.33,
+      "follow": 16.0,
+      "kb_res": 0.0,
+      "scale": 0.7,
+      "width": 0.9,
+      "height": 0.5,
+      "color": "#4a4048",
+      "accent": "#a85878",
+      "biomes": [
+        "#minecraft:is_overworld"
+      ],
+      "min_y": -64,
+      "max_y": 40,
+      "weight": 50,
+      "group_min": 3,
+      "group_max": 5,
+      "params": {
+        "hit_effect": "minecraft:slowness:60:0",
+        "alert": "1"
+      },
+      "xp": 3,
+      "drops": [
+        {
+          "item": "minecraft:spider_eye",
+          "chance": 0.4,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        },
+        {
+          "item": "minecraft:redstone",
+          "chance": 0.3,
+          "min": 1,
+          "max": 3,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.06,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Cave Crawler",
+      "tr": "Mağara Sürüngeni"
+    },
+    {
+      "id": "rock_worm",
+      "family": "underground",
+      "archetype": "sentinel",
+      "rig": "serpent",
+      "tier": 6,
+      "cls": "strong",
+      "boss": false,
+      "hp": 40.0,
+      "dmg": 5.0,
+      "armor": 4.0,
+      "speed": 0.3,
+      "follow": 12.0,
+      "kb_res": 0.4,
+      "scale": 1.4,
+      "width": 1.0,
+      "height": 0.8,
+      "color": "#5c5a58",
+      "accent": "#cfc7b3",
+      "biomes": [
+        "#minecraft:is_overworld"
+      ],
+      "min_y": -64,
+      "max_y": 30,
+      "weight": 15,
+      "group_min": 1,
+      "group_max": 1,
+      "params": {
+        "dormant": "1",
+        "wake_range": "5"
+      },
+      "xp": 10,
+      "drops": [
+        {
+          "item": "theoria:raw_cobalt",
+          "chance": 0.3,
+          "min": 1,
+          "max": 2,
+          "looting": true
+        },
+        {
+          "item": "theoria:carbon_dust",
+          "chance": 0.3,
+          "min": 1,
+          "max": 2,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.25,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Rock Worm",
+      "tr": "Kaya Kurdu"
+    },
+    {
+      "id": "cobalt_spider",
+      "family": "underground",
+      "archetype": "predator",
+      "rig": "arachnid",
+      "tier": 7,
+      "cls": "normal",
+      "boss": false,
+      "hp": 26.0,
+      "dmg": 4.0,
+      "armor": 0.0,
+      "speed": 0.32,
+      "follow": 20.0,
+      "kb_res": 0.0,
+      "scale": 1.0,
+      "width": 1.4,
+      "height": 0.9,
+      "color": "#2d4fb0",
+      "accent": "#121a3a",
+      "biomes": [
+        "#minecraft:is_overworld"
+      ],
+      "min_y": -64,
+      "max_y": 10,
+      "weight": 20,
+      "group_min": 1,
+      "group_max": 2,
+      "params": {
+        "climb": "1",
+        "leap": "0.4",
+        "hit_effect": "minecraft:poison:80:0"
+      },
+      "xp": 5,
+      "drops": [
+        {
+          "item": "theoria:raw_cobalt",
+          "chance": 0.55,
+          "min": 1,
+          "max": 2,
+          "looting": true
+        },
+        {
+          "item": "minecraft:spider_eye",
+          "chance": 0.5,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        },
+        {
+          "item": "minecraft:string",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.12,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Cobalt Spider",
+      "tr": "Kobalt Örümceği"
+    },
+    {
+      "id": "crystal_beetle",
+      "family": "underground",
+      "archetype": "swarm",
+      "rig": "arachnid",
+      "tier": 8,
+      "cls": "normal",
+      "boss": false,
+      "hp": 24.0,
+      "dmg": 3.0,
+      "armor": 8.0,
+      "speed": 0.28,
+      "follow": 16.0,
+      "kb_res": 0.2,
+      "scale": 0.9,
+      "width": 1.0,
+      "height": 0.7,
+      "color": "#5fb7d6",
+      "accent": "#e0f7ff",
+      "biomes": [
+        "#minecraft:is_overworld"
+      ],
+      "min_y": -64,
+      "max_y": 20,
+      "weight": 15,
+      "group_min": 2,
+      "group_max": 3,
+      "params": {
+        "alert": "1"
+      },
+      "xp": 5,
+      "drops": [
+        {
+          "item": "minecraft:amethyst_shard",
+          "chance": 0.6,
+          "min": 1,
+          "max": 3,
+          "looting": true
+        },
+        {
+          "item": "theoria:raw_cobalt",
+          "chance": 0.3,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.12,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Crystal Beetle",
+      "tr": "Kristal Böcek"
+    },
+    {
+      "id": "storm_eagle",
+      "family": "mountain",
+      "archetype": "flyer",
+      "rig": "winged",
+      "tier": 8,
+      "cls": "normal",
+      "boss": false,
+      "hp": 18.0,
+      "dmg": 4.0,
+      "armor": 0.0,
+      "speed": 0.5,
+      "follow": 32.0,
+      "kb_res": 0.0,
+      "scale": 1.0,
+      "width": 0.9,
+      "height": 0.8,
+      "color": "#7a8aa8",
+      "accent": "#f2f2f2",
+      "biomes": [
+        "#minecraft:is_mountain"
+      ],
+      "min_y": 90,
+      "max_y": 320,
+      "weight": 20,
+      "group_min": 1,
+      "group_max": 2,
+      "params": {
+        "flying": "1",
+        "swoop": "1"
+      },
+      "xp": 5,
+      "drops": [
+        {
+          "item": "minecraft:feather",
+          "chance": 0.85,
+          "min": 1,
+          "max": 3,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.12,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Storm Eagle",
+      "tr": "Fırtına Kartalı"
+    },
+    {
+      "id": "wind_spirit",
+      "family": "mountain",
+      "archetype": "caster",
+      "rig": "wisp",
+      "tier": 9,
+      "cls": "normal",
+      "boss": false,
+      "hp": 20.0,
+      "dmg": 3.0,
+      "armor": 0.0,
+      "speed": 0.3,
+      "follow": 24.0,
+      "kb_res": 0.0,
+      "scale": 1.0,
+      "width": 0.7,
+      "height": 1.2,
+      "color": "#b9e3f0",
+      "accent": "#ffffff",
+      "biomes": [
+        "#minecraft:is_mountain"
+      ],
+      "min_y": 100,
+      "max_y": 320,
+      "weight": 12,
+      "group_min": 1,
+      "group_max": 1,
+      "params": {
+        "flying": "1",
+        "cast": "minecraft:levitation:40:0",
+        "range": "16",
+        "cooldown": "80"
+      },
+      "xp": 5,
+      "drops": [
+        {
+          "item": "minecraft:breeze_rod",
+          "chance": 0.35,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.12,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Wind Spirit",
+      "tr": "Rüzgâr Ruhu"
+    },
+    {
+      "id": "titan_bull",
+      "family": "mountain",
+      "archetype": "charger",
+      "rig": "quad_heavy",
+      "tier": 9,
+      "cls": "strong",
+      "boss": false,
+      "hp": 50.0,
+      "dmg": 7.0,
+      "armor": 2.0,
+      "speed": 0.24,
+      "follow": 24.0,
+      "kb_res": 0.6,
+      "scale": 1.4,
+      "width": 1.4,
+      "height": 1.9,
+      "color": "#6d6a60",
+      "accent": "#c9a227",
+      "biomes": [
+        "#minecraft:is_mountain"
+      ],
+      "min_y": 80,
+      "max_y": 320,
+      "weight": 12,
+      "group_min": 1,
+      "group_max": 1,
+      "params": {
+        "charge_cd": "120",
+        "charge_speed": "1.7"
+      },
+      "xp": 10,
+      "drops": [
+        {
+          "item": "theoria:raw_titanium",
+          "chance": 0.6,
+          "min": 1,
+          "max": 3,
+          "looting": true
+        },
+        {
+          "item": "minecraft:leather",
+          "chance": 0.7,
+          "min": 2,
+          "max": 4,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.25,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Titan Bull",
+      "tr": "Titan Boğası"
+    },
+    {
+      "id": "boulder_hurler",
+      "family": "mountain",
+      "archetype": "shooter",
+      "rig": "golem",
+      "tier": 8,
+      "cls": "strong",
+      "boss": false,
+      "hp": 50.0,
+      "dmg": 6.0,
+      "armor": 4.0,
+      "speed": 0.22,
+      "follow": 28.0,
+      "kb_res": 0.5,
+      "scale": 0.9,
+      "width": 1.0,
+      "height": 2.3,
+      "color": "#6f6a64",
+      "accent": "#3b3834",
+      "biomes": [
+        "#minecraft:is_mountain"
+      ],
+      "min_y": 80,
+      "max_y": 320,
+      "weight": 10,
+      "group_min": 1,
+      "group_max": 1,
+      "params": {
+        "projectile": "arrow",
+        "range": "22",
+        "cooldown": "60"
+      },
+      "xp": 10,
+      "drops": [
+        {
+          "item": "theoria:raw_titanium",
+          "chance": 0.3,
+          "min": 1,
+          "max": 2,
+          "looting": true
+        },
+        {
+          "item": "minecraft:cobbled_deepslate",
+          "chance": 0.8,
+          "min": 2,
+          "max": 4,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.25,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Boulder Hurler",
+      "tr": "Kaya Fırlatan"
+    },
+    {
+      "id": "storm_drake",
+      "family": "mountain",
+      "archetype": "drake",
+      "rig": "drake",
+      "tier": 9,
+      "cls": "boss",
+      "boss": true,
+      "hp": 260.0,
+      "dmg": 7.0,
+      "armor": 4.0,
+      "speed": 0.4,
+      "follow": 48.0,
+      "kb_res": 1.0,
+      "scale": 2.5,
+      "width": 1.4,
+      "height": 1.2,
+      "color": "#556a8c",
+      "accent": "#ffe066",
+      "biomes": [],
+      "min_y": -64,
+      "max_y": 320,
+      "weight": 0,
+      "group_min": 1,
+      "group_max": 1,
+      "params": {
+        "flying": "1",
+        "breath": "lightning",
+        "range": "28",
+        "cooldown": "70",
+        "adds": "storm_eagle",
+        "add_count": "2",
+        "phases": "0.66|0.33"
+      },
+      "xp": 40,
+      "drops": [
+        {
+          "item": "theoria:catalyst_core",
+          "chance": 1.0,
+          "min": 1,
+          "max": 2,
+          "looting": false
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 1.0,
+          "min": 3,
+          "max": 5,
+          "looting": false
+        },
+        {
+          "item": "theoria:heart_crystal",
+          "chance": 1.0,
+          "min": 1,
+          "max": 1,
+          "looting": false
+        },
+        {
+          "item": "theoria:raw_titanium",
+          "chance": 1.0,
+          "min": 8,
+          "max": 12,
+          "looting": false
+        },
+        {
+          "item": "minecraft:breeze_rod",
+          "chance": 1.0,
+          "min": 3,
+          "max": 5,
+          "looting": false
+        },
+        {
+          "item": "minecraft:feather",
+          "chance": 1.0,
+          "min": 6,
+          "max": 10,
+          "looting": false
+        }
+      ],
+      "en": "Storm Drake",
+      "tr": "Fırtına Ejderi"
+    },
+    {
+      "id": "ember_wraith",
+      "family": "ember",
+      "archetype": "shooter",
+      "rig": "wisp",
+      "tier": 6,
+      "cls": "strong",
+      "boss": false,
+      "hp": 30.0,
+      "dmg": 5.0,
+      "armor": 0.0,
+      "speed": 0.3,
+      "follow": 32.0,
+      "kb_res": 0.0,
+      "scale": 1.0,
+      "width": 0.7,
+      "height": 1.4,
+      "color": "#e0572a",
+      "accent": "#ffd84a",
+      "biomes": [
+        "#minecraft:is_nether",
+        "#c:is_badlands",
+        "#c:is_desert"
+      ],
+      "min_y": 0,
+      "max_y": 320,
+      "weight": 25,
+      "group_min": 1,
+      "group_max": 2,
+      "params": {
+        "flying": "1",
+        "projectile": "fireball",
+        "range": "24",
+        "cooldown": "50",
+        "fire_immune": "1"
+      },
+      "xp": 10,
+      "drops": [
+        {
+          "item": "minecraft:blaze_powder",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2,
+          "looting": true
+        },
+        {
+          "item": "minecraft:blaze_rod",
+          "chance": 0.25,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.12,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Ember Wraith",
+      "tr": "Köz Hayaleti"
+    },
+    {
+      "id": "ash_golem",
+      "family": "ember",
+      "archetype": "giant",
+      "rig": "golem",
+      "tier": 7,
+      "cls": "strong",
+      "boss": false,
+      "hp": 55.0,
+      "dmg": 7.0,
+      "armor": 2.0,
+      "speed": 0.22,
+      "follow": 24.0,
+      "kb_res": 0.7,
+      "scale": 1.2,
+      "width": 1.1,
+      "height": 2.6,
+      "color": "#54504d",
+      "accent": "#ff6a1f",
+      "biomes": [
+        "#c:is_desert",
+        "#c:is_badlands",
+        "#c:is_wasteland"
+      ],
+      "min_y": 40,
+      "max_y": 200,
+      "weight": 10,
+      "group_min": 1,
+      "group_max": 1,
+      "params": {
+        "slam_radius": "4",
+        "slam_cd": "90",
+        "hit_effect": "minecraft:blindness:60:0",
+        "fire_immune": "1"
+      },
+      "xp": 10,
+      "drops": [
+        {
+          "item": "theoria:carbon_dust",
+          "chance": 0.7,
+          "min": 2,
+          "max": 4,
+          "looting": true
+        },
+        {
+          "item": "minecraft:iron_nugget",
+          "chance": 0.5,
+          "min": 2,
+          "max": 5,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.25,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Ash Golem",
+      "tr": "Kül Golemi"
+    },
+    {
+      "id": "magma_crawler",
+      "family": "ember",
+      "archetype": "swarm",
+      "rig": "arachnid",
+      "tier": 7,
+      "cls": "weak",
+      "boss": false,
+      "hp": 12.0,
+      "dmg": 3.0,
+      "armor": 0.0,
+      "speed": 0.3,
+      "follow": 16.0,
+      "kb_res": 0.0,
+      "scale": 0.8,
+      "width": 1.0,
+      "height": 0.5,
+      "color": "#5a2a20",
+      "accent": "#ff8a30",
+      "biomes": [
+        "#minecraft:is_nether",
+        "#c:is_badlands"
+      ],
+      "min_y": 0,
+      "max_y": 320,
+      "weight": 30,
+      "group_min": 3,
+      "group_max": 4,
+      "params": {
+        "fire_immune": "1",
+        "ignite": "4"
+      },
+      "xp": 3,
+      "drops": [
+        {
+          "item": "minecraft:magma_cream",
+          "chance": 0.3,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        },
+        {
+          "item": "minecraft:blaze_powder",
+          "chance": 0.3,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.06,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Magma Crawler",
+      "tr": "Magma Sürüngeni"
+    },
+    {
+      "id": "frost_stalker",
+      "family": "frost",
+      "archetype": "predator",
+      "rig": "quad",
+      "tier": 6,
+      "cls": "normal",
+      "boss": false,
+      "hp": 26.0,
+      "dmg": 4.0,
+      "armor": 0.0,
+      "speed": 0.36,
+      "follow": 28.0,
+      "kb_res": 0.0,
+      "scale": 1.0,
+      "width": 0.7,
+      "height": 0.9,
+      "color": "#c8e6f5",
+      "accent": "#4a7fa8",
+      "biomes": [
+        "#c:is_snowy"
+      ],
+      "min_y": 40,
+      "max_y": 300,
+      "weight": 25,
+      "group_min": 1,
+      "group_max": 3,
+      "params": {
+        "leap": "0.4",
+        "hit_effect": "minecraft:slowness:80:1"
+      },
+      "xp": 5,
+      "drops": [
+        {
+          "item": "minecraft:blue_ice",
+          "chance": 0.15,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        },
+        {
+          "item": "minecraft:leather",
+          "chance": 0.4,
+          "min": 1,
+          "max": 2,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.12,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Frost Stalker",
+      "tr": "Kırağı Yırtıcı"
+    },
+    {
+      "id": "frost_archer",
+      "family": "frost",
+      "archetype": "shooter",
+      "rig": "biped",
+      "tier": 6,
+      "cls": "normal",
+      "boss": false,
+      "hp": 20.0,
+      "dmg": 3.0,
+      "armor": 0.0,
+      "speed": 0.25,
+      "follow": 24.0,
+      "kb_res": 0.0,
+      "scale": 1.0,
+      "width": 0.6,
+      "height": 1.95,
+      "color": "#9fc3d9",
+      "accent": "#e8f4fa",
+      "biomes": [
+        "#c:is_snowy"
+      ],
+      "min_y": 40,
+      "max_y": 300,
+      "weight": 20,
+      "group_min": 1,
+      "group_max": 2,
+      "params": {
+        "projectile": "arrow",
+        "range": "20",
+        "cooldown": "40",
+        "hit_effect": "minecraft:slowness:80:0"
+      },
+      "xp": 5,
+      "drops": [
+        {
+          "item": "minecraft:arrow",
+          "chance": 0.6,
+          "min": 1,
+          "max": 3,
+          "looting": true
+        },
+        {
+          "item": "minecraft:bone",
+          "chance": 0.4,
+          "min": 1,
+          "max": 2,
+          "looting": true
+        },
+        {
+          "item": "minecraft:blue_ice",
+          "chance": 0.1,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.12,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Frost Archer",
+      "tr": "Buz Okçusu"
+    },
+    {
+      "id": "glacier_giant",
+      "family": "frost",
+      "archetype": "giant",
+      "rig": "golem",
+      "tier": 8,
+      "cls": "elite",
+      "boss": false,
+      "hp": 90.0,
+      "dmg": 7.0,
+      "armor": 4.0,
+      "speed": 0.2,
+      "follow": 24.0,
+      "kb_res": 0.8,
+      "scale": 1.4,
+      "width": 1.3,
+      "height": 2.8,
+      "color": "#a8d0e6",
+      "accent": "#f4fbff",
+      "biomes": [
+        "#c:is_snowy"
+      ],
+      "min_y": 40,
+      "max_y": 300,
+      "weight": 8,
+      "group_min": 1,
+      "group_max": 1,
+      "params": {
+        "slam_radius": "5",
+        "slam_cd": "100",
+        "hit_effect": "minecraft:slowness:100:2"
+      },
+      "xp": 20,
+      "drops": [
+        {
+          "item": "minecraft:blue_ice",
+          "chance": 0.6,
+          "min": 1,
+          "max": 3,
+          "looting": true
+        },
+        {
+          "item": "theoria:raw_titanium",
+          "chance": 0.25,
+          "min": 1,
+          "max": 2,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.5,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Glacier Giant",
+      "tr": "Buzul Devi"
+    },
+    {
+      "id": "snow_wisp",
+      "family": "frost",
+      "archetype": "caster",
+      "rig": "wisp",
+      "tier": 5,
+      "cls": "weak",
+      "boss": false,
+      "hp": 14.0,
+      "dmg": 2.0,
+      "armor": 0.0,
+      "speed": 0.28,
+      "follow": 20.0,
+      "kb_res": 0.0,
+      "scale": 0.9,
+      "width": 0.6,
+      "height": 1.0,
+      "color": "#e8f4fa",
+      "accent": "#7fb0d0",
+      "biomes": [
+        "#c:is_snowy"
+      ],
+      "min_y": 40,
+      "max_y": 300,
+      "weight": 20,
+      "group_min": 1,
+      "group_max": 1,
+      "params": {
+        "flying": "1",
+        "cast": "minecraft:slowness:100:1",
+        "range": "14",
+        "cooldown": "60"
+      },
+      "xp": 3,
+      "drops": [
+        {
+          "item": "minecraft:snowball",
+          "chance": 0.5,
+          "min": 2,
+          "max": 4,
+          "looting": true
+        },
+        {
+          "item": "minecraft:blue_ice",
+          "chance": 0.08,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.06,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Snow Wisp",
+      "tr": "Kar Hortlağı"
+    },
+    {
+      "id": "pale_wraith",
+      "family": "shadow",
+      "archetype": "flyer",
+      "rig": "wisp",
+      "tier": 9,
+      "cls": "normal",
+      "boss": false,
+      "hp": 20.0,
+      "dmg": 4.0,
+      "armor": 0.0,
+      "speed": 0.34,
+      "follow": 28.0,
+      "kb_res": 0.0,
+      "scale": 1.1,
+      "width": 0.7,
+      "height": 1.2,
+      "color": "#cfd2dc",
+      "accent": "#3a3d4a",
+      "biomes": [
+        "#c:is_dark_forest",
+        "#c:is_spooky"
+      ],
+      "min_y": 40,
+      "max_y": 320,
+      "weight": 15,
+      "group_min": 1,
+      "group_max": 2,
+      "params": {
+        "flying": "1",
+        "swoop": "1",
+        "hit_effect": "minecraft:weakness:100:0"
+      },
+      "xp": 5,
+      "drops": [
+        {
+          "item": "minecraft:phantom_membrane",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2,
+          "looting": true
+        },
+        {
+          "item": "minecraft:ink_sac",
+          "chance": 0.3,
+          "min": 1,
+          "max": 2,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.12,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Pale Wraith",
+      "tr": "Soluk Hayalet"
+    },
+    {
+      "id": "night_runner",
+      "family": "shadow",
+      "archetype": "assassin",
+      "rig": "biped",
+      "tier": 10,
+      "cls": "normal",
+      "boss": false,
+      "hp": 22.0,
+      "dmg": 4.0,
+      "armor": 0.0,
+      "speed": 0.42,
+      "follow": 32.0,
+      "kb_res": 0.0,
+      "scale": 1.0,
+      "width": 0.6,
+      "height": 1.95,
+      "color": "#2a2638",
+      "accent": "#8a5cd0",
+      "biomes": [
+        "#c:is_dark_forest",
+        "#c:is_spooky",
+        "#c:is_taiga"
+      ],
+      "min_y": 40,
+      "max_y": 320,
+      "weight": 15,
+      "group_min": 1,
+      "group_max": 1,
+      "params": {
+        "backstab": "1.5",
+        "blink": "1",
+        "blink_cd": "100"
+      },
+      "xp": 5,
+      "drops": [
+        {
+          "item": "minecraft:ink_sac",
+          "chance": 0.5,
+          "min": 1,
+          "max": 3,
+          "looting": true
+        },
+        {
+          "item": "minecraft:ender_pearl",
+          "chance": 0.15,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.12,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Night Runner",
+      "tr": "Gece Koşucusu"
+    },
+    {
+      "id": "shade_seep",
+      "family": "shadow",
+      "archetype": "swarm",
+      "rig": "wisp",
+      "tier": 10,
+      "cls": "weak",
+      "boss": false,
+      "hp": 10.0,
+      "dmg": 3.0,
+      "armor": 0.0,
+      "speed": 0.3,
+      "follow": 20.0,
+      "kb_res": 0.0,
+      "scale": 0.6,
+      "width": 0.5,
+      "height": 0.6,
+      "color": "#1c1a26",
+      "accent": "#6a40a8",
+      "biomes": [
+        "#c:is_dark_forest",
+        "#c:is_spooky"
+      ],
+      "min_y": 40,
+      "max_y": 320,
+      "weight": 25,
+      "group_min": 3,
+      "group_max": 5,
+      "params": {
+        "flying": "1",
+        "alert": "1",
+        "hit_effect": "minecraft:weakness:60:0"
+      },
+      "xp": 3,
+      "drops": [
+        {
+          "item": "minecraft:ink_sac",
+          "chance": 0.3,
+          "min": 1,
+          "max": 2,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.06,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Shade Seep",
+      "tr": "Gölge Sızıntısı"
+    },
+    {
+      "id": "stone_guardian",
+      "family": "ancient",
+      "archetype": "sentinel",
+      "rig": "golem",
+      "tier": 10,
+      "cls": "elite",
+      "boss": false,
+      "hp": 80.0,
+      "dmg": 7.0,
+      "armor": 12.0,
+      "speed": 0.2,
+      "follow": 12.0,
+      "kb_res": 1.0,
+      "scale": 1.2,
+      "width": 1.1,
+      "height": 2.6,
+      "color": "#7a7a78",
+      "accent": "#4a6a5a",
+      "biomes": [
+        "#minecraft:is_overworld"
+      ],
+      "min_y": -64,
+      "max_y": 40,
+      "weight": 5,
+      "group_min": 1,
+      "group_max": 1,
+      "params": {
+        "dormant": "1",
+        "wake_range": "6"
+      },
+      "xp": 20,
+      "drops": [
+        {
+          "item": "theoria:raw_mithril",
+          "chance": 0.45,
+          "min": 1,
+          "max": 2,
+          "looting": true
+        },
+        {
+          "item": "minecraft:cobbled_deepslate",
+          "chance": 1.0,
+          "min": 3,
+          "max": 6,
+          "looting": false
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.5,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_core",
+          "chance": 0.1,
+          "min": 1,
+          "max": 1,
+          "looting": false
+        }
+      ],
+      "en": "Stone Guardian",
+      "tr": "Taş Muhafız"
+    },
+    {
+      "id": "rune_caster",
+      "family": "ancient",
+      "archetype": "caster",
+      "rig": "biped",
+      "tier": 11,
+      "cls": "normal",
+      "boss": false,
+      "hp": 28.0,
+      "dmg": 3.0,
+      "armor": 0.0,
+      "speed": 0.25,
+      "follow": 24.0,
+      "kb_res": 0.0,
+      "scale": 1.0,
+      "width": 0.6,
+      "height": 1.95,
+      "color": "#4a5a7a",
+      "accent": "#7affc8",
+      "biomes": [
+        "#minecraft:is_overworld"
+      ],
+      "min_y": -64,
+      "max_y": 60,
+      "weight": 8,
+      "group_min": 1,
+      "group_max": 1,
+      "params": {
+        "cast": "minecraft:wither:80:0",
+        "range": "18",
+        "cooldown": "70"
+      },
+      "xp": 5,
+      "drops": [
+        {
+          "item": "minecraft:wither_rose",
+          "chance": 0.08,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        },
+        {
+          "item": "minecraft:lapis_lazuli",
+          "chance": 0.6,
+          "min": 2,
+          "max": 5,
+          "looting": true
+        },
+        {
+          "item": "theoria:raw_mithril",
+          "chance": 0.2,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.12,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Rune Caster",
+      "tr": "Rün Büyücüsü"
+    },
+    {
+      "id": "ancient_sentry",
+      "family": "ancient",
+      "archetype": "shooter",
+      "rig": "golem",
+      "tier": 11,
+      "cls": "strong",
+      "boss": false,
+      "hp": 36.0,
+      "dmg": 6.0,
+      "armor": 4.0,
+      "speed": 0.22,
+      "follow": 32.0,
+      "kb_res": 0.5,
+      "scale": 0.8,
+      "width": 0.9,
+      "height": 2.1,
+      "color": "#6a6050",
+      "accent": "#c8a850",
+      "biomes": [
+        "#minecraft:is_overworld"
+      ],
+      "min_y": -64,
+      "max_y": 60,
+      "weight": 6,
+      "group_min": 1,
+      "group_max": 1,
+      "params": {
+        "projectile": "arrow",
+        "range": "26",
+        "cooldown": "45"
+      },
+      "xp": 10,
+      "drops": [
+        {
+          "item": "theoria:raw_mithril",
+          "chance": 0.3,
+          "min": 1,
+          "max": 2,
+          "looting": true
+        },
+        {
+          "item": "minecraft:arrow",
+          "chance": 0.8,
+          "min": 2,
+          "max": 5,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.25,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Ancient Sentry",
+      "tr": "Kadim Okçu"
+    },
+    {
+      "id": "orichalcum_warden",
+      "family": "ancient",
+      "archetype": "humanoid",
+      "rig": "biped",
+      "tier": 12,
+      "cls": "strong",
+      "boss": false,
+      "hp": 48.0,
+      "dmg": 7.0,
+      "armor": 3.0,
+      "speed": 0.24,
+      "follow": 24.0,
+      "kb_res": 0.6,
+      "scale": 1.1,
+      "width": 0.7,
+      "height": 2.15,
+      "color": "#f0825a",
+      "accent": "#7a3a20",
+      "biomes": [
+        "#minecraft:is_overworld"
+      ],
+      "min_y": -64,
+      "max_y": 320,
+      "weight": 4,
+      "group_min": 1,
+      "group_max": 1,
+      "params": {},
+      "xp": 10,
+      "drops": [
+        {
+          "item": "theoria:raw_orichalcum",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.25,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_core",
+          "chance": 0.15,
+          "min": 1,
+          "max": 1,
+          "looting": false
+        }
+      ],
+      "en": "Orichalcum Warden",
+      "tr": "Orikalkum Bekçisi"
+    },
+    {
+      "id": "ancient_serpent",
+      "family": "ancient",
+      "archetype": "serpent",
+      "rig": "serpent",
+      "tier": 12,
+      "cls": "strong",
+      "boss": false,
+      "hp": 50.0,
+      "dmg": 6.0,
+      "armor": 0.0,
+      "speed": 0.32,
+      "follow": 24.0,
+      "kb_res": 0.3,
+      "scale": 1.5,
+      "width": 1.2,
+      "height": 0.9,
+      "color": "#3a4a5a",
+      "accent": "#c8d84a",
+      "biomes": [
+        "#minecraft:is_overworld"
+      ],
+      "min_y": -64,
+      "max_y": 60,
+      "weight": 4,
+      "group_min": 1,
+      "group_max": 1,
+      "params": {
+        "hit_effect": "minecraft:wither:100:1",
+        "hit_run": "1"
+      },
+      "xp": 10,
+      "drops": [
+        {
+          "item": "theoria:raw_orichalcum",
+          "chance": 0.35,
+          "min": 1,
+          "max": 2,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.25,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        }
+      ],
+      "en": "Ancient Serpent",
+      "tr": "Kadim Yılan"
+    },
+    {
+      "id": "platinum_puppet",
+      "family": "ancient",
+      "archetype": "humanoid",
+      "rig": "biped",
+      "tier": 13,
+      "cls": "strong",
+      "boss": false,
+      "hp": 48.0,
+      "dmg": 7.0,
+      "armor": 3.0,
+      "speed": 0.24,
+      "follow": 24.0,
+      "kb_res": 0.8,
+      "scale": 1.1,
+      "width": 0.7,
+      "height": 2.15,
+      "color": "#eceef6",
+      "accent": "#6a6e80",
+      "biomes": [
+        "#minecraft:is_overworld"
+      ],
+      "min_y": -64,
+      "max_y": 320,
+      "weight": 3,
+      "group_min": 1,
+      "group_max": 1,
+      "params": {},
+      "xp": 10,
+      "drops": [
+        {
+          "item": "theoria:raw_platinum",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 0.25,
+          "min": 1,
+          "max": 1,
+          "looting": true
+        },
+        {
+          "item": "theoria:catalyst_core",
+          "chance": 0.2,
+          "min": 1,
+          "max": 1,
+          "looting": false
+        }
+      ],
+      "en": "Platinum Puppet",
+      "tr": "Platin Kuklası"
+    },
+    {
+      "id": "platinum_colossus",
+      "family": "ancient",
+      "archetype": "giant",
+      "rig": "golem",
+      "tier": 13,
+      "cls": "boss",
+      "boss": true,
+      "hp": 300.0,
+      "dmg": 7.0,
+      "armor": 10.0,
+      "speed": 0.2,
+      "follow": 40.0,
+      "kb_res": 1.0,
+      "scale": 2.2,
+      "width": 1.3,
+      "height": 2.9,
+      "color": "#eceef6",
+      "accent": "#c8a850",
+      "biomes": [],
+      "min_y": -64,
+      "max_y": 320,
+      "weight": 0,
+      "group_min": 1,
+      "group_max": 1,
+      "params": {
+        "slam_radius": "6",
+        "slam_cd": "70",
+        "adds": "platinum_puppet",
+        "add_count": "2",
+        "phases": "0.7|0.4|0.15"
+      },
+      "xp": 40,
+      "drops": [
+        {
+          "item": "theoria:catalyst_core",
+          "chance": 1.0,
+          "min": 2,
+          "max": 3,
+          "looting": false
+        },
+        {
+          "item": "theoria:catalyst_essence",
+          "chance": 1.0,
+          "min": 4,
+          "max": 6,
+          "looting": false
+        },
+        {
+          "item": "theoria:heart_crystal",
+          "chance": 1.0,
+          "min": 1,
+          "max": 1,
+          "looting": false
+        },
+        {
+          "item": "theoria:raw_platinum",
+          "chance": 1.0,
+          "min": 6,
+          "max": 10,
+          "looting": false
+        },
+        {
+          "item": "theoria:raw_orichalcum",
+          "chance": 1.0,
+          "min": 6,
+          "max": 10,
+          "looting": false
+        }
+      ],
+      "en": "Platinum Colossus",
+      "tr": "Platin Devasa"
+    }
+  ],
+  "classes": [
+    "weak",
+    "normal",
+    "strong",
+    "elite",
+    "boss"
+  ]
+}

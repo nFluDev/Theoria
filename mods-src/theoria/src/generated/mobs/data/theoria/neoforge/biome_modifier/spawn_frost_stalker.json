@@ -1,0 +1,15 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#theoria:spawn/frost_stalker",
+  "spawners": [
+    {
+      "type": "theoria:frost_stalker",
+      "count": {
+        "type": "minecraft:uniform",
+        "min_inclusive": 1,
+        "max_inclusive": 3
+      },
+      "weight": 25
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+creating world theoria-dev seed=260309 (creative, cheats)
+backend=Vulkan driver=1.2.350 MoltenVK 1.4.2 device=AMD Radeon RX 580 window=1280x720 fullscreen=false
+chat> Theoria 0.0.1 (Minecraft 26.3, NeoForge 26.3.0.101)
+chat> Theoria: 4 checks passed
+chat> Theoria: 6 checks passed
+chat> The base value for attribute Armor for entity ixedc set to 300.0
+chat> The base value for attribute Max Health for entity ixedc set to 214.0
+payload: sent Ping(1234), Pong=1234; synced attachment on client=1234
+lang (en_us): version key translated=true; /theoria version shown=true; /theoria test core + balance ok lines=2, failures=false
+client attributes after /attribute: getArmorValue=300 (expect 300), getMaxHealth=214 (expect 214)
+macOS input: option ctrlClickEmulatesRightClick=false -> SDL hint SDL_MAC_CTRL_CLICK_EMULATE_RIGHT_CLICK=0 (consistent); quitShortcuts=false
+RESULT PASS

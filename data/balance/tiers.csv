@@ -1,0 +1,15 @@
+idx,id,tr,helm,chest,legs,boots,total,tough,adur,sword,tdur,mob_hp_mult,mob_dmg_mult,mob_bypass_mult,mobhp,mobdmg,exphp,ref_bonus,ref_epf,dr,hits,kills,src
+0,leather,Deri,1,1,1,1,4,0,80,4.0,80,1.0,1.0,1.0,20,3.0,20,0.0,0,7,7.2,5.2,inek/at derisi
+1,tin,Kalay,1,3,2,1,7,0,120,5.2,120,1.33,1.31,1.2,27,3.9,24,0.0625,0,10,6.8,4.9,YENI maden: Kalay Cevheri
+2,copper,Bakir,2,6,4,2,14,0,180,6.8,180,1.7689,1.7161,1.45,35,5.1,29,0.125,0,17,6.8,4.8,vanilla bakir
+3,bronze,Bronz,3,9,7,3,22,0,270,8.8,270,2.3526,2.2481,1.75,47,6.7,35,0.1875,0,24,6.8,4.7,alasim: Kalay + Bakir (yeni maden yok)
+4,iron,Demir,5,14,10,5,34,0,405,11.4,405,3.129,2.945,2.05,63,8.8,41,0.25,2,29,6.9,4.5,vanilla demir
+5,steel,Celik,9,24,18,9,60,0,608,14.9,608,4.1616,3.8579,2.5,83,11.6,50,0.25,4,38,7.6,4.6,alasim: Demir + Karbon Tozu (kurt/iskelet drop'u)
+6,gold,Altin,12,32,24,12,80,0,911,19.3,911,5.5349,5.0539,3.0,111,15.2,60,0.25,6,40,7.5,4.8,vanilla altin (guclendirilmis)
+7,cobalt,Kobalt,17,46,34,17,114,0,1367,25.1,1367,7.3614,6.6206,3.6,147,19.9,72,0.25,8,43,7.6,4.9,YENI maden: Kobalt Cevheri (deepslate)
+8,diamond,Elmas,22,59,44,22,147,0,2050,32.6,2050,9.7907,8.673,4.3,196,26.0,86,0.25,10,43,7.3,5.0,vanilla elmas
+9,titanium,Titanyum,25,67,50,25,167,2,3075,42.4,3075,13.0216,11.3617,5.15,260,34.1,103,0.25,12,46,7.3,5.2,YENI maden: Titanyum Cevheri (dag tepeleri/cekirdek)
+10,lonsdaleit,Lonsdaleit,31,82,62,31,206,4,4613,55.1,4613,17.3187,14.8838,6.2,346,44.7,124,0.25,14,49,7.6,5.3,YENI: sikistirilmis karbon; meteor kraterleri + Elmas+Karbon sentezi
+11,mithril,Mitril,37,98,74,37,246,6,6920,71.7,6920,23.0339,19.4977,7.45,461,58.5,149,0.25,16,51,7.6,5.4,YENI maden: Mitril Cevheri (derin/ucurum)
+12,orichalcum,Orikalkum,44,118,88,44,294,8,10380,93.2,10380,30.6351,25.542,8.9,613,76.6,178,0.25,16,52,7.1,5.5,YENI maden: Orikalkum (yuzen adalar/nadir)
+13,platinum,Platin,53,142,106,53,354,10,15570,121.2,15570,40.7447,33.4601,10.7,815,100.4,214,0.25,16,53,6.7,5.7,YENI maden: Platin (en derin/en nadir)

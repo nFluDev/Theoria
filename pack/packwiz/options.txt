@@ -1,0 +1,5 @@
+version:5023
+preferredGraphicsBackend:"vulkan"
+ctrlClickEmulatesRightClick:false
+quitShortcuts:false
+key_key.curios.open.desc:key.keyboard.j

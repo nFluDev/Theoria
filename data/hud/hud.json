@@ -1,0 +1,62 @@
+{
+  "_doc": "Faz 3 HUD tek kaynağı. Java jar'dan (theoria/hud.json), Python (tools/hud_model.py) buradan okur; elle düzenlenir, üretilmez. Renkler RRGGBB (ya da AARRGGBB); 'vanilla' = o katmanda vanilla sprite aynen (boyama yok). docs/04 §1, kararlar D16-D18.",
+
+  "layout": {
+    "_doc": "icons x quarters_per_icon = bir katın çeyrek sayısı (5 x 4 = 20: D1). bottom = ilk satırın alt boşluğu (vanilla leftHeight başlangıcı); reserved_rows = ikon satırı sayısı (zırh/binek + can/açlık) — Hud.leftHeight/rightHeight buna göre ilerletilir (ADR-002). text_pad = ikon sütunu ile orta sayı arası boşluk. text_min_scale = sayının küçülebileceği taban (docs/04 §1), altında metin kısalır. glyph_height = vanilla rakam yüksekliği (dikey ortalama). xp_text_* = XP barının içine çizilen seviye yazısı.",
+    "icons": 5,
+    "quarters_per_icon": 4,
+    "icon_size": 9,
+    "icon_step": 8,
+    "row_height": 10,
+    "bottom": 39,
+    "reserved_rows": 2,
+    "bar_edge": 91,
+    "text_pad": 3,
+    "text_min_scale": 0.25,
+    "glyph_height": 7,
+    "xp_bar_height": 5,
+    "xp_text_scale": 0.6,
+    "xp_text_outline": 0.5
+  },
+
+  "health": {
+    "_doc": "D16: renk MUTLAK değerin göstergesidir (kat boyu sabit): 1 çeyrek = 'unit' HP (D1: 1), 1 kat = 20 çeyrek. Kat 0 vanilla kırmızı; sonra turuncu, sarı, turkuaz, gökmavisi, çivit, mor, macenta, en sonda beyaz. Yeşil ve siyah YOK (zehir / solma renkleri). Beyaz KALICI: 200 da 215 de 235 HP de beyaz — başa dönmez. Binek sağlığı aynı paleti kullanır.",
+    "unit": 1,
+    "palette": ["vanilla", "FF8A2B", "FFD93D", "1FE0CF", "4DA3FF", "5B5CF0", "B45CFF", "FF4FD8", "FFFFFF"]
+  },
+
+  "armor": {
+    "_doc": "D17: zırh da HP gibi — 5 sembol, çeyrek çeyrek, mutlak. unit = çeyrek başına zırh (1 = 'HP gibi'; 3 yapılırsa 1 kat 60 zırh olur ve T13'e dek ilerler). Kat 0 vanilla çelik, sonra ışık spektrumu: en güçsüz frekanstan (kırmızı) en güçlüye (mor); son renk (mor) kalıcı.",
+    "unit": 1,
+    "palette": ["vanilla", "FF4D4D", "FF9B3D", "FFE04D", "5FE06A", "3DE0E0", "4D8DFF", "5538F0", "B05CFF"]
+  },
+
+  "tints": {
+    "_doc": "Nötr sprite çarpanları. effect_*: zehir/solma/donma sırasında kat 0 dışındaki katlar palet yerine bu renkle çizilir (kat 0 vanilla durum sprite'ı). saturation: açlık ikonlarının üstüne ince parlak katman. blink: hasarda yanıp sönen 'kaybedilen' kısım (kat 0 dışı).",
+    "effect_poison": "A8B820",
+    "effect_wither": "4D4545",
+    "effect_frozen": "9FD8FF",
+    "saturation": "B0FFD24A",
+    "blink": "FFFFFF"
+  },
+
+  "effects": {
+    "_doc": "D18: vanilla'nın Hud.java'daki efektleri, vanilla değerleriyle (yenilenme dalgası 5 ikona uyarlandı). blink_*: hasar/iyileşmede kalp yanıp sönmesi (ticks) — kaybedilen kısım display_hold_ticks boyunca eski değerde kalır. low_health_fraction: can + emilim <= azami x bu ise kalpler titrer (vanilla: <= 4 HP = 20 HP'nin %20'si; yüksek canda da anlamlı kalsın diye oran). regen_*: yenilenme etkisinde bir kalp regen_lift px kalkar, dalga regen_step_ticks'te bir ikon ilerler, sonra regen_pause kare duraklar. hunger_shake: satürasyon 0'da açlık ikonları titrer (vanilla).",
+    "blink_damage_ticks": 20,
+    "blink_heal_ticks": 10,
+    "blink_phase_ticks": 3,
+    "display_hold_ticks": 20,
+    "low_health_fraction": 0.2,
+    "low_health_jitter": 2,
+    "regen_lift": 2,
+    "regen_step_ticks": 2,
+    "regen_pause": 8,
+    "hunger_shake": 3
+  },
+
+  "text": {
+    "health": "FFFFFF",
+    "armor": "D8E4F5",
+    "xp_level": "FFFFFF"
+  }
+}

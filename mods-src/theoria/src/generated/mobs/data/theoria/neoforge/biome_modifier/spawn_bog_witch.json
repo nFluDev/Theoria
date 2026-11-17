@@ -1,0 +1,11 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#theoria:spawn/bog_witch",
+  "spawners": [
+    {
+      "type": "theoria:bog_witch",
+      "count": 1,
+      "weight": 20
+    }
+  ]
+}

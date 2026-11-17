@@ -1,0 +1,18 @@
+{
+  "id": "lonsdaleit",
+  "idx": 10,
+  "helmet": 31,
+  "chestplate": 82,
+  "leggings": 62,
+  "boots": 31,
+  "toughness": 4,
+  "armor_durability": 4613,
+  "sword_damage": 55.1,
+  "tool_durability": 4613,
+  "mob_hp_mult": 17.3187,
+  "mob_dmg_mult": 14.8838,
+  "mob_bypass_mult": 6.2,
+  "ref_health": 124,
+  "ref_bonus": 0.25,
+  "ref_epf": 14
+}

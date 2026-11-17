@@ -1,0 +1,18 @@
+{
+  "id": "platinum",
+  "idx": 13,
+  "helmet": 53,
+  "chestplate": 142,
+  "leggings": 106,
+  "boots": 53,
+  "toughness": 10,
+  "armor_durability": 15570,
+  "sword_damage": 121.2,
+  "tool_durability": 15570,
+  "mob_hp_mult": 40.7447,
+  "mob_dmg_mult": 33.4601,
+  "mob_bypass_mult": 10.7,
+  "ref_health": 214,
+  "ref_bonus": 0.25,
+  "ref_epf": 16
+}

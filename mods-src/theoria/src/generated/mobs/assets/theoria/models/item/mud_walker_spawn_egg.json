@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "theoria:item/mud_walker_spawn_egg"
+  }
+}

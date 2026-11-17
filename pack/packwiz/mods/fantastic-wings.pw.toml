@@ -1,0 +1,13 @@
+name = "Fantastic Wings"
+filename = "fantasticwings-v26.3.1-mc26.3.x+neoforge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/iGEcTqwK/versions/N97Ch5Lv/fantasticwings-v26.3.1-mc26.3.x%2Bneoforge.jar"
+hash-format = "sha512"
+hash = "aad8d1f82828510f60fec3ee45e0ba20c8230ae07c7302b4be472fb0f5ad3b90c067435a39fd86bbeb94c668e8c089d42e667cd89d5f0d963a19f221c36693f8"
+
+[update]
+[update.modrinth]
+mod-id = "iGEcTqwK"
+version = "N97Ch5Lv"

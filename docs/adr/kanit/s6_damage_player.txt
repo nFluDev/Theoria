@@ -1,0 +1,1 @@
+player (survival, NORMAL difficulty) armor 300: vanilla formula took 20.0000, spike formula took 14.2857

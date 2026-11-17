@@ -1,0 +1,6 @@
+vanilla ARMOR attribute range: [0.0, 30.0]; CombatRules MAX_ARMOR=20 (=> max 80% reduction)
+A vanilla cap, base armor 300 -> getArmorValue=30; 100 dmg mobAttack -> took 76.0000
+B cap lifted, vanilla formula, armor 300 -> took 20.0000 (vanilla clamps effective armor to 20)
+C cap lifted + Reduction.ARMOR modifier (armor/(armor+50)), armor 300 -> took 14.2857; vanilla reduction seen by modifier=80.0000
+D base 30 + item-style modifier +270 -> getArmorValue=300; spike formula -> took 14.2857
+E bypasses_armor source (magic) with spike formula -> took 100.0000 (expect 100)

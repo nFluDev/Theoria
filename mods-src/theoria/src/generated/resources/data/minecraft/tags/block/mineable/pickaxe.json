@@ -1,0 +1,22 @@
+{
+  "values": [
+    "theoria:tin_ore",
+    "theoria:deepslate_tin_ore",
+    "theoria:deepslate_cobalt_ore",
+    "theoria:titanium_ore",
+    "theoria:lonsdaleit_ore",
+    "theoria:deepslate_mithril_ore",
+    "theoria:orichalcum_ore",
+    "theoria:deepslate_platinum_ore",
+    "theoria:tin_block",
+    "theoria:bronze_block",
+    "theoria:steel_block",
+    "theoria:cobalt_block",
+    "theoria:titanium_block",
+    "theoria:lonsdaleit_block",
+    "theoria:mithril_block",
+    "theoria:orichalcum_block",
+    "theoria:platinum_block",
+    "theoria:catalyst_forge"
+  ]
+}

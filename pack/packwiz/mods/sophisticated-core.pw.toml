@@ -1,0 +1,18 @@
+name = "Sophisticated Core"
+filename = "sophisticatedcore-26.3-1.5.33.2468.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/nmoqTijg/versions/4x9YVBN8/sophisticatedcore-26.3-1.5.33.2468.jar"
+hash-format = "sha512"
+hash = "a4ae33ebb448cd92bc09aed3794ca0b391143a2557bb2f422244d6e9f51a322c61bafd3b2853978ba7dadd516a2e5d7d90ba8b806f63f6f5671503ea42131957"
+
+[update]
+[update.modrinth]
+mod-id = "nmoqTijg"
+version = "4x9YVBN8"
+
+[option]
+optional = true
+default = false
+description = "Bir opsiyonel modun bağımlılığı (better-combat / sophisticated-backpacks): ana moduyla birlikte aç/kapa."

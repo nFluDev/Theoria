@@ -1,0 +1,11 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#theoria:spawn/wind_spirit",
+  "spawners": [
+    {
+      "type": "theoria:wind_spirit",
+      "count": 1,
+      "weight": 12
+    }
+  ]
+}

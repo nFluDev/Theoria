@@ -1,0 +1,10 @@
+ItemEnchantments.CODEC level 255 -> OK
+ItemEnchantments.CODEC level 300 -> ERROR: Value 300 outside of range [1:255] missed input: {"minecraft:sharpness":300}
+ItemEnchantments.Mutable.set(sharpness, 300) stores 255
+ItemStack.enchant(sharpness, 300) -> stack level 255
+datapack enchantment definition max_level=300 -> ERROR: Value must be within range [1;255]: 300
+Enchantment.modifyDamage(level=1) direct call -> +1.00 damage (vanilla linear 1+0.5*(L-1) = 1.00)
+Enchantment.modifyDamage(level=5) direct call -> +3.00 damage (vanilla linear 1+0.5*(L-1) = 3.00)
+Enchantment.modifyDamage(level=255) direct call -> +128.00 damage (vanilla linear 1+0.5*(L-1) = 128.00)
+Enchantment.modifyDamage(level=300) direct call -> +150.50 damage (vanilla linear 1+0.5*(L-1) = 150.50)
+Enchantment.modifyDamage(level=1000) direct call -> +500.50 damage (vanilla linear 1+0.5*(L-1) = 500.50)

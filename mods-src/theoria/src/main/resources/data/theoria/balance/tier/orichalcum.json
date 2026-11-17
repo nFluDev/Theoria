@@ -1,0 +1,18 @@
+{
+  "id": "orichalcum",
+  "idx": 12,
+  "helmet": 44,
+  "chestplate": 118,
+  "leggings": 88,
+  "boots": 44,
+  "toughness": 8,
+  "armor_durability": 10380,
+  "sword_damage": 93.2,
+  "tool_durability": 10380,
+  "mob_hp_mult": 30.6351,
+  "mob_dmg_mult": 25.542,
+  "mob_bypass_mult": 8.9,
+  "ref_health": 178,
+  "ref_bonus": 0.25,
+  "ref_epf": 16
+}

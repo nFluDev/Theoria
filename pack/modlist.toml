@@ -1,0 +1,82 @@
+# Theoria mod listesi — TEK KAYNAK. pack/packwiz/ bundan üretilir: python3 -I tools/pack/sync_packwiz.py
+# Her giriş: slug (Modrinth) = sürüm numarası (NeoForge 26.3). Doğrulama: python3 -I tools/modmatrix/matrix.py (çıkış 0 = tüm sabitler mevcut)
+# ve python3 -I tools/check_pack.py (bu liste ≡ packwiz metadosyaları). Mod eklemek = buraya satır + sync (docs/11 tablosu ayrıca güncellenir).
+# Shader mimarisi (D19): Vulkan-yerli Vitrail; Iris YOK, OpenGL hedeflenmez.
+
+[meta]
+minecraft = "26.3"        # ADR-001 (2026-11-09): kesin
+loader    = "neoforge"
+neoforge  = "26.3.0.101"
+java      = 25
+
+[zorunlu]
+fantastic-wings = "26.3.1"
+jei             = "31.17.0.109"
+curios          = "17.0.1"
+puzzles-lib     = "26.3.17"      # fantastic-wings zorunlu bağımlılığı (>=26.3.16)
+mezzconfig      = "0.6.11"       # jei zorunlu bağımlılığı
+
+[performans]
+sodium          = "0.9.3-beta.4"   # Vulkan destekli (kullanıcı instance'ında kanıtlı)
+sodium-extra    = "0.9.6-beta.3"
+reeses-sodium-options = "2.2.6-beta.3"
+immediatelyfast = "1.17.1"
+badoptimizations= "2.4.1"
+scalablelux     = "0.3.0-alpha.0.17"
+moreculling     = "1.9.2"
+dynamic-fps     = "3.11.10"
+modernfix-mvus  = "5.27.23"
+ksyxis          = "1.4.6"
+
+lithium         = "0.26.3"
+ferrite-core    = "9.0.0"
+entityculling   = "1.11.3"
+chunky          = "1.5.66"         # ön üretim
+
+[shader]
+vitrail-shaders = "0.13.0-beta"   # Vulkan-yerli; zorunlu bağımlılığı yalnızca Sodium (Modrinth API, 11 Kas); Iris Vulkan'da çalışmıyor
+complementary-reimagined = "r5.9.3"   # shaderpack (shaderpacks/); Vitrail'in kendi uyumluluk tablosunda "çizilir, referansa yakın" (r5.9)
+
+[qol]
+jade            = "26.3.5"
+mouse-tweaks    = "26.3-2.31"
+waystones       = "26.3.0.2"
+xaeros-minimap  = "26.6.2"
+xaeros-world-map= "1.47.2"
+explorers-compass = "3.3.2"
+natures-compass = "3.3.1"
+lootr           = "1.25.42"
+
+[bagimlilik]
+# packwiz'in Modrinth "zorunlu bağımlılık" olarak kendiliğinden eklediği modlar; açıkça sabitlenir (check_pack.py: paketteki her mod burada olmak zorunda).
+balm            = "26.3.0.3"       # waystones
+shogi           = "26.3.0.3"       # waystones
+cloth-config    = "26.3.159"       # moreculling (+ opsiyonel better-combat)
+lithostitched   = "2.0.6"          # terralith
+
+[bagimlilik-opsiyonel]
+# Yalnızca bir opsiyonel modun bağımlılığı: onunla birlikte açılır/kapanır (packwiz [option], varsayılan KAPALI).
+player-animation-library = "1.2.9"   # better-combat
+sophisticated-core       = "1.5.33.2468"   # sophisticated-backpacks
+
+[mac-yedek]
+# ADR-005: temel paket vanilla 26.3 (ctrlClickEmulatesRightClick:false) ile; Faz 5 kullanıcı testi başarısızsa eklenir.
+mac-input-fixes-neoforged = "26.10.03"   # 26.3'te yüklendiği kanıtlı (S7)
+
+[dunya]
+terralith       = "2.6.5"
+terrablender    = "26.3.0.0.9"
+dungeons-and-taverns = "6.1.0"
+
+[opsiyonel-test-edilecek]
+distanthorizons = "3.3.4"          # Faz 5: yüklenir ama KAPANIŞTA JVM asılı kalır (3 non-daemon "DH-Render Loader Thread", jstack kanıtı); Vulkan çizimi doğrulanamadı → kapalı kalır
+better-combat   = "3.2.2"
+sophisticated-backpacks = "3.26.19"
+
+[bilerek-yok]
+iris        = "Vulkan modunda çalışmıyor → Vitrail kullanılıyor (OpenGL'e düşersek yedek)"
+appleskin   = "kendi SAT göstergemiz var"
+colorful-hearts = "kendi HUD'umuzla çakışır (LucidRem dersi)"
+apotheosis  = "26.x yok; Kataliz sistemimiz yerine geçer"
+mcmouser    = "26.3'te FML reddediyor (minecraft [26.1,26.3)) — ADR-005"
+silent-gear = "gerekmiyor (kendi kademe sistemi)"

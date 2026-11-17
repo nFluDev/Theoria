@@ -1,0 +1,4 @@
+id,result,count,ingredients,note
+bronze_ingot,theoria:bronze_ingot,4,minecraft:copper_ingot*3 theoria:tin_ingot,Alaşım: Kalay + Bakır (docs/05 §1); yeni maden yok
+steel_ingot,theoria:steel_ingot,2,minecraft:iron_ingot*2 theoria:carbon_dust,Alaşım: Demir + Karbon Tozu (iskelet/kurt drop'u)
+lonsdaleit_synthesis,theoria:lonsdaleit,1,minecraft:diamond theoria:carbon_dust*2,Sıkıştırılmış karbon: Elmas + Karbon Tozu sentezi (docs/05 §1)

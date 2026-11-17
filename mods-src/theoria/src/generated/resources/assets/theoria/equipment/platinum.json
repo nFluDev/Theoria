@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "theoria:platinum"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "theoria:platinum"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "theoria:platinum"
+      }
+    ]
+  }
+}

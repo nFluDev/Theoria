@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "theoria:item/wind_spirit_spawn_egg"
+  }
+}

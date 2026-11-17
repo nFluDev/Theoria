@@ -1,0 +1,112 @@
+entity,item,chance,min,max,looting,note
+mud_walker,minecraft:leather,0.5,1,2,1,
+mud_walker,theoria:raw_tin,0.12,1,1,1,Kalay: cevhere ek kaynak
+mud_walker,theoria:catalyst_essence,0.12,1,1,1,
+tin_gnawer,theoria:raw_tin,0.45,1,2,1,Kalay Kemirgen kalay yutar (docs/05 §4.2 Bataklık)
+tin_gnawer,minecraft:leather,0.15,1,1,1,
+tin_gnawer,theoria:catalyst_essence,0.06,1,1,1,
+reed_serpent,minecraft:leather,0.5,1,2,1,
+reed_serpent,minecraft:spider_eye,0.35,1,1,1,Zehir katalizörü imzası
+reed_serpent,theoria:catalyst_essence,0.12,1,1,1,
+bog_witch,minecraft:spider_eye,0.30,1,1,1,
+bog_witch,minecraft:moss_block,0.25,1,2,1,Onarım katalizörü imzası
+bog_witch,theoria:catalyst_essence,0.12,1,1,1,
+mud_king,theoria:catalyst_core,1.0,1,2,0,Boss: çekirdek (Karar: boss = çekirdek kaynağı)
+mud_king,theoria:catalyst_essence,1.0,3,5,0,
+mud_king,theoria:heart_crystal,1.0,1,1,0,Boss ödülü: kalıcı +can
+mud_king,theoria:raw_tin,1.0,6,10,0,
+mud_king,minecraft:leather,1.0,4,8,0,
+steel_wolf,theoria:carbon_dust,0.6,1,3,1,Karbon Tozu (Çelik alaşımı)
+steel_wolf,minecraft:leather,0.4,1,2,1,
+steel_wolf,theoria:catalyst_essence,0.12,1,1,1,
+antlered_stag,minecraft:leather,0.8,2,3,1,
+antlered_stag,theoria:catalyst_essence,0.12,1,1,1,
+thorn_boar,minecraft:leather,0.6,1,2,1,
+thorn_boar,minecraft:cactus,0.30,1,2,1,Diken katalizörü imzası
+thorn_boar,theoria:catalyst_essence,0.12,1,1,1,
+mountain_bear,minecraft:leather,0.8,2,4,1,
+mountain_bear,theoria:carbon_dust,0.3,1,2,1,
+mountain_bear,theoria:catalyst_essence,0.25,1,1,1,
+cave_crawler,minecraft:spider_eye,0.4,1,1,1,
+cave_crawler,minecraft:redstone,0.3,1,3,1,Kazı katalizörü imzası
+cave_crawler,theoria:catalyst_essence,0.06,1,1,1,
+rock_worm,theoria:raw_cobalt,0.3,1,2,1,
+rock_worm,theoria:carbon_dust,0.3,1,2,1,
+rock_worm,theoria:catalyst_essence,0.25,1,1,1,
+cobalt_spider,theoria:raw_cobalt,0.55,1,2,1,Kobalt Kristali (docs/05 §4.2 Yeraltı)
+cobalt_spider,minecraft:spider_eye,0.5,1,1,1,
+cobalt_spider,minecraft:string,0.5,1,2,1,
+cobalt_spider,theoria:catalyst_essence,0.12,1,1,1,
+crystal_beetle,minecraft:amethyst_shard,0.6,1,3,1,Sertlik katalizörü imzası
+crystal_beetle,theoria:raw_cobalt,0.3,1,1,1,
+crystal_beetle,theoria:catalyst_essence,0.12,1,1,1,
+storm_eagle,minecraft:feather,0.85,1,3,1,Koşu katalizörü imzası
+storm_eagle,theoria:catalyst_essence,0.12,1,1,1,
+wind_spirit,minecraft:breeze_rod,0.35,1,1,1,Fırtına katalizörü imzası
+wind_spirit,theoria:catalyst_essence,0.12,1,1,1,
+titan_bull,theoria:raw_titanium,0.6,1,3,1,Titanyum Parçası (docs/05 §4.2 Dağ)
+titan_bull,minecraft:leather,0.7,2,4,1,
+titan_bull,theoria:catalyst_essence,0.25,1,1,1,
+boulder_hurler,theoria:raw_titanium,0.3,1,2,1,
+boulder_hurler,minecraft:cobbled_deepslate,0.8,2,4,1,Sabitlik katalizörü imzası
+boulder_hurler,theoria:catalyst_essence,0.25,1,1,1,
+storm_drake,theoria:catalyst_core,1.0,1,2,0,
+storm_drake,theoria:catalyst_essence,1.0,3,5,0,
+storm_drake,theoria:heart_crystal,1.0,1,1,0,
+storm_drake,theoria:raw_titanium,1.0,8,12,0,
+storm_drake,minecraft:breeze_rod,1.0,3,5,0,
+storm_drake,minecraft:feather,1.0,6,10,0,
+ember_wraith,minecraft:blaze_powder,0.6,1,2,1,Güç katalizörü imzası
+ember_wraith,minecraft:blaze_rod,0.25,1,1,1,Ateş katalizörü imzası
+ember_wraith,theoria:catalyst_essence,0.12,1,1,1,
+ash_golem,theoria:carbon_dust,0.7,2,4,1,
+ash_golem,minecraft:iron_nugget,0.5,2,5,1,Zırh Plakası imzası
+ash_golem,theoria:catalyst_essence,0.25,1,1,1,
+magma_crawler,minecraft:magma_cream,0.3,1,1,1,
+magma_crawler,minecraft:blaze_powder,0.3,1,1,1,
+magma_crawler,theoria:catalyst_essence,0.06,1,1,1,
+frost_stalker,minecraft:blue_ice,0.15,1,1,1,Buz katalizörü imzası
+frost_stalker,minecraft:leather,0.4,1,2,1,
+frost_stalker,theoria:catalyst_essence,0.12,1,1,1,
+frost_archer,minecraft:arrow,0.6,1,3,1,Menzil Gücü imzası
+frost_archer,minecraft:bone,0.4,1,2,1,
+frost_archer,minecraft:blue_ice,0.10,1,1,1,
+frost_archer,theoria:catalyst_essence,0.12,1,1,1,
+glacier_giant,minecraft:blue_ice,0.6,1,3,1,
+glacier_giant,theoria:raw_titanium,0.25,1,2,1,
+glacier_giant,theoria:catalyst_essence,0.5,1,1,1,
+snow_wisp,minecraft:snowball,0.5,2,4,1,
+snow_wisp,minecraft:blue_ice,0.08,1,1,1,
+snow_wisp,theoria:catalyst_essence,0.06,1,1,1,
+pale_wraith,minecraft:phantom_membrane,0.5,1,2,1,Tüy Düşüş katalizörü imzası
+pale_wraith,minecraft:ink_sac,0.3,1,2,1,
+pale_wraith,theoria:catalyst_essence,0.12,1,1,1,
+night_runner,minecraft:ink_sac,0.5,1,3,1,Gölge katalizörü imzası
+night_runner,minecraft:ender_pearl,0.15,1,1,1,Gravite katalizörü imzası
+night_runner,theoria:catalyst_essence,0.12,1,1,1,
+shade_seep,minecraft:ink_sac,0.3,1,2,1,
+shade_seep,theoria:catalyst_essence,0.06,1,1,1,
+stone_guardian,theoria:raw_mithril,0.45,1,2,1,Mitril Çekirdeği (docs/05 §4.2 Kadim)
+stone_guardian,minecraft:cobbled_deepslate,1.0,3,6,0,
+stone_guardian,theoria:catalyst_essence,0.5,1,1,1,
+stone_guardian,theoria:catalyst_core,0.10,1,1,0,
+rune_caster,minecraft:wither_rose,0.08,1,1,1,Solma katalizörü imzası (nadir)
+rune_caster,minecraft:lapis_lazuli,0.6,2,5,1,Şans katalizörü imzası
+rune_caster,theoria:raw_mithril,0.2,1,1,1,
+rune_caster,theoria:catalyst_essence,0.12,1,1,1,
+ancient_sentry,theoria:raw_mithril,0.3,1,2,1,
+ancient_sentry,minecraft:arrow,0.8,2,5,1,
+ancient_sentry,theoria:catalyst_essence,0.25,1,1,1,
+orichalcum_warden,theoria:raw_orichalcum,0.5,1,2,1,Orikalkum Çekirdeği
+orichalcum_warden,theoria:catalyst_essence,0.25,1,1,1,
+orichalcum_warden,theoria:catalyst_core,0.15,1,1,0,
+ancient_serpent,theoria:raw_orichalcum,0.35,1,2,1,
+ancient_serpent,theoria:catalyst_essence,0.25,1,1,1,
+platinum_puppet,theoria:raw_platinum,0.5,1,2,1,Platin Çekirdeği
+platinum_puppet,theoria:catalyst_essence,0.25,1,1,1,
+platinum_puppet,theoria:catalyst_core,0.2,1,1,0,
+platinum_colossus,theoria:catalyst_core,1.0,2,3,0,
+platinum_colossus,theoria:catalyst_essence,1.0,4,6,0,
+platinum_colossus,theoria:heart_crystal,1.0,1,1,0,
+platinum_colossus,theoria:raw_platinum,1.0,6,10,0,
+platinum_colossus,theoria:raw_orichalcum,1.0,6,10,0,

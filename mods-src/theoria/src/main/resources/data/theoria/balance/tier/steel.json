@@ -1,0 +1,18 @@
+{
+  "id": "steel",
+  "idx": 5,
+  "helmet": 9,
+  "chestplate": 24,
+  "leggings": 18,
+  "boots": 9,
+  "toughness": 0,
+  "armor_durability": 608,
+  "sword_damage": 14.9,
+  "tool_durability": 608,
+  "mob_hp_mult": 4.1616,
+  "mob_dmg_mult": 3.8579,
+  "mob_bypass_mult": 2.5,
+  "ref_health": 50,
+  "ref_bonus": 0.25,
+  "ref_epf": 4
+}

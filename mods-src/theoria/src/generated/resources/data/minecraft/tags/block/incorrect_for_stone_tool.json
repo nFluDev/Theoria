@@ -1,0 +1,14 @@
+{
+  "values": [
+    "#minecraft:needs_iron_tool",
+    "#minecraft:needs_diamond_tool",
+    "#theoria:gate/2",
+    "#theoria:gate/4",
+    "#theoria:gate/7",
+    "#theoria:gate/8",
+    "#theoria:gate/10",
+    "#theoria:gate/11",
+    "#theoria:gate/12"
+  ],
+  "replace": true
+}

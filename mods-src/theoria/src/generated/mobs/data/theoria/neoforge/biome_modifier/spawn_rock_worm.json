@@ -1,0 +1,11 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#theoria:spawn/rock_worm",
+  "spawners": [
+    {
+      "type": "theoria:rock_worm",
+      "count": 1,
+      "weight": 15
+    }
+  ]
+}

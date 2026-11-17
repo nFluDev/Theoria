@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "theoria:tin"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "theoria:tin"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "theoria:tin"
+      }
+    ]
+  }
+}

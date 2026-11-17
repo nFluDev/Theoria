@@ -1,0 +1,42 @@
+{
+  "zone": {
+    "dist_step": 600,
+    "depth_from": 0,
+    "depth_step": 32,
+    "height_from": 140,
+    "height_step": 40,
+    "nether": 4,
+    "end": 8,
+    "cap": 13,
+    "band": 1
+  },
+  "xp": {
+    "growth": 2.0,
+    "base": {
+      "weak": 3,
+      "normal": 5,
+      "strong": 10,
+      "elite": 20,
+      "boss": 40
+    }
+  },
+  "heart": {
+    "hp": 4,
+    "max": 11
+  },
+  "weapons": {
+    "minecraft:wooden_sword": 4,
+    "minecraft:stone_sword": 5,
+    "minecraft:iron_sword": 6,
+    "minecraft:golden_sword": 4,
+    "minecraft:diamond_sword": 7,
+    "minecraft:netherite_sword": 8,
+    "minecraft:copper_sword": 5,
+    "minecraft:wooden_axe": 7,
+    "minecraft:stone_axe": 9,
+    "minecraft:iron_axe": 9,
+    "minecraft:golden_axe": 7,
+    "minecraft:diamond_axe": 9,
+    "minecraft:netherite_axe": 10
+  }
+}

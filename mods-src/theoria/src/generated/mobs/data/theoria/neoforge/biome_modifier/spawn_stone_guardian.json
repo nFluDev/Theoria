@@ -1,0 +1,11 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#theoria:spawn/stone_guardian",
+  "spawners": [
+    {
+      "type": "theoria:stone_guardian",
+      "count": 1,
+      "weight": 5
+    }
+  ]
+}

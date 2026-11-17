@@ -1,0 +1,18 @@
+{
+  "id": "titanium",
+  "idx": 9,
+  "helmet": 25,
+  "chestplate": 67,
+  "leggings": 50,
+  "boots": 25,
+  "toughness": 2,
+  "armor_durability": 3075,
+  "sword_damage": 42.4,
+  "tool_durability": 3075,
+  "mob_hp_mult": 13.0216,
+  "mob_dmg_mult": 11.3617,
+  "mob_bypass_mult": 5.15,
+  "ref_health": 103,
+  "ref_bonus": 0.25,
+  "ref_epf": 12
+}

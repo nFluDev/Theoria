@@ -1,0 +1,18 @@
+{
+  "id": "cobalt",
+  "idx": 7,
+  "helmet": 17,
+  "chestplate": 46,
+  "leggings": 34,
+  "boots": 17,
+  "toughness": 0,
+  "armor_durability": 1367,
+  "sword_damage": 25.1,
+  "tool_durability": 1367,
+  "mob_hp_mult": 7.3614,
+  "mob_dmg_mult": 6.6206,
+  "mob_bypass_mult": 3.6,
+  "ref_health": 72,
+  "ref_bonus": 0.25,
+  "ref_epf": 8
+}

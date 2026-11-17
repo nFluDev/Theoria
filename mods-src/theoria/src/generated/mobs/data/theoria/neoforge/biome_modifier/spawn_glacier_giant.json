@@ -1,0 +1,11 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#theoria:spawn/glacier_giant",
+  "spawners": [
+    {
+      "type": "theoria:glacier_giant",
+      "count": 1,
+      "weight": 8
+    }
+  ]
+}

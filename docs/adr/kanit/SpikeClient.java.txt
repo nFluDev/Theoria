@@ -1,0 +1,212 @@
+// REFERANS — derlenmez. Faz 0 spike'ının istemci senaryosu (S2 Fantastic Wings + S3 render kancaları), Faz 1 temizliğinde
+// koddan çıkarıldı (2026-11-10). ADR-002'nin [log] kanıtını üreten kod budur; Faz 3 (HUD katmanı + vanilla katman iptali),
+// Faz 4 (pause'suz ekran, FW kataloğu, /wings) ve Faz 11 (zırh render-state modifier) için 26.3 API kullanım örneğidir.
+// Dikkat (ADR-002 kapanış notları): katman görünürlük koşulu ve leftHeight/rightHeight burada YOK; sürükle-döndür için
+// extractEntityInInventoryFollowsMouse değil GuiGraphicsExtractor#entity kullanılacak; /wings sunucu kaynağıyla çalıştırılacak.
+// Sürücü kısmının (dünya açma, tick sayacı, kendini kapatma) yaşayan hâli: dev.theoria.devtest.client.DevClient.
+package dev.theoria.spike.client;
+
+import com.mojang.blaze3d.systems.RenderSystem;
+import dev.theoria.Theoria;
+import dev.theoria.spike.Spike;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+import net.minecraft.client.CameraType;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.screens.AccessibilityOnboardingScreen;
+import net.minecraft.client.gui.screens.DeathScreen;
+import net.minecraft.client.gui.screens.PauseScreen;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.gui.screens.TitleScreen;
+import net.minecraft.client.gui.screens.inventory.InventoryScreen;
+import net.minecraft.client.renderer.RenderPipelines;
+import net.minecraft.client.renderer.entity.state.AvatarRenderState;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.world.entity.Avatar;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.GameType;
+import net.minecraft.world.level.LevelSettings;
+import net.minecraft.world.level.WorldDataConfiguration;
+import net.minecraft.world.level.levelgen.WorldOptions;
+import net.minecraft.world.level.levelgen.presets.WorldPresets;
+import net.neoforged.bus.api.IEventBus;
+import net.minecraft.client.entity.ClientAvatarEntity;
+import net.neoforged.neoforge.client.event.ClientChatReceivedEvent;
+import net.neoforged.neoforge.client.event.ClientTickEvent;
+import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
+import net.neoforged.neoforge.client.event.RenderGuiLayerEvent;
+import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
+import net.neoforged.neoforge.client.renderstate.AvatarRenderStateModifier;
+import net.neoforged.neoforge.client.renderstate.RegisterRenderStateModifiersEvent;
+import net.neoforged.neoforge.common.NeoForge;
+
+public final class SpikeClient {
+    static final String WORLD = "theoria-spike";
+    static final long SEED = 260309L;
+    static final Identifier HUD_ID = Identifier.fromNamespaceAndPath(Theoria.MODID, "spike_hud");
+    static final ResourceKey<Registry<Object>> FW_WINGS = ResourceKey.createRegistryKey(Identifier.parse("fantasticwings:wings"));
+
+    static final Spike.Report REPORT = new Spike.Report(
+            (Spike.CLIENT_MODE.equals("fps") ? "s1_fps" : "s3_render_s2_wings") + System.getProperty("theoria.spike.label", ""));
+    static boolean worldRequested;
+    static int ticks = -1;
+    static long hudCalls;
+    static final Map<String, Long> cancelled = new TreeMap<>();
+    static long armorHides;
+    static String hiddenItem = "-";
+    static long extractedInScreen;
+    static int markPlayerTick, markServerTick;
+    static boolean pausedDuringScreen;
+    static int deaths;
+
+    private SpikeClient() {}
+
+    public static void init(IEventBus modBus) {
+        if (Spike.CLIENT_MODE.equals("s3")) {
+            modBus.addListener(SpikeClient::registerLayers);
+            modBus.addListener(SpikeClient::registerStateModifiers);
+            NeoForge.EVENT_BUS.addListener(SpikeClient::onLayerPre);
+            NeoForge.EVENT_BUS.addListener(SpikeClient::onChat);
+        }
+        NeoForge.EVENT_BUS.addListener(SpikeClient::onTick);
+    }
+
+    // ------------------------------------------------------------ S3 hooks
+    private static void registerLayers(RegisterGuiLayersEvent event) {
+        event.registerAbove(VanillaGuiLayers.PLAYER_HEALTH, HUD_ID, SpikeClient::drawHud);
+    }
+
+    private static void drawHud(GuiGraphicsExtractor g, net.minecraft.client.DeltaTracker dt) {
+        hudCalls++;
+        Minecraft mc = Minecraft.getInstance();
+        int x = g.guiWidth() / 2 - 91, y = g.guiHeight() - 39;
+        // neutral sprite tinted via color multiply (LucidRem lesson: tint a white sprite, never a red one)
+        g.blitSprite(RenderPipelines.GUI_TEXTURED, Identifier.withDefaultNamespace("hud/heart/full"), x, y, 9, 9, 0xFF55FF55);
+        g.text(mc.font, "THEORIA S3 hp=" + (mc.player == null ? "?" : (int) mc.player.getHealth()), x + 12, y + 1, 0xFFFFFFFF, true);
+    }
+
+    private static void onLayerPre(RenderGuiLayerEvent.Pre event) {
+        Identifier n = event.getName();
+        if (n.equals(VanillaGuiLayers.PLAYER_HEALTH) || n.equals(VanillaGuiLayers.ARMOR_LEVEL) || n.equals(VanillaGuiLayers.FOOD_LEVEL)) {
+            event.setCanceled(true);
+            cancelled.merge(n.toString(), 1L, Long::sum);
+        }
+    }
+
+    private static void registerStateModifiers(RegisterRenderStateModifiersEvent event) {
+        event.registerAvatarEntityModifier(new AvatarRenderStateModifier() {
+            @Override
+            public <T extends Avatar & ClientAvatarEntity> void accept(T avatar, AvatarRenderState state) {
+                Minecraft mc = Minecraft.getInstance();
+                if (avatar == mc.player && !state.chestEquipment.isEmpty()) {
+                    hiddenItem = BuiltInRegistries.ITEM.getKey(state.chestEquipment.getItem()).toString();
+                    state.chestEquipment = ItemStack.EMPTY;
+                    armorHides++;
+                }
+            }
+        });
+    }
+
+    private static void onChat(ClientChatReceivedEvent event) {
+        String s = event.getMessage().getString();
+        if (s.length() > 600) s = s.substring(0, 600) + "…";
+        REPORT.line("chat> %s", s);
+    }
+
+    /** Non-pausing screen that draws the local player like InventoryScreen does. */
+    static final class PlayerPreviewScreen extends Screen {
+        PlayerPreviewScreen() {
+            super(Component.literal("theoria spike preview"));
+        }
+
+        @Override
+        public boolean isPauseScreen() {
+            return false;
+        }
+
+        @Override
+        public void extractRenderState(GuiGraphicsExtractor g, int mouseX, int mouseY, float a) {
+            super.extractRenderState(g, mouseX, mouseY, a);
+            if (minecraft.player != null) {
+                int cx = width / 2, cy = height / 2;
+                InventoryScreen.extractEntityInInventoryFollowsMouse(g, cx - 60, cy - 90, cx + 60, cy + 90, 70, 0.0625f, mouseX, mouseY, minecraft.player);
+                extractedInScreen++;
+            }
+        }
+    }
+
+    // ------------------------------------------------------------ driver (bkz. DevClient)
+    private static void cmd(Minecraft mc, String command) {
+        REPORT.line("cmd: /%s", command);
+        mc.player.connection.sendCommand(command);
+    }
+
+    private static void s3Tick(Minecraft mc) {
+        MinecraftServer server = mc.getSingleplayerServer();
+        switch (ticks) {
+            case 40 -> {
+                mc.options.setCameraType(CameraType.THIRD_PERSON_BACK);
+                cmd(mc, "item replace entity @s armor.chest with minecraft:diamond_chestplate");
+                cmd(mc, "wings give @s fantasticwings:angel");
+                REPORT.line("S2 catalog (client registry): %s", keys(mc.level.registryAccess().lookup(FW_WINGS)));
+                if (server != null) REPORT.line("S2 catalog (server registry): %s", keys(server.registryAccess().lookup(FW_WINGS)));
+            }
+            case 60 -> cmd(mc, "data get entity @s neoforge:attachments");
+            case 80 -> {
+                REPORT.line("S3a hud layer calls=%d, cancelled vanilla layers=%s", hudCalls, cancelled);
+                REPORT.line("S3c armor render-state hides=%d (item=%s), real chest slot=%s", armorHides, hiddenItem,
+                        BuiltInRegistries.ITEM.getKey(mc.player.getItemBySlot(net.minecraft.world.entity.EquipmentSlot.CHEST).getItem()));
+                markPlayerTick = mc.player.tickCount;
+                markServerTick = server == null ? -1 : server.getTickCount();
+                mc.gui.setScreen(new PlayerPreviewScreen());
+            }
+            case 100 -> pausedDuringScreen = mc.isPaused();
+            case 140 -> {
+                REPORT.line("S3b non-pause screen: extract calls=%d, isPaused=%s, client player ticks +%d, server ticks +%d (over 60 client ticks)",
+                        extractedInScreen, pausedDuringScreen, mc.player.tickCount - markPlayerTick,
+                        server == null ? -1 : server.getTickCount() - markServerTick);
+                mc.gui.setScreen(null);
+            }
+            case 150 -> {
+                markPlayerTick = mc.player.tickCount;
+                markServerTick = server == null ? -1 : server.getTickCount();
+                mc.pauseGame(false);
+            }
+            case 170 -> pausedDuringScreen = mc.isPaused();
+            case 210 -> {
+                REPORT.line("S3b vanilla PauseScreen (screen=%s): isPaused=%s, client player ticks +%d, server ticks +%d (over 60 client ticks)",
+                        mc.gui.screen() instanceof PauseScreen, pausedDuringScreen, mc.player.tickCount - markPlayerTick,
+                        server == null ? -1 : server.getTickCount() - markServerTick);
+                mc.gui.setScreen(null);
+            }
+            case 220 -> cmd(mc, "kill @s");
+            case 280 -> {
+                REPORT.line("S2 deaths handled=%d (auto-respawn)", deaths);
+                cmd(mc, "data get entity @s neoforge:attachments");
+            }
+            case 300 -> {
+                REPORT.line("S3a/c final: hud calls=%d, cancelled=%s, armor hides=%d", hudCalls, cancelled, armorHides);
+                REPORT.line("DONE");
+                REPORT.write();
+                mc.stop();
+            }
+            default -> {}
+        }
+    }
+
+    static String keys(java.util.Optional<? extends Registry<?>> reg) {
+        if (reg.isEmpty()) return "<registry absent>";
+        List<String> out = new ArrayList<>();
+        reg.get().keySet().forEach(k -> out.add(k.toString()));
+        out.sort(String::compareTo);
+        return out.size() + " " + out;
+    }
+}

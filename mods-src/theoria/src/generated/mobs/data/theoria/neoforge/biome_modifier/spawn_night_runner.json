@@ -1,0 +1,11 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#theoria:spawn/night_runner",
+  "spawners": [
+    {
+      "type": "theoria:night_runner",
+      "count": 1,
+      "weight": 15
+    }
+  ]
+}

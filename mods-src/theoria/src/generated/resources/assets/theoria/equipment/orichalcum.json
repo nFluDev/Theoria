@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "theoria:orichalcum"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "theoria:orichalcum"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "theoria:orichalcum"
+      }
+    ]
+  }
+}

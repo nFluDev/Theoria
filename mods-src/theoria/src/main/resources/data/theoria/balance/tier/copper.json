@@ -1,0 +1,18 @@
+{
+  "id": "copper",
+  "idx": 2,
+  "helmet": 2,
+  "chestplate": 6,
+  "leggings": 4,
+  "boots": 2,
+  "toughness": 0,
+  "armor_durability": 180,
+  "sword_damage": 6.8,
+  "tool_durability": 180,
+  "mob_hp_mult": 1.7689,
+  "mob_dmg_mult": 1.7161,
+  "mob_bypass_mult": 1.45,
+  "ref_health": 29,
+  "ref_bonus": 0.125,
+  "ref_epf": 0
+}

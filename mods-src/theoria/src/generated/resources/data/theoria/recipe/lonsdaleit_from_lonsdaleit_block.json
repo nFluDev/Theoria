@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "theoria:lonsdaleit_block"
+  ],
+  "result": {
+    "id": "theoria:lonsdaleit",
+    "count": 9
+  },
+  "group": "lonsdaleit"
+}

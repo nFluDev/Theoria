@@ -1,0 +1,10 @@
+key,value,note
+dist_step,600,doğuş noktasından her N blok +1 kademe
+depth_from,0,bu yüksekliğin altı derinlik
+depth_step,32,her N blok derinlik +1
+height_from,140,bu yüksekliğin üstü yükseklik primi
+height_step,40,her N blok yükseklik +1
+nether,4,Nether taban kademesi
+end,8,End taban kademesi
+cap,13,kademe tavanı
+band,1,yeni tür spawn bandı: tür kademesi ± band

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "theoria:item/shade_seep_spawn_egg"
+  }
+}

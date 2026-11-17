@@ -1,0 +1,1252 @@
+{
+  "version": 1,
+  "materials": [
+    {
+      "id": "wood",
+      "vanilla": true,
+      "idx": 0,
+      "prefix": "wooden",
+      "enchantability": 15,
+      "equip_sound": "",
+      "ingredient": "",
+      "armor": null,
+      "tools": {
+        "idx": 0,
+        "durability": 80,
+        "mining_speed": 2,
+        "kinds": {
+          "sword": {
+            "damage": 4,
+            "speed": 1.6
+          },
+          "axe": {
+            "damage": 6,
+            "speed": 1
+          },
+          "pickaxe": {
+            "damage": 2.6,
+            "speed": 1.2
+          },
+          "shovel": {
+            "damage": 3,
+            "speed": 1
+          },
+          "hoe": {
+            "damage": 1,
+            "speed": 2
+          },
+          "spear": {
+            "damage": 2.4,
+            "speed": 1.538
+          }
+        },
+        "spear": [
+          0.65,
+          0.7,
+          0.75,
+          5.0,
+          14.0,
+          10.0,
+          5.1,
+          15.0,
+          4.6
+        ]
+      }
+    },
+    {
+      "id": "stone",
+      "vanilla": true,
+      "idx": 1,
+      "prefix": "stone",
+      "enchantability": 5,
+      "equip_sound": "",
+      "ingredient": "",
+      "armor": null,
+      "tools": {
+        "idx": 1,
+        "durability": 120,
+        "mining_speed": 2.6,
+        "kinds": {
+          "sword": {
+            "damage": 5.2,
+            "speed": 1.6
+          },
+          "axe": {
+            "damage": 7.8,
+            "speed": 1
+          },
+          "pickaxe": {
+            "damage": 3.4,
+            "speed": 1.2
+          },
+          "shovel": {
+            "damage": 3.9,
+            "speed": 1
+          },
+          "hoe": {
+            "damage": 1.3,
+            "speed": 2
+          },
+          "spear": {
+            "damage": 3.1,
+            "speed": 1.333
+          }
+        },
+        "spear": [
+          0.75,
+          0.82,
+          0.7,
+          4.5,
+          13.0,
+          9.0,
+          5.1,
+          13.75,
+          4.6
+        ]
+      }
+    },
+    {
+      "id": "leather",
+      "vanilla": true,
+      "idx": 0,
+      "prefix": "leather",
+      "enchantability": 15,
+      "equip_sound": "leather",
+      "ingredient": "minecraft:leather",
+      "armor": {
+        "points": {
+          "helmet": 1,
+          "chestplate": 1,
+          "leggings": 1,
+          "boots": 1
+        },
+        "toughness": 0,
+        "durability": {
+          "helmet": 55,
+          "chestplate": 80,
+          "leggings": 75,
+          "boots": 65
+        },
+        "speed": 0.02,
+        "knockback": 0.0
+      },
+      "tools": null
+    },
+    {
+      "id": "tin",
+      "vanilla": false,
+      "idx": 1,
+      "prefix": "tin",
+      "enchantability": 10,
+      "equip_sound": "chain",
+      "ingredient": "theoria:tin_ingot",
+      "armor": {
+        "points": {
+          "helmet": 1,
+          "chestplate": 3,
+          "leggings": 2,
+          "boots": 1
+        },
+        "toughness": 0,
+        "durability": {
+          "helmet": 83,
+          "chestplate": 120,
+          "leggings": 113,
+          "boots": 98
+        },
+        "speed": 0.0,
+        "knockback": 0.0
+      },
+      "tools": null
+    },
+    {
+      "id": "copper",
+      "vanilla": true,
+      "idx": 2,
+      "prefix": "copper",
+      "enchantability": 13,
+      "equip_sound": "copper",
+      "ingredient": "minecraft:copper_ingot",
+      "armor": {
+        "points": {
+          "helmet": 2,
+          "chestplate": 6,
+          "leggings": 4,
+          "boots": 2
+        },
+        "toughness": 0,
+        "durability": {
+          "helmet": 124,
+          "chestplate": 180,
+          "leggings": 169,
+          "boots": 146
+        },
+        "speed": 0.0,
+        "knockback": 0.0
+      },
+      "tools": {
+        "idx": 2,
+        "durability": 180,
+        "mining_speed": 3.3,
+        "kinds": {
+          "sword": {
+            "damage": 6.8,
+            "speed": 1.6
+          },
+          "axe": {
+            "damage": 10.2,
+            "speed": 1
+          },
+          "pickaxe": {
+            "damage": 4.4,
+            "speed": 1.2
+          },
+          "shovel": {
+            "damage": 5.1,
+            "speed": 1
+          },
+          "hoe": {
+            "damage": 1.7,
+            "speed": 2
+          },
+          "spear": {
+            "damage": 4.1,
+            "speed": 1.176
+          }
+        },
+        "spear": [
+          0.85,
+          0.82,
+          0.65,
+          4.0,
+          12.0,
+          8.25,
+          5.1,
+          12.5,
+          4.6
+        ]
+      }
+    },
+    {
+      "id": "bronze",
+      "vanilla": false,
+      "idx": 3,
+      "prefix": "bronze",
+      "enchantability": 12,
+      "equip_sound": "copper",
+      "ingredient": "theoria:bronze_ingot",
+      "armor": {
+        "points": {
+          "helmet": 3,
+          "chestplate": 9,
+          "leggings": 7,
+          "boots": 3
+        },
+        "toughness": 0,
+        "durability": {
+          "helmet": 186,
+          "chestplate": 270,
+          "leggings": 253,
+          "boots": 219
+        },
+        "speed": 0.0,
+        "knockback": 0.0
+      },
+      "tools": null
+    },
+    {
+      "id": "iron",
+      "vanilla": true,
+      "idx": 4,
+      "prefix": "iron",
+      "enchantability": 14,
+      "equip_sound": "iron",
+      "ingredient": "minecraft:iron_ingot",
+      "armor": {
+        "points": {
+          "helmet": 5,
+          "chestplate": 14,
+          "leggings": 10,
+          "boots": 5
+        },
+        "toughness": 0,
+        "durability": {
+          "helmet": 278,
+          "chestplate": 405,
+          "leggings": 380,
+          "boots": 329
+        },
+        "speed": 0.0,
+        "knockback": 0.0
+      },
+      "tools": {
+        "idx": 4,
+        "durability": 405,
+        "mining_speed": 5.4,
+        "kinds": {
+          "sword": {
+            "damage": 11.4,
+            "speed": 1.6
+          },
+          "axe": {
+            "damage": 17.1,
+            "speed": 1
+          },
+          "pickaxe": {
+            "damage": 7.4,
+            "speed": 1.2
+          },
+          "shovel": {
+            "damage": 8.6,
+            "speed": 1
+          },
+          "hoe": {
+            "damage": 2.9,
+            "speed": 2
+          },
+          "spear": {
+            "damage": 6.8,
+            "speed": 1.053
+          }
+        },
+        "spear": [
+          0.95,
+          0.95,
+          0.6,
+          2.5,
+          11.0,
+          6.75,
+          5.1,
+          11.25,
+          4.6
+        ]
+      }
+    },
+    {
+      "id": "steel",
+      "vanilla": false,
+      "idx": 5,
+      "prefix": "steel",
+      "enchantability": 14,
+      "equip_sound": "iron",
+      "ingredient": "theoria:steel_ingot",
+      "armor": {
+        "points": {
+          "helmet": 9,
+          "chestplate": 24,
+          "leggings": 18,
+          "boots": 9
+        },
+        "toughness": 0,
+        "durability": {
+          "helmet": 418,
+          "chestplate": 608,
+          "leggings": 570,
+          "boots": 494
+        },
+        "speed": 0.0,
+        "knockback": 0.0
+      },
+      "tools": null
+    },
+    {
+      "id": "gold",
+      "vanilla": true,
+      "idx": 6,
+      "prefix": "golden",
+      "enchantability": 40,
+      "equip_sound": "gold",
+      "ingredient": "minecraft:gold_ingot",
+      "armor": {
+        "points": {
+          "helmet": 12,
+          "chestplate": 32,
+          "leggings": 24,
+          "boots": 12
+        },
+        "toughness": 0,
+        "durability": {
+          "helmet": 626,
+          "chestplate": 911,
+          "leggings": 854,
+          "boots": 740
+        },
+        "speed": 0.0,
+        "knockback": 0.0
+      },
+      "tools": {
+        "idx": 6,
+        "durability": 911,
+        "mining_speed": 8.8,
+        "kinds": {
+          "sword": {
+            "damage": 19.3,
+            "speed": 1.6
+          },
+          "axe": {
+            "damage": 29,
+            "speed": 1
+          },
+          "pickaxe": {
+            "damage": 12.5,
+            "speed": 1.2
+          },
+          "shovel": {
+            "damage": 14.5,
+            "speed": 1
+          },
+          "hoe": {
+            "damage": 4.8,
+            "speed": 2
+          },
+          "spear": {
+            "damage": 11.6,
+            "speed": 1.053
+          }
+        },
+        "spear": [
+          0.95,
+          0.7,
+          0.7,
+          3.5,
+          13.0,
+          8.5,
+          5.1,
+          13.75,
+          4.6
+        ]
+      }
+    },
+    {
+      "id": "cobalt",
+      "vanilla": false,
+      "idx": 7,
+      "prefix": "cobalt",
+      "enchantability": 16,
+      "equip_sound": "diamond",
+      "ingredient": "theoria:cobalt_ingot",
+      "armor": {
+        "points": {
+          "helmet": 17,
+          "chestplate": 46,
+          "leggings": 34,
+          "boots": 17
+        },
+        "toughness": 0,
+        "durability": {
+          "helmet": 940,
+          "chestplate": 1367,
+          "leggings": 1282,
+          "boots": 1111
+        },
+        "speed": 0.0,
+        "knockback": 0.0
+      },
+      "tools": {
+        "idx": 7,
+        "durability": 1367,
+        "mining_speed": 11.3,
+        "kinds": {
+          "sword": {
+            "damage": 25.1,
+            "speed": 1.6
+          },
+          "axe": {
+            "damage": 37.7,
+            "speed": 1
+          },
+          "pickaxe": {
+            "damage": 16.3,
+            "speed": 1.2
+          },
+          "shovel": {
+            "damage": 18.8,
+            "speed": 1
+          },
+          "hoe": {
+            "damage": 6.3,
+            "speed": 2
+          },
+          "spear": {
+            "damage": 15.1,
+            "speed": 1.053
+          }
+        },
+        "spear": [
+          0.95,
+          0.95,
+          0.6,
+          2.5,
+          11.0,
+          6.75,
+          5.1,
+          11.25,
+          4.6
+        ]
+      }
+    },
+    {
+      "id": "diamond",
+      "vanilla": true,
+      "idx": 8,
+      "prefix": "diamond",
+      "enchantability": 10,
+      "equip_sound": "diamond",
+      "ingredient": "minecraft:diamond",
+      "armor": {
+        "points": {
+          "helmet": 22,
+          "chestplate": 59,
+          "leggings": 44,
+          "boots": 22
+        },
+        "toughness": 0,
+        "durability": {
+          "helmet": 1409,
+          "chestplate": 2050,
+          "leggings": 1922,
+          "boots": 1666
+        },
+        "speed": 0.0,
+        "knockback": 0.0
+      },
+      "tools": {
+        "idx": 8,
+        "durability": 2050,
+        "mining_speed": 14.4,
+        "kinds": {
+          "sword": {
+            "damage": 32.6,
+            "speed": 1.6
+          },
+          "axe": {
+            "damage": 48.9,
+            "speed": 1
+          },
+          "pickaxe": {
+            "damage": 21.2,
+            "speed": 1.2
+          },
+          "shovel": {
+            "damage": 24.5,
+            "speed": 1
+          },
+          "hoe": {
+            "damage": 8.2,
+            "speed": 2
+          },
+          "spear": {
+            "damage": 19.6,
+            "speed": 0.952
+          }
+        },
+        "spear": [
+          1.05,
+          1.075,
+          0.5,
+          3.0,
+          10.0,
+          6.5,
+          5.1,
+          10.0,
+          4.6
+        ]
+      }
+    },
+    {
+      "id": "titanium",
+      "vanilla": false,
+      "idx": 9,
+      "prefix": "titanium",
+      "enchantability": 12,
+      "equip_sound": "netherite",
+      "ingredient": "theoria:titanium_ingot",
+      "armor": {
+        "points": {
+          "helmet": 25,
+          "chestplate": 67,
+          "leggings": 50,
+          "boots": 25
+        },
+        "toughness": 2,
+        "durability": {
+          "helmet": 2114,
+          "chestplate": 3075,
+          "leggings": 2883,
+          "boots": 2498
+        },
+        "speed": 0.0,
+        "knockback": 0.2
+      },
+      "tools": null
+    },
+    {
+      "id": "lonsdaleit",
+      "vanilla": false,
+      "idx": 10,
+      "prefix": "lonsdaleit",
+      "enchantability": 18,
+      "equip_sound": "diamond",
+      "ingredient": "theoria:lonsdaleit",
+      "armor": {
+        "points": {
+          "helmet": 31,
+          "chestplate": 82,
+          "leggings": 62,
+          "boots": 31
+        },
+        "toughness": 4,
+        "durability": {
+          "helmet": 3171,
+          "chestplate": 4613,
+          "leggings": 4325,
+          "boots": 3748
+        },
+        "speed": 0.0,
+        "knockback": 0.0
+      },
+      "tools": {
+        "idx": 10,
+        "durability": 4613,
+        "mining_speed": 23.6,
+        "kinds": {
+          "sword": {
+            "damage": 55.1,
+            "speed": 1.6
+          },
+          "axe": {
+            "damage": 82.7,
+            "speed": 1
+          },
+          "pickaxe": {
+            "damage": 35.8,
+            "speed": 1.2
+          },
+          "shovel": {
+            "damage": 41.3,
+            "speed": 1
+          },
+          "hoe": {
+            "damage": 13.8,
+            "speed": 2
+          },
+          "spear": {
+            "damage": 33.1,
+            "speed": 0.952
+          }
+        },
+        "spear": [
+          1.05,
+          1.075,
+          0.5,
+          3.0,
+          10.0,
+          6.5,
+          5.1,
+          10.0,
+          4.6
+        ]
+      }
+    },
+    {
+      "id": "mithril",
+      "vanilla": false,
+      "idx": 11,
+      "prefix": "mithril",
+      "enchantability": 22,
+      "equip_sound": "netherite",
+      "ingredient": "theoria:mithril_ingot",
+      "armor": {
+        "points": {
+          "helmet": 37,
+          "chestplate": 98,
+          "leggings": 74,
+          "boots": 37
+        },
+        "toughness": 6,
+        "durability": {
+          "helmet": 4758,
+          "chestplate": 6920,
+          "leggings": 6488,
+          "boots": 5623
+        },
+        "speed": 0.04,
+        "knockback": 0.0
+      },
+      "tools": {
+        "idx": 11,
+        "durability": 6920,
+        "mining_speed": 30.2,
+        "kinds": {
+          "sword": {
+            "damage": 71.7,
+            "speed": 1.6
+          },
+          "axe": {
+            "damage": 107.6,
+            "speed": 1
+          },
+          "pickaxe": {
+            "damage": 46.6,
+            "speed": 1.2
+          },
+          "shovel": {
+            "damage": 53.8,
+            "speed": 1
+          },
+          "hoe": {
+            "damage": 17.9,
+            "speed": 2
+          },
+          "spear": {
+            "damage": 43,
+            "speed": 0.87
+          }
+        },
+        "spear": [
+          1.15,
+          1.2,
+          0.4,
+          2.5,
+          9.0,
+          5.5,
+          5.1,
+          8.75,
+          4.6
+        ]
+      }
+    },
+    {
+      "id": "orichalcum",
+      "vanilla": false,
+      "idx": 12,
+      "prefix": "orichalcum",
+      "enchantability": 25,
+      "equip_sound": "gold",
+      "ingredient": "theoria:orichalcum_ingot",
+      "armor": {
+        "points": {
+          "helmet": 44,
+          "chestplate": 118,
+          "leggings": 88,
+          "boots": 44
+        },
+        "toughness": 8,
+        "durability": {
+          "helmet": 7136,
+          "chestplate": 10380,
+          "leggings": 9731,
+          "boots": 8434
+        },
+        "speed": 0.0,
+        "knockback": 0.0
+      },
+      "tools": {
+        "idx": 12,
+        "durability": 10380,
+        "mining_speed": 38.7,
+        "kinds": {
+          "sword": {
+            "damage": 93.2,
+            "speed": 1.6
+          },
+          "axe": {
+            "damage": 139.8,
+            "speed": 1
+          },
+          "pickaxe": {
+            "damage": 60.6,
+            "speed": 1.2
+          },
+          "shovel": {
+            "damage": 69.9,
+            "speed": 1
+          },
+          "hoe": {
+            "damage": 23.3,
+            "speed": 2
+          },
+          "spear": {
+            "damage": 55.9,
+            "speed": 0.87
+          }
+        },
+        "spear": [
+          1.15,
+          1.2,
+          0.4,
+          2.5,
+          9.0,
+          5.5,
+          5.1,
+          8.75,
+          4.6
+        ]
+      }
+    },
+    {
+      "id": "platinum",
+      "vanilla": false,
+      "idx": 13,
+      "prefix": "platinum",
+      "enchantability": 30,
+      "equip_sound": "netherite",
+      "ingredient": "theoria:platinum_ingot",
+      "armor": {
+        "points": {
+          "helmet": 53,
+          "chestplate": 142,
+          "leggings": 106,
+          "boots": 53
+        },
+        "toughness": 10,
+        "durability": {
+          "helmet": 10704,
+          "chestplate": 15570,
+          "leggings": 14597,
+          "boots": 12651
+        },
+        "speed": 0.0,
+        "knockback": 0.0
+      },
+      "tools": {
+        "idx": 13,
+        "durability": 15570,
+        "mining_speed": 49.5,
+        "kinds": {
+          "sword": {
+            "damage": 121.2,
+            "speed": 1.6
+          },
+          "axe": {
+            "damage": 181.8,
+            "speed": 1
+          },
+          "pickaxe": {
+            "damage": 78.8,
+            "speed": 1.2
+          },
+          "shovel": {
+            "damage": 90.9,
+            "speed": 1
+          },
+          "hoe": {
+            "damage": 30.3,
+            "speed": 2
+          },
+          "spear": {
+            "damage": 72.7,
+            "speed": 0.87
+          }
+        },
+        "spear": [
+          1.15,
+          1.2,
+          0.4,
+          2.5,
+          9.0,
+          5.5,
+          5.1,
+          8.75,
+          4.6
+        ]
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "id": "tin_ore",
+      "kind": "ore",
+      "hardness": 3.0,
+      "resistance": 3.0,
+      "xp_min": 0,
+      "xp_max": 2,
+      "ore": "tin"
+    },
+    {
+      "id": "deepslate_tin_ore",
+      "kind": "ore",
+      "hardness": 4.5,
+      "resistance": 4.5,
+      "xp_min": 0,
+      "xp_max": 2,
+      "ore": "tin"
+    },
+    {
+      "id": "deepslate_cobalt_ore",
+      "kind": "ore",
+      "hardness": 4.5,
+      "resistance": 4.5,
+      "xp_min": 1,
+      "xp_max": 3,
+      "ore": "cobalt"
+    },
+    {
+      "id": "titanium_ore",
+      "kind": "ore",
+      "hardness": 6.6,
+      "resistance": 6.6,
+      "xp_min": 2,
+      "xp_max": 4,
+      "ore": "titanium"
+    },
+    {
+      "id": "lonsdaleit_ore",
+      "kind": "ore",
+      "hardness": 7.8,
+      "resistance": 7.8,
+      "xp_min": 3,
+      "xp_max": 5,
+      "ore": "lonsdaleit"
+    },
+    {
+      "id": "deepslate_mithril_ore",
+      "kind": "ore",
+      "hardness": 9.6,
+      "resistance": 9.6,
+      "xp_min": 3,
+      "xp_max": 6,
+      "ore": "mithril"
+    },
+    {
+      "id": "orichalcum_ore",
+      "kind": "ore",
+      "hardness": 11.4,
+      "resistance": 11.4,
+      "xp_min": 4,
+      "xp_max": 7,
+      "ore": "orichalcum"
+    },
+    {
+      "id": "deepslate_platinum_ore",
+      "kind": "ore",
+      "hardness": 13.5,
+      "resistance": 13.5,
+      "xp_min": 5,
+      "xp_max": 9,
+      "ore": "platinum"
+    },
+    {
+      "id": "tin_block",
+      "kind": "storage",
+      "hardness": 5.0,
+      "resistance": 6.0,
+      "material": "tin"
+    },
+    {
+      "id": "bronze_block",
+      "kind": "storage",
+      "hardness": 5.0,
+      "resistance": 6.0,
+      "material": "bronze"
+    },
+    {
+      "id": "steel_block",
+      "kind": "storage",
+      "hardness": 5.0,
+      "resistance": 6.0,
+      "material": "steel"
+    },
+    {
+      "id": "cobalt_block",
+      "kind": "storage",
+      "hardness": 5.0,
+      "resistance": 6.0,
+      "material": "cobalt"
+    },
+    {
+      "id": "titanium_block",
+      "kind": "storage",
+      "hardness": 5.0,
+      "resistance": 6.0,
+      "material": "titanium"
+    },
+    {
+      "id": "lonsdaleit_block",
+      "kind": "storage",
+      "hardness": 5.0,
+      "resistance": 6.0,
+      "material": "lonsdaleit"
+    },
+    {
+      "id": "mithril_block",
+      "kind": "storage",
+      "hardness": 5.0,
+      "resistance": 6.0,
+      "material": "mithril"
+    },
+    {
+      "id": "orichalcum_block",
+      "kind": "storage",
+      "hardness": 5.0,
+      "resistance": 6.0,
+      "material": "orichalcum"
+    },
+    {
+      "id": "platinum_block",
+      "kind": "storage",
+      "hardness": 5.0,
+      "resistance": 6.0,
+      "material": "platinum"
+    }
+  ],
+  "items": [
+    {
+      "id": "tin_ingot"
+    },
+    {
+      "id": "bronze_ingot"
+    },
+    {
+      "id": "steel_ingot"
+    },
+    {
+      "id": "cobalt_ingot"
+    },
+    {
+      "id": "titanium_ingot"
+    },
+    {
+      "id": "lonsdaleit"
+    },
+    {
+      "id": "mithril_ingot"
+    },
+    {
+      "id": "orichalcum_ingot"
+    },
+    {
+      "id": "platinum_ingot"
+    },
+    {
+      "id": "raw_cobalt"
+    },
+    {
+      "id": "raw_mithril"
+    },
+    {
+      "id": "raw_orichalcum"
+    },
+    {
+      "id": "raw_platinum"
+    },
+    {
+      "id": "raw_tin"
+    },
+    {
+      "id": "raw_titanium"
+    },
+    {
+      "id": "carbon_dust"
+    }
+  ],
+  "gates": [
+    {
+      "ore": "coal",
+      "tool_idx": 0,
+      "blocks": [
+        {
+          "id": "minecraft:coal_ore",
+          "hardness": 3.0
+        },
+        {
+          "id": "minecraft:deepslate_coal_ore",
+          "hardness": 4.5
+        }
+      ]
+    },
+    {
+      "ore": "tin",
+      "tool_idx": 1,
+      "blocks": [
+        {
+          "id": "theoria:tin_ore",
+          "hardness": 3.0
+        },
+        {
+          "id": "theoria:deepslate_tin_ore",
+          "hardness": 4.5
+        }
+      ]
+    },
+    {
+      "ore": "copper",
+      "tool_idx": 1,
+      "blocks": [
+        {
+          "id": "minecraft:copper_ore",
+          "hardness": 3.3
+        },
+        {
+          "id": "minecraft:deepslate_copper_ore",
+          "hardness": 4.95
+        }
+      ]
+    },
+    {
+      "ore": "iron",
+      "tool_idx": 2,
+      "blocks": [
+        {
+          "id": "minecraft:iron_ore",
+          "hardness": 3.6
+        },
+        {
+          "id": "minecraft:deepslate_iron_ore",
+          "hardness": 5.4
+        }
+      ]
+    },
+    {
+      "ore": "redstone",
+      "tool_idx": 2,
+      "blocks": [
+        {
+          "id": "minecraft:redstone_ore",
+          "hardness": 3.6
+        },
+        {
+          "id": "minecraft:deepslate_redstone_ore",
+          "hardness": 5.4
+        }
+      ]
+    },
+    {
+      "ore": "lapis",
+      "tool_idx": 2,
+      "blocks": [
+        {
+          "id": "minecraft:lapis_ore",
+          "hardness": 3.6
+        },
+        {
+          "id": "minecraft:deepslate_lapis_ore",
+          "hardness": 5.4
+        }
+      ]
+    },
+    {
+      "ore": "gold",
+      "tool_idx": 4,
+      "blocks": [
+        {
+          "id": "minecraft:gold_ore",
+          "hardness": 3.9
+        },
+        {
+          "id": "minecraft:deepslate_gold_ore",
+          "hardness": 5.85
+        }
+      ]
+    },
+    {
+      "ore": "cobalt",
+      "tool_idx": 4,
+      "blocks": [
+        {
+          "id": "theoria:deepslate_cobalt_ore",
+          "hardness": 4.5
+        }
+      ]
+    },
+    {
+      "ore": "diamond",
+      "tool_idx": 7,
+      "blocks": [
+        {
+          "id": "minecraft:diamond_ore",
+          "hardness": 5.4
+        },
+        {
+          "id": "minecraft:deepslate_diamond_ore",
+          "hardness": 8.1
+        }
+      ]
+    },
+    {
+      "ore": "obsidian",
+      "tool_idx": 8,
+      "blocks": [
+        {
+          "id": "minecraft:obsidian",
+          "hardness": null
+        }
+      ]
+    },
+    {
+      "ore": "ancient_debris",
+      "tool_idx": 8,
+      "blocks": [
+        {
+          "id": "minecraft:ancient_debris",
+          "hardness": null
+        }
+      ]
+    },
+    {
+      "ore": "titanium",
+      "tool_idx": 8,
+      "blocks": [
+        {
+          "id": "theoria:titanium_ore",
+          "hardness": 6.6
+        }
+      ]
+    },
+    {
+      "ore": "lonsdaleit",
+      "tool_idx": 8,
+      "blocks": [
+        {
+          "id": "theoria:lonsdaleit_ore",
+          "hardness": 7.8
+        }
+      ]
+    },
+    {
+      "ore": "mithril",
+      "tool_idx": 10,
+      "blocks": [
+        {
+          "id": "theoria:deepslate_mithril_ore",
+          "hardness": 9.6
+        }
+      ]
+    },
+    {
+      "ore": "orichalcum",
+      "tool_idx": 11,
+      "blocks": [
+        {
+          "id": "theoria:orichalcum_ore",
+          "hardness": 11.4
+        }
+      ]
+    },
+    {
+      "ore": "platinum",
+      "tool_idx": 12,
+      "blocks": [
+        {
+          "id": "theoria:deepslate_platinum_ore",
+          "hardness": 13.5
+        }
+      ]
+    }
+  ],
+  "removed": [
+    "minecraft:netherite_helmet",
+    "minecraft:netherite_chestplate",
+    "minecraft:netherite_leggings",
+    "minecraft:netherite_boots",
+    "minecraft:netherite_sword",
+    "minecraft:netherite_axe",
+    "minecraft:netherite_pickaxe",
+    "minecraft:netherite_shovel",
+    "minecraft:netherite_hoe",
+    "minecraft:netherite_spear",
+    "minecraft:netherite_horse_armor",
+    "minecraft:netherite_nautilus_armor",
+    "minecraft:netherite_upgrade_smithing_template"
+  ]
+}

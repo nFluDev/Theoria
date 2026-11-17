@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:diamond",
+    "theoria:carbon_dust",
+    "theoria:carbon_dust"
+  ],
+  "result": {
+    "id": "theoria:lonsdaleit"
+  }
+}

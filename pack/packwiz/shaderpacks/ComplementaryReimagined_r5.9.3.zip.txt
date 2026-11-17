@@ -1,0 +1,11 @@
+# Written by Vitrail's settings screen and by Iris, one NAME=value per line.
+# Only what differs from the pack's own defaults.
+# vitrail/options.txt is a different file, it is never written here, and it wins.
+GENERATED_NORMALS=true
+SHADOW_QUALITY=0
+shadowDistance=96.0
+BLOCK_REFLECT_QUALITY=1
+LIGHTSHAFT_QUALI_DEFINE=0
+FXAA_DEFINE=-1
+ENTITY_SHADOW=-1
+GLOWING_ORE_MASTER=2

@@ -1,0 +1,18 @@
+{
+  "id": "mithril",
+  "idx": 11,
+  "helmet": 37,
+  "chestplate": 98,
+  "leggings": 74,
+  "boots": 37,
+  "toughness": 6,
+  "armor_durability": 6920,
+  "sword_damage": 71.7,
+  "tool_durability": 6920,
+  "mob_hp_mult": 23.0339,
+  "mob_dmg_mult": 19.4977,
+  "mob_bypass_mult": 7.45,
+  "ref_health": 149,
+  "ref_bonus": 0.25,
+  "ref_epf": 16
+}

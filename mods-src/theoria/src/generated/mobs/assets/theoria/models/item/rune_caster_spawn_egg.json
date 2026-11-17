@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "theoria:item/rune_caster_spawn_egg"
+  }
+}

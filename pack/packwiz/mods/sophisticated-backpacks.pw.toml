@@ -1,0 +1,18 @@
+name = "Sophisticated Backpacks"
+filename = "sophisticatedbackpacks-26.3-3.26.19.2246.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/TyCTlI4b/versions/e9FwsZEX/sophisticatedbackpacks-26.3-3.26.19.2246.jar"
+hash-format = "sha512"
+hash = "2dcf1b5e8fe261eab8f11e5dd8351438c6d9dc278d6e8bfac12cbe219f922f3ae018333f718ac45890813af9cec4dcadbbfa3346d13c38aa90d14184e00d46ff"
+
+[update]
+[update.modrinth]
+mod-id = "TyCTlI4b"
+version = "e9FwsZEX"
+
+[option]
+optional = true
+default = false
+description = "Opsiyonel; Vulkan altında denenmeden varsayılan açık değil (docs/journal/f05.md)."

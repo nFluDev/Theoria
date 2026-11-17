@@ -1,0 +1,15 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#theoria:spawn/storm_eagle",
+  "spawners": [
+    {
+      "type": "theoria:storm_eagle",
+      "count": {
+        "type": "minecraft:uniform",
+        "min_inclusive": 1,
+        "max_inclusive": 2
+      },
+      "weight": 20
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "_comment": "Mob iskeletleri (rig): geometrik/blocky model. Vanilla model konvansiyonu: y AŞAĞI, zemin y=24, birim piksel (16 = 1 blok). Kutu b=[x,y,z,genişlik,yükseklik,derinlik] parça pivotuna göre, boyutlar TAM sayı. tint: base|accent|dark|glow. face:'eyes' = ön yüze göz. Rol: head (bakış) · leg/arm (yürüyüş salınımı, phase 0|1, amp) · spider (örümcek bacağı: i 0-3, side ±1) · wing (çırpma, side ±1) · tail (sallanma) · spin (y ekseninde döner, rate) · bob (süzülme) · seg (yılan gövdesi, idx) · jaw (saldırıda açılır). generator/mobs.py bunu derler: UV yerleşimi + doku boyutu + doku üretimi; Java (RigData/RigModel) derlenmiş theoria/mob_rigs.json'ı okur.",
+  "biped": {"parts": [
+    {"name": "head", "pivot": [0, 0, 0], "role": "head", "boxes": [{"b": [-4, -8, -4, 8, 8, 8], "tint": "base", "face": "eyes"}, {"b": [-4, -8, -4, 8, 2, 8], "tint": "dark"}]},
+    {"name": "body", "pivot": [0, 0, 0], "boxes": [{"b": [-4, 0, -2, 8, 12, 4], "tint": "base"}, {"b": [-4, 5, -2.5, 8, 2, 5], "tint": "accent"}]},
+    {"name": "arm_r", "pivot": [-5, 2, 0], "role": "arm", "phase": 1, "boxes": [{"b": [-3, -2, -2, 4, 12, 4], "tint": "base"}, {"b": [-3, 7, -2.5, 4, 3, 5], "tint": "dark"}]},
+    {"name": "arm_l", "pivot": [5, 2, 0], "role": "arm", "phase": 0, "boxes": [{"b": [-1, -2, -2, 4, 12, 4], "tint": "base"}, {"b": [-1, 7, -2.5, 4, 3, 5], "tint": "dark"}]},
+    {"name": "leg_r", "pivot": [-1.9, 12, 0], "role": "leg", "phase": 0, "boxes": [{"b": [-2, 0, -2, 4, 12, 4], "tint": "dark"}]},
+    {"name": "leg_l", "pivot": [1.9, 12, 0], "role": "leg", "phase": 1, "boxes": [{"b": [-2, 0, -2, 4, 12, 4], "tint": "dark"}]}
+  ]},
+  "quad": {"parts": [
+    {"name": "head", "pivot": [0, 14, -6], "role": "head", "boxes": [{"b": [-3, -3, -5, 6, 6, 5], "tint": "base", "face": "eyes"}, {"b": [-1.5, 0, -8, 3, 3, 3], "tint": "accent"},
+      {"b": [-3, -5, -2, 2, 2, 1], "tint": "dark"}, {"b": [1, -5, -2, 2, 2, 1], "tint": "dark"}]},
+    {"name": "body", "pivot": [0, 15, 0], "boxes": [{"b": [-3, -3, -6, 6, 6, 12], "tint": "base"}, {"b": [-3, -3, -2, 6, 1, 4], "tint": "accent"}]},
+    {"name": "tail", "pivot": [0, 13, 6], "rot": [0.7, 0, 0], "role": "tail", "boxes": [{"b": [-1, 0, 0, 2, 2, 6], "tint": "accent"}]},
+    {"name": "leg_fr", "pivot": [-2, 18, -4], "role": "leg", "phase": 0, "boxes": [{"b": [-1, 0, -1, 2, 6, 2], "tint": "dark"}]},
+    {"name": "leg_fl", "pivot": [2, 18, -4], "role": "leg", "phase": 1, "boxes": [{"b": [-1, 0, -1, 2, 6, 2], "tint": "dark"}]},
+    {"name": "leg_br", "pivot": [-2, 18, 4], "role": "leg", "phase": 1, "boxes": [{"b": [-1, 0, -1, 2, 6, 2], "tint": "dark"}]},
+    {"name": "leg_bl", "pivot": [2, 18, 4], "role": "leg", "phase": 0, "boxes": [{"b": [-1, 0, -1, 2, 6, 2], "tint": "dark"}]}
+  ]},
+  "quad_heavy": {"parts": [
+    {"name": "head", "pivot": [0, 9, -9], "role": "head", "boxes": [{"b": [-4, -4, -7, 8, 8, 7], "tint": "base", "face": "eyes"}, {"b": [-2, 1, -10, 4, 3, 3], "tint": "accent"},
+      {"b": [-7, -7, -4, 2, 5, 2], "tint": "accent"}, {"b": [5, -7, -4, 2, 5, 2], "tint": "accent"}, {"b": [-8, -9, -4, 2, 2, 2], "tint": "accent"}, {"b": [6, -9, -4, 2, 2, 2], "tint": "accent"}]},
+    {"name": "body", "pivot": [0, 10, 0], "boxes": [{"b": [-5, -5, -9, 10, 10, 18], "tint": "base"}, {"b": [-4, -8, -6, 8, 3, 8], "tint": "dark"}, {"b": [-5, 2, -9, 10, 3, 18], "tint": "accent"}]},
+    {"name": "tail", "pivot": [0, 6, 9], "rot": [0.5, 0, 0], "role": "tail", "boxes": [{"b": [-1, 0, 0, 2, 8, 2], "tint": "dark"}]},
+    {"name": "leg_fr", "pivot": [-3.5, 15, -6], "role": "leg", "phase": 0, "boxes": [{"b": [-2, 0, -2, 4, 9, 4], "tint": "dark"}]},
+    {"name": "leg_fl", "pivot": [3.5, 15, -6], "role": "leg", "phase": 1, "boxes": [{"b": [-2, 0, -2, 4, 9, 4], "tint": "dark"}]},
+    {"name": "leg_br", "pivot": [-3.5, 15, 6], "role": "leg", "phase": 1, "boxes": [{"b": [-2, 0, -2, 4, 9, 4], "tint": "dark"}]},
+    {"name": "leg_bl", "pivot": [3.5, 15, 6], "role": "leg", "phase": 0, "boxes": [{"b": [-2, 0, -2, 4, 9, 4], "tint": "dark"}]}
+  ]},
+  "arachnid": {"parts": [
+    {"name": "head", "pivot": [0, 15, -3], "role": "head", "boxes": [{"b": [-4, -4, -8, 8, 8, 8], "tint": "base", "face": "eyes"}, {"b": [-2, 1, -10, 4, 2, 2], "tint": "accent"}]},
+    {"name": "body0", "pivot": [0, 15, 0], "boxes": [{"b": [-3, -3, -3, 6, 6, 6], "tint": "dark"}]},
+    {"name": "body1", "pivot": [0, 15, 9], "boxes": [{"b": [-5, -4, -6, 10, 8, 12], "tint": "base"}, {"b": [-2, -4.5, -4, 4, 1, 8], "tint": "accent"}]},
+    {"name": "leg_r0", "pivot": [-4, 15, 2], "rot": [0, 0.785, -0.785], "role": "spider", "i": 0, "side": -1, "boxes": [{"b": [-15, -1, -1, 16, 2, 2], "tint": "dark"}]},
+    {"name": "leg_l0", "pivot": [4, 15, 2], "rot": [0, -0.785, 0.785], "role": "spider", "i": 0, "side": 1, "boxes": [{"b": [-1, -1, -1, 16, 2, 2], "tint": "dark"}]},
+    {"name": "leg_r1", "pivot": [-4, 15, 1], "rot": [0, 0.39, -0.58], "role": "spider", "i": 1, "side": -1, "boxes": [{"b": [-15, -1, -1, 16, 2, 2], "tint": "dark"}]},
+    {"name": "leg_l1", "pivot": [4, 15, 1], "rot": [0, -0.39, 0.58], "role": "spider", "i": 1, "side": 1, "boxes": [{"b": [-1, -1, -1, 16, 2, 2], "tint": "dark"}]},
+    {"name": "leg_r2", "pivot": [-4, 15, 0], "rot": [0, -0.39, -0.58], "role": "spider", "i": 2, "side": -1, "boxes": [{"b": [-15, -1, -1, 16, 2, 2], "tint": "dark"}]},
+    {"name": "leg_l2", "pivot": [4, 15, 0], "rot": [0, 0.39, 0.58], "role": "spider", "i": 2, "side": 1, "boxes": [{"b": [-1, -1, -1, 16, 2, 2], "tint": "dark"}]},
+    {"name": "leg_r3", "pivot": [-4, 15, -1], "rot": [0, -0.785, -0.785], "role": "spider", "i": 3, "side": -1, "boxes": [{"b": [-15, -1, -1, 16, 2, 2], "tint": "dark"}]},
+    {"name": "leg_l3", "pivot": [4, 15, -1], "rot": [0, 0.785, 0.785], "role": "spider", "i": 3, "side": 1, "boxes": [{"b": [-1, -1, -1, 16, 2, 2], "tint": "dark"}]}
+  ]},
+  "serpent": {"parts": [
+    {"name": "head", "pivot": [0, 21, -17], "role": "head", "boxes": [{"b": [-3, -3, -5, 6, 5, 6], "tint": "base", "face": "eyes"}, {"b": [-1, 0, -7, 2, 1, 2], "tint": "accent"}]},
+    {"name": "seg1", "parent": "head", "pivot": [0, 0, 1], "role": "seg", "idx": 1, "boxes": [{"b": [-3, -2.5, 0, 6, 5, 6], "tint": "base"}, {"b": [-1, -3, 0, 2, 1, 6], "tint": "accent"}]},
+    {"name": "seg2", "parent": "seg1", "pivot": [0, 0, 6], "role": "seg", "idx": 2, "boxes": [{"b": [-3, -2.5, 0, 6, 5, 6], "tint": "accent"}]},
+    {"name": "seg3", "parent": "seg2", "pivot": [0, 0, 6], "role": "seg", "idx": 3, "boxes": [{"b": [-2.5, -2, 0, 5, 4, 6], "tint": "base"}, {"b": [-1, -2.5, 0, 2, 1, 6], "tint": "accent"}]},
+    {"name": "seg4", "parent": "seg3", "pivot": [0, 0, 6], "role": "seg", "idx": 4, "boxes": [{"b": [-2.5, -2, 0, 5, 4, 6], "tint": "accent"}]},
+    {"name": "seg5", "parent": "seg4", "pivot": [0, 0, 6], "role": "seg", "idx": 5, "boxes": [{"b": [-2, -1.5, 0, 4, 3, 6], "tint": "base"}]},
+    {"name": "seg6", "parent": "seg5", "pivot": [0, 0, 6], "role": "seg", "idx": 6, "boxes": [{"b": [-1, -1, 0, 2, 2, 6], "tint": "dark"}]}
+  ]},
+  "winged": {"parts": [
+    {"name": "head", "pivot": [0, 13, -5], "role": "head", "boxes": [{"b": [-2, -3, -3, 4, 5, 4], "tint": "base", "face": "eyes"}, {"b": [-1, 0, -6, 2, 2, 3], "tint": "accent"}]},
+    {"name": "body", "pivot": [0, 15, 0], "boxes": [{"b": [-3, -2, -5, 6, 5, 10], "tint": "base"}, {"b": [-3, 1, -4, 6, 2, 8], "tint": "accent"}]},
+    {"name": "wing_r", "pivot": [-3, 13, -2], "role": "wing", "side": -1, "boxes": [{"b": [-14, 0, 0, 14, 1, 8], "tint": "base"}, {"b": [-14, 0, 5, 14, 1, 3], "tint": "accent"}]},
+    {"name": "wing_l", "pivot": [3, 13, -2], "role": "wing", "side": 1, "boxes": [{"b": [0, 0, 0, 14, 1, 8], "tint": "base"}, {"b": [0, 0, 5, 14, 1, 3], "tint": "accent"}]},
+    {"name": "tail", "pivot": [0, 15, 5], "role": "tail", "boxes": [{"b": [-2, 0, 0, 4, 1, 7], "tint": "accent"}]},
+    {"name": "talon_r", "pivot": [-1.5, 17, 0], "boxes": [{"b": [-1, 0, -1, 1, 5, 1], "tint": "dark"}]},
+    {"name": "talon_l", "pivot": [1.5, 17, 0], "boxes": [{"b": [0, 0, -1, 1, 5, 1], "tint": "dark"}]}
+  ]},
+  "wisp": {"parts": [
+    {"name": "core", "pivot": [0, 12, 0], "role": "head", "boxes": [{"b": [-4, -4, -4, 8, 8, 8], "tint": "glow", "face": "eyes"}, {"b": [-5, -5, -5, 10, 2, 10], "tint": "base"}]},
+    {"name": "veil", "pivot": [0, 12, 0], "boxes": [{"b": [-3, 4, -3, 6, 7, 6], "tint": "base"}, {"b": [-2, 11, -2, 4, 4, 4], "tint": "dark"}]},
+    {"name": "orbit_a", "pivot": [0, 12, 0], "role": "spin", "rate": 0.12, "boxes": [{"b": [6, -2, -1, 3, 3, 3], "tint": "accent"}]},
+    {"name": "orbit_b", "pivot": [0, 12, 0], "role": "spin", "rate": 0.12, "phase": 2.1, "boxes": [{"b": [6, 1, -1, 3, 3, 3], "tint": "accent"}]},
+    {"name": "orbit_c", "pivot": [0, 12, 0], "role": "spin", "rate": 0.12, "phase": 4.2, "boxes": [{"b": [6, -4, -1, 2, 2, 2], "tint": "accent"}]}
+  ]},
+  "golem": {"parts": [
+    {"name": "head", "pivot": [0, -7, -2], "role": "head", "boxes": [{"b": [-4, -12, -5, 8, 10, 8], "tint": "base", "face": "eyes"}, {"b": [-1, -5, -7, 2, 4, 2], "tint": "accent"}]},
+    {"name": "body", "pivot": [0, -7, 0], "boxes": [{"b": [-9, -2, -6, 18, 12, 11], "tint": "base"}, {"b": [-5, 10, -3, 10, 5, 6], "tint": "dark"}, {"b": [-3, 1, -7, 6, 6, 1], "tint": "glow"}]},
+    {"name": "arm_r", "pivot": [-11, -5, 0], "role": "arm", "phase": 1, "boxes": [{"b": [-3, 0, -3, 5, 28, 6], "tint": "base"}, {"b": [-4, -2, -4, 7, 4, 8], "tint": "accent"}]},
+    {"name": "arm_l", "pivot": [11, -5, 0], "role": "arm", "phase": 0, "boxes": [{"b": [-2, 0, -3, 5, 28, 6], "tint": "base"}, {"b": [-3, -2, -4, 7, 4, 8], "tint": "accent"}]},
+    {"name": "leg_r", "pivot": [-4.5, 11, 0], "role": "leg", "phase": 0, "boxes": [{"b": [-3, 0, -3, 6, 13, 6], "tint": "dark"}]},
+    {"name": "leg_l", "pivot": [4.5, 11, 0], "role": "leg", "phase": 1, "boxes": [{"b": [-3, 0, -3, 6, 13, 6], "tint": "dark"}]}
+  ]},
+  "drake": {"parts": [
+    {"name": "body", "pivot": [0, 14, 0], "boxes": [{"b": [-5, -4, -10, 10, 8, 20], "tint": "base"}, {"b": [-5, 2, -10, 10, 2, 20], "tint": "accent"}, {"b": [-1, -6, -8, 2, 2, 14], "tint": "dark"}]},
+    {"name": "neck", "pivot": [0, 12, -10], "rot": [-0.5, 0, 0], "role": "head", "boxes": [{"b": [-2.5, -3, -9, 5, 6, 9], "tint": "base"}]},
+    {"name": "head", "parent": "neck", "pivot": [0, 0, -9], "rot": [0.5, 0, 0], "role": "head", "boxes": [{"b": [-3, -3, -6, 6, 5, 6], "tint": "base", "face": "eyes"}, {"b": [-3, -6, -2, 1, 3, 2], "tint": "accent"}, {"b": [2, -6, -2, 1, 3, 2], "tint": "accent"}]},
+    {"name": "jaw", "parent": "head", "pivot": [0, 2, 0], "role": "jaw", "boxes": [{"b": [-2.5, 0, -6, 5, 1, 6], "tint": "dark"}]},
+    {"name": "wing_r", "pivot": [-5, 11, -4], "role": "wing", "side": -1, "boxes": [{"b": [-26, 0, -2, 26, 1, 14], "tint": "base"}, {"b": [-26, 0, 8, 26, 1, 4], "tint": "accent"}]},
+    {"name": "wing_l", "pivot": [5, 11, -4], "role": "wing", "side": 1, "boxes": [{"b": [0, 0, -2, 26, 1, 14], "tint": "base"}, {"b": [0, 0, 8, 26, 1, 4], "tint": "accent"}]},
+    {"name": "tail1", "pivot": [0, 14, 10], "role": "tail", "boxes": [{"b": [-3, -2, 0, 6, 5, 8], "tint": "base"}]},
+    {"name": "tail2", "parent": "tail1", "pivot": [0, 0, 8], "role": "tail", "boxes": [{"b": [-2, -1.5, 0, 4, 4, 8], "tint": "accent"}]},
+    {"name": "tail3", "parent": "tail2", "pivot": [0, 0, 8], "role": "tail", "boxes": [{"b": [-1, -1, 0, 2, 2, 8], "tint": "dark"}]},
+    {"name": "leg_r", "pivot": [-4, 18, 4], "role": "leg", "phase": 0, "boxes": [{"b": [-1.5, 0, -1.5, 3, 6, 3], "tint": "dark"}]},
+    {"name": "leg_l", "pivot": [4, 18, 4], "role": "leg", "phase": 1, "boxes": [{"b": [-1.5, 0, -1.5, 3, 6, 3], "tint": "dark"}]}
+  ]}
+}

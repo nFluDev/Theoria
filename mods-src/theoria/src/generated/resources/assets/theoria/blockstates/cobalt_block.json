@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "theoria:block/cobalt_block"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+name = "MacOS Input Fixes (Neoforged)"
+filename = "macos_input_fixes-neoforge-26.3-26.10.03.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/ac3bcWXA/versions/dG2rDxqc/macos_input_fixes-neoforge-26.3-26.10.03.jar"
+hash-format = "sha512"
+hash = "d13f1a3d3510dbaf90c2c6db97f18f9868685ec3a317666ecd8040bd3dc1f61718bdd9ccd809f1e12a2bf213b3e3247ebd5d7867e35c6d021ec45173367ac1b7"
+
+[update]
+[update.modrinth]
+mod-id = "ac3bcWXA"
+version = "dG2rDxqc"
+
+[option]
+optional = true
+default = false
+description = "macOS giriş yedeği (ADR-005 Yedek 1): yalnızca Ctrl+tık / Ctrl+Q kontrol listesi başarısız olursa aç. Bkz. docs/adr/ADR-005."

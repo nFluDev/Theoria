@@ -1,0 +1,32 @@
+opening existing world theoria-dev
+backend=Vulkan driver=1.2.350 MoltenVK 1.4.2 device=AMD Radeon RX 580 window=1280x720 fullscreen=false
+render ready after 315 ticks (15.8 s since the world appeared; last second: 37 frames, 22 server ticks)
+reset                      ok  [synced choice '']
+esc_menu                   ok  [gui 427x240, vanilla column ends y=184, Wings button 111,192 204x20]
+esc_menu_pauses_game       ok  [isPaused=true, player ticks +0 over 20 client ticks]
+click_wings_button         ok
+screen_warm_up             ok
+screen_does_not_pause      ok  [isPaused=false, player ticks +30, server ticks +30 over 30 client ticks; frames +45, 3D previews +45, cards 11]
+drag_turns_preview         ok  [20 px drag -> -32°]
+equip_first                ok  [synced choice 'fantasticwings:angel']
+fantastic_wings_first      ok  [Fantastic Wings state 'fantasticwings:angel']
+switch_to_last             ok  [synced choice 'fantasticwings:slime']
+fantastic_wings_last       ok  [Fantastic Wings state 'fantasticwings:slime']
+click_worn_takes_off       ok  [synced choice '']
+fantastic_wings_none       ok  [Fantastic Wings state '']
+equip_for_death            ok  [synced choice 'fantasticwings:dragon']
+die                        ok  [synced choice 'fantasticwings:dragon']
+fantastic_wings_after_death ok  [Fantastic Wings state 'fantasticwings:dragon']
+esc_button_gui_scale_1     ok  [gui 1280x720, vanilla column ends y=304, Wings button 538,312 204x20]
+wings_screen_gui_scale_1   ok  [gui 1280x720 (scale 1), 13 widgets, 2 column(s), max scroll 0]
+esc_button_gui_scale_2     ok  [gui 640x360, vanilla column ends y=214, Wings button 218,222 204x20]
+wings_screen_gui_scale_2   ok  [gui 640x360 (scale 2), 13 widgets, 2 column(s), max scroll 0]
+esc_button_gui_scale_3     ok  [gui 427x240, vanilla column ends y=184, Wings button 111,192 204x20]
+wings_screen_gui_scale_3   ok  [gui 427x240 (scale 3), 13 widgets, 2 column(s), max scroll 0]
+esc_button_gui_scale_4     ok  [gui 427x240, vanilla column ends y=184, Wings button 111,192 204x20]
+wings_screen_gui_scale_4   ok  [gui 427x240 (scale 3), 13 widgets, 2 column(s), max scroll 0]
+take_off_button            ok  [synced choice '']
+fantastic_wings_clean      ok  [Fantastic Wings state '']
+escape_returns_to_esc_menu ok
+finish                     ok
+RESULT PASS

@@ -1,0 +1,8 @@
+id,en,tr,variants,drop,xp_min,xp_max,color,min_y,max_y,count,size,rarity,note
+tin,Tin,Kalay,stone+deepslate,raw_tin,0,2,#b4c3cf,40,110,10,8,0,dağ eteği (docs/05 §1) — şimdilik tüm Overworld; Faz 9a biyom bandına bağlar
+cobalt,Cobalt,Kobalt,deepslate,raw_cobalt,1,3,#2a5ee0,-60,-10,6,6,0,derin kayalık (deepslate, y −60…−10)
+titanium,Titanium,Titanyum,stone,raw_titanium,2,4,#7ba3a8,140,300,3,5,0,dağ zirveleri (y>140)
+lonsdaleit,Lonsdaleit,Lonsdaleit,stone,lonsdaleit,3,5,#e6cdfa,-64,16,1,3,40,yer tutucu: meteor kraterleri Faz 9'da; o zamana dek çok seyrek derin taş damarı
+mithril,Mithril,Mitril,deepslate,raw_mithril,3,6,#8fc6ee,-64,-40,2,4,0,derin (y<−40); ender madeni Faz 9
+orichalcum,Orichalcum,Orikalkum,stone,raw_orichalcum,4,7,#f0825a,100,320,1,3,12,yer tutucu: yüzen adalar Faz 9'da; o zamana dek çok seyrek yüksek damar
+platinum,Platinum,Platin,deepslate,raw_platinum,5,9,#eceef6,-64,-48,1,3,8,en derin/nadir; boss kasaları Faz 8-9

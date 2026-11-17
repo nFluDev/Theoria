@@ -1,0 +1,16 @@
+opening existing world theoria-dev
+backend=Vulkan driver=1.2.350 MoltenVK 1.4.2 device=AMD Radeon RX 580 window=1920x1080 fullscreen=true
+render ready after 312 ticks (15.6 s since the world appeared; last second: 38 frames, 18 server ticks)
+phase 0: renderDistance=12 (settle 300 ticks, sample 20 s)
+RESULT rd=12 samples=21 avg=83.2 min=74 p10=77 median=85 max=87 window=1920x1080 fullscreen=true
+MEMORY rd=12 heapMb start=3175 max=3265 end=3052 rssMb start=5029 end=5029 perMinuteAvgFps=[83]
+phase 1: renderDistance=16 (settle 300 ticks, sample 20 s)
+RESULT rd=16 samples=21 avg=57.8 min=41 p10=53 median=59 max=68 window=1920x1080 fullscreen=true
+MEMORY rd=16 heapMb start=3725 max=3727 end=2961 rssMb start=4994 end=4914 perMinuteAvgFps=[58]
+phase 2: renderDistance=24 (settle 300 ticks, sample 20 s)
+RESULT rd=24 samples=21 avg=60.2 min=53 p10=55 median=62 max=65 window=1920x1080 fullscreen=true
+MEMORY rd=24 heapMb start=1831 max=3373 end=3373 rssMb start=4868 end=4755 perMinuteAvgFps=[60]
+phase 3: renderDistance=32 (settle 300 ticks, sample 20 s)
+RESULT rd=32 samples=21 avg=46.5 min=44 p10=45 median=46 max=52 window=1920x1080 fullscreen=true
+MEMORY rd=32 heapMb start=3071 max=3755 end=3755 rssMb start=4807 end=4803 perMinuteAvgFps=[46]
+DONE

@@ -1,0 +1,18 @@
+name = "Better Combat"
+filename = "bettercombat-neoforge-3.2.2+26.3.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/5sy6g3kz/versions/RbEnSa47/bettercombat-neoforge-3.2.2%2B26.3.jar"
+hash-format = "sha512"
+hash = "2ad3584995acc8bc7693942a150d674a9147651c2103f6d8225eb61203c04cd19c8cd8f0fdf530ff6ddd6fc7c061f5d80ecd1df225b84390675d78b69fcb4843"
+
+[update]
+[update.modrinth]
+mod-id = "5sy6g3kz"
+version = "RbEnSa47"
+
+[option]
+optional = true
+default = false
+description = "Opsiyonel; Vulkan altında denenmeden varsayılan açık değil (docs/journal/f05.md)."

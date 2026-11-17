@@ -1,0 +1,12 @@
+{
+  "values": [
+    "#c:ingots/tin",
+    "#c:ingots/bronze",
+    "#c:ingots/steel",
+    "#c:ingots/cobalt",
+    "#c:ingots/titanium",
+    "#c:ingots/mithril",
+    "#c:ingots/orichalcum",
+    "#c:ingots/platinum"
+  ]
+}

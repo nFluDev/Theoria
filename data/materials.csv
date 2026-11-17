@@ -1,0 +1,17 @@
+id,item_prefix,vanilla,armor,tools,en,tr,color,ingredient,enchantability,equip_sound,traits
+wood,wooden,1,0,1,Wooden,Tahta,,,15,,
+stone,stone,1,0,1,Stone,Taş,,,5,,
+leather,leather,1,1,0,Leather,Deri,,minecraft:leather,15,leather,speed=0.02
+tin,tin,0,1,0,Tin,Kalay,#b4c3cf,theoria:tin_ingot,10,chain,
+copper,copper,1,1,1,Copper,Bakır,,minecraft:copper_ingot,13,copper,
+bronze,bronze,0,1,0,Bronze,Bronz,#b8743a,theoria:bronze_ingot,12,copper,
+iron,iron,1,1,1,Iron,Demir,,minecraft:iron_ingot,14,iron,
+steel,steel,0,1,0,Steel,Çelik,#66738c,theoria:steel_ingot,14,iron,
+gold,golden,1,1,1,Gold,Altın,,minecraft:gold_ingot,40,gold,
+cobalt,cobalt,0,1,1,Cobalt,Kobalt,#2a5ee0,theoria:cobalt_ingot,16,diamond,
+diamond,diamond,1,1,1,Diamond,Elmas,,minecraft:diamond,10,diamond,
+titanium,titanium,0,1,0,Titanium,Titanyum,#7ba3a8,theoria:titanium_ingot,12,netherite,kb=0.2
+lonsdaleit,lonsdaleit,0,1,1,Lonsdaleit,Lonsdaleit,#e6cdfa,theoria:lonsdaleit,18,diamond,
+mithril,mithril,0,1,1,Mithril,Mitril,#8fc6ee,theoria:mithril_ingot,22,netherite,speed=0.04
+orichalcum,orichalcum,0,1,1,Orichalcum,Orikalkum,#f0825a,theoria:orichalcum_ingot,25,gold,
+platinum,platinum,0,1,1,Platinum,Platin,#eceef6,theoria:platinum_ingot,30,netherite,

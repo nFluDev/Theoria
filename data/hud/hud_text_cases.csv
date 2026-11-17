@@ -1,0 +1,27 @@
+id,kind,lang,args,expect
+n_0,compact,en_us,0,0
+n_9999,compact,en_us,9999,9999
+n_10000,compact,en_us,10000,10K
+n_43200_en,compact,en_us,43200,43.2K
+n_43200_tr,compact,tr_tr,43200,"43,2B"
+n_249295_en,compact,en_us,249295,249.3K
+n_249295_tr,compact,tr_tr,249295,"249,3B"
+n_999949,compact,tr_tr,999949,"999,9B"
+n_999950_promote,compact,tr_tr,999950,1M
+n_12M_tr,compact,tr_tr,12345678,"12,3M"
+n_3B_tr,compact,tr_tr,3456789012,"3,5Mr"
+n_5T_tr,compact,tr_tr,5678901234567,"5,7Tr"
+n_neg,compact,en_us,-5,0
+h_plain_en,health_text,en_us,20|20|0|94,20/20|1.000
+h_abs_en,health_text,en_us,214|214|12|94,214/214 (+12)|1.000
+h_big_tr,health_text,tr_tr,43200|249295|12|94,"43,2B/249,3B (+12)|0.870"
+h_big_full_tr,health_text,tr_tr,249295|249295|12345|94,"249,3B/249,3B (+12,3B)|0.712"
+h_shrink_tr,health_text,tr_tr,214|214|12|90,214/214 (+12)|1.000
+h_drop_abs,health_text,tr_tr,214|214|12|60,214/214 (+12)|0.769
+h_drop_max,health_text,tr_tr,214|214|12|30,214/214 (+12)|0.385
+h_tiny_room,health_text,tr_tr,214|214|12|4,214|0.250
+h_frac_hp,health_text,en_us,0.5|20|0|94,1/20|1.000
+a_plain,armor_text,en_us,310|0|94,310|1.000
+a_tough_tr,armor_text,tr_tr,354|10|94,354 (+10)|1.000
+a_big_tr,armor_text,tr_tr,123456|12345|94,"123,5B (+12,3B)|1.000"
+a_drop_tough,armor_text,tr_tr,354|10|40,354 (+10)|0.741

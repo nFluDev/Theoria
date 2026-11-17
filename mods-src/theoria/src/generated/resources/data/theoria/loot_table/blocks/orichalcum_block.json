@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "theoria:blocks/orichalcum_block",
+  "pools": [
+    {
+      "rolls": 1,
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "theoria:orichalcum_block"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "type": "neoforge:add_table",
+  "condition": {
+    "type": "neoforge:loot_table_id",
+    "loot_table_id": "minecraft:entities/stray"
+  },
+  "table": "theoria:entities/drop_stray_carbon_dust"
+}

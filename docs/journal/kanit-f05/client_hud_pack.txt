@@ -1,0 +1,27 @@
+opening existing world theoria-dev
+backend=Vulkan driver=1.2.350 MoltenVK 1.4.2 device=AMD Radeon RX 580 window=1280x720 fullscreen=false
+render ready after 319 ticks (16.0 s since the world appeared; last second: 68 frames, 20 server ticks)
+hp20_armor0      ok    [draws +45, level +7, vanilla cancelled +180, blink +0, low +0, regen +0, hunger +0] heights left=59 right=59 gui=427x240 scale 3
+damage_blink     ok    [draws +67, level +0, vanilla cancelled +268, blink +30, low +0, regen +0, hunger +0] heights left=59 right=59 gui=427x240 scale 3
+heal             ok    [draws +89, level +0, vanilla cancelled +356, blink +17, low +0, regen +0, hunger +0] heights left=59 right=59 gui=427x240 scale 3
+low_health       ok    [draws +36, level +0, vanilla cancelled +144, blink +12, low +35, regen +0, hunger +0] heights left=59 right=59 gui=427x240 scale 3
+heal_again       ok    [draws +45, level +0, vanilla cancelled +180, blink +8, low +2, regen +0, hunger +0] heights left=59 right=59 gui=427x240 scale 3
+regen_wave       ok    [draws +36, level +0, vanilla cancelled +144, blink +0, low +0, regen +35, hunger +0] heights left=59 right=59 gui=427x240 scale 3
+hunger_shake     ok    [draws +210, level +0, vanilla cancelled +840, blink +0, low +0, regen +1, hunger +5] heights left=59 right=59 gui=427x240 scale 3
+food_restore     ok    [draws +36, level +0, vanilla cancelled +144, blink +0, low +0, regen +0, hunger +0] heights left=59 right=59 gui=427x240 scale 3
+hp21             ok    [draws +42, level +0, vanilla cancelled +168, blink +6, low +0, regen +0, hunger +0] heights left=59 right=59 gui=427x240 scale 3
+hp250_armor310   ok    [draws +128, level +0, vanilla cancelled +512, blink +23, low +0, regen +0, hunger +0] heights left=59 right=59 gui=427x240 scale 3
+xp_level_12      ok    [draws +88, level +84, vanilla cancelled +352, blink +0, low +0, regen +0, hunger +0] heights left=59 right=59 gui=427x240 scale 3
+absorption       ok    [draws +66, level +66, vanilla cancelled +264, blink +0, low +0, regen +0, hunger +0] heights left=69 right=59 gui=427x240 scale 3
+poison           ok    [draws +81, level +81, vanilla cancelled +324, blink +26, low +0, regen +0, hunger +0] heights left=59 right=59 gui=427x240 scale 3
+ride_horse       ok    [draws +148, level +2, vanilla cancelled +592, blink +13, low +0, regen +0, hunger +0] heights left=59 right=59 gui=427x240 scale 3
+jump_bar_owns    ok    [draws +62, level +0, vanilla cancelled +248, blink +0, low +0, regen +0, hunger +0] heights left=59 right=59 gui=427x240 scale 3
+dismount         ok    [draws +62, level +44, vanilla cancelled +248, blink +0, low +0, regen +0, hunger +0] heights left=59 right=59 gui=427x240 scale 3
+gui_scale_1      ok    [draws +27, level +27, vanilla cancelled +108, blink +0, low +0, regen +0, hunger +0] heights left=59 right=59 gui=1280x720 scale 1
+gui_scale_2      ok    [draws +32, level +32, vanilla cancelled +128, blink +0, low +0, regen +0, hunger +0] heights left=59 right=59 gui=640x360 scale 2
+gui_scale_3      ok    [draws +30, level +30, vanilla cancelled +120, blink +0, low +0, regen +0, hunger +0] heights left=59 right=59 gui=427x240 scale 3
+gui_scale_4      ok    [draws +25, level +25, vanilla cancelled +100, blink +0, low +0, regen +0, hunger +0] heights left=59 right=59 gui=427x240 scale 3
+gui_scale_auto   ok    [draws +31, level +31, vanilla cancelled +124, blink +0, low +0, regen +0, hunger +0] heights left=59 right=59 gui=427x240 scale 3
+to_creative      ok    [draws +2, level +2, vanilla cancelled +122, blink +0, low +0, regen +0, hunger +0] heights left=39 right=39 gui=427x240 scale 3
+creative_quiet   ok    [draws +0, level +0, vanilla cancelled +123, blink +0, low +0, regen +0, hunger +0] heights left=39 right=39 gui=427x240 scale 3
+RESULT PASS

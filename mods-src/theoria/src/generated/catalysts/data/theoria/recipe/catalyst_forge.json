@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:iron_ingot",
+    "minecraft:iron_ingot",
+    "minecraft:iron_ingot",
+    "minecraft:iron_ingot",
+    "minecraft:obsidian",
+    "minecraft:obsidian",
+    "minecraft:diamond",
+    "minecraft:lava_bucket"
+  ],
+  "result": {
+    "id": "theoria:catalyst_forge"
+  }
+}

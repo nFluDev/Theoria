@@ -1,0 +1,13 @@
+name = "Dungeons and Taverns"
+filename = "dungeons-and-taverns-6.1.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/tpehi7ww/versions/A97537Vz/dungeons-and-taverns-6.1.0.jar"
+hash-format = "sha512"
+hash = "dbbb723f9574f14f526c85aa80a370ad046bbd100eb73c83ae8e6cb71b3180b51b6f5e0041793e0772b6ba47ecaa60ff46725a3b73d16a9ffba30115d29052e7"
+
+[update]
+[update.modrinth]
+mod-id = "tpehi7ww"
+version = "A97537Vz"

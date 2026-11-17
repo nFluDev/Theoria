@@ -1,0 +1,13 @@
+{
+  "values": [
+    "#c:storage_blocks/tin",
+    "#c:storage_blocks/bronze",
+    "#c:storage_blocks/steel",
+    "#c:storage_blocks/cobalt",
+    "#c:storage_blocks/titanium",
+    "#c:storage_blocks/lonsdaleit",
+    "#c:storage_blocks/mithril",
+    "#c:storage_blocks/orichalcum",
+    "#c:storage_blocks/platinum"
+  ]
+}

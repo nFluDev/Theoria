@@ -1,0 +1,33 @@
+id,kind,tr,en,targets,effect,op,basis,cap,min_idx,signature,note
+power,attribute,Güç,Might,weapon,minecraft:attack_damage,add_value,sword,0.16,0,minecraft:blaze_powder,düz hasar; ref bütçesinin hasar yarısı
+attack_speed,attribute,Çeviklik,Swiftness,weapon,minecraft:attack_speed,add_value,fixed,0.4,0,minecraft:sugar,"kılıç 1,6 → 2,0 vuruş/sn (V)"
+crit_chance,attribute,Kritik Şansı,Critical Chance,weapon,theoria:crit_chance,add_value,fixed,0.25,2,minecraft:rabbit_foot,"CriticalHitEvent; toplam ≤ 0,75"
+crit_damage,attribute,Kritik Hasar,Critical Damage,weapon,theoria:crit_damage,add_value,fixed,0.5,2,minecraft:fermented_spider_eye,"kritik çarpanına eklenir (vanilla 1,5 → 2,0 V)"
+life_steal,attribute,Yaşam Çalma,Life Steal,weapon,theoria:life_steal,add_value,fixed,0.1,4,minecraft:glistering_melon_slice,"verilen hasarın bu kesri kadar can; toplam ≤ 0,30"
+armor,attribute,Zırh Plakası,Armor Plating,head chest legs feet,minecraft:armor,add_value,piece_armor,0.16,0,minecraft:iron_nugget,parçanın zırhının %'si; ref bütçesinin zırh yarısı
+toughness,attribute,Sertlik,Resilience,head chest legs feet,minecraft:armor_toughness,add_value,fixed,0.75,4,minecraft:amethyst_shard,parça başına (takım V: +3)
+max_health,attribute,Kalp,Heart,head chest legs feet,minecraft:max_health,add_value,hp_gap,0.115,1,minecraft:golden_carrot,parça başına ref can açığının %'si; takım IV ≈ Kalp bütçesi
+thorns,attribute,Diken,Thorns,chest legs,theoria:thorns,add_value,sword,0.1,2,minecraft:cactus,alınan her vuruşta saldırgana düz hasar
+steadfast,attribute,Sabitlik,Steadfast,head chest legs feet,minecraft:knockback_resistance,add_value,fixed,0.2,2,minecraft:cobbled_deepslate,"parça başına (takım V: 0,8)"
+sprint,attribute,Koşu,Sprint,legs feet,minecraft:movement_speed,add_multiplied_base,fixed,0.05,0,minecraft:feather,yalnız hareket (savaş gücü değil): çarpan serbest
+leap,attribute,Sıçrayış,Leap,legs feet,minecraft:jump_strength,add_value,fixed,0.1,0,minecraft:slime_ball,"vanilla taban 0,42"
+featherfall,attribute,Tüy Düşüş,Featherfall,feet,minecraft:safe_fall_distance,add_value,fixed,6.0,0,minecraft:phantom_membrane,güvenli düşüş mesafesi (blok)
+saturation,attribute,Doygunluk,Satiety,head chest,theoria:food_saturation,add_value,fixed,4.0,0,minecraft:cooked_beef,her yemekte ek satürasyon; toplam ≤ 12
+reach,attribute,Erişim,Reach,weapon tool,weapon=minecraft:entity_interaction_range tool=minecraft:block_interaction_range,add_value,fixed,1.0,0,minecraft:lead,"vanilla 3,0 / 4,5 blok"
+excavation,attribute,Kazı,Excavation,tool,minecraft:mining_efficiency,add_value,tool_speed,0.3,0,minecraft:redstone,doğru aletle kazı hızına düz ekleme
+fortune_luck,attribute,Şans,Fortune,weapon tool ranged head chest legs feet,minecraft:luck,add_value,fixed,1.0,0,minecraft:lapis_lazuli,her parçada; yağma/keşif tablosu luck'ı okur
+frost,enchant,Buz,Frost,weapon,theoria:frost,enchant,sword,0.1,0,minecraft:blue_ice,"vuruşa buz hasarı + yavaşlatma (V: %60, 3 sn)"
+fire,enchant,Ateş,Fire,weapon,theoria:fire,enchant,sword,0.1,0,minecraft:blaze_rod,vuruşa yangın hasarı + tutuşturma
+lightning,enchant,Yıldırım,Lightning,weapon,theoria:lightning,enchant,sword,0.12,2,minecraft:lightning_rod,vuruş hedefinden 2 hedefe zincirler
+poison,enchant,Zehir,Poison,weapon,theoria:poison,enchant,sword,0.12,0,minecraft:spider_eye,5 sn boyunca toplam hasar
+wither,enchant,Solma,Wither,weapon,theoria:wither,enchant,sword,0.12,4,minecraft:wither_rose,5 sn boyunca toplam hasar + iyileşmeyi keser
+cleave,enchant,AoE (Yarım Daire),Cleave,weapon,theoria:cleave,enchant,sword,0.15,2,minecraft:flint,2 blok yarıçaptaki diğer hedeflere vuruşun bu kesri
+bleed,enchant,Kanama,Bleed,weapon,theoria:bleed,enchant,sword,0.14,2,minecraft:beetroot,6 sn boyunca toplam hasar; üst üste binmez
+radiance,enchant,Işık,Radiance,weapon,theoria:radiance,enchant,sword,0.3,4,minecraft:glowstone_dust,"koşullu: yalnız hortlak/ölümsüz etiketli hedefe (sayımda ×0,4)"
+umbra,enchant,Gölge,Umbra,weapon,theoria:umbra,enchant,sword,0.3,4,minecraft:ink_sac,"koşullu: arkadan vuruş (sayımda ×0,4)"
+tempest,enchant,Fırtına,Tempest,weapon,theoria:tempest,enchant,sword,0.3,6,minecraft:breeze_rod,"koşullu: havadayken (Kanat sinerjisi; sayımda ×0,4)"
+gravity,enchant,Gravite,Gravity,weapon,theoria:gravity,enchant,fixed,1.5,4,minecraft:ender_pearl,hasar yok: hedefi oyuncuya çeker (blok)
+restoration,enchant,Onarım,Restoration,weapon tool ranged head chest legs feet,theoria:restoration,enchant,fixed,0.002,2,minecraft:moss_block,saniyede azami dayanıklılığın bu kesri (V: 8 dk'da tam)
+ranged_power,ranged,Menzil Gücü,Ranged Power,ranged,theoria:ranged_power,enchant,sword,0.6,0,minecraft:arrow,Q37: yay/arbalet/üçlü mızrak/gürz; DERECELİ: taban = katalizörün derecesi
+erudition,erudition,Bilgelik,Erudition,weapon tool ranged head chest legs feet,theoria:erudition,enchant,fixed,1.0,0,minecraft:book,mob + blok XP'sine +%100…1600 (ADR-006 Karar 8)
+netherite,netherite,Netherite,Netherite,weapon tool head chest legs feet ranged,minecraft:netherite_ingot,bonus,fixed,1.0,0,minecraft:netherite_ingot,"evrensel: gerçek büyülerin hepsini +1 (vanilla külçe, yeni item yok)"

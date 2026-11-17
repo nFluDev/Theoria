@@ -1,0 +1,11 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#theoria:spawn/titan_bull",
+  "spawners": [
+    {
+      "type": "theoria:titan_bull",
+      "count": 1,
+      "weight": 12
+    }
+  ]
+}

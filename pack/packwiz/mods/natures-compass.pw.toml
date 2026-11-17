@@ -1,0 +1,13 @@
+name = "Nature's Compass"
+filename = "NaturesCompass-26.3-3.3.1-neoforge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/fPetb5Kh/versions/PijZPpB6/NaturesCompass-26.3-3.3.1-neoforge.jar"
+hash-format = "sha512"
+hash = "07c93a33bea0692a643c01fa4750497068ec848c341d2b506bc8b4d5de1c5e6f0cd85f98ec863f6758d70232b27be01ab1d5d2fd4824cbcbe2c10a5bf11f0558"
+
+[update]
+[update.modrinth]
+mod-id = "fPetb5Kh"
+version = "PijZPpB6"

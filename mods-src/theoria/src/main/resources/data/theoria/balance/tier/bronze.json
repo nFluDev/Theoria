@@ -1,0 +1,18 @@
+{
+  "id": "bronze",
+  "idx": 3,
+  "helmet": 3,
+  "chestplate": 9,
+  "leggings": 7,
+  "boots": 3,
+  "toughness": 0,
+  "armor_durability": 270,
+  "sword_damage": 8.8,
+  "tool_durability": 270,
+  "mob_hp_mult": 2.3526,
+  "mob_dmg_mult": 2.2481,
+  "mob_bypass_mult": 1.75,
+  "ref_health": 35,
+  "ref_bonus": 0.1875,
+  "ref_epf": 0
+}

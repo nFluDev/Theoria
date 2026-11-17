@@ -1,0 +1,11 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#theoria:spawn/mountain_bear",
+  "spawners": [
+    {
+      "type": "theoria:mountain_bear",
+      "count": 1,
+      "weight": 15
+    }
+  ]
+}

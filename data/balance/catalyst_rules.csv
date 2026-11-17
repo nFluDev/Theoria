@@ -1,0 +1,26 @@
+key,value,note
+levels,5,"katalizör seviyesi I-V; aynı katalizör bir eşyada bir yuvada, seviyeyi yükseltmek = daha yüksek seviyeyle değiştirmek"
+curve,0.2 0.4 0.6 0.8 1.0,değer = cap × curve[L-1] × taban(kademe)
+slot_base,1,"yuva = min(slot_max, slot_base + ⌊kademe/slot_step⌋)"
+slot_step,4,
+slot_max,4,
+platinum_idx,13,kademe ≥ bu → +platinum_slots yuva
+platinum_slots,1,en çok 5 yuva
+tierless_slots,3,yay/arbalet/üçlü mızrak/gürz (Q37)
+cost_l1,3 1 0 0,seviye 1: toz imza öz çekirdek (5 puan)
+cost_l2,6 2 1 0,seviye 2: toz imza öz çekirdek (15 puan)
+cost_l3,10 3 2 0,seviye 3: toz imza öz çekirdek (26 puan)
+cost_l4,16 4 4 1,seviye 4: toz imza öz çekirdek (69 puan)
+cost_l5,24 6 6 3,seviye 5: toz imza öz çekirdek (141 puan)
+netherite_cost,1 2 4 6 9,n. uygulamanın külçe maliyeti
+netherite_max,5,eşya başına en çok uygulama
+netherite_default_cap,1,"enchant_caps.csv'de olmayan büyü: max_level ≥ 2 ise bu, değilse 0"
+erudition_pct,100 300 600 1000 1600,Bilgelik I-V XP bonusu (%)
+erudition_step,400,V üstü her seviye +%
+erudition_total_cap,2400,toplam XP bonusu tavanı (%) — mainhand + 4 zırh parçası toplanır
+enchant_level_cap,255,"etkin büyü seviyesi tavanı (D13, ADR-004 Karar 5)"
+agg_cap_crit_chance,0.75,birleşik yumuşak tavan
+agg_cap_crit_damage,2.0,birleşik yumuşak tavan
+agg_cap_life_steal,0.3,birleşik yumuşak tavan
+agg_cap_food_saturation,12.0,birleşik yumuşak tavan
+agg_cap_knockback_resistance,1.0,birleşik yumuşak tavan

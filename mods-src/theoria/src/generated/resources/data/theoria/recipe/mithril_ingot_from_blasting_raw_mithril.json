@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "mithril_ingot",
+  "ingredient": "theoria:raw_mithril",
+  "result": {
+    "id": "theoria:mithril_ingot"
+  }
+}

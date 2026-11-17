@@ -1,0 +1,15 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#theoria:spawn/frost_archer",
+  "spawners": [
+    {
+      "type": "theoria:frost_archer",
+      "count": {
+        "type": "minecraft:uniform",
+        "min_inclusive": 1,
+        "max_inclusive": 2
+      },
+      "weight": 20
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#theoria:spawn/shade_seep",
+  "spawners": [
+    {
+      "type": "theoria:shade_seep",
+      "count": {
+        "type": "minecraft:uniform",
+        "min_inclusive": 3,
+        "max_inclusive": 5
+      },
+      "weight": 25
+    }
+  ]
+}

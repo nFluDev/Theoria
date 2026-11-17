@@ -1,0 +1,11 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#theoria:spawn/snow_wisp",
+  "spawners": [
+    {
+      "type": "theoria:snow_wisp",
+      "count": 1,
+      "weight": 20
+    }
+  ]
+}

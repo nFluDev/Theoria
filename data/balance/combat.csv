@@ -1,0 +1,10 @@
+key,value,note
+armor_k1,30,"oran = min(cap, A / (A + k1 + k2*H*tau))"
+armor_k2,8,H = zirh oncesi hasar (ADR-003 tanimi)
+armor_cap,0.9,zirh azaltma tavani
+toughness_half,8,tau = half / (half + armor_toughness)
+ench_scale,0.5,Reduction.ENCHANTMENTS: vanilla azaltma * bu carpan (EPF basi %2; en cok %40)
+attr_max_armor,1000000,teknik tavan (denge degeri degil)
+attr_max_armor_toughness,1000,teknik tavan
+attr_max_health,1000000,teknik tavan
+attr_max_attack_damage,1000000,teknik tavan

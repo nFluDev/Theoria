@@ -1,0 +1,18 @@
+{
+  "id": "diamond",
+  "idx": 8,
+  "helmet": 22,
+  "chestplate": 59,
+  "leggings": 44,
+  "boots": 22,
+  "toughness": 0,
+  "armor_durability": 2050,
+  "sword_damage": 32.6,
+  "tool_durability": 2050,
+  "mob_hp_mult": 9.7907,
+  "mob_dmg_mult": 8.673,
+  "mob_bypass_mult": 4.3,
+  "ref_health": 86,
+  "ref_bonus": 0.25,
+  "ref_epf": 10
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "theoria:item/ash_golem_spawn_egg"
+  }
+}

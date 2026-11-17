@@ -1,0 +1,8 @@
+{
+  "type": "neoforge:add_table",
+  "condition": {
+    "type": "neoforge:loot_table_id",
+    "loot_table_id": "minecraft:entities/wither_skeleton"
+  },
+  "table": "theoria:entities/drop_wither_skeleton_carbon_dust"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "tin",
+  "idx": 1,
+  "helmet": 1,
+  "chestplate": 3,
+  "leggings": 2,
+  "boots": 1,
+  "toughness": 0,
+  "armor_durability": 120,
+  "sword_damage": 5.2,
+  "tool_durability": 120,
+  "mob_hp_mult": 1.33,
+  "mob_dmg_mult": 1.31,
+  "mob_bypass_mult": 1.2,
+  "ref_health": 24,
+  "ref_bonus": 0.0625,
+  "ref_epf": 0
+}

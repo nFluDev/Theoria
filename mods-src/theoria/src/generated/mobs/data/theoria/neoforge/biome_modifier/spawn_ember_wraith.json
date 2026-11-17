@@ -1,0 +1,15 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#theoria:spawn/ember_wraith",
+  "spawners": [
+    {
+      "type": "theoria:ember_wraith",
+      "count": {
+        "type": "minecraft:uniform",
+        "min_inclusive": 1,
+        "max_inclusive": 2
+      },
+      "weight": 25
+    }
+  ]
+}

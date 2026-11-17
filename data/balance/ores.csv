@@ -1,0 +1,17 @@
+ore,tr,tool_idx,tool,hardness,blocks
+coal,Komur,0,wood,3.0,minecraft:coal_ore minecraft:deepslate_coal_ore
+tin,Kalay,1,stone,3.0,theoria:tin_ore theoria:deepslate_tin_ore
+copper,Bakir,1,stone,3.3,minecraft:copper_ore minecraft:deepslate_copper_ore
+iron,Demir,2,copper,3.6,minecraft:iron_ore minecraft:deepslate_iron_ore
+redstone,Kirmizitas,2,copper,3.6,minecraft:redstone_ore minecraft:deepslate_redstone_ore
+lapis,Lapis,2,copper,3.6,minecraft:lapis_ore minecraft:deepslate_lapis_ore
+gold,Altin,4,iron,3.9,minecraft:gold_ore minecraft:deepslate_gold_ore
+cobalt,Kobalt,4,iron,4.5,theoria:deepslate_cobalt_ore
+diamond,Elmas,7,cobalt,5.4,minecraft:diamond_ore minecraft:deepslate_diamond_ore
+obsidian,Obsidyen,8,diamond,,minecraft:obsidian
+ancient_debris,Antik Enkaz,8,diamond,,minecraft:ancient_debris
+titanium,Titanyum,8,diamond,6.6,theoria:titanium_ore
+lonsdaleit,Lonsdaleit,8,diamond,7.8,theoria:lonsdaleit_ore
+mithril,Mitril,10,lonsdaleit,9.6,theoria:deepslate_mithril_ore
+orichalcum,Orikalkum,11,mithril,11.4,theoria:orichalcum_ore
+platinum,Platin,12,orichalcum,13.5,theoria:deepslate_platinum_ore

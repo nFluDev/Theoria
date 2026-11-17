@@ -1,0 +1,5855 @@
+{
+  "levels": 5,
+  "curve": [
+    0.2,
+    0.4,
+    0.6,
+    0.8,
+    1.0
+  ],
+  "slots": {
+    "base": 1,
+    "step": 4,
+    "max": 4,
+    "platinum_idx": 13,
+    "platinum_bonus": 1,
+    "tierless": 3
+  },
+  "ladder": [
+    {
+      "level": 1,
+      "dust": 3,
+      "signature": 1,
+      "essence": 0,
+      "core": 0
+    },
+    {
+      "level": 2,
+      "dust": 6,
+      "signature": 2,
+      "essence": 1,
+      "core": 0
+    },
+    {
+      "level": 3,
+      "dust": 10,
+      "signature": 3,
+      "essence": 2,
+      "core": 0
+    },
+    {
+      "level": 4,
+      "dust": 16,
+      "signature": 4,
+      "essence": 4,
+      "core": 1
+    },
+    {
+      "level": 5,
+      "dust": 24,
+      "signature": 6,
+      "essence": 6,
+      "core": 3
+    }
+  ],
+  "netherite": {
+    "cost": [
+      1,
+      2,
+      4,
+      6,
+      9
+    ],
+    "max": 5,
+    "default_cap": 1,
+    "level_cap": 255,
+    "caps": {
+      "minecraft:protection": 1,
+      "minecraft:fire_protection": 1,
+      "minecraft:blast_protection": 1,
+      "minecraft:projectile_protection": 1,
+      "minecraft:feather_falling": 2,
+      "minecraft:respiration": 2,
+      "minecraft:depth_strider": 2,
+      "minecraft:soul_speed": 2,
+      "minecraft:swift_sneak": 2,
+      "minecraft:thorns": 2,
+      "minecraft:frost_walker": 1,
+      "minecraft:aqua_affinity": 0,
+      "minecraft:sharpness": 5,
+      "minecraft:smite": 5,
+      "minecraft:bane_of_arthropods": 5,
+      "minecraft:power": 5,
+      "minecraft:efficiency": 5,
+      "minecraft:unbreaking": 5,
+      "minecraft:fortune": 2,
+      "minecraft:looting": 2,
+      "minecraft:luck_of_the_sea": 2,
+      "minecraft:sweeping_edge": 2,
+      "minecraft:fire_aspect": 2,
+      "minecraft:impaling": 2,
+      "minecraft:piercing": 2,
+      "minecraft:quick_charge": 1,
+      "minecraft:density": 3,
+      "minecraft:breach": 3,
+      "minecraft:wind_burst": 1,
+      "minecraft:lunge": 2,
+      "minecraft:loyalty": 2,
+      "minecraft:knockback": 1,
+      "minecraft:punch": 1,
+      "minecraft:lure": 0,
+      "minecraft:riptide": 0,
+      "minecraft:mending": 0,
+      "minecraft:silk_touch": 0,
+      "minecraft:infinity": 0,
+      "minecraft:flame": 0,
+      "minecraft:channeling": 0,
+      "minecraft:multishot": 0,
+      "minecraft:binding_curse": 0,
+      "minecraft:vanishing_curse": 0,
+      "theoria:erudition": 1
+    }
+  },
+  "erudition": {
+    "pct": [
+      100,
+      300,
+      600,
+      1000,
+      1600
+    ],
+    "step": 400,
+    "total_cap": 2400
+  },
+  "agg_caps": {
+    "theoria:crit_chance": 0.75,
+    "theoria:crit_damage": 2.0,
+    "theoria:life_steal": 0.3,
+    "theoria:food_saturation": 12.0,
+    "minecraft:knockback_resistance": 1.0
+  },
+  "catalysts": [
+    {
+      "id": "power",
+      "kind": "attribute",
+      "targets": [
+        "weapon"
+      ],
+      "effect": "minecraft:attack_damage",
+      "effects": {
+        "weapon": "minecraft:attack_damage"
+      },
+      "op": "add_value",
+      "basis": "sword",
+      "cap": 0.16,
+      "min_idx": 0,
+      "signature": "minecraft:blaze_powder",
+      "graded": false
+    },
+    {
+      "id": "attack_speed",
+      "kind": "attribute",
+      "targets": [
+        "weapon"
+      ],
+      "effect": "minecraft:attack_speed",
+      "effects": {
+        "weapon": "minecraft:attack_speed"
+      },
+      "op": "add_value",
+      "basis": "fixed",
+      "cap": 0.4,
+      "min_idx": 0,
+      "signature": "minecraft:sugar",
+      "graded": false
+    },
+    {
+      "id": "crit_chance",
+      "kind": "attribute",
+      "targets": [
+        "weapon"
+      ],
+      "effect": "theoria:crit_chance",
+      "effects": {
+        "weapon": "theoria:crit_chance"
+      },
+      "op": "add_value",
+      "basis": "fixed",
+      "cap": 0.25,
+      "min_idx": 2,
+      "signature": "minecraft:rabbit_foot",
+      "graded": false
+    },
+    {
+      "id": "crit_damage",
+      "kind": "attribute",
+      "targets": [
+        "weapon"
+      ],
+      "effect": "theoria:crit_damage",
+      "effects": {
+        "weapon": "theoria:crit_damage"
+      },
+      "op": "add_value",
+      "basis": "fixed",
+      "cap": 0.5,
+      "min_idx": 2,
+      "signature": "minecraft:fermented_spider_eye",
+      "graded": false
+    },
+    {
+      "id": "life_steal",
+      "kind": "attribute",
+      "targets": [
+        "weapon"
+      ],
+      "effect": "theoria:life_steal",
+      "effects": {
+        "weapon": "theoria:life_steal"
+      },
+      "op": "add_value",
+      "basis": "fixed",
+      "cap": 0.1,
+      "min_idx": 4,
+      "signature": "minecraft:glistering_melon_slice",
+      "graded": false
+    },
+    {
+      "id": "armor",
+      "kind": "attribute",
+      "targets": [
+        "head",
+        "chest",
+        "legs",
+        "feet"
+      ],
+      "effect": "minecraft:armor",
+      "effects": {
+        "head": "minecraft:armor",
+        "chest": "minecraft:armor",
+        "legs": "minecraft:armor",
+        "feet": "minecraft:armor"
+      },
+      "op": "add_value",
+      "basis": "piece_armor",
+      "cap": 0.16,
+      "min_idx": 0,
+      "signature": "minecraft:iron_nugget",
+      "graded": false
+    },
+    {
+      "id": "toughness",
+      "kind": "attribute",
+      "targets": [
+        "head",
+        "chest",
+        "legs",
+        "feet"
+      ],
+      "effect": "minecraft:armor_toughness",
+      "effects": {
+        "head": "minecraft:armor_toughness",
+        "chest": "minecraft:armor_toughness",
+        "legs": "minecraft:armor_toughness",
+        "feet": "minecraft:armor_toughness"
+      },
+      "op": "add_value",
+      "basis": "fixed",
+      "cap": 0.75,
+      "min_idx": 4,
+      "signature": "minecraft:amethyst_shard",
+      "graded": false
+    },
+    {
+      "id": "max_health",
+      "kind": "attribute",
+      "targets": [
+        "head",
+        "chest",
+        "legs",
+        "feet"
+      ],
+      "effect": "minecraft:max_health",
+      "effects": {
+        "head": "minecraft:max_health",
+        "chest": "minecraft:max_health",
+        "legs": "minecraft:max_health",
+        "feet": "minecraft:max_health"
+      },
+      "op": "add_value",
+      "basis": "hp_gap",
+      "cap": 0.115,
+      "min_idx": 1,
+      "signature": "minecraft:golden_carrot",
+      "graded": false
+    },
+    {
+      "id": "thorns",
+      "kind": "attribute",
+      "targets": [
+        "chest",
+        "legs"
+      ],
+      "effect": "theoria:thorns",
+      "effects": {
+        "chest": "theoria:thorns",
+        "legs": "theoria:thorns"
+      },
+      "op": "add_value",
+      "basis": "sword",
+      "cap": 0.1,
+      "min_idx": 2,
+      "signature": "minecraft:cactus",
+      "graded": false
+    },
+    {
+      "id": "steadfast",
+      "kind": "attribute",
+      "targets": [
+        "head",
+        "chest",
+        "legs",
+        "feet"
+      ],
+      "effect": "minecraft:knockback_resistance",
+      "effects": {
+        "head": "minecraft:knockback_resistance",
+        "chest": "minecraft:knockback_resistance",
+        "legs": "minecraft:knockback_resistance",
+        "feet": "minecraft:knockback_resistance"
+      },
+      "op": "add_value",
+      "basis": "fixed",
+      "cap": 0.2,
+      "min_idx": 2,
+      "signature": "minecraft:cobbled_deepslate",
+      "graded": false
+    },
+    {
+      "id": "sprint",
+      "kind": "attribute",
+      "targets": [
+        "legs",
+        "feet"
+      ],
+      "effect": "minecraft:movement_speed",
+      "effects": {
+        "legs": "minecraft:movement_speed",
+        "feet": "minecraft:movement_speed"
+      },
+      "op": "add_multiplied_base",
+      "basis": "fixed",
+      "cap": 0.05,
+      "min_idx": 0,
+      "signature": "minecraft:feather",
+      "graded": false
+    },
+    {
+      "id": "leap",
+      "kind": "attribute",
+      "targets": [
+        "legs",
+        "feet"
+      ],
+      "effect": "minecraft:jump_strength",
+      "effects": {
+        "legs": "minecraft:jump_strength",
+        "feet": "minecraft:jump_strength"
+      },
+      "op": "add_value",
+      "basis": "fixed",
+      "cap": 0.1,
+      "min_idx": 0,
+      "signature": "minecraft:slime_ball",
+      "graded": false
+    },
+    {
+      "id": "featherfall",
+      "kind": "attribute",
+      "targets": [
+        "feet"
+      ],
+      "effect": "minecraft:safe_fall_distance",
+      "effects": {
+        "feet": "minecraft:safe_fall_distance"
+      },
+      "op": "add_value",
+      "basis": "fixed",
+      "cap": 6.0,
+      "min_idx": 0,
+      "signature": "minecraft:phantom_membrane",
+      "graded": false
+    },
+    {
+      "id": "saturation",
+      "kind": "attribute",
+      "targets": [
+        "head",
+        "chest"
+      ],
+      "effect": "theoria:food_saturation",
+      "effects": {
+        "head": "theoria:food_saturation",
+        "chest": "theoria:food_saturation"
+      },
+      "op": "add_value",
+      "basis": "fixed",
+      "cap": 4.0,
+      "min_idx": 0,
+      "signature": "minecraft:cooked_beef",
+      "graded": false
+    },
+    {
+      "id": "reach",
+      "kind": "attribute",
+      "targets": [
+        "weapon",
+        "tool"
+      ],
+      "effect": "weapon=minecraft:entity_interaction_range tool=minecraft:block_interaction_range",
+      "effects": {
+        "weapon": "minecraft:entity_interaction_range",
+        "tool": "minecraft:block_interaction_range"
+      },
+      "op": "add_value",
+      "basis": "fixed",
+      "cap": 1.0,
+      "min_idx": 0,
+      "signature": "minecraft:lead",
+      "graded": false
+    },
+    {
+      "id": "excavation",
+      "kind": "attribute",
+      "targets": [
+        "tool"
+      ],
+      "effect": "minecraft:mining_efficiency",
+      "effects": {
+        "tool": "minecraft:mining_efficiency"
+      },
+      "op": "add_value",
+      "basis": "tool_speed",
+      "cap": 0.3,
+      "min_idx": 0,
+      "signature": "minecraft:redstone",
+      "graded": false
+    },
+    {
+      "id": "fortune_luck",
+      "kind": "attribute",
+      "targets": [
+        "weapon",
+        "tool",
+        "ranged",
+        "head",
+        "chest",
+        "legs",
+        "feet"
+      ],
+      "effect": "minecraft:luck",
+      "effects": {
+        "weapon": "minecraft:luck",
+        "tool": "minecraft:luck",
+        "ranged": "minecraft:luck",
+        "head": "minecraft:luck",
+        "chest": "minecraft:luck",
+        "legs": "minecraft:luck",
+        "feet": "minecraft:luck"
+      },
+      "op": "add_value",
+      "basis": "fixed",
+      "cap": 1.0,
+      "min_idx": 0,
+      "signature": "minecraft:lapis_lazuli",
+      "graded": false
+    },
+    {
+      "id": "frost",
+      "kind": "enchant",
+      "targets": [
+        "weapon"
+      ],
+      "effect": "theoria:frost",
+      "effects": {},
+      "op": "enchant",
+      "basis": "sword",
+      "cap": 0.1,
+      "min_idx": 0,
+      "signature": "minecraft:blue_ice",
+      "graded": false
+    },
+    {
+      "id": "fire",
+      "kind": "enchant",
+      "targets": [
+        "weapon"
+      ],
+      "effect": "theoria:fire",
+      "effects": {},
+      "op": "enchant",
+      "basis": "sword",
+      "cap": 0.1,
+      "min_idx": 0,
+      "signature": "minecraft:blaze_rod",
+      "graded": false
+    },
+    {
+      "id": "lightning",
+      "kind": "enchant",
+      "targets": [
+        "weapon"
+      ],
+      "effect": "theoria:lightning",
+      "effects": {},
+      "op": "enchant",
+      "basis": "sword",
+      "cap": 0.12,
+      "min_idx": 2,
+      "signature": "minecraft:lightning_rod",
+      "graded": false
+    },
+    {
+      "id": "poison",
+      "kind": "enchant",
+      "targets": [
+        "weapon"
+      ],
+      "effect": "theoria:poison",
+      "effects": {},
+      "op": "enchant",
+      "basis": "sword",
+      "cap": 0.12,
+      "min_idx": 0,
+      "signature": "minecraft:spider_eye",
+      "graded": false
+    },
+    {
+      "id": "wither",
+      "kind": "enchant",
+      "targets": [
+        "weapon"
+      ],
+      "effect": "theoria:wither",
+      "effects": {},
+      "op": "enchant",
+      "basis": "sword",
+      "cap": 0.12,
+      "min_idx": 4,
+      "signature": "minecraft:wither_rose",
+      "graded": false
+    },
+    {
+      "id": "cleave",
+      "kind": "enchant",
+      "targets": [
+        "weapon"
+      ],
+      "effect": "theoria:cleave",
+      "effects": {},
+      "op": "enchant",
+      "basis": "sword",
+      "cap": 0.15,
+      "min_idx": 2,
+      "signature": "minecraft:flint",
+      "graded": false
+    },
+    {
+      "id": "bleed",
+      "kind": "enchant",
+      "targets": [
+        "weapon"
+      ],
+      "effect": "theoria:bleed",
+      "effects": {},
+      "op": "enchant",
+      "basis": "sword",
+      "cap": 0.14,
+      "min_idx": 2,
+      "signature": "minecraft:beetroot",
+      "graded": false
+    },
+    {
+      "id": "radiance",
+      "kind": "enchant",
+      "targets": [
+        "weapon"
+      ],
+      "effect": "theoria:radiance",
+      "effects": {},
+      "op": "enchant",
+      "basis": "sword",
+      "cap": 0.3,
+      "min_idx": 4,
+      "signature": "minecraft:glowstone_dust",
+      "graded": false
+    },
+    {
+      "id": "umbra",
+      "kind": "enchant",
+      "targets": [
+        "weapon"
+      ],
+      "effect": "theoria:umbra",
+      "effects": {},
+      "op": "enchant",
+      "basis": "sword",
+      "cap": 0.3,
+      "min_idx": 4,
+      "signature": "minecraft:ink_sac",
+      "graded": false
+    },
+    {
+      "id": "tempest",
+      "kind": "enchant",
+      "targets": [
+        "weapon"
+      ],
+      "effect": "theoria:tempest",
+      "effects": {},
+      "op": "enchant",
+      "basis": "sword",
+      "cap": 0.3,
+      "min_idx": 6,
+      "signature": "minecraft:breeze_rod",
+      "graded": false
+    },
+    {
+      "id": "gravity",
+      "kind": "enchant",
+      "targets": [
+        "weapon"
+      ],
+      "effect": "theoria:gravity",
+      "effects": {},
+      "op": "enchant",
+      "basis": "fixed",
+      "cap": 1.5,
+      "min_idx": 4,
+      "signature": "minecraft:ender_pearl",
+      "graded": false
+    },
+    {
+      "id": "restoration",
+      "kind": "enchant",
+      "targets": [
+        "weapon",
+        "tool",
+        "ranged",
+        "head",
+        "chest",
+        "legs",
+        "feet"
+      ],
+      "effect": "theoria:restoration",
+      "effects": {},
+      "op": "enchant",
+      "basis": "fixed",
+      "cap": 0.002,
+      "min_idx": 2,
+      "signature": "minecraft:moss_block",
+      "graded": false
+    },
+    {
+      "id": "ranged_power",
+      "kind": "ranged",
+      "targets": [
+        "ranged"
+      ],
+      "effect": "theoria:ranged_power",
+      "effects": {},
+      "op": "enchant",
+      "basis": "sword",
+      "cap": 0.6,
+      "min_idx": 0,
+      "signature": "minecraft:arrow",
+      "graded": true
+    },
+    {
+      "id": "erudition",
+      "kind": "erudition",
+      "targets": [
+        "weapon",
+        "tool",
+        "ranged",
+        "head",
+        "chest",
+        "legs",
+        "feet"
+      ],
+      "effect": "theoria:erudition",
+      "effects": {},
+      "op": "enchant",
+      "basis": "fixed",
+      "cap": 1.0,
+      "min_idx": 0,
+      "signature": "minecraft:book",
+      "graded": false
+    },
+    {
+      "id": "netherite",
+      "kind": "netherite",
+      "targets": [
+        "weapon",
+        "tool",
+        "head",
+        "chest",
+        "legs",
+        "feet",
+        "ranged"
+      ],
+      "effect": "minecraft:netherite_ingot",
+      "effects": {},
+      "op": "bonus",
+      "basis": "fixed",
+      "cap": 1.0,
+      "min_idx": 0,
+      "signature": "minecraft:netherite_ingot",
+      "graded": false
+    }
+  ],
+  "tierless": {
+    "items": [
+      "minecraft:bow",
+      "minecraft:crossbow",
+      "minecraft:trident",
+      "minecraft:mace"
+    ],
+    "idx": 13
+  },
+  "forge": {
+    "dust": "theoria:catalyst_dust",
+    "essence": "theoria:catalyst_essence",
+    "core": "theoria:catalyst_core"
+  },
+  "values": {
+    "power": {
+      "weapon": {
+        "0": [
+          0.128,
+          0.256,
+          0.384,
+          0.512,
+          0.64
+        ],
+        "1": [
+          0.1664,
+          0.3328,
+          0.4992,
+          0.6656,
+          0.832
+        ],
+        "2": [
+          0.2176,
+          0.4352,
+          0.6528,
+          0.8704,
+          1.088
+        ],
+        "4": [
+          0.3648,
+          0.7296,
+          1.0944,
+          1.4592,
+          1.824
+        ],
+        "6": [
+          0.6176,
+          1.2352,
+          1.8528,
+          2.4704,
+          3.088
+        ],
+        "7": [
+          0.8032,
+          1.6064,
+          2.4096,
+          3.2128,
+          4.016
+        ],
+        "8": [
+          1.0432,
+          2.0864,
+          3.1296,
+          4.1728,
+          5.216
+        ],
+        "10": [
+          1.7632,
+          3.5264,
+          5.2896,
+          7.0528,
+          8.816
+        ],
+        "11": [
+          2.2944,
+          4.5888,
+          6.8832,
+          9.1776,
+          11.472
+        ],
+        "12": [
+          2.9824,
+          5.9648,
+          8.9472,
+          11.9296,
+          14.912
+        ],
+        "13": [
+          3.8784,
+          7.7568,
+          11.6352,
+          15.5136,
+          19.392
+        ]
+      }
+    },
+    "attack_speed": {
+      "weapon": {
+        "0": [
+          0.08,
+          0.16,
+          0.24,
+          0.32,
+          0.4
+        ],
+        "1": [
+          0.08,
+          0.16,
+          0.24,
+          0.32,
+          0.4
+        ],
+        "2": [
+          0.08,
+          0.16,
+          0.24,
+          0.32,
+          0.4
+        ],
+        "4": [
+          0.08,
+          0.16,
+          0.24,
+          0.32,
+          0.4
+        ],
+        "6": [
+          0.08,
+          0.16,
+          0.24,
+          0.32,
+          0.4
+        ],
+        "7": [
+          0.08,
+          0.16,
+          0.24,
+          0.32,
+          0.4
+        ],
+        "8": [
+          0.08,
+          0.16,
+          0.24,
+          0.32,
+          0.4
+        ],
+        "10": [
+          0.08,
+          0.16,
+          0.24,
+          0.32,
+          0.4
+        ],
+        "11": [
+          0.08,
+          0.16,
+          0.24,
+          0.32,
+          0.4
+        ],
+        "12": [
+          0.08,
+          0.16,
+          0.24,
+          0.32,
+          0.4
+        ],
+        "13": [
+          0.08,
+          0.16,
+          0.24,
+          0.32,
+          0.4
+        ]
+      }
+    },
+    "crit_chance": {
+      "weapon": {
+        "2": [
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25
+        ],
+        "4": [
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25
+        ],
+        "6": [
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25
+        ],
+        "7": [
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25
+        ],
+        "8": [
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25
+        ],
+        "10": [
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25
+        ],
+        "11": [
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25
+        ],
+        "12": [
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25
+        ],
+        "13": [
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25
+        ]
+      }
+    },
+    "crit_damage": {
+      "weapon": {
+        "2": [
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5
+        ],
+        "4": [
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5
+        ],
+        "6": [
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5
+        ],
+        "7": [
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5
+        ],
+        "8": [
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5
+        ],
+        "10": [
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5
+        ],
+        "11": [
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5
+        ],
+        "12": [
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5
+        ],
+        "13": [
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5
+        ]
+      }
+    },
+    "life_steal": {
+      "weapon": {
+        "4": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "6": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "7": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "8": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "10": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "11": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "12": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "13": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ]
+      }
+    },
+    "armor": {
+      "head": {
+        "0": [
+          0.032,
+          0.064,
+          0.096,
+          0.128,
+          0.16
+        ],
+        "1": [
+          0.032,
+          0.064,
+          0.096,
+          0.128,
+          0.16
+        ],
+        "2": [
+          0.064,
+          0.128,
+          0.192,
+          0.256,
+          0.32
+        ],
+        "3": [
+          0.096,
+          0.192,
+          0.288,
+          0.384,
+          0.48
+        ],
+        "4": [
+          0.16,
+          0.32,
+          0.48,
+          0.64,
+          0.8
+        ],
+        "5": [
+          0.288,
+          0.576,
+          0.864,
+          1.152,
+          1.44
+        ],
+        "6": [
+          0.384,
+          0.768,
+          1.152,
+          1.536,
+          1.92
+        ],
+        "7": [
+          0.544,
+          1.088,
+          1.632,
+          2.176,
+          2.72
+        ],
+        "8": [
+          0.704,
+          1.408,
+          2.112,
+          2.816,
+          3.52
+        ],
+        "9": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "10": [
+          0.992,
+          1.984,
+          2.976,
+          3.968,
+          4.96
+        ],
+        "11": [
+          1.184,
+          2.368,
+          3.552,
+          4.736,
+          5.92
+        ],
+        "12": [
+          1.408,
+          2.816,
+          4.224,
+          5.632,
+          7.04
+        ],
+        "13": [
+          1.696,
+          3.392,
+          5.088,
+          6.784,
+          8.48
+        ]
+      },
+      "chest": {
+        "0": [
+          0.032,
+          0.064,
+          0.096,
+          0.128,
+          0.16
+        ],
+        "1": [
+          0.096,
+          0.192,
+          0.288,
+          0.384,
+          0.48
+        ],
+        "2": [
+          0.192,
+          0.384,
+          0.576,
+          0.768,
+          0.96
+        ],
+        "3": [
+          0.288,
+          0.576,
+          0.864,
+          1.152,
+          1.44
+        ],
+        "4": [
+          0.448,
+          0.896,
+          1.344,
+          1.792,
+          2.24
+        ],
+        "5": [
+          0.768,
+          1.536,
+          2.304,
+          3.072,
+          3.84
+        ],
+        "6": [
+          1.024,
+          2.048,
+          3.072,
+          4.096,
+          5.12
+        ],
+        "7": [
+          1.472,
+          2.944,
+          4.416,
+          5.888,
+          7.36
+        ],
+        "8": [
+          1.888,
+          3.776,
+          5.664,
+          7.552,
+          9.44
+        ],
+        "9": [
+          2.144,
+          4.288,
+          6.432,
+          8.576,
+          10.72
+        ],
+        "10": [
+          2.624,
+          5.248,
+          7.872,
+          10.496,
+          13.12
+        ],
+        "11": [
+          3.136,
+          6.272,
+          9.408,
+          12.544,
+          15.68
+        ],
+        "12": [
+          3.776,
+          7.552,
+          11.328,
+          15.104,
+          18.88
+        ],
+        "13": [
+          4.544,
+          9.088,
+          13.632,
+          18.176,
+          22.72
+        ]
+      },
+      "legs": {
+        "0": [
+          0.032,
+          0.064,
+          0.096,
+          0.128,
+          0.16
+        ],
+        "1": [
+          0.064,
+          0.128,
+          0.192,
+          0.256,
+          0.32
+        ],
+        "2": [
+          0.128,
+          0.256,
+          0.384,
+          0.512,
+          0.64
+        ],
+        "3": [
+          0.224,
+          0.448,
+          0.672,
+          0.896,
+          1.12
+        ],
+        "4": [
+          0.32,
+          0.64,
+          0.96,
+          1.28,
+          1.6
+        ],
+        "5": [
+          0.576,
+          1.152,
+          1.728,
+          2.304,
+          2.88
+        ],
+        "6": [
+          0.768,
+          1.536,
+          2.304,
+          3.072,
+          3.84
+        ],
+        "7": [
+          1.088,
+          2.176,
+          3.264,
+          4.352,
+          5.44
+        ],
+        "8": [
+          1.408,
+          2.816,
+          4.224,
+          5.632,
+          7.04
+        ],
+        "9": [
+          1.6,
+          3.2,
+          4.8,
+          6.4,
+          8.0
+        ],
+        "10": [
+          1.984,
+          3.968,
+          5.952,
+          7.936,
+          9.92
+        ],
+        "11": [
+          2.368,
+          4.736,
+          7.104,
+          9.472,
+          11.84
+        ],
+        "12": [
+          2.816,
+          5.632,
+          8.448,
+          11.264,
+          14.08
+        ],
+        "13": [
+          3.392,
+          6.784,
+          10.176,
+          13.568,
+          16.96
+        ]
+      },
+      "feet": {
+        "0": [
+          0.032,
+          0.064,
+          0.096,
+          0.128,
+          0.16
+        ],
+        "1": [
+          0.032,
+          0.064,
+          0.096,
+          0.128,
+          0.16
+        ],
+        "2": [
+          0.064,
+          0.128,
+          0.192,
+          0.256,
+          0.32
+        ],
+        "3": [
+          0.096,
+          0.192,
+          0.288,
+          0.384,
+          0.48
+        ],
+        "4": [
+          0.16,
+          0.32,
+          0.48,
+          0.64,
+          0.8
+        ],
+        "5": [
+          0.288,
+          0.576,
+          0.864,
+          1.152,
+          1.44
+        ],
+        "6": [
+          0.384,
+          0.768,
+          1.152,
+          1.536,
+          1.92
+        ],
+        "7": [
+          0.544,
+          1.088,
+          1.632,
+          2.176,
+          2.72
+        ],
+        "8": [
+          0.704,
+          1.408,
+          2.112,
+          2.816,
+          3.52
+        ],
+        "9": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "10": [
+          0.992,
+          1.984,
+          2.976,
+          3.968,
+          4.96
+        ],
+        "11": [
+          1.184,
+          2.368,
+          3.552,
+          4.736,
+          5.92
+        ],
+        "12": [
+          1.408,
+          2.816,
+          4.224,
+          5.632,
+          7.04
+        ],
+        "13": [
+          1.696,
+          3.392,
+          5.088,
+          6.784,
+          8.48
+        ]
+      }
+    },
+    "toughness": {
+      "head": {
+        "4": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "5": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "6": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "7": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "8": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "9": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "10": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "11": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "12": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "13": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ]
+      },
+      "chest": {
+        "4": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "5": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "6": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "7": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "8": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "9": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "10": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "11": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "12": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "13": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ]
+      },
+      "legs": {
+        "4": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "5": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "6": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "7": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "8": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "9": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "10": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "11": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "12": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "13": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ]
+      },
+      "feet": {
+        "4": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "5": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "6": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "7": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "8": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "9": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "10": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "11": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "12": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ],
+        "13": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.75
+        ]
+      }
+    },
+    "max_health": {
+      "head": {
+        "1": [
+          0.092,
+          0.184,
+          0.276,
+          0.368,
+          0.46
+        ],
+        "2": [
+          0.207,
+          0.414,
+          0.621,
+          0.828,
+          1.035
+        ],
+        "3": [
+          0.345,
+          0.69,
+          1.035,
+          1.38,
+          1.725
+        ],
+        "4": [
+          0.483,
+          0.966,
+          1.449,
+          1.932,
+          2.415
+        ],
+        "5": [
+          0.69,
+          1.38,
+          2.07,
+          2.76,
+          3.45
+        ],
+        "6": [
+          0.92,
+          1.84,
+          2.76,
+          3.68,
+          4.6
+        ],
+        "7": [
+          1.196,
+          2.392,
+          3.588,
+          4.784,
+          5.98
+        ],
+        "8": [
+          1.518,
+          3.036,
+          4.554,
+          6.072,
+          7.59
+        ],
+        "9": [
+          1.909,
+          3.818,
+          5.727,
+          7.636,
+          9.545
+        ],
+        "10": [
+          2.392,
+          4.784,
+          7.176,
+          9.568,
+          11.96
+        ],
+        "11": [
+          2.967,
+          5.934,
+          8.901,
+          11.868,
+          14.835
+        ],
+        "12": [
+          3.634,
+          7.268,
+          10.902,
+          14.536,
+          18.17
+        ],
+        "13": [
+          4.462,
+          8.924,
+          13.386,
+          17.848,
+          22.31
+        ]
+      },
+      "chest": {
+        "1": [
+          0.092,
+          0.184,
+          0.276,
+          0.368,
+          0.46
+        ],
+        "2": [
+          0.207,
+          0.414,
+          0.621,
+          0.828,
+          1.035
+        ],
+        "3": [
+          0.345,
+          0.69,
+          1.035,
+          1.38,
+          1.725
+        ],
+        "4": [
+          0.483,
+          0.966,
+          1.449,
+          1.932,
+          2.415
+        ],
+        "5": [
+          0.69,
+          1.38,
+          2.07,
+          2.76,
+          3.45
+        ],
+        "6": [
+          0.92,
+          1.84,
+          2.76,
+          3.68,
+          4.6
+        ],
+        "7": [
+          1.196,
+          2.392,
+          3.588,
+          4.784,
+          5.98
+        ],
+        "8": [
+          1.518,
+          3.036,
+          4.554,
+          6.072,
+          7.59
+        ],
+        "9": [
+          1.909,
+          3.818,
+          5.727,
+          7.636,
+          9.545
+        ],
+        "10": [
+          2.392,
+          4.784,
+          7.176,
+          9.568,
+          11.96
+        ],
+        "11": [
+          2.967,
+          5.934,
+          8.901,
+          11.868,
+          14.835
+        ],
+        "12": [
+          3.634,
+          7.268,
+          10.902,
+          14.536,
+          18.17
+        ],
+        "13": [
+          4.462,
+          8.924,
+          13.386,
+          17.848,
+          22.31
+        ]
+      },
+      "legs": {
+        "1": [
+          0.092,
+          0.184,
+          0.276,
+          0.368,
+          0.46
+        ],
+        "2": [
+          0.207,
+          0.414,
+          0.621,
+          0.828,
+          1.035
+        ],
+        "3": [
+          0.345,
+          0.69,
+          1.035,
+          1.38,
+          1.725
+        ],
+        "4": [
+          0.483,
+          0.966,
+          1.449,
+          1.932,
+          2.415
+        ],
+        "5": [
+          0.69,
+          1.38,
+          2.07,
+          2.76,
+          3.45
+        ],
+        "6": [
+          0.92,
+          1.84,
+          2.76,
+          3.68,
+          4.6
+        ],
+        "7": [
+          1.196,
+          2.392,
+          3.588,
+          4.784,
+          5.98
+        ],
+        "8": [
+          1.518,
+          3.036,
+          4.554,
+          6.072,
+          7.59
+        ],
+        "9": [
+          1.909,
+          3.818,
+          5.727,
+          7.636,
+          9.545
+        ],
+        "10": [
+          2.392,
+          4.784,
+          7.176,
+          9.568,
+          11.96
+        ],
+        "11": [
+          2.967,
+          5.934,
+          8.901,
+          11.868,
+          14.835
+        ],
+        "12": [
+          3.634,
+          7.268,
+          10.902,
+          14.536,
+          18.17
+        ],
+        "13": [
+          4.462,
+          8.924,
+          13.386,
+          17.848,
+          22.31
+        ]
+      },
+      "feet": {
+        "1": [
+          0.092,
+          0.184,
+          0.276,
+          0.368,
+          0.46
+        ],
+        "2": [
+          0.207,
+          0.414,
+          0.621,
+          0.828,
+          1.035
+        ],
+        "3": [
+          0.345,
+          0.69,
+          1.035,
+          1.38,
+          1.725
+        ],
+        "4": [
+          0.483,
+          0.966,
+          1.449,
+          1.932,
+          2.415
+        ],
+        "5": [
+          0.69,
+          1.38,
+          2.07,
+          2.76,
+          3.45
+        ],
+        "6": [
+          0.92,
+          1.84,
+          2.76,
+          3.68,
+          4.6
+        ],
+        "7": [
+          1.196,
+          2.392,
+          3.588,
+          4.784,
+          5.98
+        ],
+        "8": [
+          1.518,
+          3.036,
+          4.554,
+          6.072,
+          7.59
+        ],
+        "9": [
+          1.909,
+          3.818,
+          5.727,
+          7.636,
+          9.545
+        ],
+        "10": [
+          2.392,
+          4.784,
+          7.176,
+          9.568,
+          11.96
+        ],
+        "11": [
+          2.967,
+          5.934,
+          8.901,
+          11.868,
+          14.835
+        ],
+        "12": [
+          3.634,
+          7.268,
+          10.902,
+          14.536,
+          18.17
+        ],
+        "13": [
+          4.462,
+          8.924,
+          13.386,
+          17.848,
+          22.31
+        ]
+      }
+    },
+    "thorns": {
+      "chest": {
+        "2": [
+          0.136,
+          0.272,
+          0.408,
+          0.544,
+          0.68
+        ],
+        "3": [
+          0.176,
+          0.352,
+          0.528,
+          0.704,
+          0.88
+        ],
+        "4": [
+          0.228,
+          0.456,
+          0.684,
+          0.912,
+          1.14
+        ],
+        "5": [
+          0.298,
+          0.596,
+          0.894,
+          1.192,
+          1.49
+        ],
+        "6": [
+          0.386,
+          0.772,
+          1.158,
+          1.544,
+          1.93
+        ],
+        "7": [
+          0.502,
+          1.004,
+          1.506,
+          2.008,
+          2.51
+        ],
+        "8": [
+          0.652,
+          1.304,
+          1.956,
+          2.608,
+          3.26
+        ],
+        "9": [
+          0.848,
+          1.696,
+          2.544,
+          3.392,
+          4.24
+        ],
+        "10": [
+          1.102,
+          2.204,
+          3.306,
+          4.408,
+          5.51
+        ],
+        "11": [
+          1.434,
+          2.868,
+          4.302,
+          5.736,
+          7.17
+        ],
+        "12": [
+          1.864,
+          3.728,
+          5.592,
+          7.456,
+          9.32
+        ],
+        "13": [
+          2.424,
+          4.848,
+          7.272,
+          9.696,
+          12.12
+        ]
+      },
+      "legs": {
+        "2": [
+          0.136,
+          0.272,
+          0.408,
+          0.544,
+          0.68
+        ],
+        "3": [
+          0.176,
+          0.352,
+          0.528,
+          0.704,
+          0.88
+        ],
+        "4": [
+          0.228,
+          0.456,
+          0.684,
+          0.912,
+          1.14
+        ],
+        "5": [
+          0.298,
+          0.596,
+          0.894,
+          1.192,
+          1.49
+        ],
+        "6": [
+          0.386,
+          0.772,
+          1.158,
+          1.544,
+          1.93
+        ],
+        "7": [
+          0.502,
+          1.004,
+          1.506,
+          2.008,
+          2.51
+        ],
+        "8": [
+          0.652,
+          1.304,
+          1.956,
+          2.608,
+          3.26
+        ],
+        "9": [
+          0.848,
+          1.696,
+          2.544,
+          3.392,
+          4.24
+        ],
+        "10": [
+          1.102,
+          2.204,
+          3.306,
+          4.408,
+          5.51
+        ],
+        "11": [
+          1.434,
+          2.868,
+          4.302,
+          5.736,
+          7.17
+        ],
+        "12": [
+          1.864,
+          3.728,
+          5.592,
+          7.456,
+          9.32
+        ],
+        "13": [
+          2.424,
+          4.848,
+          7.272,
+          9.696,
+          12.12
+        ]
+      }
+    },
+    "steadfast": {
+      "head": {
+        "2": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "3": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "4": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "5": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "6": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "7": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "8": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "9": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "10": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "11": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "12": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "13": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ]
+      },
+      "chest": {
+        "2": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "3": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "4": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "5": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "6": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "7": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "8": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "9": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "10": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "11": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "12": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "13": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ]
+      },
+      "legs": {
+        "2": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "3": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "4": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "5": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "6": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "7": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "8": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "9": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "10": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "11": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "12": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "13": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ]
+      },
+      "feet": {
+        "2": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "3": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "4": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "5": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "6": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "7": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "8": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "9": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "10": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "11": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "12": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ],
+        "13": [
+          0.04,
+          0.08,
+          0.12,
+          0.16,
+          0.2
+        ]
+      }
+    },
+    "sprint": {
+      "legs": {
+        "0": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "1": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "2": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "3": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "4": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "5": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "6": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "7": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "8": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "9": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "10": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "11": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "12": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "13": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ]
+      },
+      "feet": {
+        "0": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "1": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "2": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "3": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "4": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "5": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "6": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "7": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "8": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "9": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "10": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "11": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "12": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ],
+        "13": [
+          0.01,
+          0.02,
+          0.03,
+          0.04,
+          0.05
+        ]
+      }
+    },
+    "leap": {
+      "legs": {
+        "0": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "1": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "2": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "3": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "4": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "5": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "6": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "7": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "8": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "9": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "10": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "11": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "12": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "13": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ]
+      },
+      "feet": {
+        "0": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "1": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "2": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "3": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "4": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "5": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "6": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "7": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "8": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "9": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "10": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "11": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "12": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ],
+        "13": [
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1
+        ]
+      }
+    },
+    "featherfall": {
+      "feet": {
+        "0": [
+          1.2,
+          2.4,
+          3.6,
+          4.8,
+          6.0
+        ],
+        "1": [
+          1.2,
+          2.4,
+          3.6,
+          4.8,
+          6.0
+        ],
+        "2": [
+          1.2,
+          2.4,
+          3.6,
+          4.8,
+          6.0
+        ],
+        "3": [
+          1.2,
+          2.4,
+          3.6,
+          4.8,
+          6.0
+        ],
+        "4": [
+          1.2,
+          2.4,
+          3.6,
+          4.8,
+          6.0
+        ],
+        "5": [
+          1.2,
+          2.4,
+          3.6,
+          4.8,
+          6.0
+        ],
+        "6": [
+          1.2,
+          2.4,
+          3.6,
+          4.8,
+          6.0
+        ],
+        "7": [
+          1.2,
+          2.4,
+          3.6,
+          4.8,
+          6.0
+        ],
+        "8": [
+          1.2,
+          2.4,
+          3.6,
+          4.8,
+          6.0
+        ],
+        "9": [
+          1.2,
+          2.4,
+          3.6,
+          4.8,
+          6.0
+        ],
+        "10": [
+          1.2,
+          2.4,
+          3.6,
+          4.8,
+          6.0
+        ],
+        "11": [
+          1.2,
+          2.4,
+          3.6,
+          4.8,
+          6.0
+        ],
+        "12": [
+          1.2,
+          2.4,
+          3.6,
+          4.8,
+          6.0
+        ],
+        "13": [
+          1.2,
+          2.4,
+          3.6,
+          4.8,
+          6.0
+        ]
+      }
+    },
+    "saturation": {
+      "head": {
+        "0": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "1": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "2": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "3": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "4": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "5": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "6": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "7": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "8": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "9": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "10": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "11": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "12": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "13": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ]
+      },
+      "chest": {
+        "0": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "1": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "2": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "3": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "4": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "5": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "6": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "7": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "8": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "9": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "10": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "11": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "12": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ],
+        "13": [
+          0.8,
+          1.6,
+          2.4,
+          3.2,
+          4.0
+        ]
+      }
+    },
+    "reach": {
+      "weapon": {
+        "0": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "1": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "2": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "4": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "6": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "7": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "8": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "10": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "11": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "12": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "13": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ]
+      },
+      "tool": {
+        "0": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "1": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "2": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "4": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "6": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "7": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "8": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "10": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "11": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "12": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "13": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ]
+      }
+    },
+    "excavation": {
+      "tool": {
+        "0": [
+          0.12,
+          0.24,
+          0.36,
+          0.48,
+          0.6
+        ],
+        "1": [
+          0.156,
+          0.312,
+          0.468,
+          0.624,
+          0.78
+        ],
+        "2": [
+          0.198,
+          0.396,
+          0.594,
+          0.792,
+          0.99
+        ],
+        "4": [
+          0.324,
+          0.648,
+          0.972,
+          1.296,
+          1.62
+        ],
+        "6": [
+          0.528,
+          1.056,
+          1.584,
+          2.112,
+          2.64
+        ],
+        "7": [
+          0.678,
+          1.356,
+          2.034,
+          2.712,
+          3.39
+        ],
+        "8": [
+          0.864,
+          1.728,
+          2.592,
+          3.456,
+          4.32
+        ],
+        "10": [
+          1.416,
+          2.832,
+          4.248,
+          5.664,
+          7.08
+        ],
+        "11": [
+          1.812,
+          3.624,
+          5.436,
+          7.248,
+          9.06
+        ],
+        "12": [
+          2.322,
+          4.644,
+          6.966,
+          9.288,
+          11.61
+        ],
+        "13": [
+          2.97,
+          5.94,
+          8.91,
+          11.88,
+          14.85
+        ]
+      }
+    },
+    "fortune_luck": {
+      "weapon": {
+        "0": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "1": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "2": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "4": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "6": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "7": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "8": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "10": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "11": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "12": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "13": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ]
+      },
+      "tool": {
+        "0": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "1": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "2": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "4": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "6": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "7": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "8": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "10": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "11": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "12": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "13": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ]
+      },
+      "ranged": {
+        "0": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "1": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "2": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "3": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "4": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "5": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "6": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "7": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "8": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "9": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "10": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "11": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "12": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "13": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ]
+      },
+      "head": {
+        "0": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "1": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "2": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "3": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "4": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "5": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "6": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "7": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "8": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "9": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "10": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "11": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "12": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "13": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ]
+      },
+      "chest": {
+        "0": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "1": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "2": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "3": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "4": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "5": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "6": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "7": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "8": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "9": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "10": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "11": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "12": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "13": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ]
+      },
+      "legs": {
+        "0": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "1": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "2": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "3": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "4": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "5": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "6": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "7": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "8": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "9": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "10": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "11": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "12": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "13": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ]
+      },
+      "feet": {
+        "0": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "1": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "2": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "3": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "4": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "5": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "6": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "7": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "8": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "9": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "10": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "11": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "12": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "13": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ]
+      }
+    },
+    "frost": {
+      "weapon": {
+        "0": [
+          0.08,
+          0.16,
+          0.24,
+          0.32,
+          0.4
+        ],
+        "1": [
+          0.104,
+          0.208,
+          0.312,
+          0.416,
+          0.52
+        ],
+        "2": [
+          0.136,
+          0.272,
+          0.408,
+          0.544,
+          0.68
+        ],
+        "4": [
+          0.228,
+          0.456,
+          0.684,
+          0.912,
+          1.14
+        ],
+        "6": [
+          0.386,
+          0.772,
+          1.158,
+          1.544,
+          1.93
+        ],
+        "7": [
+          0.502,
+          1.004,
+          1.506,
+          2.008,
+          2.51
+        ],
+        "8": [
+          0.652,
+          1.304,
+          1.956,
+          2.608,
+          3.26
+        ],
+        "10": [
+          1.102,
+          2.204,
+          3.306,
+          4.408,
+          5.51
+        ],
+        "11": [
+          1.434,
+          2.868,
+          4.302,
+          5.736,
+          7.17
+        ],
+        "12": [
+          1.864,
+          3.728,
+          5.592,
+          7.456,
+          9.32
+        ],
+        "13": [
+          2.424,
+          4.848,
+          7.272,
+          9.696,
+          12.12
+        ]
+      }
+    },
+    "fire": {
+      "weapon": {
+        "0": [
+          0.08,
+          0.16,
+          0.24,
+          0.32,
+          0.4
+        ],
+        "1": [
+          0.104,
+          0.208,
+          0.312,
+          0.416,
+          0.52
+        ],
+        "2": [
+          0.136,
+          0.272,
+          0.408,
+          0.544,
+          0.68
+        ],
+        "4": [
+          0.228,
+          0.456,
+          0.684,
+          0.912,
+          1.14
+        ],
+        "6": [
+          0.386,
+          0.772,
+          1.158,
+          1.544,
+          1.93
+        ],
+        "7": [
+          0.502,
+          1.004,
+          1.506,
+          2.008,
+          2.51
+        ],
+        "8": [
+          0.652,
+          1.304,
+          1.956,
+          2.608,
+          3.26
+        ],
+        "10": [
+          1.102,
+          2.204,
+          3.306,
+          4.408,
+          5.51
+        ],
+        "11": [
+          1.434,
+          2.868,
+          4.302,
+          5.736,
+          7.17
+        ],
+        "12": [
+          1.864,
+          3.728,
+          5.592,
+          7.456,
+          9.32
+        ],
+        "13": [
+          2.424,
+          4.848,
+          7.272,
+          9.696,
+          12.12
+        ]
+      }
+    },
+    "lightning": {
+      "weapon": {
+        "2": [
+          0.1632,
+          0.3264,
+          0.4896,
+          0.6528,
+          0.816
+        ],
+        "4": [
+          0.2736,
+          0.5472,
+          0.8208,
+          1.0944,
+          1.368
+        ],
+        "6": [
+          0.4632,
+          0.9264,
+          1.3896,
+          1.8528,
+          2.316
+        ],
+        "7": [
+          0.6024,
+          1.2048,
+          1.8072,
+          2.4096,
+          3.012
+        ],
+        "8": [
+          0.7824,
+          1.5648,
+          2.3472,
+          3.1296,
+          3.912
+        ],
+        "10": [
+          1.3224,
+          2.6448,
+          3.9672,
+          5.2896,
+          6.612
+        ],
+        "11": [
+          1.7208,
+          3.4416,
+          5.1624,
+          6.8832,
+          8.604
+        ],
+        "12": [
+          2.2368,
+          4.4736,
+          6.7104,
+          8.9472,
+          11.184
+        ],
+        "13": [
+          2.9088,
+          5.8176,
+          8.7264,
+          11.6352,
+          14.544
+        ]
+      }
+    },
+    "poison": {
+      "weapon": {
+        "0": [
+          0.096,
+          0.192,
+          0.288,
+          0.384,
+          0.48
+        ],
+        "1": [
+          0.1248,
+          0.2496,
+          0.3744,
+          0.4992,
+          0.624
+        ],
+        "2": [
+          0.1632,
+          0.3264,
+          0.4896,
+          0.6528,
+          0.816
+        ],
+        "4": [
+          0.2736,
+          0.5472,
+          0.8208,
+          1.0944,
+          1.368
+        ],
+        "6": [
+          0.4632,
+          0.9264,
+          1.3896,
+          1.8528,
+          2.316
+        ],
+        "7": [
+          0.6024,
+          1.2048,
+          1.8072,
+          2.4096,
+          3.012
+        ],
+        "8": [
+          0.7824,
+          1.5648,
+          2.3472,
+          3.1296,
+          3.912
+        ],
+        "10": [
+          1.3224,
+          2.6448,
+          3.9672,
+          5.2896,
+          6.612
+        ],
+        "11": [
+          1.7208,
+          3.4416,
+          5.1624,
+          6.8832,
+          8.604
+        ],
+        "12": [
+          2.2368,
+          4.4736,
+          6.7104,
+          8.9472,
+          11.184
+        ],
+        "13": [
+          2.9088,
+          5.8176,
+          8.7264,
+          11.6352,
+          14.544
+        ]
+      }
+    },
+    "wither": {
+      "weapon": {
+        "4": [
+          0.2736,
+          0.5472,
+          0.8208,
+          1.0944,
+          1.368
+        ],
+        "6": [
+          0.4632,
+          0.9264,
+          1.3896,
+          1.8528,
+          2.316
+        ],
+        "7": [
+          0.6024,
+          1.2048,
+          1.8072,
+          2.4096,
+          3.012
+        ],
+        "8": [
+          0.7824,
+          1.5648,
+          2.3472,
+          3.1296,
+          3.912
+        ],
+        "10": [
+          1.3224,
+          2.6448,
+          3.9672,
+          5.2896,
+          6.612
+        ],
+        "11": [
+          1.7208,
+          3.4416,
+          5.1624,
+          6.8832,
+          8.604
+        ],
+        "12": [
+          2.2368,
+          4.4736,
+          6.7104,
+          8.9472,
+          11.184
+        ],
+        "13": [
+          2.9088,
+          5.8176,
+          8.7264,
+          11.6352,
+          14.544
+        ]
+      }
+    },
+    "cleave": {
+      "weapon": {
+        "2": [
+          0.204,
+          0.408,
+          0.612,
+          0.816,
+          1.02
+        ],
+        "4": [
+          0.342,
+          0.684,
+          1.026,
+          1.368,
+          1.71
+        ],
+        "6": [
+          0.579,
+          1.158,
+          1.737,
+          2.316,
+          2.895
+        ],
+        "7": [
+          0.753,
+          1.506,
+          2.259,
+          3.012,
+          3.765
+        ],
+        "8": [
+          0.978,
+          1.956,
+          2.934,
+          3.912,
+          4.89
+        ],
+        "10": [
+          1.653,
+          3.306,
+          4.959,
+          6.612,
+          8.265
+        ],
+        "11": [
+          2.151,
+          4.302,
+          6.453,
+          8.604,
+          10.755
+        ],
+        "12": [
+          2.796,
+          5.592,
+          8.388,
+          11.184,
+          13.98
+        ],
+        "13": [
+          3.636,
+          7.272,
+          10.908,
+          14.544,
+          18.18
+        ]
+      }
+    },
+    "bleed": {
+      "weapon": {
+        "2": [
+          0.1904,
+          0.3808,
+          0.5712,
+          0.7616,
+          0.952
+        ],
+        "4": [
+          0.3192,
+          0.6384,
+          0.9576,
+          1.2768,
+          1.596
+        ],
+        "6": [
+          0.5404,
+          1.0808,
+          1.6212,
+          2.1616,
+          2.702
+        ],
+        "7": [
+          0.7028,
+          1.4056,
+          2.1084,
+          2.8112,
+          3.514
+        ],
+        "8": [
+          0.9128,
+          1.8256,
+          2.7384,
+          3.6512,
+          4.564
+        ],
+        "10": [
+          1.5428,
+          3.0856,
+          4.6284,
+          6.1712,
+          7.714
+        ],
+        "11": [
+          2.0076,
+          4.0152,
+          6.0228,
+          8.0304,
+          10.038
+        ],
+        "12": [
+          2.6096,
+          5.2192,
+          7.8288,
+          10.4384,
+          13.048
+        ],
+        "13": [
+          3.3936,
+          6.7872,
+          10.1808,
+          13.5744,
+          16.968
+        ]
+      }
+    },
+    "radiance": {
+      "weapon": {
+        "4": [
+          0.684,
+          1.368,
+          2.052,
+          2.736,
+          3.42
+        ],
+        "6": [
+          1.158,
+          2.316,
+          3.474,
+          4.632,
+          5.79
+        ],
+        "7": [
+          1.506,
+          3.012,
+          4.518,
+          6.024,
+          7.53
+        ],
+        "8": [
+          1.956,
+          3.912,
+          5.868,
+          7.824,
+          9.78
+        ],
+        "10": [
+          3.306,
+          6.612,
+          9.918,
+          13.224,
+          16.53
+        ],
+        "11": [
+          4.302,
+          8.604,
+          12.906,
+          17.208,
+          21.51
+        ],
+        "12": [
+          5.592,
+          11.184,
+          16.776,
+          22.368,
+          27.96
+        ],
+        "13": [
+          7.272,
+          14.544,
+          21.816,
+          29.088,
+          36.36
+        ]
+      }
+    },
+    "umbra": {
+      "weapon": {
+        "4": [
+          0.684,
+          1.368,
+          2.052,
+          2.736,
+          3.42
+        ],
+        "6": [
+          1.158,
+          2.316,
+          3.474,
+          4.632,
+          5.79
+        ],
+        "7": [
+          1.506,
+          3.012,
+          4.518,
+          6.024,
+          7.53
+        ],
+        "8": [
+          1.956,
+          3.912,
+          5.868,
+          7.824,
+          9.78
+        ],
+        "10": [
+          3.306,
+          6.612,
+          9.918,
+          13.224,
+          16.53
+        ],
+        "11": [
+          4.302,
+          8.604,
+          12.906,
+          17.208,
+          21.51
+        ],
+        "12": [
+          5.592,
+          11.184,
+          16.776,
+          22.368,
+          27.96
+        ],
+        "13": [
+          7.272,
+          14.544,
+          21.816,
+          29.088,
+          36.36
+        ]
+      }
+    },
+    "tempest": {
+      "weapon": {
+        "6": [
+          1.158,
+          2.316,
+          3.474,
+          4.632,
+          5.79
+        ],
+        "7": [
+          1.506,
+          3.012,
+          4.518,
+          6.024,
+          7.53
+        ],
+        "8": [
+          1.956,
+          3.912,
+          5.868,
+          7.824,
+          9.78
+        ],
+        "10": [
+          3.306,
+          6.612,
+          9.918,
+          13.224,
+          16.53
+        ],
+        "11": [
+          4.302,
+          8.604,
+          12.906,
+          17.208,
+          21.51
+        ],
+        "12": [
+          5.592,
+          11.184,
+          16.776,
+          22.368,
+          27.96
+        ],
+        "13": [
+          7.272,
+          14.544,
+          21.816,
+          29.088,
+          36.36
+        ]
+      }
+    },
+    "gravity": {
+      "weapon": {
+        "4": [
+          0.3,
+          0.6,
+          0.9,
+          1.2,
+          1.5
+        ],
+        "6": [
+          0.3,
+          0.6,
+          0.9,
+          1.2,
+          1.5
+        ],
+        "7": [
+          0.3,
+          0.6,
+          0.9,
+          1.2,
+          1.5
+        ],
+        "8": [
+          0.3,
+          0.6,
+          0.9,
+          1.2,
+          1.5
+        ],
+        "10": [
+          0.3,
+          0.6,
+          0.9,
+          1.2,
+          1.5
+        ],
+        "11": [
+          0.3,
+          0.6,
+          0.9,
+          1.2,
+          1.5
+        ],
+        "12": [
+          0.3,
+          0.6,
+          0.9,
+          1.2,
+          1.5
+        ],
+        "13": [
+          0.3,
+          0.6,
+          0.9,
+          1.2,
+          1.5
+        ]
+      }
+    },
+    "restoration": {
+      "weapon": {
+        "2": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "4": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "6": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "7": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "8": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "10": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "11": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "12": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "13": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ]
+      },
+      "tool": {
+        "2": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "4": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "6": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "7": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "8": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "10": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "11": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "12": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "13": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ]
+      },
+      "ranged": {
+        "2": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "3": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "4": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "5": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "6": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "7": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "8": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "9": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "10": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "11": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "12": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "13": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ]
+      },
+      "head": {
+        "2": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "3": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "4": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "5": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "6": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "7": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "8": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "9": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "10": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "11": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "12": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "13": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ]
+      },
+      "chest": {
+        "2": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "3": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "4": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "5": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "6": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "7": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "8": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "9": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "10": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "11": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "12": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "13": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ]
+      },
+      "legs": {
+        "2": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "3": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "4": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "5": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "6": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "7": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "8": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "9": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "10": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "11": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "12": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "13": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ]
+      },
+      "feet": {
+        "2": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "3": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "4": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "5": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "6": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "7": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "8": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "9": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "10": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "11": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "12": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ],
+        "13": [
+          0.0004,
+          0.0008,
+          0.0012,
+          0.0016,
+          0.002
+        ]
+      }
+    },
+    "ranged_power": {
+      "ranged": {
+        "0": [
+          0.48,
+          0.96,
+          1.44,
+          1.92,
+          2.4
+        ],
+        "1": [
+          0.624,
+          1.248,
+          1.872,
+          2.496,
+          3.12
+        ],
+        "2": [
+          0.816,
+          1.632,
+          2.448,
+          3.264,
+          4.08
+        ],
+        "3": [
+          1.056,
+          2.112,
+          3.168,
+          4.224,
+          5.28
+        ],
+        "4": [
+          1.368,
+          2.736,
+          4.104,
+          5.472,
+          6.84
+        ],
+        "5": [
+          1.788,
+          3.576,
+          5.364,
+          7.152,
+          8.94
+        ],
+        "6": [
+          2.316,
+          4.632,
+          6.948,
+          9.264,
+          11.58
+        ],
+        "7": [
+          3.012,
+          6.024,
+          9.036,
+          12.048,
+          15.06
+        ],
+        "8": [
+          3.912,
+          7.824,
+          11.736,
+          15.648,
+          19.56
+        ],
+        "9": [
+          5.088,
+          10.176,
+          15.264,
+          20.352,
+          25.44
+        ],
+        "10": [
+          6.612,
+          13.224,
+          19.836,
+          26.448,
+          33.06
+        ],
+        "11": [
+          8.604,
+          17.208,
+          25.812,
+          34.416,
+          43.02
+        ],
+        "12": [
+          11.184,
+          22.368,
+          33.552,
+          44.736,
+          55.92
+        ],
+        "13": [
+          14.544,
+          29.088,
+          43.632,
+          58.176,
+          72.72
+        ]
+      }
+    }
+  },
+  "innate": [
+    {
+      "tier": "bronze",
+      "host": "armor",
+      "enchant": "minecraft:unbreaking",
+      "level": 1
+    },
+    {
+      "tier": "bronze",
+      "host": "tool",
+      "enchant": "minecraft:unbreaking",
+      "level": 1
+    },
+    {
+      "tier": "bronze",
+      "host": "weapon",
+      "enchant": "minecraft:unbreaking",
+      "level": 1
+    },
+    {
+      "tier": "steel",
+      "host": "weapon",
+      "enchant": "minecraft:sharpness",
+      "level": 1
+    },
+    {
+      "tier": "steel",
+      "host": "armor",
+      "enchant": "minecraft:protection",
+      "level": 1
+    },
+    {
+      "tier": "gold",
+      "host": "weapon",
+      "enchant": "minecraft:looting",
+      "level": 1
+    },
+    {
+      "tier": "gold",
+      "host": "tool",
+      "enchant": "minecraft:fortune",
+      "level": 1
+    },
+    {
+      "tier": "cobalt",
+      "host": "tool",
+      "enchant": "minecraft:efficiency",
+      "level": 1
+    },
+    {
+      "tier": "diamond",
+      "host": "armor",
+      "enchant": "minecraft:unbreaking",
+      "level": 2
+    },
+    {
+      "tier": "diamond",
+      "host": "tool",
+      "enchant": "minecraft:unbreaking",
+      "level": 2
+    },
+    {
+      "tier": "diamond",
+      "host": "weapon",
+      "enchant": "minecraft:unbreaking",
+      "level": 2
+    },
+    {
+      "tier": "lonsdaleit",
+      "host": "armor",
+      "enchant": "minecraft:protection",
+      "level": 2
+    },
+    {
+      "tier": "lonsdaleit",
+      "host": "weapon",
+      "enchant": "minecraft:sharpness",
+      "level": 2
+    },
+    {
+      "tier": "lonsdaleit",
+      "host": "armor",
+      "enchant": "minecraft:unbreaking",
+      "level": 2
+    },
+    {
+      "tier": "lonsdaleit",
+      "host": "tool",
+      "enchant": "minecraft:unbreaking",
+      "level": 2
+    },
+    {
+      "tier": "lonsdaleit",
+      "host": "weapon",
+      "enchant": "minecraft:unbreaking",
+      "level": 2
+    },
+    {
+      "tier": "mithril",
+      "host": "armor",
+      "enchant": "minecraft:unbreaking",
+      "level": 3
+    },
+    {
+      "tier": "mithril",
+      "host": "tool",
+      "enchant": "minecraft:unbreaking",
+      "level": 3
+    },
+    {
+      "tier": "mithril",
+      "host": "weapon",
+      "enchant": "minecraft:unbreaking",
+      "level": 3
+    },
+    {
+      "tier": "orichalcum",
+      "host": "armor",
+      "enchant": "theoria:restoration",
+      "level": 2
+    },
+    {
+      "tier": "orichalcum",
+      "host": "tool",
+      "enchant": "theoria:restoration",
+      "level": 2
+    },
+    {
+      "tier": "orichalcum",
+      "host": "weapon",
+      "enchant": "theoria:restoration",
+      "level": 2
+    },
+    {
+      "tier": "orichalcum",
+      "host": "armor",
+      "enchant": "minecraft:fire_protection",
+      "level": 1
+    },
+    {
+      "tier": "orichalcum",
+      "host": "armor",
+      "enchant": "minecraft:blast_protection",
+      "level": 1
+    },
+    {
+      "tier": "orichalcum",
+      "host": "armor",
+      "enchant": "minecraft:projectile_protection",
+      "level": 1
+    },
+    {
+      "tier": "platinum",
+      "host": "armor",
+      "enchant": "minecraft:protection",
+      "level": 3
+    },
+    {
+      "tier": "platinum",
+      "host": "armor",
+      "enchant": "minecraft:fire_protection",
+      "level": 2
+    },
+    {
+      "tier": "platinum",
+      "host": "armor",
+      "enchant": "minecraft:blast_protection",
+      "level": 2
+    },
+    {
+      "tier": "platinum",
+      "host": "armor",
+      "enchant": "minecraft:projectile_protection",
+      "level": 2
+    }
+  ]
+}

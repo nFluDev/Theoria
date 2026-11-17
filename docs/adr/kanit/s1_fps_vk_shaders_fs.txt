@@ -1,0 +1,9 @@
+creating world theoria-spike seed=260309 (creative, cheats)
+backend=Vulkan driver=1.2.350 MoltenVK 1.4.2 device=AMD Radeon RX 580 window=1920x1080 fullscreen=true
+phase 0: renderDistance=12 (settle 300 ticks, sample 20 s)
+RESULT rd=12 samples=21 avg=89.7 min=88 p10=88 median=90 max=91 window=1920x1080 fullscreen=true
+phase 1: renderDistance=16 (settle 300 ticks, sample 20 s)
+RESULT rd=16 samples=21 avg=87.7 min=78 p10=82 median=88 max=95 window=1920x1080 fullscreen=true
+phase 2: renderDistance=24 (settle 300 ticks, sample 20 s)
+RESULT rd=24 samples=21 avg=75.5 min=70 p10=70 median=76 max=81 window=1920x1080 fullscreen=true
+DONE

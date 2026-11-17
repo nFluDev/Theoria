@@ -1,0 +1,10 @@
+{
+  "values": [
+    "#c:raw_materials/cobalt",
+    "#c:raw_materials/mithril",
+    "#c:raw_materials/orichalcum",
+    "#c:raw_materials/platinum",
+    "#c:raw_materials/tin",
+    "#c:raw_materials/titanium"
+  ]
+}

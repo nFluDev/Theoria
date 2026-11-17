@@ -1,0 +1,25 @@
+entity,item,chance,min,max,looting,note
+minecraft:zombie,theoria:catalyst_essence,0.12,1,1,1,Öz: 20 vanilla düşman (Faz 7b geçici listesi buraya taşındı)
+minecraft:skeleton,theoria:catalyst_essence,0.12,1,1,1,Öz: 20 vanilla düşman (Faz 7b geçici listesi buraya taşındı)
+minecraft:creeper,theoria:catalyst_essence,0.12,1,1,1,Öz: 20 vanilla düşman (Faz 7b geçici listesi buraya taşındı)
+minecraft:spider,theoria:catalyst_essence,0.12,1,1,1,Öz: 20 vanilla düşman (Faz 7b geçici listesi buraya taşındı)
+minecraft:cave_spider,theoria:catalyst_essence,0.12,1,1,1,Öz: 20 vanilla düşman (Faz 7b geçici listesi buraya taşındı)
+minecraft:enderman,theoria:catalyst_essence,0.12,1,1,1,Öz: 20 vanilla düşman (Faz 7b geçici listesi buraya taşındı)
+minecraft:witch,theoria:catalyst_essence,0.12,1,1,1,Öz: 20 vanilla düşman (Faz 7b geçici listesi buraya taşındı)
+minecraft:blaze,theoria:catalyst_essence,0.12,1,1,1,Öz: 20 vanilla düşman (Faz 7b geçici listesi buraya taşındı)
+minecraft:ghast,theoria:catalyst_essence,0.12,1,1,1,Öz: 20 vanilla düşman (Faz 7b geçici listesi buraya taşındı)
+minecraft:wither_skeleton,theoria:catalyst_essence,0.12,1,1,1,Öz: 20 vanilla düşman (Faz 7b geçici listesi buraya taşındı)
+minecraft:piglin_brute,theoria:catalyst_essence,0.12,1,1,1,Öz: 20 vanilla düşman (Faz 7b geçici listesi buraya taşındı)
+minecraft:pillager,theoria:catalyst_essence,0.12,1,1,1,Öz: 20 vanilla düşman (Faz 7b geçici listesi buraya taşındı)
+minecraft:vindicator,theoria:catalyst_essence,0.12,1,1,1,Öz: 20 vanilla düşman (Faz 7b geçici listesi buraya taşındı)
+minecraft:evoker,theoria:catalyst_essence,0.12,1,1,1,Öz: 20 vanilla düşman (Faz 7b geçici listesi buraya taşındı)
+minecraft:husk,theoria:catalyst_essence,0.12,1,1,1,Öz: 20 vanilla düşman (Faz 7b geçici listesi buraya taşındı)
+minecraft:stray,theoria:catalyst_essence,0.12,1,1,1,Öz: 20 vanilla düşman (Faz 7b geçici listesi buraya taşındı)
+minecraft:drowned,theoria:catalyst_essence,0.12,1,1,1,Öz: 20 vanilla düşman (Faz 7b geçici listesi buraya taşındı)
+minecraft:guardian,theoria:catalyst_essence,0.12,1,1,1,Öz: 20 vanilla düşman (Faz 7b geçici listesi buraya taşındı)
+minecraft:breeze,theoria:catalyst_essence,0.12,1,1,1,Öz: 20 vanilla düşman (Faz 7b geçici listesi buraya taşındı)
+minecraft:bogged,theoria:catalyst_essence,0.12,1,1,1,Öz: 20 vanilla düşman (Faz 7b geçici listesi buraya taşındı)
+minecraft:wither,theoria:catalyst_core,1.0,1,2,0,Çekirdek: vanilla boss
+minecraft:ender_dragon,theoria:catalyst_core,1.0,1,2,0,Çekirdek: vanilla boss
+minecraft:elder_guardian,theoria:catalyst_core,1.0,1,2,0,Çekirdek: vanilla boss
+minecraft:warden,theoria:catalyst_core,1.0,1,2,0,Çekirdek: vanilla boss
