@@ -178,8 +178,8 @@ Sayılar (`python3 -I tools/balance/tiers.py --tools`; hasar @ hız):
 **Sapma:** docs/05 §7'deki Obsidyen/Antik Enkaz sertliği 9,0 **kaldırıldı** — vanilla 50/30 kalır (kapı idx 8 aynen): 9,0 elmas kazmayla 1 sn'den kısa sürer, portal/yıkım korumasını yok ederdi (`docs/10` Q36).
 **Doğrulama:** `check_gear.py` (kapı çözümlemesi oyundan bağımsız) · GameTest `gear_gate_matrix` (264 çift) · `/theoria test gear` · `gear_mining` (gerçek kırma ilerlemesi: bakır kazma demir cevherini ≈164 tikte, odun kazma 900 tikte — vanilla 30↔100 cezası).
 
-### Elde silah taşıyan mob'lar (Faz 8 girdisi — `docs/10` Q35)
-Mob'un vuruşu = kendi `attack_damage` tabanı + elindeki eşyanın niteliği. Vanilla silahların niteliği D6 ile yükseldi, mob'lar bunu da alıyor:
+### Elde silah taşıyan mob'lar (Faz 8 sonucu — `docs/10` Q35)
+Mob'un vuruşu = kendi `attack_damage` tabanı + elindeki eşyanın niteliği. Vanilla silahların niteliği D6 ile yükseldi; oyuncu eşyası statları korunurken mob'larda `MobHooks` el silahı bonusunu `data/balance/mob_weapons.csv`'deki vanilla toplamına normalize eder:
 | Silah (kim taşır) | vanilla toplam | yeni toplam | oran |
 |---|--:|--:|--:|
 | tahta kılıç | 4 | 4,0 | ×1,0 |
@@ -189,7 +189,7 @@ Mob'un vuruşu = kendi `attack_damage` tabanı + elindeki eşyanın niteliği. V
 | demir balta (vindicator) | 9 | 17,1 | ×1,9 |
 | altın balta (piglin brute) | 7 | 29,0 | ×4,1 |
 | elmas kılıç | 7 | 32,6 | ×4,7 |
-Yani T0 bölgesinde bile bir piglin/brute/vindicator vanilla'dan 2-5 kat vurur. Kademe çarpanı (`mob_dmg_mult`) üstüne biner. Çözüm seçenekleri Faz 8'de: (a) mob'un el eşyası niteliğini vanilla'ya sabitle, (b) kademe çarpanını silah payı çıkarılmış tabana uygula, (c) olduğu gibi bırak ve mob tabanlarını düşür.
+Bu tablo oyuncunun D6 sonrası silah değerlerini gösterir; mob'lar bunları almaz. Q35 kararı: mob'un kendi `attack_damage` tabanı aynen kalır, mob elindeki item bonusu vanilla değerine çekilir ve ardından `mob_dmg_mult` hasar hattında bir kez uygulanır. GameTest bunu zombi tabanı 3 için altın kılıçta 6, demir baltada 11, boş elde 3 olarak ölçer. `sim.py --mobs` tablo başlığındaki gibi yalnızca attribute taban hasarını (elde silah/mermi/patlama hariç) raporlar; özel mob TTK bantları `tools/balance/mobs.py` ile denetlenir. Vanilla Ravager T13'te HTD ≈1,02 ile sınırda kalır; kademe/formül tavanı bu fazda değiştirilmedi.
 
 
 ## 11. Katalizör tabloları (Faz 7a, `tools/balance/catalysts.py`)

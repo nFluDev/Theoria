@@ -239,6 +239,7 @@ final class MobTests {
     private static void weaponEvent(GameTestHelper h) {
         Dev.Report r = new Dev.Report("mobs_weapon_event");
         Zombie z = h.spawnWithNoFreeWill(EntityTypes.ZOMBIE, new BlockPos(2, 1, 2));
+        z.setNoAi(false);
         h.runAfterDelay(1, () -> z.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.GOLDEN_SWORD)));
         h.runAfterDelay(4, () -> {
             double sword = z.getAttributeValue(Attributes.ATTACK_DAMAGE);

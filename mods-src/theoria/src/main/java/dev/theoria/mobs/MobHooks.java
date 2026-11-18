@@ -24,7 +24,7 @@ import net.neoforged.neoforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.neoforged.neoforge.event.entity.living.LivingExperienceDropEvent;
 
 /**
- * The mob rules that apply to vanilla and Theoria mobs alike (docs/06 §12, ADR-007):
+ * Shared vanilla/Theoria mob rules (docs/05 §4, docs/06 §§4–5 and §10; Q35):
  * <ol>
  * <li><b>zone tier</b> — a vanilla monster is born at the tier of its zone ({@link MobZones});</li>
  * <li><b>XP</b> — the kill XP is multiplied by {@code xp_growth^tier} (before Bilgelik, which multiplies the result);</li>
