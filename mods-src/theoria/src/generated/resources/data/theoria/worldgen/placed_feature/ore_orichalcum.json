@@ -2,8 +2,8 @@
   "feature": "theoria:ore_orichalcum",
   "placement": [
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 12
+      "type": "minecraft:count",
+      "count": 4
     },
     {
       "type": "minecraft:in_square"
@@ -13,7 +13,7 @@
       "height": {
         "type": "minecraft:uniform",
         "min_inclusive": {
-          "absolute": 100
+          "absolute": 160
         },
         "max_inclusive": {
           "absolute": 320

@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/magnet_ring",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/lucky_clover",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/sure_foot_anklet",
+          "weight": 3
+        }
+      ],
+      "condition": {
+        "type": "minecraft:random_chance",
+        "chance": 0.06
+      }
+    }
+  ]
+}

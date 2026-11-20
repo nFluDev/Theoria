@@ -34,12 +34,25 @@ public final class Checks {
         return AREAS.keySet();
     }
 
+    /** The check names of an area, in registration order (empty for an unknown area): {@code /theoria test <area> <name>} runs one of them. */
+    public static Set<String> names(String area) {
+        Map<String, Check> checks = AREAS.get(area);
+        return checks == null ? Set.of() : checks.keySet();
+    }
+
     /** Runs one area, or every area when {@code area} is null. Unknown area → empty list. */
     public static List<Result> run(String area, CommandSourceStack source) {
+        return run(area, null, source);
+    }
+
+    /** Like {@link #run(String, CommandSourceStack)} but only the check called {@code name} of the area when {@code name} is not null (Phase 12: {@code /theoria test relic <id>}). */
+    public static List<Result> run(String area, String name, CommandSourceStack source) {
         List<Result> results = new ArrayList<>();
         for (var entry : AREAS.entrySet()) {
             if (area != null && !area.equals(entry.getKey())) continue;
-            entry.getValue().forEach((name, check) -> results.add(runOne(entry.getKey() + "/" + name, check, source)));
+            entry.getValue().forEach((checkName, check) -> {
+                if (name == null || name.equals(checkName)) results.add(runOne(entry.getKey() + "/" + checkName, check, source));
+            });
         }
         return results;
     }

@@ -1,0 +1,22 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 91400101,
+    "separation": 6,
+    "spacing": 16
+  },
+  "structures": [
+    {
+      "structure": "theoria:haven_s",
+      "weight": 5
+    },
+    {
+      "structure": "theoria:haven_m",
+      "weight": 3
+    },
+    {
+      "structure": "theoria:haven_l",
+      "weight": 2
+    }
+  ]
+}

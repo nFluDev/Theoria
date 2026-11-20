@@ -93,6 +93,14 @@ def check_schema(model, errs=None):
             errs.append(f"ores.csv {o['id']}: yükseklik aralığı ters ya da damar < 3 (boyut 2 damarlar hiç blok koymayabiliyor)")
         if int(o["rarity"]) == 0 and int(o["count"]) <= 0:
             errs.append(f"ores.csv {o['id']}: count ya da rarity gerekli")
+        # Hibrit (docs/10 Q63): yabani damar — TÜM Overworld biyomlarında, ev damarından seyrek
+        if not o.get("wild_min_y"):
+            errs.append(f"ores.csv {o['id']}: yabani damar sütunları (wild_*) boş")
+        else:
+            if not -64 <= int(o["wild_min_y"]) < int(o["wild_max_y"]) <= 320 or int(o["wild_size"]) < 3:
+                errs.append(f"ores.csv {o['id']}: yabani yükseklik aralığı ters/dünya dışı ya da damar < 3")
+            if int(o["wild_rarity"]) == 0 and int(o["wild_count"]) <= 0:
+                errs.append(f"ores.csv {o['id']}: yabani damar için wild_count ya da wild_rarity gerekli")
         expected = {f"theoria:{n}" for _, n, _ in G.ore_blocks({"ores": {o["id"]: o}})}
         if not expected <= gate_blocks:
             errs.append(f"ores.csv {o['id']}: {sorted(expected - gate_blocks)} tiers.py ORES kapı tablosunda yok")
@@ -186,11 +194,12 @@ def check_lang(gear, langs, errs):
     if mobs_file.exists():
         species = json.loads(mobs_file.read_text(encoding="utf-8")).get("species", [])
         want |= {f"item.theoria.{sp['id']}_spawn_egg" for sp in species}
-        want |= {"item.theoria.heart_crystal", "itemGroup.theoria.mobs"}
+        want |= {"item.theoria.heart_crystal", "item.theoria.oblivion_orb", "itemGroup.theoria.mobs"}
     for name, table in langs.items():
         for key in sorted(want - set(table)):
             errs.append(f"lang {name}: '{key}' yok")
-        foreign = ("item.theoria.catalyst", "block.theoria.catalyst_forge", "itemGroup.theoria.catalysts")   # generator/catalysts.py'nin anahtarları (Faz 7b)
+        foreign = ("item.theoria.catalyst", "block.theoria.catalyst_forge", "itemGroup.theoria.catalysts",   # generator/catalysts.py'nin anahtarları (Faz 7b)
+                   "item.theoria.relic.", "itemGroup.theoria.relics")                                           # generator/relics.py'nin anahtarları (Faz 12)
         for key in sorted(k for k in table if k.startswith(("item.theoria.", "block.theoria.", "itemGroup.theoria.")) and k not in want and not k.startswith(foreign)):
             errs.append(f"lang {name}: artık anahtar '{key}'")
 

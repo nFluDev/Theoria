@@ -17,7 +17,7 @@ Ayrıntılı model gerekçesi: `docs/08`. Başlatma prompt'ları: `prompts/faz-N
 | 9 | Dünya: biyom, yapı, Haven | Opus 5.5 · high (worldgen tasarımı) → Sonnet 5.5 · xHigh | 5-7 | |
 | 10 | Durum ekranı + seviye | Sonnet 5.5 · xHigh | 3 | |
 | 11 | Curios Max + Kozmetik | Opus 5.5 · xHigh (render kancası) → Sonnet 5.5 · xHigh | 3-4 | **M3** |
-| 12 | Relics (v1.1) | Sonnet 5.5 · high | 2-3 | |
+| 12 | Relics (v1.1) | Sonnet 5.5 · high | 2-3 | ✅ 2026-11-20 |
 | 13 | Entegrasyon, denge, yayın | Opus 5.5 · high (inceleme) + Sonnet 5.5 · high (düzeltme) | 3-4 | **v1.0** |
 
 Toplam: ≈ 40-55 oturum. Hız kapsamı kesmekle ayarlanır: M2 (Faz 8) zaten oynanabilir ve eğlenceli çekirdek.
@@ -87,15 +87,17 @@ Toplam: ≈ 40-55 oturum. Hız kapsamı kesmekle ayarlanır: M2 (Faz 8) zaten oy
 **DoD:** L2'ye 55 ham XP'de çıkılıyor; her stat doğrulanmış etkide; harcanan XP seviye düşürmüyor.
 
 ## Faz 11 — Curios Max + Kozmetik (M3)
-**11a (Opus 5.5 · xHigh):** zırh render kancası (S3 sonucuna göre), gizleme stratejisi, Curios Max ekranı yaklaşımı.
-**11b (Sonnet 5.5 · xHigh):** `CuriosMaxScreen`, slot tanımları, kozmetik slotlar + sekme, ayar ekranı (kozmetik/zırh göster-gizle), çok oyunculu görünürlük.
+**11a (Opus 5.5 · xHigh) ✅ 2026-11-20 → ADR-007:** zırh render kancası (S3 sonucuna göre), gizleme stratejisi, Curios Max ekranı yaklaşımı. (Not: bu oturumda 11a Sonnet 5.5 ile yapıldı; kararlar kaynak okumasına ve gerçek çalıştırmalara dayanıyor, ADR-007'nin K1/K2 gerekçeleri Opus gözden geçirmesine açık.)
+**11b ✅ 2026-11-20 (Sonnet 5.5 · xHigh):** `CuriosMaxScreen`, slot tanımları, kozmetik slotlar + sekme, ayar ekranı (kozmetik/zırh göster-gizle), çok oyunculu görünürlük.
 **DoD:** kozmetik takıp gerçek zırhın stat'ını alırken görünümün değişmesi; ayardan her ikisini kapatınca vanilla; Curios Max'te ≥ 30 slot.
 
 ## Faz 12 — Relics (v1.1)
 ~25 relic (veri+olay), boss/zindan loot'una bağlama, Curios slotları, JEI tooltip. DoD: her relic için `/theoria test relic <id>`.
+**✅ uygulandı 2026-11-20 (Sonnet 5.5 · high):** 25 relic (`data/relics.csv` → `generator/relics.py`), 7 kaynak (3 boss + 4 kutu), `/theoria test relic [id]` (27 denetim), GameTest `relic_*` (32), `tools/check_relics.py`. Görünüş/his kullanıcı onayında. `docs/04 §9`, `docs/10` B14, `docs/journal/f12.md`.
 
 ## Faz 13 — Entegrasyon, denge, yayın (v1.0)
 Uzun oyun testi (kullanıcı), `sim.py` ile yeniden denge, performans, çökme avı, JEI/Jade metinleri, ekran-dışı kontroller, README ve sürüm, packwiz yayınlama. **Opus 5.5 · high kod incelemesi** (code-review skill) → Sonnet düzeltir.
+**✅ 13a uygulandı 2026-11-20 (Sonnet 5.5 · high):** code-review (high) 7 bulgu → hepsi düzeltildi (XP eğrisi L200 uçurumu dahil), `sim.py` bantları yeşil, release jar'ında test kodu yok, sürüm adayı **1.0.0-rc.1**, `docs/13-yayin.md`. **13b (kullanıcı kapısı):** 20+ saat oyun testi, görünüş onayları, `git tag v1.0.0`.
 
 ---
 

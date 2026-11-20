@@ -69,7 +69,7 @@ final class GearTests {
         return Path.of(System.getProperty("theoria.dev.data", "data/balance")).toAbsolutePath().getParent();
     }
 
-    private static List<Map<String, String>> csv(String relative) {
+    static List<Map<String, String>> csv(String relative) {
         try {
             List<String> lines = Files.readAllLines(dataDir().resolve(relative));
             String[] header = lines.get(0).split(",", -1);
@@ -424,11 +424,28 @@ final class GearTests {
             var placedKey = ResourceKey.create(Registries.PLACED_FEATURE, Theoria.id("ore_" + id));
             h.assertTrue(features.get(featureKey).isPresent(), "feature theoria:ore_" + id + " missing");
             h.assertTrue(placed.get(placedKey).isPresent(), "placed feature theoria:ore_" + id + " missing");
-            boolean everywhere = true;
+            // Phase 9b: the vein goes into exactly the biomes of #theoria:has_ore/<ore> (data/ores.csv `biomes`), no other biome
+            var tag = net.minecraft.tags.TagKey.create(Registries.BIOME, Theoria.id("has_ore/" + id));
+            int carriers = 0;
             for (var biome : biomes.listElements().toList()) {
-                if (biome.is(net.minecraft.tags.BiomeTags.IS_OVERWORLD) && biome.value().getGenerationSettings().features().stream().noneMatch(set -> set.stream().anyMatch(p -> p.is(placedKey)))) everywhere = false;
+                boolean carries = biome.value().getGenerationSettings().features().stream().anyMatch(set -> set.stream().anyMatch(p -> p.is(placedKey)));
+                h.assertTrue(carries == biome.is(tag), "theoria:ore_" + id + " in " + biome.getRegisteredName() + ": carries=" + carries + " but has_ore tag says " + biome.is(tag));
+                if (carries) carriers++;
             }
-            h.assertTrue(everywhere, "every overworld biome should carry theoria:ore_" + id + " (biome modifier)");
+            h.assertTrue(carriers > 0, "no biome carries theoria:ore_" + id);
+            // Hybrid (docs/10 Q63): the wild vein exists and every Overworld biome carries it
+            if (!ore.getOrDefault("wild_min_y", "").isEmpty()) {
+                var wildFeature = ResourceKey.create(Registries.FEATURE, Theoria.id("ore_" + id + "_wild"));
+                var wildPlaced = ResourceKey.create(Registries.PLACED_FEATURE, Theoria.id("ore_" + id + "_wild"));
+                h.assertTrue(features.get(wildFeature).isPresent() && placed.get(wildPlaced).isPresent(), "wild feature theoria:ore_" + id + "_wild missing");
+                int overworld = 0, wildCarriers = 0;
+                for (var biome : biomes.listElements().toList()) {
+                    if (!biome.is(net.minecraft.tags.BiomeTags.IS_OVERWORLD)) continue;
+                    overworld++;
+                    if (biome.value().getGenerationSettings().features().stream().anyMatch(set -> set.stream().anyMatch(p -> p.is(wildPlaced)))) wildCarriers++;
+                }
+                h.assertTrue(overworld > 0 && wildCarriers == overworld, "theoria:ore_" + id + "_wild in " + wildCarriers + " of " + overworld + " Overworld biomes");
+            }
             // place the real feature into a stone/deepslate block and count the ore blocks it makes
             Block host = ore.get("variants").contains("stone") ? Blocks.STONE : Blocks.DEEPSLATE;
             for (BlockPos p : BlockPos.betweenClosed(base.offset(-8, -8, -8), base.offset(8, 8, 8))) level.setBlock(p, host.defaultBlockState(), 2);
@@ -441,7 +458,7 @@ final class GearTests {
                 }
             }
             for (BlockPos p : BlockPos.betweenClosed(base.offset(-8, -8, -8), base.offset(8, 8, 8))) level.setBlock(p, Blocks.AIR.defaultBlockState(), 2);
-            r.line("%-11s feature ok, placed in every overworld biome, %d ore blocks from a test placement (size %s, y %s…%s)", id, made, ore.get("size"), ore.get("min_y"), ore.get("max_y"));
+            r.line("%-11s feature ok, carried by %d biomes (has_ore tag), %d ore blocks from a test placement (size %s, y %s…%s)", id, carriers, made, ore.get("size"), ore.get("min_y"), ore.get("max_y"));
             h.assertTrue(made > 0, "theoria:ore_" + id + " placed no ore blocks");
         }
         r.write();

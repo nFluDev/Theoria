@@ -1,0 +1,21 @@
+id,en,tr,tier_lo,tier_hi,kind,profile,temperature,downfall,precip,sky,fog,water,grass,foliage,joins,note
+tin_marsh,Tin Marsh,Kalay Bataklığı,0,3,surface,marsh,0.8,0.9,rain,#78a7ff,,#4f7a6a,#5d7a3a,#6a7039,c:is_swamp,Kalay'ın doğduğu bataklık; mob ailesi swamp
+steel_steppe,Steel Steppe,Çelik Bozkırı,0,3,surface,steppe,0.9,0.2,rain,#8fb4ff,,#3f76e4,#9aa56a,#8a9a5a,c:is_plains,Kuru otlak; çelik kurtları
+copperwood,Copperwood,Bakır Korusu,0,3,surface,grove,0.7,0.6,rain,#7fabff,,#3f76e4,#5f9a3a,#a8782a,minecraft:is_forest,Bakır tonlu yapraklar
+iron_uplands,Iron Uplands,Demir Yaylası,0,3,surface,uplands,0.4,0.4,rain,#85a8ff,,#3f76e4,#7a8a6a,#6a7a5a,minecraft:is_hill|c:is_hill,Alçak tepelik yayla
+luminous_valley,Luminous Valley,Işıldayan Vadi,0,3,surface,valley,0.7,0.7,rain,#a0c0ff,#d8e8ff,#3fb4d8,#78c878,#6ab45a,,Haven biyomu: sığınaklar burada sık
+cobalt_canyon,Cobalt Canyon,Kobalt Kanyonu,3,6,surface,canyon,1.6,0.1,none,#6eb1ff,,#3f76e4,#90814d,#9e814d,c:is_badlands,Kırmızı-mavi kaya yarıkları
+ash_desert,Ash Desert,Kül Çölü,3,6,surface,desert,2.0,0.0,none,#9aa0b0,#8a8a90,#5a6a7a,#b0aa9a,#b0aa9a,c:is_desert|c:is_wasteland,Kül ve duman
+ice_graveyard,Ice Graveyard,Buz Mezarlığı,3,6,surface,frozen,-0.5,0.4,snow,#7fa1ff,#c8dcff,#3d57d6,#80b497,#60a17b,c:is_snowy,Donmuş kalıntılar
+ember_rift,Ember Rift,Alev Çatlağı,3,6,surface,rift,2.0,0.0,none,#a05848,#6a3028,#4a5a6a,#6a5a3a,#6a5a3a,c:is_badlands|c:is_wasteland,Sıcak kayalık yarık
+storm_coast,Storm Coast,Fırtına Kıyısı,3,6,surface,coast,0.5,0.8,rain,#6a8ac0,#8a9ab8,#3a6ab0,#6a9a6a,#5a8a5a,,Fırtınalı kıyı şeridi
+crystal_caves,Crystal Caves,Kristal Mağaraları,6,10,cave,crystal,0.5,0.5,none,#78a7ff,,#3f76e4,#79c05a,#59ae30,,Yeraltı: kristal ve sarkıt
+shadow_forest,Shadow Forest,Gölge Ormanı,6,10,surface,shadow,0.7,0.8,rain,#4a5a80,#2a3048,#3a4a68,#3a5a3a,#2a4a2a,c:is_dark_forest|c:is_spooky|minecraft:is_forest,Karanlık orman
+titan_peaks,Titan Peaks,Titan Zirveleri,6,10,surface,peaks,-0.2,0.4,snow,#7fa1ff,#c0d4ff,#3d57d6,#80b497,#60a17b,minecraft:is_mountain,Çok yüksek dağlar
+ancient_ruins,Ancient Ruins,Kadim Harabeler,6,10,surface,ruins,0.6,0.5,rain,#7fabff,,#3f76e4,#6a8a4a,#5a7a3a,c:is_spooky,Eski kalıntılar ve taşlı otlak
+rune_vale,Rune Vale,Rünlü Vadi,6,10,surface,vale,0.5,0.8,rain,#a8b8ff,#e0d8ff,#8fa0ff,#9ab87a,#e8a0c8,,Rün taşlı çiçekli vadi
+meteor_crater,Meteor Crater,Meteor Krateri,9,13,surface,crater,0.3,0.0,none,#7a7a88,#5a5a68,#4a5a6a,#6a6a5a,#6a6a5a,c:is_wasteland,Lonsdaleit düşmüş krater
+storm_islands,Storm Islands,Fırtına Adaları,9,13,ocean,islands,0.5,0.9,rain,#5a6a90,#6a7a98,#2a5a98,#5a9a6a,#4a8a5a,,Okyanusta fırtınalı adalar
+mithril_rift,Mithril Rift,Mitril Yarığı,9,13,cave,rift_cave,0.4,0.5,none,#78a7ff,,#3f76e4,#79c05a,#59ae30,,Derin yarık: mitril damarları
+orichalcum_sky,Orichalcum Sky,Orikalkum Göğü,9,13,surface,sky,0.0,0.3,snow,#c0d8ff,#e8f0ff,#a0c0ff,#80b497,#60a17b,,Yüksek yayla ve gökyüzü adaları
+platinum_depths,Platinum Depths,Platin Derinlikleri,9,13,bottom,depths,0.5,0.5,none,#78a7ff,,#3f76e4,#79c05a,#59ae30,,En derin katman: platin

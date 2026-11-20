@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "theoria:ancient_ruins",
+    "theoria:rune_vale",
+    "theoria:meteor_crater",
+    "theoria:shadow_forest"
+  ]
+}

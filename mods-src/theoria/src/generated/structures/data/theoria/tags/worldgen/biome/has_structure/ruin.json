@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "theoria:steel_steppe",
+    "theoria:iron_uplands",
+    "theoria:ancient_ruins",
+    "theoria:rune_vale",
+    "theoria:shadow_forest",
+    "#minecraft:is_forest",
+    "#c:is_plains",
+    "#c:is_desert",
+    "#c:is_badlands"
+  ]
+}

@@ -59,7 +59,7 @@ Ref oyuncu kademe `idx`'te şunlara sahiptir (`tiers.csv`: `exphp`, `ref_bonus`,
 - **Büyü koruması** `EPF = 2·(idx−3)`, en çok 16 (T11+ = Koruma IV × 4).
 - min ↔ max arası (bonus %0 – %100, can ×0,5 – ×1,5) tasarlanmış yatırım aralığıdır; HTD 2 – 30 bandı bunun içindir.
 
-⚠ **Faz 10 girdisi** (`sim.py --budget`): `docs/04 §5`'teki taslak puan değerleri (Vitalite +4 can, Dayanıklılık +2 zırh, Güç +0,5 hasar; 4 puan/seviye) bu bütçeye göre çok cömert — T13 bütçesinin tamamı yalnızca seviye puanıyla **L40**'ta dolar; L50'de bütün puanlar Vitalite'ye giderse ref HTD 6,7 → 31. Puan değerleri/yumuşak tavanlar bu bütçeye göre ayarlanmalı (D9); erken oyunda tek puanın bir takım kadar zırh vermesi de (T1 takımı 7 zırh ↔ 1 puan +2) aynı sorunun parçası.
+✅ **Faz 10 (çözüldü, Q67):** `sim.py --budget` taslak puan değerlerinin (Vitalite +4 can, Dayanıklılık +2 zırh, Güç +0,5 hasar) bütçeyi L40'ta doldurduğunu göstermişti. Yumuşak tavanlı yeni değerler `tools/balance/stats.py`'de (`docs/04 §5`): referans oyuncu (puanların %30'u Vitalite, %25 Dayanıklılık, %25 Güç, kalan beşte %4'er) referans tempoda (aşağıda §5) T3..T13'te **can payını (%40), düz zırh ve hasar bonusunun yarısını ±%25 (+ küçük mutlak pay) içinde** tutturur (`stats.py` denetimi); T13'te: can +74,9 / hedef +77,6, zırh +51,1 / +44,2, hasar +16,3 / +15,2. Tüm seviye tavanları dolu (L9999) T13 ref oyuncu ölüm vuruşu 9,6 (üst sınır 30). Bütçenin kalanı Kataliz (Faz 7), Kalp Kristali (Faz 8).
 HUD: renk mutlak HP'dir (kat = 20 HP, 9 renkli palet, son renk beyaz kalıcı); 214 can = 180'in ötesi → tam beyaz (`docs/04 §1`, D16).
 
 ## 4. Mob ölçekleme kuralı
@@ -77,25 +77,38 @@ Faz 8 için (`sim.py --mobs`):
 - Zorluk: vanilla Zor ×1,5 hasar aynen kalır (ref HTD 3,7 – 4,7); paketin referans zorluğu Normal.
 
 ## 5. XP eğrisi (Durum ekranı) — tavan 9999
-`R(L)` = L'ye ulaşmak için gereken **ömür boyu ham XP** (`long`). L ≤ 200: `55·(L−1)^2.2`. L > 200: seviye başı maliyet L ile doğrusal artar (`R(L)=R(200)+c200/400·(L²−200²)`; c200 = L199→200 maliyeti ≈ 70K). Üretim: `python3 -I tools/balance/tiers.py --xp`.
-| L | gereken ham XP | toplam beceri puanı (4/seviye) |
-|--:|--:|--:|
-| 2 | 55 | 4 |
-| 3 | 253 | 8 |
-| 5 | 1.161 | 16 |
-| 10 | 6.913 | 36 |
-| 20 | 35.778 | 76 |
-| 30 | 90.706 | 116 |
-| 50 | 287.603 | 196 |
-| 100 | 1.351.326 | 396 |
-| 200 | 6.278.262 | 796 |
-| 300 | 14.980.420 | 1.196 |
-| 500 | 42.827.327 | 1.996 |
-| 1000 | 173.359.699 | 3.996 |
-| 2500 | 1.087.086.306 | 9.996 |
-| 5000 | 4.350.395.618 | 19.996 |
-| 9999 | 17.400.152.176 | 39.992 |
-Vanilla 5. XP seviyesi = 5²+6·5 = **55** ham XP (✓ L2 eşiği). **Bilgelik büyüsü** (+%1600 → 17×) ve mob XP'sinin kademeyle ölçeklenmesi bu sayıları erişilebilir kılar: ör. T13 bir mob'dan 50K XP × 17 = 850K → L9999 ≈ 20K öldürme. Hedef: L50 ≈ 30-40 saat, L200 ≈ 150 saat, L9999 uzun vadeli "sonsuz" hedef ⚠ Faz 10 sim ile ayarlanır. `long` şart (17,4 milyar > int).
+`R(L)` = L'ye ulaşmak için gereken **ömür boyu ham XP** (`long`). L ≤ 200: **parçalı kuvvet yasası** (2026-11-20, kullanıcı: "L50 ~38 saat çok hızlı"): bağlı noktalar `tiers.py XP_ANCHORS` = (L2, 55) · (L25, 19.700) · (L50, 182.000) · (L75, 1,41 M) · (L100, 9,49 M) · (L200, 222 M); iki nokta arası `Xa·((L−1)/(La−1))^e`. L > 200: seviye başı maliyet L ile doğrusal artar (`R(L)=R(200)+c200/400·(L²−200²)`; c200 = L199→200 maliyeti ≈ 5 M). **Faz 13 düzeltmesi (code-review):** taban yanlışlıkla `R(199)` idi → L200→L201 12 bin XP'ye düşüyordu; taban `R(200)` (L>200 her seviye ≈ 5 M daha pahalı). Bağlı noktalarda üs değiştiği için L99→L100 (610 k) ile L100→L101 (441 k) arasında %28'lik hafif bir düşüş kalır (kullanıcının L100/L200 noktaları); `stats.py` uçurum denetimi bir önceki adımın %60'ında durur. Üretim: `python3 -I tools/balance/tiers.py --xp`.
+| L | gereken ham XP | toplam beceri puanı (4/seviye) | referans saat (model) |
+|--:|--:|--:|--:|
+| 2 | 55 | 4 | — |
+| 3 | 198 | 8 | — |
+| 5 | 715 | 16 | 1 sa |
+| 10 | 3.208 | 36 | 4 sa |
+| 20 | 12.785 | 76 | 10 sa |
+| 25 | 19.700 | 96 | 12 sa |
+| 30 | 35.520 | 116 | 16 sa |
+| 50 | 182.000 | 196 | 32 sa |
+| 75 | 1.410.000 | 296 | 68 sa |
+| 100 | 9.490.000 | 396 | 130 sa |
+| 150 | 60.109.524 | 596 | 223 sa |
+| 200 | 222.000.000 | 796 | 401 sa |
+| 300 | 846.093.353 | 1.196 | 1087 sa |
+| 500 | 2.843.192.082 | 1.996 | 3283 sa |
+| 1000 | 12.204.592.374 | 3.996 | 13575 sa |
+| 2500 | 77.734.394.417 | 9.996 | 85620 sa |
+| 5000 | 311.769.401.714 | 19.996 | ulaşılmaz |
+| 9999 | 1.247.659.806.042 | 39.992 | ulaşılmaz |
+Vanilla 5. XP seviyesi = 5²+6·5 = **55** ham XP (✓ L2 eşiği). **Mob XP'si** `taban × 1,75^kademe` (sınıf tabanları weak 3 · normal 5 · strong 10 · elite 20 · boss 40): T0 zombi 5 XP, T4 47, T8 440, **T13 7.219** (Faz 10'da 2,0'dan 1,75'e indirildi: 2,0 ile referans oyuncu L200'e ≈ 90 saatte varıyordu; seviye bütçe sayılarından hızlı büyür).
+
+**Referans tempo (`stats.py`, varsayım — Q66/Q85):** saatte 90 öldürme × 1,4 sınıf karışımı, kademe p'de `3 + p²/4` saat (toplam 245 sa; sonrası T13 hızında devam), Bilgelik yok sayılır (alt sınır). **Hedef (kullanıcı, 2026-11-20): L25 ≈ 12 sa · L25→L50 ≈ 20 sa (L50 ≈ 32) · L50→L75 ≈ 36 sa (L75 ≈ 68), sonrası artan zorlukta** → model: L10 ≈ 4 · L25 ≈ 12 · L50 ≈ 32 · L75 ≈ 68 · L100 ≈ 130 · L200 ≈ 400 sa. Mob farmı bunu hızlandırır; çözülmüyor, çözülmesi de gerekmiyor (kullanıcı kararı). **Bütçe:** seviye kasıtlı yavaşlatıldığı için referans oyuncu geç kademelerde seviye payını (can/zırh/hasar) **doldurmaz** (T13 can payı ≈ +33 / hedef +78); `stats.py` aşmayı en çok %25, altta kalmayı en çok %65 tolere eder.
+| Kademe | Saat | Öldürme XP (normal) | Seviye (bitişte) | Can payı (model/hedef) | Zırh payı | Hasar payı |
+|---|---|--:|--:|--:|--:|--:|
+| T3 bronz | 10–15 | 27 | 18 | 4,8 / 6,0 | 2,5 / 2,1 | 0,60 / 0,83 |
+| T5 çelik | 22–31 | 82 | 38 | 10,0 / 12,0 | 5,4 / 7,5 | 1,29 / 1,86 |
+| T8 elmas | 58–77 | 440 | 116 | 26,4 / 26,4 | 15,0 / 18,4 | 3,80 / 4,08 |
+| T10 lonsdaleit | 100–128 | 1.347 | 234 | 43,6 / 41,6 | 26,4 / 25,8 | 7,13 / 6,89 |
+| T13 platin | 200–245 | 7.219 | 680 | 74,9 / 77,6 | 51,1 / 44,2 | 16,33 / 15,15 |
+(Tam tablo: `python3 -I tools/balance/stats.py --report`, `data/balance/pacing.csv`.)
 Beceri puanı enflasyonu (39.992 puan) için her stat'ın yumuşak tavanı + azalan getirisi (Q3); stat bonuslarının kademe başına bütçesi §3.
 
 ## 6. Hasar azaltma (kilitli) — uygulama ADR-003

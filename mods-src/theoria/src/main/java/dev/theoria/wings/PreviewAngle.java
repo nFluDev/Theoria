@@ -20,6 +20,15 @@ public final class PreviewAngle {
     private float sinceInteraction = IDLE_DELAY;
     private boolean dragging;
 
+    public PreviewAngle() {
+        this(0f);
+    }
+
+    /** {@code startYaw} 180° = the player faces the camera (the Status screen); the wings screen starts at the back (0°). */
+    public PreviewAngle(float startYaw) {
+        this.yaw = wrap(startYaw);
+    }
+
     public float yaw() {
         return yaw;
     }

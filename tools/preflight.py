@@ -43,6 +43,8 @@ py = [sys.executable, "-I"]
 step("veri denetimi (check_data.py)", py + ["tools/check_data.py"], expect=r"(?m)^OK$")
 step("HUD denetimi (check_hud.py)", py + ["tools/check_hud.py"], expect=r"(?m)^OK$")
 step("kanat denetimi (check_wings.py)", py + ["tools/check_wings.py"], expect=r"(?m)^OK$")
+step("Curios Max + kozmetik denetimi (check_curios.py)", py + ["tools/check_curios.py"], expect=r"(?m)^OK$")   # Faz 11
+step("Relic denetimi (check_relics.py)", py + ["tools/check_relics.py"], expect=r"(?m)^OK$")   # Faz 12
 step("paket denetimi (check_pack.py)", py + ["tools/check_pack.py"], expect=r"(?m)^OK$")
 step("vanilla mob verisi (check_vanilla_mobs.py)", py + ["tools/check_vanilla_mobs.py", str(ROOT / "data/vanilla_mobs.csv")], expect=r"(?m)^OK")
 step("derleme (gradlew build)", ["./gradlew", "build", "--console=plain", "-q"], cwd=MOD, log=MOD / "build/preflight-build.log")
@@ -84,6 +86,24 @@ if "--client" in args:
          log=MOD / "build/preflight-client-wings.log")
     text = wings_report.read_text(encoding="utf-8") if wings_report.exists() else ""
     results.append(("kanat senaryo raporu (client_wings.txt)", "RESULT PASS" in text,
+                    next((l for l in text.splitlines() if l.startswith("RESULT")), "rapor yazılmadı"), 0.0))
+
+    stats_report = OUT / "client_stats.txt"
+    if stats_report.exists():
+        stats_report.unlink()
+    step("istemci durum ekranı senaryosu (gradlew runDevClient -PdevClient=stats)", ["./gradlew", "runDevClient", "-PdevClient=stats", "--console=plain"], cwd=MOD,
+         log=MOD / "build/preflight-client-stats.log")
+    text = stats_report.read_text(encoding="utf-8") if stats_report.exists() else ""
+    results.append(("durum ekranı senaryo raporu (client_stats.txt)", "RESULT PASS" in text,
+                    next((l for l in text.splitlines() if l.startswith("RESULT")), "rapor yazılmadı"), 0.0))
+
+    curios_report = OUT / "client_curios.txt"
+    if curios_report.exists():
+        curios_report.unlink()
+    step("istemci Curios Max senaryosu (gradlew runDevClient -PdevClient=curios)", ["./gradlew", "runDevClient", "-PdevClient=curios", "--console=plain"], cwd=MOD,
+         log=MOD / "build/preflight-client-curios.log")
+    text = curios_report.read_text(encoding="utf-8") if curios_report.exists() else ""
+    results.append(("Curios Max senaryo raporu (client_curios.txt)", "RESULT PASS" in text,
                     next((l for l in text.splitlines() if l.startswith("RESULT")), "rapor yazılmadı"), 0.0))
 
 print()

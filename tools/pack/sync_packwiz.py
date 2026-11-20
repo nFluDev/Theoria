@@ -116,8 +116,10 @@ def main():
         for slug, pin in entries.items():
             wanted.append((section, slug, pin))
     changed = 0
+    resolved = []
     for section, slug, pin in wanted:
         ver, exact = resolve(slug, pin, meta["minecraft"])
+        resolved.append((section, slug, ver))
         time.sleep(0.12)
         cur = have.get(ver["project_id"])
         tag = "" if exact else f"  (kısmi eşleşme: '{pin}' → '{ver['version_number']}')"
@@ -134,6 +136,20 @@ def main():
             have2 = existing_metafiles()
             mark_optional(have2[ver["project_id"]][0], OPTIONAL[section])
     if not dry:
+        # packwiz, bir modu eklerken ZORUNLU BAĞIMLILIĞINI en yeni sürüme çekebilir (2026-11-19: sodium-extra eklenirken sabitlenen Sodium beta.1 → beta.5 oldu).
+        # Bu yüzden eklemelerden sonra her girişin sürüm kimliği modlist'in çözdüğüyle karşılaştırılır; kayanlar yeniden sabitlenir.
+        have3 = existing_metafiles()
+        for section, slug, ver in resolved:
+            cur = have3.get(ver["project_id"])
+            if cur and cur[1] == ver["id"]:
+                continue
+            print(f"! {slug:28} packwiz bağımlılık çözümü sürümü kaydırdı ({cur[1] if cur else 'yok'}) → {ver['id']} yeniden sabitleniyor")
+            if cur:
+                cur[0].unlink()
+            pw("modrinth", "add", "--project-id", ver["project_id"], "--version-id", ver["id"], "-y")
+            changed += 1
+            if section in OPTIONAL:
+                mark_optional(existing_metafiles()[ver["project_id"]][0], OPTIONAL[section])
         pw("refresh")
         ensure_preserve()
         pw("refresh")   # pack.toml'daki index özetini yeniden hesaplar; preserve bayrakları korunur

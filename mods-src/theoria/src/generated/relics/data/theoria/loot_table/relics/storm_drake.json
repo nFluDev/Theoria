@@ -1,0 +1,45 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/ember_ring",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/hunter_ring",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/vampire_fang",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/storm_talisman",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/eternal_apple",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/wind_cloak",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/dragon_scale",
+          "weight": 6
+        }
+      ]
+    }
+  ]
+}

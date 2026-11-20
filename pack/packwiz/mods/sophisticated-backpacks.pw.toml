@@ -1,18 +1,13 @@
 name = "Sophisticated Backpacks"
-filename = "sophisticatedbackpacks-26.3-3.26.19.2246.jar"
+filename = "sophisticatedbackpacks-26.3-3.26.22.2260.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/TyCTlI4b/versions/e9FwsZEX/sophisticatedbackpacks-26.3-3.26.19.2246.jar"
+url = "https://cdn.modrinth.com/data/TyCTlI4b/versions/xpOKMUbN/sophisticatedbackpacks-26.3-3.26.22.2260.jar"
 hash-format = "sha512"
-hash = "2dcf1b5e8fe261eab8f11e5dd8351438c6d9dc278d6e8bfac12cbe219f922f3ae018333f718ac45890813af9cec4dcadbbfa3346d13c38aa90d14184e00d46ff"
+hash = "04789e58ef30c3b022db243fbd44593f64652721f131f03fb532dc4d1cb3690406c1afd789471990631156f8b53579c6b83bbc24d66f22a433bd501af02dad9e"
 
 [update]
 [update.modrinth]
 mod-id = "TyCTlI4b"
-version = "e9FwsZEX"
-
-[option]
-optional = true
-default = false
-description = "Opsiyonel; Vulkan altında denenmeden varsayılan açık değil (docs/journal/f05.md)."
+version = "xpOKMUbN"

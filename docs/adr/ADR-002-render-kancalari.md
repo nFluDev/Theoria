@@ -67,7 +67,7 @@ Kod: spike istemci senaryosu Faz 1'de koddan çıkarıldı; kaynağı referans o
 - **Faz 4:** ✅ döndürme `GuiGraphicsExtractor#entity` ile; ESC butonu; sunucu-kaynaklı komut + id doğrulama; `take`; öl → yeniden doğ; `/theoria test wings` — aşağıdaki "Faz 4 sonucu". **Açık:** kanatların 3B önizlemede ve oyunda *görünüşü* kullanıcı onayı (iki arka uçta); Vitrail açıkken Kanatlar ekranı (Faz 5 / M1).
 - **Faz 5 (M1):** Vulkan + Vitrail açıkken HUD ve Kanatlar ekranı kullanıcı onayı (DoD'de var).
 - **Faz 10:** Durum ekranı Faz 4'ün önizleme bileşenini yeniden kullanır.
-- **Faz 11a:** dört slot + uzak oyuncular; elytra/pelerin kuralı; başka modların zırh katmanları.
+- **Faz 11a:** ✅ dört slot + uzak oyuncular + elytra/pelerin kuralı uygulandı ve doğrulandı (aşağıdaki "Faz 11 sonucu", karar kaydı **ADR-007**). **Açık:** başka modların kendi katmanında çizdiği zırhlar (`docs/10` Q82, Faz 13).
 
 ## Faz 3 sonucu (2026-11-11, HUD)
 Kanıt etiketleri yukarıdaki gibi. Ayrıntı: `docs/journal/f03.md`, tasarım: `docs/04 §1`.
@@ -91,6 +91,14 @@ Kanıt etiketleri yukarıdaki gibi. Ayrıntı: `docs/journal/f04.md`, tasarım: 
 7. **Ölüm ve kalıcılık** [log, başsız GameTest + gözetimsiz istemci]: FW kanadı ölümde siler; `theoria:wings` (`copyOnDeath`) kalır; `PlayerRespawnEvent` işleyicisi tam bir kez yeniden takar (sayaçla kanıtlı), istemcide senkron attachment değişmeden döner. End-tipi yeniden doğuş (tüm veri korunur) yeniden takmaz, FW durumu kalır. Kanadı çıkarıp ölen oyuncuda kanat belirmez. Kayıttan kalkmış kanat kimliği ölümde çökmez. `PlayerList#respawn` sahte bağlantıyla da `PlayerRespawnEvent`'i tetikliyor (sonraki fazların başsız testlerinde kullanılabilir).
 8. **FW durumunu okumak** [log]: `data get entity @s neoforge:attachments` → `wing_type: "fantasticwings:…"`; hem GameTest hem istemci senaryosu FW'nin *kendi* durumunu bununla doğruladı (kendi attachment'ımıza güvenmek yetmez).
 9. **Yapılmadı:** kart başına küçük resim — FW'nin şişe simgesi FW'nin özel item özelliğine/`GrantWingsConsumeEffect`'e bağlı, bunlara dokunmak ADR (d)'nin "FW iç yapısına bağlanma" sınırını aşar; asıl önizleme canlı 3B oyuncu. **Hâlâ [çıkarım]:** Vitrail altında Kanatlar ekranı; dedicated server'da payload/respawn yolu (kod aynı, çalıştırılmadı).
+
+## Faz 11 sonucu (2026-11-20, kozmetik)
+Kanıt etiketleri yukarıdaki gibi. Ayrıntı: `docs/journal/f11.md`, tasarım `docs/04 §6`, karar **ADR-007**.
+1. **Tek `AvatarRenderStateModifier` her avatara uygulanıyor** [log: `-PdevClient=curios`]: yerel oyuncu (3B önizleme ekranı her karede çağırıyor: ≥ 237 değişiklik/120 kare), **ikinci avatar** (`RemotePlayer`; göğüs giyilen demir, başlık kozmetik elmas → başlık elmas, göğüs demir; "başkalarının kozmetiği" kapalıyken başlık boş) ve ayarlar. Önceki [çıkarım] kapandı: "diğer üç slot ve uzak oyuncular — aynı kod yolu". Dört slot tek döngüden geçer; baş/göğüs doğrudan senaryoda, bacak/ayak saf kural süpürmesinde (`/theoria test cosmetics`: her slot × giyilen × kozmetik × 16 ayar kombinasyonu).
+2. **Elytra kuralı** [log]: giyilen göğüs elytra ve göğüs kozmetiği elmas göğüslükken çizilen elytra (kozmetik çizilmez); "gerçek zırhım" kapalıyken de elytra. Kural öğe adıyla değil `DataComponents.GLIDER` bileşeniyle. Elytra giyiliyken pelerin/elytra katmanları bozulmaz (göğüs alanı boşaltılmıyor).
+3. **Tüm ayarlar kapalı = vanilla** [log: `vanilla_when_off`, senaryo `switches`]: iki kozmetik anahtarı kapalı + gerçek zırh açık → çizilen = giyilen, her girdide.
+4. **Çok oyunculu** [log, kısmen]: izleyici başladığında NeoForge'un gönderdiği ilk eşzamanlama paketi sahibin `theoria:cosmetics`'ini taşıyor (`cosmetics_sync_to_viewers`); sonraki değişiklikler `syncEntityUpdate` ile oyuncuyu izleyen herkese + kendisine gidiyor [kaynak]; sahte oyuncu hiçbir parçanın izleyici listesinde olmadığı için bu yarı başsız denenemedi, iki istemcili gerçek denemeye kalıyor (Faz 11 kullanıcı onayı, LAN).
+5. **Hâlâ [çıkarım]:** Vulkan + Vitrail altında kozmetik görünüşü; başka modların kendi katmanında çizdiği zırhlar.
 
 ## Geri dönüş planı
 - (a) Katman API'si değişirse: `RegisterGuiLayersEvent#replaceLayer` ile vanilla katmanın yerine geçmek; o da yoksa `Hud` üzerine mixin (son çare).

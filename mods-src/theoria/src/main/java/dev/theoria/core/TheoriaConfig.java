@@ -16,12 +16,22 @@ public final class TheoriaConfig {
             .translation("theoria.configuration.verbose")
             .define("verbose", false);
 
+    /** Phase 11 (ADR-007 K5): off = the classic Curios screen opens as Curios made it. */
+    public static final ModConfigSpec.BooleanValue CURIOS_MAX = LOCAL_BUILDER
+            .comment("Open the Curios Max screen (slot-type tabs, search, cosmetic armor) from the Curios key and button. Off: Curios' own screen.")
+            .translation("theoria.configuration.curios_max_screen")
+            .define("curios_max_screen", true);
+
     public static final ModConfigSpec LOCAL = LOCAL_BUILDER.build();
 
     private TheoriaConfig() {}
 
     public static void init(ModContainer container) {
         container.registerConfig(ModConfig.Type.LOCAL, LOCAL);
+    }
+
+    public static boolean curiosMax() {
+        return !LOCAL.isLoaded() || CURIOS_MAX.get();
     }
 
     public static boolean verbose() {

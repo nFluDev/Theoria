@@ -18,10 +18,12 @@ import net.minecraft.network.chat.Component;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 
-/** {@code /theoria version} (everyone) and {@code /theoria test [area]} (game masters). */
+/** {@code /theoria version} (everyone) and {@code /theoria test [area [check]]} (game masters). */
 public final class TheoriaCommand {
     private static final DynamicCommandExceptionType UNKNOWN_AREA =
             new DynamicCommandExceptionType(area -> Component.translatable("commands.theoria.test.unknown_area", area));
+    private static final Dynamic2CommandExceptionType UNKNOWN_CHECK =
+            new Dynamic2CommandExceptionType((check, area) -> Component.translatable("commands.theoria.test.unknown_check", check, area));
     private static final Dynamic2CommandExceptionType FAILED =
             new Dynamic2CommandExceptionType((failed, total) -> Component.translatable("commands.theoria.test.failed", failed, total));
 
@@ -36,10 +38,13 @@ public final class TheoriaCommand {
                 .then(Commands.literal("version").executes(TheoriaCommand::version))
                 .then(Commands.literal("test")
                         .requires(Commands.hasPermission(Commands.LEVEL_GAMEMASTERS))
-                        .executes(context -> test(context, null))
+                        .executes(context -> test(context, null, null))
                         .then(Commands.argument("area", StringArgumentType.word())
                                 .suggests((context, builder) -> SharedSuggestionProvider.suggest(Checks.areas(), builder))
-                                .executes(context -> test(context, StringArgumentType.getString(context, "area"))))));
+                                .executes(context -> test(context, StringArgumentType.getString(context, "area"), null))
+                                .then(Commands.argument("check", StringArgumentType.word())
+                                        .suggests((context, builder) -> SharedSuggestionProvider.suggest(Checks.names(StringArgumentType.getString(context, "area")), builder))
+                                        .executes(context -> test(context, StringArgumentType.getString(context, "area"), StringArgumentType.getString(context, "check")))))));
     }
 
     private static int version(CommandContext<CommandSourceStack> context) {
@@ -49,10 +54,11 @@ public final class TheoriaCommand {
     }
 
     /** Result = number of passed checks; fails the command if any check failed. */
-    private static int test(CommandContext<CommandSourceStack> context, String area) throws CommandSyntaxException {
+    private static int test(CommandContext<CommandSourceStack> context, String area, String check) throws CommandSyntaxException {
         CommandSourceStack source = context.getSource();
         if (area != null && !Checks.areas().contains(area)) throw UNKNOWN_AREA.create(area);
-        List<Checks.Result> results = Checks.run(area, source);
+        if (check != null && !Checks.names(area).contains(check)) throw UNKNOWN_CHECK.create(check, area);
+        List<Checks.Result> results = Checks.run(area, check, source);
         int failed = 0;
         for (Checks.Result result : results) {
             if (!result.ok()) {

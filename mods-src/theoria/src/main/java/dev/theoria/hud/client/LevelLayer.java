@@ -26,8 +26,9 @@ final class LevelLayer {
     static void render(GuiGraphicsExtractor g, DeltaTracker delta) {
         Minecraft mc = Minecraft.getInstance();
         if (mc.gameMode == null || mc.player == null || mc.gui.hud.isHidden()) return;
+        // 2026-11-20 (user): the bar shows VANILLA's level again — the one enchanting and the anvil spend; the skill level (lifetime, never spent) lives on the Status screen.
         int level = mc.player.experienceLevel;
-        if (!mc.gameMode.hasExperience() || level <= 0) return;
+        if (!mc.gameMode.hasExperience() || level <= 0) return; // vanilla draws no "0" either
         // The Hud decides each frame which bar owns the slot (experience / locator / jumpable vehicle); AT makes the field readable.
         if (!(mc.gui.hud.contextualInfoBar.getSecond() instanceof ExperienceBar)) return;
         HudClient.levelDraws++;
@@ -35,7 +36,7 @@ final class LevelLayer {
         HudConfig cfg = HudConfig.get();
         HudLayout lay = HudLayout.of(cfg, g.guiWidth(), g.guiHeight());
         Font font = mc.font;
-        Component text = Component.literal(Integer.toString(level)); // vanilla's gui.experience.level is just "%s"
+        Component text = Component.literal(Integer.toString(level));
         float scale = (float) cfg.layout().xpTextScale();
         float x = lay.centre() - font.width(text) * scale / 2f;
         float y = lay.xpTop() + (cfg.layout().xpBarHeight() - cfg.layout().glyphHeight() * scale) / 2f;

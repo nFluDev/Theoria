@@ -1,6 +1,9 @@
 package dev.theoria.wings.client;
 
 import dev.theoria.wings.WingsLayout;
+import java.util.Collections;
+import java.util.Set;
+import java.util.WeakHashMap;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.AbstractButton;
 import net.minecraft.client.gui.components.Button;
@@ -18,11 +21,27 @@ import net.neoforged.neoforge.common.NeoForge;
 public final class WingsClient {
     /** Lang key of the button label; the dev scenario finds the button by it. */
     public static final String BUTTON_KEY = "theoria.wings.button";
+    /** Mod buttons in the row under the ESC column: Wings (left), Status (right, dev.theoria.stats.client). */
+    public static final int PAUSE_BUTTONS = 2;
 
     private WingsClient() {}
 
     public static void init() {
         NeoForge.EVENT_BUS.addListener(WingsClient::onScreenInit);
+    }
+
+    /** The buttons Theoria itself put on the ESC screen (identity, weakly held: a rebuilt screen's old buttons just disappear). */
+    private static final Set<AbstractButton> OURS = Collections.newSetFromMap(new WeakHashMap<>());
+
+    /** Buttons of Theoria's own ESC row (Wings, Status): they are not the vanilla column the row is measured from. Identity, not the label — another mod's button may read the same. */
+    public static boolean isOurs(AbstractButton button) {
+        return OURS.contains(button);
+    }
+
+    /** Registers a button as part of Theoria's own ESC row and returns it. */
+    public static Button ours(Button button) {
+        OURS.add(button);
+        return button;
     }
 
     private static void onScreenInit(ScreenEvent.Init.Post event) {
@@ -31,15 +50,16 @@ public final class WingsClient {
         int bottom = Integer.MIN_VALUE;
         for (GuiEventListener child : screen.children()) {
             if (!(child instanceof AbstractButton button)) continue; // the title text and other non-buttons are not part of the column
+            if (isOurs(button)) continue; // the Status button (Faz 10) sits in our row, not in the vanilla column
             int centre = button.getX() + button.getWidth() / 2;
             if (Math.abs(centre - screen.width / 2) > WingsLayout.PAUSE_CENTRE_TOLERANCE) continue;
             top = Math.min(top, button.getY());
             bottom = Math.max(bottom, button.getY() + button.getHeight());
         }
         if (bottom == Integer.MIN_VALUE) return; // no vanilla column: the "saving world" variant of the screen
-        WingsLayout.Rect r = WingsLayout.pauseRow(top, bottom, screen.width, screen.height, 1).get(0);
-        event.addListener(Button.builder(Component.translatable(BUTTON_KEY),
+        WingsLayout.Rect r = WingsLayout.pauseRow(top, bottom, screen.width, screen.height, PAUSE_BUTTONS).get(0); // Faz 10: the Status button takes the second slot
+        event.addListener(ours(Button.builder(Component.translatable(BUTTON_KEY),
                         button -> Minecraft.getInstance().gui.setScreen(new WingsScreen(screen)))
-                .bounds(r.x(), r.y(), r.w(), r.h()).build());
+                .bounds(r.x(), r.y(), r.w(), r.h()).build()));
     }
 }

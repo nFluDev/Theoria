@@ -1,6 +1,6 @@
 {
   "type": "neoforge:add_features",
-  "biomes": "#minecraft:is_overworld",
+  "biomes": "#theoria:has_ore/lonsdaleit",
   "features": "theoria:ore_lonsdaleit",
   "step": "underground_ores"
 }

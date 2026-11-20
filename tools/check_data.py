@@ -11,6 +11,10 @@ Denetler:
   4. Hiçbir .java 600 satırı geçmiyor (docs/03 §6).
   5. Gear (Faz 6): tools/check_gear.py — materials/ores/alloys/drops.csv şeması, üretilen dosyalar güncel, model/doku/lang/tarif/loot/tag referansları,
      bağımsız kazı-kapısı çözümlemesi, blok sertliği. data/balance/tools.csv ve ores.csv güncelliği check_tiers içinde (tiers.py --check) denetlenir.
+  7. Worldgen (Faz 9b): tools/check_worldgen.py — biomes/biome_climate/structures/worldgen/ores CSV'leri ↔ üretilen biyom/bölge/yapı/loot dosyaları, NBT'ler bağımsız okunur.
+  8. Durum ekranı (Faz 10): tools/balance/stats.py --check (stat/seviye CSV'leri + oyun JSON'u üreteçle özdeş; seviye eğrisi, yumuşak tavanlar, referans bütçe payı,
+     tempo bantları, respec düşüşü, dil anahtarları) + tools/balance/mobs.py --check (mob XP büyümesi stats.py'nin tempo modeliyle aynı sayıdır).
+  9. Relic (Faz 12): tools/check_relics.py — data/relics.csv + relic_sources.csv ↔ üretilen öğe/doku/Curios etiketi/loot/lang, yuva kapasitesi, güç bütçesi, kaynaklar, Java'da gömülü relic kimliği yok.
   6. Katalizör (Faz 7a/7b): generator/catalysts.py --check (item/blok/büyü/loot/lang dosyaları güncel) + tools/balance/catalysts.py --check — catalysts/catalyst_values/catalyst_rules/enchant_caps/innate.csv + oyun JSON'u üreteçle özdeş;
      ref bütçesi (zırh/hasar/Kalp), yuva sığması, katalizör-maks bantları, Netherite ve Bilgelik kuralları (negatif test: catalysts.py --break).
 Çıkış kodu: 0 = temiz, 1 = hata var. Yeni veri dosyası (materials.csv, mobs.csv …) geldikçe buraya şeması eklenir.
@@ -153,6 +157,16 @@ def check_tiers():
                  + (", denge bantları yeşil" if balanced else ""))
 
 
+def check_stats():
+    """Faz 10: stat/seviye sayıları tek kaynaktan (tools/balance/stats.py) geliyor; XP büyümesi mobs.py'de, tempo modeli ikisini birlikte denetler."""
+    for script in ("stats.py", "mobs.py"):
+        ok, lines = run_tool(script, "--check")
+        if not ok:
+            for line in lines[:12]:
+                err(f"{script}: " + line.strip())
+    notes.append("durum ekranı (stats.py + mobs.py XP): CSV'ler + oyun JSON'u güncel, seviye/stat/bütçe/tempo bantları yeşil")
+
+
 def check_gear():
     """Faz 6: asıl denetim tools/check_gear.py'de (kendi başına da koşar, negatif testi --break); burada preflight'ın tek kapısına bağlanır."""
     result = subprocess.run([sys.executable, "-I", str(ROOT / "tools/check_gear.py")], capture_output=True, text=True)
@@ -166,6 +180,31 @@ def check_gear():
     notes.append("gear: check_gear.py OK (şema, üreteç güncel, referanslar, kazı kapıları, sertlik)")
 
 
+def check_relics():
+    """Faz 12: tools/check_relics.py — relic tablosu (CSV) ↔ üretilen öğe/doku/etiket/loot/lang, yuva kapasitesi, güç bütçesi, kaynaklar, Java'da gömülü kimlik yok."""
+    result = subprocess.run([sys.executable, "-I", str(ROOT / "tools/check_relics.py")], capture_output=True, text=True)
+    lines = (result.stdout + result.stderr).strip().splitlines()
+    if result.returncode != 0 or not lines or lines[-1] != "OK":
+        err("check_relics.py kırmızı:")
+        for line in lines[:12]:
+            err("  " + line.strip())
+        return
+    notes.append("relic'ler: check_relics.py OK (tablo, üretilen dosyalar, yuva kapasitesi, güç bütçesi, kaynaklar, varlıklar)")
+
+
+def check_world():
+    """Faz 9b: tools/check_worldgen.py — biyom/iklim şeması + bölüntü, üreteçler güncel, cevher etiketleri, mob bandı, yapı NBT'leri (Haven mob'suz/ışık), loot."""
+    result = subprocess.run([sys.executable, "-I", str(ROOT / "tools/check_worldgen.py")], capture_output=True, text=True)
+    lines = (result.stdout + result.stderr).strip().splitlines()
+    if result.returncode != 0 or not lines or lines[-1] != "OK":
+        err("check_worldgen.py kırmızı:")
+        for line in lines[:14]:
+            err("  " + line.strip())
+        return
+    notes.extend(line.strip() for line in lines[:-1] if line.strip().startswith(("biyomlar", "yapılar", "cevherler", "mob/biyom")))
+    notes.append("worldgen: check_worldgen.py OK (biyom/iklim, üreteçler, cevher etiketleri, yapı NBT, Haven mob'suzluk/ışık, loot)")
+
+
 def check_json():
     count = 0
     for path in (MOD / "resources").rglob("*.json"):
@@ -174,14 +213,15 @@ def check_json():
             json.loads(path.read_text(encoding="utf-8"))
         except json.JSONDecodeError as e:
             err(f"json: {path.relative_to(ROOT)}: {e}")
-    generated = ROOT / "mods-src/theoria/src/generated/resources"
-    if generated.exists():
-        for path in generated.rglob("*.json"):
-            count += 1
-            try:
-                json.loads(path.read_text(encoding="utf-8"))
-            except json.JSONDecodeError as e:
-                err(f"json: {path.relative_to(ROOT)}: {e}")
+    for sub in ("resources", "biomes", "structures"):                     # Faz 9b: biomes/ ve structures/ üretilen dizinleri de ayrıştırılır
+        generated = ROOT / "mods-src/theoria/src/generated" / sub
+        if generated.exists():
+            for path in generated.rglob("*.json"):
+                count += 1
+                try:
+                    json.loads(path.read_text(encoding="utf-8"))
+                except json.JSONDecodeError as e:
+                    err(f"json: {path.relative_to(ROOT)}: {e}")
     notes.append(f"json: {count} dosya ayrıştırıldı")
 
 
@@ -196,7 +236,7 @@ def check_java_size():
     notes.append(f"java: en uzun dosya {longest[0]} ({longest[1]} satır)")
 
 
-for check in (check_lang, check_tiers, check_gear, check_json, check_java_size):
+for check in (check_lang, check_tiers, check_stats, check_gear, check_relics, check_world, check_json, check_java_size):
     check()
 for note in notes:
     print("  " + note)

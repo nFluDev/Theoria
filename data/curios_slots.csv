@@ -1,0 +1,16 @@
+# Curios slot sizes for the player (Phase 11, ADR-007) — single source: generator/curios.py writes data/theoria/curios/slots/<id>.json from it.
+# id = a Curios preset slot type (its icon, order and Turkish/English names ship with Curios: curios.identifier.<id>); size = how many slots the player has.
+# Curios merges the same id from every namespace: "set" takes the larger size, so a row here can only raise a preset (never lower it).
+# Items go into a slot through the Curios item tag #curios:<id> (Phase 12 relics are tagged that way); #curios:curio fits every slot.
+id,size,note
+ring,8,"eight fingers — the bulk of the relic set (night vision, magnet, …)"
+necklace,3,"amulets"
+belt,2,"belts"
+bracelet,4,"two wrists"
+charm,5,"small trinkets"
+back,2,"backpack-like and cloak-like items (wings stay in the Wings screen, D14)"
+head,1,"hats and circlets (the helmet slot stays the real armor slot)"
+body,2,"vest and sash"
+hands,2,"gloves"
+feet,2,"anklets and boots-like accessories"
+curio,4,"generic: accepts anything tagged #curios:curio"

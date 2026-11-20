@@ -9,7 +9,7 @@ Ayar: `preferredGraphicsBackend:"vulkan"`, Sodium 0.9.3-beta, **Vitrail 0.13.0-b
 |---|---|---|
 | Render | Sodium · Sodium Extra · Reese's Sodium Options | ✅ ✅ ✅ |
 | **Shader** | **Vitrail Shaders** (OptiFine-format paketleri native Vulkan'da çalıştırır) | ✅ 0.13.0-beta |
-| Performans | BadOptimizations · ImmediatelyFast · ScalableLux · MoreCulling · Dynamic FPS · EntityCulling · FerriteCore · Lithium · ModernFix (**modernfix-mvus** çatalı) · Ksyxis · Ixeris · Better Block Entities · Noisium(yok) | ✅ (Noisium ❌) |
+| Performans | BadOptimizations · ImmediatelyFast · ScalableLux · ~~MoreCulling~~ (çıkarıldı 2026-11-19: Sodium beta.1 ile uyumsuz) · Dynamic FPS · EntityCulling · FerriteCore · Lithium · ModernFix (**modernfix-mvus** çatalı) · Ksyxis · Ixeris · Better Block Entities · Noisium(yok) | ✅ (Noisium ❌) |
 | Fabric-yerli (yerine yok) | **C2ME**, **VMP**, Fadeless, ZFastNoise vb. | ❌ → Q1 |
 | Kanat | Fantastic Wings | ✅ 26.3.1 |
 

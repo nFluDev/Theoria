@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "theoria:haven_s",
+    "theoria:haven_m",
+    "theoria:haven_l",
+    "theoria:haven_valley_s",
+    "theoria:haven_valley_m",
+    "theoria:haven_valley_l"
+  ]
+}

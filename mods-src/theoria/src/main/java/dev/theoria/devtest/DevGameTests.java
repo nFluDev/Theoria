@@ -46,6 +46,11 @@ public final class DevGameTests {
         GearTests.register(DevGameTests::add);
         CatalystTests.register(DevGameTests::add); // Faz 7b: the catalyst system (after the event-chain proof below)
         MobTests.register(DevGameTests::add); // Faz 8: species, spawn rules, zone tiers, drops, bosses
+        ClimateProbe.register(DevGameTests::add); // Faz 9b: real-climate sampling for generator/biomes.py --share (measurement, not an assertion)
+        WorldTests.register(DevGameTests::add); // Faz 9b: biomes, ore placement tags, structures, Haven generation + spawn gate, chest loot
+        StatsTests.register(DevGameTests::add); // Faz 10: lifetime XP + level, point rules, each stat's effect one by one, respec orb
+        CuriosTests.register(DevGameTests::add); // Faz 11: cosmetic attachment, Curios Max menu (slots, views, item moves), the open redirect
+        RelicTests.register(DevGameTests::add); // Faz 12: every relic worn through the real code (RelicProbe), real damage events, the tick schedule, all 25 at once, loot modifiers on the real tables
         EnchantLevelTests.register(DevGameTests::add); // Faz 7b: ADR-004/006 event-chain proof comes before any catalyst code
         add("dump_vanilla_mobs", VanillaMobDump::run);
         modBus.addListener(DevGameTests::registerTests);
@@ -57,11 +62,17 @@ public final class DevGameTests {
 
     private static void registerTests(RegisterGameTestsEvent event) {
         Holder<TestEnvironmentDefinition<?>> env = event.registerEnvironment(Theoria.id("dev"), new TestEnvironmentDefinition.AllOf(List.of()));
+        // Faz 9b: worldgen tests load/generate/place whole structures (hundreds of thousands of blocks, real chunk loads) inside one tick. A separate environment is a separate
+        // batch, so the timing-sensitive entity tests (equipment attributes after N ticks …) are not scheduled together with them.
+        Holder<TestEnvironmentDefinition<?>> heavy = event.registerEnvironment(Theoria.id("dev_heavy"), new TestEnvironmentDefinition.AllOf(List.of()));
+        String only = System.getProperty("theoria.dev.only", "");
         for (var fn : TheoriaRegistries.TEST_FUNCTIONS.getEntries()) {
+            if (!only.isBlank() && java.util.Arrays.stream(only.split(",")).noneMatch(prefix -> fn.getId().getPath().startsWith(prefix.trim()))) continue;
             // Behaviour tests need room: real AI in a 24×24 arena (data/theoria/structure/dev_arena.nbt) so neighbouring tests do not share mobs, players or floors.
             String path = fn.getId().getPath();
             Identifier structure = path.startsWith("mobs_ai_") || path.startsWith("mobs_boss_") || path.equals("mobs_xp") ? Theoria.id("dev_arena") : Identifier.withDefaultNamespace("empty");
-            event.registerTest(fn.getId(), new FunctionGameTestInstance(fn.key(), new TestData<>(env, structure, 200, 0, true)));
+            boolean isHeavy = path.startsWith("worlds_");
+            event.registerTest(fn.getId(), new FunctionGameTestInstance(fn.key(), new TestData<>(isHeavy ? heavy : env, structure, 200, 0, true)));
         }
     }
 

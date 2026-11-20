@@ -78,7 +78,9 @@ public final class MobChecks {
         Checks.register("mobs", "xp", source -> {
             Checks.require(MobHooks.scaledExperience(5, 0) == 5, "tier 0 XP must stay vanilla");
             int t13 = MobHooks.scaledExperience(5, 13);
-            Checks.require(t13 == 40960, "tier 13 normal-class XP = " + t13 + ", expected 40960");
+            long expected = Math.round(5 * Math.pow(MobData.balance().xpGrowth(), 13)); // xp_growth is tools/balance/mobs.py's (1,75 since Faz 10: 7219)
+            Checks.require(t13 == expected, "tier 13 normal-class XP = " + t13 + ", expected " + expected);
+            Checks.require(t13 >= 5_000 && t13 <= 15_000, "tier 13 normal-class XP " + t13 + " left the Faz 10 band 5K-15K (docs/06 §5, tools/balance/stats.py pacing)");
             return "tier 0: 5 · tier 4: " + MobHooks.scaledExperience(5, 4) + " · tier 13: " + t13;
         });
         Checks.register("mobs", "weapons", MobChecks::weapons);

@@ -220,6 +220,7 @@ def item_tags(model):
 
 
 # ------------------------------------------------------------------------------------------------ worldgen (cevher damarları)
+# Faz 9b: damar yalnız `theoria:has_ore/<cevher>` etiketindeki biyomlara eklenir; etiketi generator/biomes.py üretir (data/ores.csv `biomes`).
 def worldgen(model):
     out = {}
     seen = set()
@@ -244,5 +245,29 @@ def worldgen(model):
                       {"type": "minecraft:biome"}]
         out[f"data/theoria/worldgen/placed_feature/ore_{o['id']}.json"] = dumps({"feature": f"theoria:ore_{o['id']}", "placement": placement})
         out[f"data/theoria/neoforge/biome_modifier/ore_{o['id']}.json"] = dumps({
-            "type": "neoforge:add_features", "biomes": "#minecraft:is_overworld", "features": f"theoria:ore_{o['id']}", "step": "underground_ores"})
+            "type": "neoforge:add_features", "biomes": f"#theoria:has_ore/{o['id']}", "features": f"theoria:ore_{o['id']}", "step": "underground_ores"})
+        out.update(wild_worldgen(o, targets))
     return out
+
+
+# Hibrit (Faz 9b kapısı, docs/10 Q63): her cevherin "yabani" damarı TÜM Overworld biyomlarına (vanilla, Terralith, Theoria) eklenir, ev biyomundaki damardan çok daha seyrek ve
+# genellikle daha alçak yükseklikte. Neden: yüksek kademe cevheri yalnız ev biyomunda + y ≥ 140'ta olunca dünyada neredeyse hiç yoktu (ölçüm: Terralith'li dünyada yüzey y ≥ 140
+# sütunların %0,83'ü, y ≥ 160 %0,14; titanyum 1 bölüm, orikalkum 0). Ev biyomu (`theoria:ore_<id>`, `has_ore` etiketi) bol/yüksek kademe kimliğini korur.
+def wild_worldgen(o, targets):
+    if not o.get("wild_min_y"):
+        return {}
+    cid = f"ore_{o['id']}_wild"
+    placement = []
+    if int(o["wild_rarity"]) > 0:
+        placement.append({"type": "minecraft:rarity_filter", "chance": int(o["wild_rarity"])})
+    else:
+        placement.append({"type": "minecraft:count", "count": int(o["wild_count"])})
+    placement += [{"type": "minecraft:in_square"},
+                  {"type": "minecraft:height_range", "height": {"type": "minecraft:uniform", "min_inclusive": {"absolute": int(o["wild_min_y"])}, "max_inclusive": {"absolute": int(o["wild_max_y"])}}},
+                  {"type": "minecraft:biome"}]
+    return {
+        f"data/theoria/worldgen/feature/{cid}.json": dumps({"type": "minecraft:ore", "size": int(o["wild_size"]), "discard_chance_on_air_exposure": 0.0, "targets": targets}),
+        f"data/theoria/worldgen/placed_feature/{cid}.json": dumps({"feature": f"theoria:{cid}", "placement": placement}),
+        f"data/theoria/neoforge/biome_modifier/{cid}.json": dumps({
+            "type": "neoforge:add_features", "biomes": "#minecraft:is_overworld", "features": f"theoria:{cid}", "step": "underground_ores"}),
+    }

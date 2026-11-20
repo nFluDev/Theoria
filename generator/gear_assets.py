@@ -109,10 +109,11 @@ def lang(model):
 def merge_lang(existing_text, generated):
     """Elle yazılmış anahtarlar yerinde kalır; gear'ın sahip olduğu (item.theoria.* / block.theoria.* / itemGroup.theoria.*) anahtarlar yeniden yazılır."""
     owned = ("item.theoria.", "block.theoria.", "itemGroup.theoria.")
-    foreign = ("item.theoria.catalyst", "block.theoria.catalyst_forge", "itemGroup.theoria.catalysts")   # generator/catalysts.py'nin anahtarları: dokunma
+    foreign = ("item.theoria.catalyst", "block.theoria.catalyst_forge", "itemGroup.theoria.catalysts",   # generator/catalysts.py'nin anahtarları: dokunma
+               "item.theoria.relic.", "itemGroup.theoria.relics")                                           # generator/relics.py'nin anahtarları (Faz 12): dokunma
     current = json.loads(existing_text)
     # generator/mobs.py'nin anahtarları (spawn yumurtaları, Kalp Kristali, mob sekmesi): dokunma
-    mobs = lambda k: k.endswith("_spawn_egg") or k.startswith(("item.theoria.heart_crystal", "itemGroup.theoria.mobs"))
+    mobs = lambda k: k.endswith("_spawn_egg") or k.startswith(("item.theoria.heart_crystal", "item.theoria.oblivion_orb", "itemGroup.theoria.mobs"))
     merged = {k: v for k, v in current.items() if not k.startswith(owned) or k.startswith(foreign) or mobs(k)}
     merged.update(generated)
     return dumps(dict(sorted(merged.items())))   # tek kanonik sıra: gear.py ve catalysts.py aynı dosyayı birleştirir, sıra kavgası olmasın

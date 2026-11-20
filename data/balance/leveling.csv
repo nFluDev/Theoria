@@ -1,0 +1,10 @@
+key,value,note
+max_level,9999,ömür boyu seviye tavanı (karar D5)
+points_per_level,4,seviye başına beceri puanı
+xp_anchors,"[[2, 55], [25, 19700], [50, 182000], [75, 1410000], [100, 9490000], [200, 222000000]]",R(L): bağlı noktalar arası kuvvet yasası (L2 = 55 ham XP = vanilla 5. seviye)
+xp_knee,200,L > knee: seviye başı maliyet L ile doğrusal
+respec_item,theoria:oblivion_orb,puanları sıfırlayan nadir eşya (Q6)
+respec_boss_chance,0.05,boss öldürmesinde düşme olasılığı (mob_drops.csv ile eşit)
+kills_per_hour,90,tempo varsayımı (Q66)
+class_mix,1.4,tempo varsayımı: ortalama XP / normal sınıf
+tier_hours,3 3 4 5 7 9 12 15 19 23 28 33 39 45,tempo varsayımı: kademe başına saat

@@ -158,6 +158,11 @@ final class WingsScenario {
         int columnBottom = Integer.MIN_VALUE;
         for (GuiEventListener child : screen.children()) {
             if (!(child instanceof AbstractButton b) || b == ours) continue;
+            if (WingsClient.isOurs(b)) { // the Status button (Faz 10) shares our row: it must not overlap us, but it is not the vanilla column
+                WingsLayout.Rect mine = new WingsLayout.Rect(b.getX(), b.getY(), b.getWidth(), b.getHeight());
+                if (r.intersects(mine)) return "Wings and Status buttons overlap " + r + " / " + mine;
+                continue;
+            }
             if (Math.abs(b.getX() + b.getWidth() / 2 - screen.width / 2) > WingsLayout.PAUSE_CENTRE_TOLERANCE) continue;
             WingsLayout.Rect other = new WingsLayout.Rect(b.getX(), b.getY(), b.getWidth(), b.getHeight());
             if (r.intersects(other)) return "button overlaps '" + b.getMessage().getString() + "' " + other;

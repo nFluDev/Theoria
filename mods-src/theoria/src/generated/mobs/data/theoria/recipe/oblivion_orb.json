@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": "minecraft:ender_eye",
+    "D": "minecraft:diamond",
+    "C": "minecraft:end_crystal"
+  },
+  "pattern": [
+    "EDE",
+    "DCD",
+    "EDE"
+  ],
+  "result": {
+    "id": "theoria:oblivion_orb"
+  }
+}

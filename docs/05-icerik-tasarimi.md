@@ -74,12 +74,13 @@ Kategoriler, her biri kademe 1-13 aralığında 2-4 tür; drop'u merdivenin bir 
 | Buz | Kırağı Yırtıcı, Buzul Devi | Buz Özü |
 | Gölge/Ruh | Soluk Hayalet, Gece Koşucusu | Gölge Özü |
 | Kadim | Taş Muhafız, Orikalkum Bekçisi, Platin Kuklası | Mitril/Orikalkum/Platin Çekirdeği |
-| Boss'lar (8) | her 2 kademede bir kapı boss'u | Kalp Kristali + katalizör çekirdeği |
+| Boss'lar (8) | her 2 kademede bir kapı boss'u | Kalp Kristali + katalizör çekirdeği + Unutuş Küresi (%30; beceri puanlarını geri verir, Faz 10) |
 **Teknik:** 12 arketip entity sınıfı (yırtıcı, nişancı, büyücü, sürü, uçan, dev, ejder, yılan, insansı…) + `species` data'sı (HP/hasar/boyut/davranış/ses/model parametresi). Model ve animasyonlar: geometrik/blocky stil, **tek tint'li doku** (LucidRem greyscale+tint yaklaşımı) → sanat işi küçük.
 
 ## 5. Biyomlar
 - **Tabaka 1 (hazır):** Terralith (+TerraBlender). Regions Unexplored 26.x gelince eklenir.
 - **Tabaka 2 (bizim, v1 ≥ 20):** Kalay Bataklığı, Çelik Bozkırı, Kobalt Kanyonu, Titan Zirveleri, Kül Çölü, Buz Mezarlığı, Fırtına Adaları (yüzen), Kristal Mağaraları, Gölge Ormanı, Kadim Harabeler, Meteor Krateri (Lonsdaleit), Işıldayan Vadi (Haven biyomu), Mitril Yarığı vb.
+- **Cevher (hibrit, 2026-11-20, `docs/10` Q63):** her cevher ev biyomunda bol, ayrıca tüm Overworld biyomlarında seyrek "yabani" damar (daha alçak yükseklik: titanyum y 80-150, orikalkum y 90-170) — yüksek kademe cevheri biyomsuz/zirvesiz dünyada kilitlenmesin.
 - Yerleşim: TerraBlender bölgesi, düşük ağırlık (~%25 yüzey), yüksek kademe biyomları uzak/derin/dikey (Kanatla ulaşılır). **Eşik kuralı:** Faz 9'a kadar ana dünyayı başlatma.
 
 ## 6. Yapılar ve Haven'lar
@@ -91,7 +92,8 @@ Kategoriler, her biri kademe 1-13 aralığında 2-4 tür; drop'u merdivenin bir 
 | Kale/Tapınak | Çok büyük | Boss | Çok zor | Efsanevi + Relic |
 - **Haven kuralları:** survival'e uygun (yatak, ocak, depo odası hazır), mob spawn `structure_spawn_overrides` ile boş, çevre dekoratif (asma bahçe, gölet, fener). Hedef "burası artık benim" duygusu; yapı ücretsiz eşya vermez ama kısmen dolu sandıklarla yolculuğu ödüllendirir.
 - **Üretim:** LucidRem'deki kod-üretimli yapı kütüphanesi yaklaşımı (palet × arketip); NBT'ler `generator/structures.py` ile üretilir → elle inşa gerekmez. Hazır paketten **Dungeons and Taverns 6.1.0** ek çeşitlilik.
-- **OP itemler:** boss kasalarından ve Zindan'dan; Relics (Faz 12): gece görüşü yüzüğü, sonsuz yemek (tükenmeyen elma), vb.
+- **Faz 9b durumu (2026-11-19):** 20 biyom (`data/biomes.csv` + `biome_climate.csv` → TerraBlender bölge JSON'u) ve Haven S/M/L + Harabe + Zindan + 3 Kale (`data/structures.csv` → `generator/structures.py`) uygulandı; mob'suzluk 8 kategori `spawn_overrides` + ışık + şablonda varlık yok ile; sayılar ilk deneme, **Chunky kapısı ve dondurma bekliyor** (`docs/journal/f09.md`, `docs/10` B11).
+- **OP itemler:** boss kasalarından ve Zindan'dan; Relics (Faz 12 ✅): gece görüşü yüzüğü, sonsuz yemek (Tükenmeyen Elma) ve 23 relic daha — liste, sayılar ve kaynaklar `data/relics.csv` + `data/relic_sources.csv` (özet `docs/04 §9`).
 
 ## 7. Kazı kapıları (karar D6: "hepsi elmas kazmayla" yok)
 Her blok/cevher bir **gereken alet kademesi** ister; daha düşük kademeyle kazılırsa **drop vermez** (vanilla davranışı) ve çok yavaş kırılır. Cevherin sertliği kademeyle artar, aletin kazı hızı da `2,0·1,28^idx` ile. Kaynak: `tools/balance/tiers.py --ores`; uygulama = `incorrect_for_*_tool` tag'leri (veri-güdümlü, Faz 6).

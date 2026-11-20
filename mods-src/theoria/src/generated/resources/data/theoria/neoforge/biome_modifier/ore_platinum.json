@@ -1,6 +1,6 @@
 {
   "type": "neoforge:add_features",
-  "biomes": "#minecraft:is_overworld",
+  "biomes": "#theoria:has_ore/platinum",
   "features": "theoria:ore_platinum",
   "step": "underground_ores"
 }

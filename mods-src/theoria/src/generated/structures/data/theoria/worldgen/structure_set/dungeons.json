@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 91400104,
+    "separation": 9,
+    "spacing": 24
+  },
+  "structures": [
+    {
+      "structure": "theoria:dungeon",
+      "weight": 1
+    }
+  ]
+}

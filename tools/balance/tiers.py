@@ -209,12 +209,27 @@ def ore_rows():
                  blocks=" ".join(blocks)) for o, tr, m, h, blocks in ORES]
 
 
-# --- Seviye XP egrisi: L<=200 polinom, sonrasi satir basi maliyet dogrusal artar ---
+# --- Seviye XP egrisi (2026-11-20, kullanici: "L50 ~38 saat cok hizli"): L25 ~12 sa, L50 ~32 sa, L75 ~68 sa (stats.py ANCHORS denetler) ---
+# Parcali kuvvet yasasi: iki bagli nokta arasinda R(L) = Xa * ((L-1)/(La-1))^e, e = ln(Xb/Xa)/ln((Lb-1)/(La-1)). Son noktadan (KNEE) sonra bir seviyenin maliyeti L ile dogrusal artar.
+# Degerler tempo modelinden (stats.py pace(): saatte 90 oldurme x 1,4 sinif karisimi, TIER_HOURS) turetildi; L2 = 55 ham XP (vanilla 5. seviye) korunur.
+XP_ANCHORS = [(2, 55), (25, 19_700), (50, 182_000), (75, 1_410_000), (100, 9_490_000), (200, 222_000_000)]
+XP_KNEE = XP_ANCHORS[-1][0]
+
+
+def _poly(L):
+    """R(L) for 2 <= L <= KNEE (float)."""
+    for (la, xa), (lb, xb) in zip(XP_ANCHORS, XP_ANCHORS[1:]):
+        if L <= lb:
+            e = math.log(xb / xa) / math.log((lb - 1) / (la - 1))
+            return xa * ((L - 1) / (la - 1)) ** e
+    raise ValueError(L)
+
+
 def xp_total(L):
     if L <= 1: return 0
-    if L <= 200: return round(55 * (L - 1) ** 2.2)
-    c200 = 55 * (200 ** 2.2 - 199 ** 2.2)
-    return round(55 * 199 ** 2.2 + c200 / 400 * (L * L - 200 * 200))
+    if L <= XP_KNEE: return round(_poly(L))
+    per_level = _poly(XP_KNEE) - _poly(XP_KNEE - 1)      # cost of the last tabulated level
+    return round(_poly(XP_KNEE) + per_level / (2 * XP_KNEE) * (L * L - XP_KNEE * XP_KNEE))   # base = R(KNEE) (Faz 13: was R(KNEE-1) -> L200->L201 cost 12k instead of ~5M)
 
 
 FIELDS = ("idx,id,tr,helm,chest,legs,boots,total,tough,adur,sword,tdur,mob_hp_mult,mob_dmg_mult,mob_bypass_mult,"

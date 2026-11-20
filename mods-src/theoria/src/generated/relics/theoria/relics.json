@@ -1,0 +1,713 @@
+{
+  "rarities": [
+    "common",
+    "uncommon",
+    "rare",
+    "legendary"
+  ],
+  "relics": [
+    {
+      "id": "night_vision_ring",
+      "slot": "ring",
+      "rarity": "uncommon",
+      "kind": "effect",
+      "params": {
+        "effect": "minecraft:night_vision",
+        "amp": 0
+      },
+      "mods": [],
+      "sources": [
+        {
+          "source": "dungeon",
+          "weight": 8
+        },
+        {
+          "source": "ruin",
+          "weight": 5
+        },
+        {
+          "source": "keep",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "diver_ring",
+      "slot": "ring",
+      "rarity": "uncommon",
+      "kind": "effect",
+      "params": {
+        "effect": "minecraft:water_breathing",
+        "amp": 0
+      },
+      "mods": [],
+      "sources": [
+        {
+          "source": "dungeon",
+          "weight": 6
+        },
+        {
+          "source": "ruin",
+          "weight": 4
+        },
+        {
+          "source": "keep",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "ember_ring",
+      "slot": "ring",
+      "rarity": "uncommon",
+      "kind": "effect",
+      "params": {
+        "effect": "minecraft:fire_resistance",
+        "amp": 0
+      },
+      "mods": [],
+      "sources": [
+        {
+          "source": "dungeon",
+          "weight": 6
+        },
+        {
+          "source": "keep",
+          "weight": 4
+        },
+        {
+          "source": "storm_drake",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "miner_ring",
+      "slot": "ring",
+      "rarity": "uncommon",
+      "kind": "effect",
+      "params": {
+        "effect": "minecraft:haste",
+        "amp": 0
+      },
+      "mods": [],
+      "sources": [
+        {
+          "source": "dungeon",
+          "weight": 6
+        },
+        {
+          "source": "ruin",
+          "weight": 4
+        },
+        {
+          "source": "mud_king",
+          "weight": 5
+        }
+      ]
+    },
+    {
+      "id": "magnet_ring",
+      "slot": "ring",
+      "rarity": "uncommon",
+      "kind": "magnet",
+      "params": {
+        "radius": 8,
+        "pull": 0.35
+      },
+      "mods": [],
+      "sources": [
+        {
+          "source": "ruin",
+          "weight": 6
+        },
+        {
+          "source": "dungeon",
+          "weight": 5
+        },
+        {
+          "source": "haven_large",
+          "weight": 6
+        },
+        {
+          "source": "mud_king",
+          "weight": 5
+        }
+      ]
+    },
+    {
+      "id": "hunter_ring",
+      "slot": "ring",
+      "rarity": "rare",
+      "kind": "attribute",
+      "params": {
+        "fmt": "pct"
+      },
+      "mods": [
+        {
+          "attribute": "theoria:crit_chance",
+          "op": "add_value",
+          "amount": 0.05
+        }
+      ],
+      "sources": [
+        {
+          "source": "keep",
+          "weight": 5
+        },
+        {
+          "source": "dungeon",
+          "weight": 2
+        },
+        {
+          "source": "storm_drake",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "warlord_ring",
+      "slot": "ring",
+      "rarity": "rare",
+      "kind": "attribute",
+      "params": {
+        "fmt": "pct"
+      },
+      "mods": [
+        {
+          "attribute": "theoria:crit_damage",
+          "op": "add_value",
+          "amount": 0.15
+        }
+      ],
+      "sources": [
+        {
+          "source": "keep",
+          "weight": 5
+        },
+        {
+          "source": "dungeon",
+          "weight": 2
+        },
+        {
+          "source": "platinum_colossus",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "vampire_fang",
+      "slot": "necklace",
+      "rarity": "rare",
+      "kind": "attribute",
+      "params": {
+        "fmt": "pct"
+      },
+      "mods": [
+        {
+          "attribute": "theoria:life_steal",
+          "op": "add_value",
+          "amount": 0.03
+        }
+      ],
+      "sources": [
+        {
+          "source": "keep",
+          "weight": 4
+        },
+        {
+          "source": "dungeon",
+          "weight": 2
+        },
+        {
+          "source": "storm_drake",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "storm_talisman",
+      "slot": "necklace",
+      "rarity": "rare",
+      "kind": "immune",
+      "params": {
+        "damage": "minecraft:is_lightning",
+        "factor": 1.0
+      },
+      "mods": [],
+      "sources": [
+        {
+          "source": "storm_drake",
+          "weight": 8
+        },
+        {
+          "source": "keep",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "heart_locket",
+      "slot": "necklace",
+      "rarity": "legendary",
+      "kind": "attribute",
+      "params": {
+        "fmt": "num"
+      },
+      "mods": [
+        {
+          "attribute": "minecraft:max_health",
+          "op": "add_value",
+          "amount": 6
+        }
+      ],
+      "sources": [
+        {
+          "source": "platinum_colossus",
+          "weight": 6
+        },
+        {
+          "source": "keep",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "stone_belt",
+      "slot": "belt",
+      "rarity": "uncommon",
+      "kind": "attribute",
+      "params": {
+        "fmt": "pct"
+      },
+      "mods": [
+        {
+          "attribute": "minecraft:knockback_resistance",
+          "op": "add_value",
+          "amount": 0.3
+        }
+      ],
+      "sources": [
+        {
+          "source": "dungeon",
+          "weight": 6
+        },
+        {
+          "source": "ruin",
+          "weight": 3
+        },
+        {
+          "source": "mud_king",
+          "weight": 6
+        }
+      ]
+    },
+    {
+      "id": "mender_belt",
+      "slot": "belt",
+      "rarity": "rare",
+      "kind": "repair",
+      "params": {
+        "interval": 60,
+        "amount": 1
+      },
+      "mods": [],
+      "sources": [
+        {
+          "source": "keep",
+          "weight": 5
+        },
+        {
+          "source": "dungeon",
+          "weight": 3
+        },
+        {
+          "source": "platinum_colossus",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "quick_bracelet",
+      "slot": "bracelet",
+      "rarity": "uncommon",
+      "kind": "attribute",
+      "params": {
+        "fmt": "num"
+      },
+      "mods": [
+        {
+          "attribute": "minecraft:attack_speed",
+          "op": "add_value",
+          "amount": 0.15
+        }
+      ],
+      "sources": [
+        {
+          "source": "dungeon",
+          "weight": 6
+        },
+        {
+          "source": "ruin",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "warding_bracelet",
+      "slot": "bracelet",
+      "rarity": "rare",
+      "kind": "immune",
+      "params": {
+        "damage": "minecraft:is_explosion",
+        "factor": 0.5
+      },
+      "mods": [],
+      "sources": [
+        {
+          "source": "keep",
+          "weight": 4
+        },
+        {
+          "source": "dungeon",
+          "weight": 4
+        },
+        {
+          "source": "mud_king",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "frost_bracelet",
+      "slot": "bracelet",
+      "rarity": "uncommon",
+      "kind": "immune",
+      "params": {
+        "damage": "minecraft:is_freezing",
+        "factor": 1.0
+      },
+      "mods": [],
+      "sources": [
+        {
+          "source": "ruin",
+          "weight": 5
+        },
+        {
+          "source": "dungeon",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "swan_feather",
+      "slot": "charm",
+      "rarity": "uncommon",
+      "kind": "attribute",
+      "params": {
+        "fmt": "none"
+      },
+      "mods": [
+        {
+          "attribute": "minecraft:fall_damage_multiplier",
+          "op": "add_value",
+          "amount": -1.0
+        }
+      ],
+      "sources": [
+        {
+          "source": "ruin",
+          "weight": 6
+        },
+        {
+          "source": "dungeon",
+          "weight": 4
+        },
+        {
+          "source": "mud_king",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "lucky_clover",
+      "slot": "charm",
+      "rarity": "uncommon",
+      "kind": "attribute",
+      "params": {
+        "fmt": "num"
+      },
+      "mods": [
+        {
+          "attribute": "minecraft:luck",
+          "op": "add_value",
+          "amount": 1.0
+        }
+      ],
+      "sources": [
+        {
+          "source": "haven_large",
+          "weight": 6
+        },
+        {
+          "source": "dungeon",
+          "weight": 4
+        },
+        {
+          "source": "ruin",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "eternal_apple",
+      "slot": "charm",
+      "rarity": "rare",
+      "kind": "food",
+      "params": {
+        "interval": 100,
+        "food": 1,
+        "saturation": 1.0
+      },
+      "mods": [],
+      "sources": [
+        {
+          "source": "keep",
+          "weight": 4
+        },
+        {
+          "source": "storm_drake",
+          "weight": 5
+        },
+        {
+          "source": "dungeon",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "wind_cloak",
+      "slot": "back",
+      "rarity": "rare",
+      "kind": "attribute",
+      "params": {
+        "fmt": "pct"
+      },
+      "mods": [
+        {
+          "attribute": "minecraft:movement_speed",
+          "op": "add_multiplied_base",
+          "amount": 0.1
+        }
+      ],
+      "sources": [
+        {
+          "source": "storm_drake",
+          "weight": 6
+        },
+        {
+          "source": "keep",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "climber_pack",
+      "slot": "back",
+      "rarity": "uncommon",
+      "kind": "attribute",
+      "params": {
+        "fmt": "num"
+      },
+      "mods": [
+        {
+          "attribute": "minecraft:safe_fall_distance",
+          "op": "add_value",
+          "amount": 4
+        }
+      ],
+      "sources": [
+        {
+          "source": "dungeon",
+          "weight": 5
+        },
+        {
+          "source": "ruin",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "watcher_circlet",
+      "slot": "head",
+      "rarity": "rare",
+      "kind": "reveal",
+      "params": {
+        "radius": 16,
+        "interval": 40,
+        "duration": 60
+      },
+      "mods": [],
+      "sources": [
+        {
+          "source": "keep",
+          "weight": 4
+        },
+        {
+          "source": "dungeon",
+          "weight": 3
+        },
+        {
+          "source": "platinum_colossus",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "dragon_scale",
+      "slot": "body",
+      "rarity": "rare",
+      "kind": "immune",
+      "params": {
+        "damage": "minecraft:is_fire",
+        "factor": 1.0
+      },
+      "mods": [],
+      "sources": [
+        {
+          "source": "storm_drake",
+          "weight": 6
+        },
+        {
+          "source": "keep",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "giants_grip",
+      "slot": "hands",
+      "rarity": "uncommon",
+      "kind": "attribute",
+      "params": {
+        "fmt": "num"
+      },
+      "mods": [
+        {
+          "attribute": "minecraft:block_interaction_range",
+          "op": "add_value",
+          "amount": 1.0
+        }
+      ],
+      "sources": [
+        {
+          "source": "dungeon",
+          "weight": 5
+        },
+        {
+          "source": "ruin",
+          "weight": 3
+        },
+        {
+          "source": "mud_king",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "sure_foot_anklet",
+      "slot": "feet",
+      "rarity": "uncommon",
+      "kind": "attribute",
+      "params": {
+        "fmt": "num"
+      },
+      "mods": [
+        {
+          "attribute": "minecraft:step_height",
+          "op": "add_value",
+          "amount": 0.5
+        }
+      ],
+      "sources": [
+        {
+          "source": "dungeon",
+          "weight": 5
+        },
+        {
+          "source": "ruin",
+          "weight": 4
+        },
+        {
+          "source": "haven_large",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "phoenix_feather",
+      "slot": "curio",
+      "rarity": "legendary",
+      "kind": "survive",
+      "params": {
+        "cooldown": 6000,
+        "heal": 0.5
+      },
+      "mods": [],
+      "sources": [
+        {
+          "source": "platinum_colossus",
+          "weight": 6
+        },
+        {
+          "source": "keep",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "ruin",
+      "type": "chest",
+      "target": "theoria:chests/ruin",
+      "chance": 0.12
+    },
+    {
+      "id": "haven_large",
+      "type": "chest",
+      "target": "theoria:chests/haven_large",
+      "chance": 0.06
+    },
+    {
+      "id": "dungeon",
+      "type": "chest",
+      "target": "theoria:chests/dungeon",
+      "chance": 0.35
+    },
+    {
+      "id": "keep",
+      "type": "chest",
+      "target": "theoria:chests/keep",
+      "chance": 0.8
+    },
+    {
+      "id": "mud_king",
+      "type": "boss",
+      "target": "theoria:entities/mud_king",
+      "chance": 1.0
+    },
+    {
+      "id": "storm_drake",
+      "type": "boss",
+      "target": "theoria:entities/storm_drake",
+      "chance": 1.0
+    },
+    {
+      "id": "platinum_colossus",
+      "type": "boss",
+      "target": "theoria:entities/platinum_colossus",
+      "chance": 1.0
+    }
+  ]
+}

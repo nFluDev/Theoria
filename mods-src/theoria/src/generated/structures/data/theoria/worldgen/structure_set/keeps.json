@@ -1,0 +1,22 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 91400105,
+    "separation": 18,
+    "spacing": 44
+  },
+  "structures": [
+    {
+      "structure": "theoria:keep_mud",
+      "weight": 1
+    },
+    {
+      "structure": "theoria:keep_storm",
+      "weight": 1
+    },
+    {
+      "structure": "theoria:keep_ancient",
+      "weight": 1
+    }
+  ]
+}

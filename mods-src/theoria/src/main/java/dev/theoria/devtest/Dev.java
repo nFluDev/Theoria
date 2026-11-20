@@ -46,8 +46,9 @@ public final class Dev {
 
         public static void write(String file, List<String> content) {
             try {
-                Files.createDirectories(outDir());
-                Files.write(outDir().resolve(file), content);
+                Path target = outDir().resolve(file);
+                Files.createDirectories(target.getParent());   // `world/climate_<seed>.csv` etc.
+                Files.write(target, content);
             } catch (IOException e) {
                 Theoria.LOGGER.error("[DEV] cannot write {}", file, e);
             }

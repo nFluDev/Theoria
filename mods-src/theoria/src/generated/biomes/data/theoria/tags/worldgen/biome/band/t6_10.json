@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "theoria:crystal_caves",
+    "theoria:shadow_forest",
+    "theoria:titan_peaks",
+    "theoria:ancient_ruins",
+    "theoria:rune_vale"
+  ]
+}

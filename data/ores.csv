@@ -1,8 +1,8 @@
-id,en,tr,variants,drop,xp_min,xp_max,color,min_y,max_y,count,size,rarity,note
-tin,Tin,Kalay,stone+deepslate,raw_tin,0,2,#b4c3cf,40,110,10,8,0,dağ eteği (docs/05 §1) — şimdilik tüm Overworld; Faz 9a biyom bandına bağlar
-cobalt,Cobalt,Kobalt,deepslate,raw_cobalt,1,3,#2a5ee0,-60,-10,6,6,0,derin kayalık (deepslate, y −60…−10)
-titanium,Titanium,Titanyum,stone,raw_titanium,2,4,#7ba3a8,140,300,3,5,0,dağ zirveleri (y>140)
-lonsdaleit,Lonsdaleit,Lonsdaleit,stone,lonsdaleit,3,5,#e6cdfa,-64,16,1,3,40,yer tutucu: meteor kraterleri Faz 9'da; o zamana dek çok seyrek derin taş damarı
-mithril,Mithril,Mitril,deepslate,raw_mithril,3,6,#8fc6ee,-64,-40,2,4,0,derin (y<−40); ender madeni Faz 9
-orichalcum,Orichalcum,Orikalkum,stone,raw_orichalcum,4,7,#f0825a,100,320,1,3,12,yer tutucu: yüzen adalar Faz 9'da; o zamana dek çok seyrek yüksek damar
-platinum,Platinum,Platin,deepslate,raw_platinum,5,9,#eceef6,-64,-48,1,3,8,en derin/nadir; boss kasaları Faz 8-9
+id,en,tr,variants,drop,xp_min,xp_max,color,min_y,max_y,count,size,rarity,note,biomes,wild_min_y,wild_max_y,wild_count,wild_size,wild_rarity
+tin,Tin,Kalay,stone+deepslate,raw_tin,0,2,#b4c3cf,40,110,10,8,0,"T0-3 yüzey biyomları (docs/05 §1, 9a/9b); Kalay Bataklığı öncelikli, vanilla bataklık/tepe/ova etiketleri güvenlik ağı (ilerleme kapısı)",tin_marsh|steel_steppe|copperwood|iron_uplands|luminous_valley|#c:is_swamp|#minecraft:is_hill|#c:is_plains,4,110,1,6,0
+cobalt,Cobalt,Kobalt,deepslate,raw_cobalt,1,3,#2a5ee0,-56,-20,6,6,0,derin kayalık (deepslate y −56…−20): Kobalt Kanyonu ve derin biyomlar,cobalt_canyon|crystal_caves|mithril_rift|platinum_depths|#c:is_badlands,-56,-20,1,5,0
+titanium,Titanium,Titanyum,stone,raw_titanium,2,4,#7ba3a8,140,256,3,5,0,dağ zirveleri (y 140…256): Titan Zirveleri / Orikalkum Göğü + vanilla dağ etiketi,titan_peaks|orichalcum_sky|#minecraft:is_mountain,4,150,0,4,3
+lonsdaleit,Lonsdaleit,Lonsdaleit,stone,lonsdaleit,3,5,#e6cdfa,48,120,3,3,0,"Meteor Krateri, yüzeye yakın y 48…120 (kraterin düz platosu y≈63-100; ölçüm); biyom ≈ bölgenin %2'si, damar sayısı count",meteor_crater,4,120,0,3,4
+mithril,Mithril,Mitril,deepslate,raw_mithril,3,6,#8fc6ee,-64,-40,2,4,0,derin (deepslate y −64…−40): Mitril Yarığı ve Kristal Mağaraları,mithril_rift|crystal_caves,-64,-40,0,3,2
+orichalcum,Orichalcum,Orikalkum,stone,raw_orichalcum,4,7,#f0825a,160,320,4,3,0,"gökyüzü/yüksek (y 160…320): ölçüm — y≥160 kaya yalnız zirve sütunlarında (≈ %1); biyom süzgeci + vanilla dağ etiketi, damar sayısı count (rarity değil)",orichalcum_sky|titan_peaks|#minecraft:is_mountain,4,170,0,3,4
+platinum,Platinum,Platin,deepslate,raw_platinum,5,9,#eceef6,-64,-48,1,3,8,en derin/nadir (deepslate y −64…−48): Platin Derinlikleri; boss kasaları ve Zindan loot'u destekler,platinum_depths,-64,-48,0,3,12

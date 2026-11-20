@@ -6,6 +6,11 @@ hash = "ba10874c01b33675cfe24e527e6060bc3d12c968396c1727901b5de9e3612cdc"
 preserve = true
 
 [[files]]
+file = "mods/ae2.pw.toml"
+hash = "d040f5606f493d264f7ded772ba2fd585cae13c516ce9b680291e875bac8f315"
+metafile = true
+
+[[files]]
 file = "mods/badoptimizations.pw.toml"
 hash = "3e319c44da81d9ff1e74eff6b7d975186e6c07949aecc1b80f5cc1cba47dd438"
 metafile = true
@@ -27,7 +32,7 @@ metafile = true
 
 [[files]]
 file = "mods/cloth-config.pw.toml"
-hash = "3f3e528701cf893977b383ab7a2c4a9d9bb5c244be0c85b0af53b70a5f47f8b0"
+hash = "f71e78496ca4264271f2656b0406d42f2f58e65d0a3a19b45bf88fa28c2f8055"
 metafile = true
 
 [[files]]
@@ -71,8 +76,18 @@ hash = "ecd9e70faca5584f8cb488905c333f9eeef03193674f03692a7bb32f1283fcdc"
 metafile = true
 
 [[files]]
+file = "mods/guideme.pw.toml"
+hash = "fb47789901599ba3dc0cb789c570d187d3eb9455be860ab258750f2dae1710b1"
+metafile = true
+
+[[files]]
 file = "mods/immediatelyfast.pw.toml"
 hash = "bdb355067c96a55915cf0925fd4220b2cbfd7d199b6275f0adf48cce48bf5483"
+metafile = true
+
+[[files]]
+file = "mods/inventory-profiles-next.pw.toml"
+hash = "3642d8685a238fef46297f915475f2412d997efd93012126e9e0cf3ecddadaa4"
 metafile = true
 
 [[files]]
@@ -86,8 +101,23 @@ hash = "cb3d45c41c7b93394ac9e60653bea91df35c78231e1a9f94cbeffb0b8ac1a3dc"
 metafile = true
 
 [[files]]
+file = "mods/just-enough-resources-jer.pw.toml"
+hash = "ddd0362ae53097b0d33c4cbf4387c9731f5d340b5420d879b3c4a9aaa362871a"
+metafile = true
+
+[[files]]
+file = "mods/kotlin-lang-forge.pw.toml"
+hash = "b920932d9eaecab1a732436946e6ec9983318871c31cb785fe271f8155e2b778"
+metafile = true
+
+[[files]]
 file = "mods/ksyxis.pw.toml"
 hash = "0546b1ffff8f721de68cf4e8963390b37de255d9c117bbb0370ae645e68839ca"
+metafile = true
+
+[[files]]
+file = "mods/libipn.pw.toml"
+hash = "97611cc97e0a2e54bfad22dd72f1b38fa2a205cd338d8f509fb88dff3fa4452b"
 metafile = true
 
 [[files]]
@@ -121,11 +151,6 @@ hash = "30c12f0a0c767816bb737ad122e31b2f2a25b76adb9acb0227c0a0d123cbdf11"
 metafile = true
 
 [[files]]
-file = "mods/moreculling.pw.toml"
-hash = "5d0b62a9899c70220ae860f9a676b95d18cc3f9c0c379609b89dbbc997dbf237"
-metafile = true
-
-[[files]]
 file = "mods/mouse-tweaks.pw.toml"
 hash = "947c0322f9c5c6362c6010b1ba539681b2dd806bef2505e9fcd7bf45b7b8734a"
 metafile = true
@@ -133,6 +158,11 @@ metafile = true
 [[files]]
 file = "mods/natures-compass.pw.toml"
 hash = "9d7f08d597c6dd77056560644c91ebdf3c03906153c170fea31868be8bd2e5b7"
+metafile = true
+
+[[files]]
+file = "mods/ok-zoomer.pw.toml"
+hash = "91134324bc8610fd3d7506edc61a4e27a41222a080d2dc8b5073d32f9505376e"
 metafile = true
 
 [[files]]
@@ -147,7 +177,7 @@ metafile = true
 
 [[files]]
 file = "mods/reeses-sodium-options.pw.toml"
-hash = "b45a6367012038b946e04072e223403d751da987f429cec193891ea50e3fdd1e"
+hash = "6552d40a7b93474d2fd303b3fd2d3cc2ad4ea02380c8786894f081f8ab1b3472"
 metafile = true
 
 [[files]]
@@ -162,22 +192,27 @@ metafile = true
 
 [[files]]
 file = "mods/sodium-extra.pw.toml"
-hash = "0b4f41a02964972776827424ab0744ea83e214c52352c273042cf6729294f68d"
+hash = "1772f83035c5e707be598d31c30fe0a9b4211427a5ed36b126a701549596da39"
 metafile = true
 
 [[files]]
 file = "mods/sodium.pw.toml"
-hash = "e3590127a4a5ec35fbc6987b8f5037f5d0ccfe0de78363da11196a2e3eab1fb1"
+hash = "894bbc09a4fd276ae857b9bf6470c68aa6e75fc70425bdfb26d94c1c20af8c5b"
 metafile = true
 
 [[files]]
 file = "mods/sophisticated-backpacks.pw.toml"
-hash = "ef9505846a1b8dcdfff918d8363f0d726741ed9240d796489a136df327ec2f47"
+hash = "b8f6a140f38cf29cdd94efaccff852fc198dd6c65fbf12b4a52aa686913e838b"
 metafile = true
 
 [[files]]
 file = "mods/sophisticated-core.pw.toml"
-hash = "69fc0aeff5cb34687c2a0b19fbc2ceedf465bf2951e7c8ec02d3d06b7a2ab0ae"
+hash = "85c3fe4d42f77e5211cf3b9fe56f3f7d701c781d5b04563f6680954ef7ff3a52"
+metafile = true
+
+[[files]]
+file = "mods/sophisticated-storage.pw.toml"
+hash = "a0c9f4daea2366b906b7ddf40dd2ff780dec10e0ec5c57a214529bb75f07e0a8"
 metafile = true
 
 [[files]]
@@ -188,6 +223,11 @@ metafile = true
 [[files]]
 file = "mods/terralith.pw.toml"
 hash = "a7619e2d021df10a2c86dbd38d22847377f9ebb1a5654a8a8b7c513090feb3c9"
+metafile = true
+
+[[files]]
+file = "mods/veinminer.pw.toml"
+hash = "3296b0195e5ec88e2ceb5f58b24c98cb12a55f1a180c6056db2f27d2e1f2535e"
 metafile = true
 
 [[files]]

@@ -71,6 +71,15 @@ Theoria — keşif ve güçlenme / exploration and progression.
     # Side this dependency is applied on - BOTH, CLIENT, or SERVER
     side="BOTH"
 
+# Phase 11 (ADR-007): Curios API is the one mod Theoria compiles against (Curios Max screen + slot data). Required: the pack ships 17.0.1.
+[[dependencies.${mod_id}]]
+    modId="curios"
+    type="required"
+    reason="Curios Max screen and accessory slots"
+    versionRange="[17.0.1,18)"
+    ordering="AFTER"
+    side="BOTH"
+
 # Here's another dependency
 [[dependencies.${mod_id}]]
     modId="minecraft"

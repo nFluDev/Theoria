@@ -24,10 +24,23 @@ sourceSets.main.resources {
     srcDir('src/generated/catalysts')
     // Phase 8: generator/mobs.py writes here (species table, compiled rigs, textures, loot tables, spawn biome modifiers)
     srcDir('src/generated/mobs')
+    // Phase 9b: generator/biomes.py (20 biomes, TerraBlender region, biome tags) and generator/structures.py (NBT templates, jigsaw pools, structure sets, chest loot)
+    srcDir('src/generated/biomes')
+    srcDir('src/generated/structures')
+    // Phase 11: generator/curios.py (Curios slot sizes from data/curios_slots.csv)
+    srcDir('src/generated/curios')
+    // Phase 12: generator/relics.py (relic items, icons, Curios tags, loot tables + modifiers, theoria/relics.json)
+    srcDir('src/generated/relics')
 
     // Exclude common development only resources from finalized outputs
     exclude("**/*.bbmodel") // BlockBench project files
     exclude("src/generated/**/.cache") // datagen cache files
+}
+
+// Faz 13: the RELEASE jar carries no test code. dev.theoria.devtest (GameTests, client scenarios, probes — ~50 classes) is only reached by reflection from Theoria/TheoriaClient and
+// only with -Dtheoria.dev=true; the dev run configs use the compiled classes, not this jar. `-PkeepDevTests` keeps the package in the jar (to run the tests from a packaged instance).
+tasks.named('jar', Jar).configure {
+    if (!project.hasProperty('keepDevTests')) exclude('dev/theoria/devtest/**')
 }
 
 repositories {
@@ -93,6 +106,8 @@ neoForge {
             systemProperty 'theoria.dev.out', file('build/dev-out').absolutePath
             // data/balance (single source of the numbers): balance_* tests compare the datapack JSON with the CSVs
             systemProperty 'theoria.dev.data', file('../../data/balance').absolutePath
+            // -PgameTestOnly=worlds_ runs only the GameTests whose name starts with one of the comma-separated prefixes (empty = all)
+            systemProperty 'theoria.dev.only', (findProperty('gameTestOnly') ?: '') as String
         }
 
         // Unattended client scenario (own game dir): opens a world, runs, quits by itself.
@@ -102,6 +117,9 @@ neoForge {
             gameDirectory = project.file('run-dev')
             systemProperty 'theoria.dev', 'true'
             systemProperty 'theoria.dev.client', (findProperty('devClient') ?: 'smoke') as String
+            // worldgen scenario (tools/worldgen_sweep.py): fixed seed and force-load size
+            systemProperty 'theoria.dev.seed', (findProperty('devSeed') ?: '260309') as String
+            systemProperty 'theoria.dev.tiles', (findProperty('devTiles') ?: '3') as String
             systemProperty 'theoria.dev.out', file('build/dev-out').absolutePath
             programArguments.addAll '--width', '1280', '--height', '720'
         }
@@ -150,10 +168,20 @@ configurations {
 }
 
 dependencies {
+    // Curios API 17.0.1+26.3 (the pack's version; Modrinth version id NBT8yOsH): the ONE third-party mod Theoria compiles against (CLAUDE.md rule, Phase 11 / ADR-007).
+    // Only dev.theoria.curios touches it; slot definitions stay datapack JSON. It is a required dependency in neoforge.mods.toml, so the dev runs load it too.
+    compileOnly("maven.modrinth:curios:NBT8yOsH") { transitive = false }
+    localRuntime("maven.modrinth:curios:NBT8yOsH") { transitive = false }
     // Fantastic Wings 26.3.1 (+ Puzzles Lib 26.3.17), runtime only — Phase 4 integrates at command/registry level (ADR-002).
     // Modrinth version ids.
     localRuntime("maven.modrinth:fantastic-wings:N97Ch5Lv") { transitive = false }
     localRuntime("maven.modrinth:puzzles-lib:F9mIZLWF") { transitive = false }
+    // TerraBlender 26.3.0.0.9 (the pack's version), runtime only and OPT-IN (-PwithTerraBlender): Phase 9b places the biomes through its data-driven `terrablender:region` JSON
+    // (never compiled against). It is not in the default GameTest run because with it the timing-sensitive entity tests (gear_innate, mobs_weapon_event, catalyst_elements) turn flaky
+    // (4 of 5 runs; 78/78 three times without it). Region-load proof: ./gradlew runGameTestServer -PwithTerraBlender -PgameTestOnly=worlds_
+    if (project.hasProperty('withTerraBlender')) {
+        localRuntime("maven.modrinth:terrablender:Vmc9zVfq") { transitive = false }
+    }
 
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime

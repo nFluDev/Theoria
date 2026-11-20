@@ -249,7 +249,7 @@ def budget():
         end = dict(M.loadout(p), armor=M.loadout(p)["armor"] + 2 * pts, toughness=M.loadout(p)["toughness"] + 0.2 * pts)
         print(f"  T13 ref + L{level} ({pts} puan) tek stat'a: hepsi Vitalite → HTD {M.hits_to_die(vit, M.mob_dmg(p)):.0f} · "
               f"hepsi Dayanıklılık → HTD {M.hits_to_die(end, M.mob_dmg(p)):.0f}  (ref {htd(p):.1f}, max bandı ≤ {MAX_HTD:g})")
-    print("  → taslak puan değerleri bütçeye göre çok cömert; Faz 10 yumuşak tavan/azalan getiriyi bu bütçeye göre ayarlamalı (D9).")
+    print("  → taslak puan değerleri bütçeye göre çok cömertti; Faz 10 yumuşak tavanlı yeni değerleri tools/balance/stats.py'de (bütçe payı denetimi: stats.py --report).")
 
 
 # ─── 2b için beklenen değerler ───────────────────────────────────────────────────────────────────────────────────

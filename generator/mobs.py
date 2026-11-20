@@ -27,7 +27,7 @@ import tiers as M  # noqa: E402
 ROOT = HERE.parent
 GEN = ROOT / "mods-src/theoria/src/generated/mobs"
 LANG = ROOT / "mods-src/theoria/src/main/resources/assets/theoria/lang"
-OWNED_PREFIX = ("entity.theoria.", "theoria.mob.", "itemGroup.theoria.mobs", "item.theoria.heart_crystal")
+OWNED_PREFIX = ("entity.theoria.", "theoria.mob.", "itemGroup.theoria.mobs", "item.theoria.heart_crystal", "item.theoria.oblivion_orb")
 EGG_SUFFIX = "_spawn_egg"
 
 # Kalp Kristali (boss ödülü) ve sınıf adları
@@ -182,6 +182,30 @@ def heart_png():
     return pngio.encode(px)
 
 
+def orb_png():
+    """Unutuş Küresi (Faz 10 respec eşyası): koyu mor küre, içinde dönen sönük ışık; kenarı kararır — 'unutulan' puanların soluşu."""
+    px = [[(0, 0, 0, 0)] * 16 for _ in range(16)]
+    cx = cy = 7.5
+    for y in range(16):
+        for x in range(16):
+            d = ((x - cx) ** 2 + (y - cy) ** 2) ** 0.5
+            if d > 6.2:
+                continue
+            t = d / 6.2
+            swirl = (math.atan2(y - cy, x - cx) + d * 0.9) % (2 * math.pi) / (2 * math.pi)
+            base = (74, 38, 122) if swirl < 0.5 else (112, 62, 176)
+            shade = 1.0 - 0.55 * t
+            px[y][x] = (int(base[0] * shade), int(base[1] * shade), int(base[2] * shade), 255)
+    for (x, y), c in {(5, 4): (235, 220, 255, 255), (6, 4): (200, 176, 240, 255), (5, 5): (200, 176, 240, 255)}.items():
+        px[y][x] = c
+    for y in range(16):                          # koyu çerçeve
+        for x in range(16):
+            if px[y][x][3] == 0 and any(0 <= y + dy < 16 and 0 <= x + dx < 16 and px[y + dy][x + dx][3] == 255
+                                       for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))):
+                px[y][x] = (24, 10, 42, 255)
+    return pngio.encode(px)
+
+
 # ──────────────────────────────────────────────────────────────────────────────────────────────── tablolar
 def species_rows():
     rows = B.species()
@@ -235,6 +259,7 @@ def lang(species):
         en[f"entity.theoria.{sp['id']}"], tr[f"entity.theoria.{sp['id']}"] = sp["en"], sp["tr"]
         en[f"item.theoria.{sp['id']}{EGG_SUFFIX}"], tr[f"item.theoria.{sp['id']}{EGG_SUFFIX}"] = f"{sp['en']} Spawn Egg", f"{sp['tr']} Doğurma Yumurtası"
     en["item.theoria.heart_crystal"], tr["item.theoria.heart_crystal"] = "Heart Crystal", "Kalp Kristali"
+    en["item.theoria.oblivion_orb"], tr["item.theoria.oblivion_orb"] = "Orb of Oblivion", "Unutuş Küresi"
     en["itemGroup.theoria.mobs"], tr["itemGroup.theoria.mobs"] = "Theoria: Mobs", "Theoria: Mob'lar"
     for cls, (a, b) in CLASS_NAMES.items():
         en[f"theoria.mob.cls.{cls}"], tr[f"theoria.mob.cls.{cls}"] = a, b
@@ -279,6 +304,13 @@ def outputs():
     rel["assets/theoria/items/heart_crystal.json"] = item_definition("theoria:item/heart_crystal")
     rel["assets/theoria/models/item/heart_crystal.json"] = flat_model("theoria:item/heart_crystal")
     rel["assets/theoria/textures/item/heart_crystal.png"] = heart_png()
+    rel["assets/theoria/items/oblivion_orb.json"] = item_definition("theoria:item/oblivion_orb")   # Faz 10: puan sıfırlama eşyası (boss ödülü)
+    rel["assets/theoria/models/item/oblivion_orb.json"] = flat_model("theoria:item/oblivion_orb")
+    rel["assets/theoria/textures/item/oblivion_orb.png"] = orb_png()
+    # 2026-11-20 (user): resetting skill points must cost something real — the orb is CRAFTABLE with an End Crystal (+ 4 ender eyes + 4 diamonds); a boss drops one only rarely (5 %)
+    rel["data/theoria/recipe/oblivion_orb.json"] = dumps({"type": "minecraft:crafting_shaped", "category": "misc",
+        "key": {"E": "minecraft:ender_eye", "D": "minecraft:diamond", "C": "minecraft:end_crystal"},
+        "pattern": ["EDE", "DCD", "EDE"], "result": {"id": "theoria:oblivion_orb"}})
     rel["data/theoria/tags/entity_type/species.json"] = dumps({"replace": False, "values": [f"theoria:{s['id']}" for s in species]})
     rel["data/theoria/tags/entity_type/bosses.json"] = dumps({"replace": False, "values": [f"theoria:{s['id']}" for s in species if s["boss"]]})
     rel["data/minecraft/tags/entity_type/undead.json"] = dumps({"replace": False, "values": ["theoria:pale_wraith", "theoria:shade_seep"]})

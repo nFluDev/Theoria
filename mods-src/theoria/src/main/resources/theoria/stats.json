@@ -1,0 +1,705 @@
+{
+  "leveling": {
+    "max_level": 9999,
+    "points_per_level": 4,
+    "xp_anchors": [
+      [
+        2,
+        55
+      ],
+      [
+        25,
+        19700
+      ],
+      [
+        50,
+        182000
+      ],
+      [
+        75,
+        1410000
+      ],
+      [
+        100,
+        9490000
+      ],
+      [
+        200,
+        222000000
+      ]
+    ],
+    "xp_knee": 200
+  },
+  "respec": {
+    "item": "theoria:oblivion_orb",
+    "boss_chance": 0.05
+  },
+  "stats": [
+    {
+      "id": "strength",
+      "effects": [
+        {
+          "id": "attack_damage",
+          "kind": "attribute",
+          "attribute": "minecraft:attack_damage",
+          "op": "add_value",
+          "cap": 50.0,
+          "half": 1400.0
+        },
+        {
+          "id": "mining_efficiency",
+          "kind": "attribute",
+          "attribute": "minecraft:mining_efficiency",
+          "op": "add_value",
+          "cap": 4.0,
+          "half": 1400.0
+        }
+      ]
+    },
+    {
+      "id": "vitality",
+      "effects": [
+        {
+          "id": "max_health",
+          "kind": "attribute",
+          "attribute": "minecraft:max_health",
+          "op": "add_value",
+          "cap": 120.0,
+          "half": 490.0
+        }
+      ]
+    },
+    {
+      "id": "endurance",
+      "effects": [
+        {
+          "id": "armor",
+          "kind": "attribute",
+          "attribute": "minecraft:armor",
+          "op": "add_value",
+          "cap": 100.0,
+          "half": 650.0
+        },
+        {
+          "id": "armor_toughness",
+          "kind": "attribute",
+          "attribute": "minecraft:armor_toughness",
+          "op": "add_value",
+          "cap": 4.0,
+          "half": 650.0
+        },
+        {
+          "id": "knockback_resistance",
+          "kind": "attribute",
+          "attribute": "minecraft:knockback_resistance",
+          "op": "add_value",
+          "cap": 0.5,
+          "half": 650.0
+        }
+      ]
+    },
+    {
+      "id": "agility",
+      "effects": [
+        {
+          "id": "movement_speed",
+          "kind": "attribute",
+          "attribute": "minecraft:movement_speed",
+          "op": "add_multiplied_base",
+          "cap": 0.3,
+          "half": 100.0
+        }
+      ]
+    },
+    {
+      "id": "satiety",
+      "effects": [
+        {
+          "id": "food_saturation",
+          "kind": "attribute",
+          "attribute": "theoria:food_saturation",
+          "op": "add_value",
+          "cap": 6.0,
+          "half": 150.0
+        },
+        {
+          "id": "exhaustion",
+          "kind": "exhaustion",
+          "attribute": "",
+          "op": "",
+          "cap": 0.5,
+          "half": 200.0
+        }
+      ]
+    },
+    {
+      "id": "precision",
+      "effects": [
+        {
+          "id": "crit_chance",
+          "kind": "attribute",
+          "attribute": "theoria:crit_chance",
+          "op": "add_value",
+          "cap": 0.35,
+          "half": 500.0
+        },
+        {
+          "id": "crit_damage",
+          "kind": "attribute",
+          "attribute": "theoria:crit_damage",
+          "op": "add_value",
+          "cap": 1.0,
+          "half": 500.0
+        }
+      ]
+    },
+    {
+      "id": "fortune",
+      "effects": [
+        {
+          "id": "luck",
+          "kind": "attribute",
+          "attribute": "minecraft:luck",
+          "op": "add_value",
+          "cap": 10.0,
+          "half": 200.0
+        }
+      ]
+    },
+    {
+      "id": "wisdom",
+      "effects": [
+        {
+          "id": "xp_percent",
+          "kind": "xp_percent",
+          "attribute": "",
+          "op": "",
+          "cap": 300.0,
+          "half": 500.0
+        }
+      ]
+    }
+  ],
+  "cases": {
+    "xp": [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        55
+      ],
+      [
+        3,
+        198
+      ],
+      [
+        4,
+        420
+      ],
+      [
+        5,
+        715
+      ],
+      [
+        10,
+        3208
+      ],
+      [
+        20,
+        12785
+      ],
+      [
+        50,
+        182000
+      ],
+      [
+        100,
+        9490000
+      ],
+      [
+        199,
+        217007253
+      ],
+      [
+        200,
+        222000000
+      ],
+      [
+        201,
+        227005229
+      ],
+      [
+        500,
+        2843192082
+      ],
+      [
+        1000,
+        12204592374
+      ],
+      [
+        5000,
+        311769401714
+      ],
+      [
+        9998,
+        1247410206147
+      ],
+      [
+        9999,
+        1247659806042
+      ]
+    ],
+    "level": [
+      [
+        0,
+        1
+      ],
+      [
+        54,
+        1
+      ],
+      [
+        55,
+        2
+      ],
+      [
+        56,
+        2
+      ],
+      [
+        252,
+        3
+      ],
+      [
+        253,
+        3
+      ],
+      [
+        254,
+        3
+      ],
+      [
+        6913,
+        14
+      ],
+      [
+        6914,
+        14
+      ],
+      [
+        287603,
+        54
+      ],
+      [
+        287604,
+        54
+      ],
+      [
+        17400152175,
+        1190
+      ],
+      [
+        17400152176,
+        1190
+      ],
+      [
+        99000000000,
+        2820
+      ]
+    ],
+    "bonus": [
+      [
+        "strength.attack_damage",
+        1,
+        0.035688794
+      ],
+      [
+        "strength.attack_damage",
+        4,
+        0.142450142
+      ],
+      [
+        "strength.attack_damage",
+        40,
+        1.388888889
+      ],
+      [
+        "strength.attack_damage",
+        400,
+        11.111111111
+      ],
+      [
+        "strength.attack_damage",
+        4000,
+        37.037037037
+      ],
+      [
+        "strength.attack_damage",
+        39992,
+        48.308851952
+      ],
+      [
+        "strength.mining_efficiency",
+        1,
+        0.002855103
+      ],
+      [
+        "strength.mining_efficiency",
+        4,
+        0.011396011
+      ],
+      [
+        "strength.mining_efficiency",
+        40,
+        0.111111111
+      ],
+      [
+        "strength.mining_efficiency",
+        400,
+        0.888888889
+      ],
+      [
+        "strength.mining_efficiency",
+        4000,
+        2.962962963
+      ],
+      [
+        "strength.mining_efficiency",
+        39992,
+        3.864708156
+      ],
+      [
+        "vitality.max_health",
+        1,
+        0.244399185
+      ],
+      [
+        "vitality.max_health",
+        4,
+        0.971659919
+      ],
+      [
+        "vitality.max_health",
+        40,
+        9.056603774
+      ],
+      [
+        "vitality.max_health",
+        400,
+        53.93258427
+      ],
+      [
+        "vitality.max_health",
+        4000,
+        106.904231626
+      ],
+      [
+        "vitality.max_health",
+        39992,
+        118.547502594
+      ],
+      [
+        "endurance.armor",
+        1,
+        0.153609831
+      ],
+      [
+        "endurance.armor",
+        4,
+        0.611620795
+      ],
+      [
+        "endurance.armor",
+        40,
+        5.797101449
+      ],
+      [
+        "endurance.armor",
+        400,
+        38.095238095
+      ],
+      [
+        "endurance.armor",
+        4000,
+        86.021505376
+      ],
+      [
+        "endurance.armor",
+        39992,
+        98.400669258
+      ],
+      [
+        "endurance.armor_toughness",
+        1,
+        0.006144393
+      ],
+      [
+        "endurance.armor_toughness",
+        4,
+        0.024464832
+      ],
+      [
+        "endurance.armor_toughness",
+        40,
+        0.231884058
+      ],
+      [
+        "endurance.armor_toughness",
+        400,
+        1.523809524
+      ],
+      [
+        "endurance.armor_toughness",
+        4000,
+        3.440860215
+      ],
+      [
+        "endurance.armor_toughness",
+        39992,
+        3.93602677
+      ],
+      [
+        "endurance.knockback_resistance",
+        1,
+        0.000768049
+      ],
+      [
+        "endurance.knockback_resistance",
+        4,
+        0.003058104
+      ],
+      [
+        "endurance.knockback_resistance",
+        40,
+        0.028985507
+      ],
+      [
+        "endurance.knockback_resistance",
+        400,
+        0.19047619
+      ],
+      [
+        "endurance.knockback_resistance",
+        4000,
+        0.430107527
+      ],
+      [
+        "endurance.knockback_resistance",
+        39992,
+        0.492003346
+      ],
+      [
+        "agility.movement_speed",
+        1,
+        0.002970297
+      ],
+      [
+        "agility.movement_speed",
+        4,
+        0.011538462
+      ],
+      [
+        "agility.movement_speed",
+        40,
+        0.085714286
+      ],
+      [
+        "agility.movement_speed",
+        400,
+        0.24
+      ],
+      [
+        "agility.movement_speed",
+        4000,
+        0.292682927
+      ],
+      [
+        "agility.movement_speed",
+        39992,
+        0.299251721
+      ],
+      [
+        "satiety.food_saturation",
+        1,
+        0.039735099
+      ],
+      [
+        "satiety.food_saturation",
+        4,
+        0.155844156
+      ],
+      [
+        "satiety.food_saturation",
+        40,
+        1.263157895
+      ],
+      [
+        "satiety.food_saturation",
+        400,
+        4.363636364
+      ],
+      [
+        "satiety.food_saturation",
+        4000,
+        5.78313253
+      ],
+      [
+        "satiety.food_saturation",
+        39992,
+        5.977579592
+      ],
+      [
+        "satiety.exhaustion",
+        1,
+        0.002487562
+      ],
+      [
+        "satiety.exhaustion",
+        4,
+        0.009803922
+      ],
+      [
+        "satiety.exhaustion",
+        40,
+        0.083333333
+      ],
+      [
+        "satiety.exhaustion",
+        400,
+        0.333333333
+      ],
+      [
+        "satiety.exhaustion",
+        4000,
+        0.476190476
+      ],
+      [
+        "satiety.exhaustion",
+        39992,
+        0.497511943
+      ],
+      [
+        "precision.crit_chance",
+        1,
+        0.000698603
+      ],
+      [
+        "precision.crit_chance",
+        4,
+        0.002777778
+      ],
+      [
+        "precision.crit_chance",
+        40,
+        0.025925926
+      ],
+      [
+        "precision.crit_chance",
+        400,
+        0.155555556
+      ],
+      [
+        "precision.crit_chance",
+        4000,
+        0.311111111
+      ],
+      [
+        "precision.crit_chance",
+        39992,
+        0.345678159
+      ],
+      [
+        "precision.crit_damage",
+        1,
+        0.001996008
+      ],
+      [
+        "precision.crit_damage",
+        4,
+        0.007936508
+      ],
+      [
+        "precision.crit_damage",
+        40,
+        0.074074074
+      ],
+      [
+        "precision.crit_damage",
+        400,
+        0.444444444
+      ],
+      [
+        "precision.crit_damage",
+        4000,
+        0.888888889
+      ],
+      [
+        "precision.crit_damage",
+        39992,
+        0.987651882
+      ],
+      [
+        "fortune.luck",
+        1,
+        0.049751244
+      ],
+      [
+        "fortune.luck",
+        4,
+        0.196078431
+      ],
+      [
+        "fortune.luck",
+        40,
+        1.666666667
+      ],
+      [
+        "fortune.luck",
+        400,
+        6.666666667
+      ],
+      [
+        "fortune.luck",
+        4000,
+        9.523809524
+      ],
+      [
+        "fortune.luck",
+        39992,
+        9.950238854
+      ],
+      [
+        "wisdom.xp_percent",
+        1,
+        0.598802395
+      ],
+      [
+        "wisdom.xp_percent",
+        4,
+        2.380952381
+      ],
+      [
+        "wisdom.xp_percent",
+        40,
+        22.222222222
+      ],
+      [
+        "wisdom.xp_percent",
+        400,
+        133.333333333
+      ],
+      [
+        "wisdom.xp_percent",
+        4000,
+        266.666666667
+      ],
+      [
+        "wisdom.xp_percent",
+        39992,
+        296.295564556
+      ]
+    ]
+  }
+}

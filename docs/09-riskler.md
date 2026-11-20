@@ -11,9 +11,9 @@
 | R7 | Vanilla zırh formülü 20'de tavan → sayılar anlamsız | Kesin / Yüksek | Hasar azaltma enjeksiyonu (ADR-003, Faz 2) — projenin en kritik teknik karar |
 | R8 | Sayı enflasyonu: HUD'da 6 haneli sayılar, TTK bozuluyor | Orta / Orta | `sim.py`, kısaltma, TTK ölçüm testi |
 | R16 | Fabric'teki C2ME/VMP NeoForge'da yok → worldgen/ağ performans farkı | Orta / Düşük | Q1; Chunky ön üretim; ModernFix-mvus, Lithium, Ksyxis |
-| R17 | 9999 seviye + 40K beceri puanı + %1600 XP → sayı kırılması | Yüksek / Orta | Q3: yumuşak tavan/azalan getiri; XP `long`; Faz 10 sim |
-| R9 | Zırh render gizleme/kozmetik 26.x render yeniden yazımında zor | Orta / Orta | S3; fallback: yalnızca kendi oyuncuda |
-| R10 | Worldgen'i sonradan değiştirmek chunk dikişi bırakır | Kesin / Yüksek | Faz 9 sonrası worldgen dondurulur; M2'ye kadar test dünyaları kullan |
+| R17 | 9999 seviye + 40K beceri puanı + %1600 XP → sayı kırılması | Yüksek / Orta | Q3: yumuşak tavan/azalan getiri; XP `long`. **Durum (2026-11-20): Faz 10 uygulandı** — her etki `tavan·n/(n+yarı)`, L9999'da bile tavanın altında; `stats.py` bantları + `/theoria test stats` |
+| R9 | Zırh render gizleme/kozmetik 26.x render yeniden yazımında zor | Orta / Orta → **kapandı (Faz 11, ADR-007)** | S3; tek `AvatarRenderStateModifier` yerel + uzak oyuncuda çalıştı (istemci senaryosu), fallback gerekmedi. Kalan: başka modların kendi katmanında çizdiği zırhlar (docs/10 Q82), Vulkan+Vitrail altında *görünüş* (kullanıcı) |
+| R10 | Worldgen'i sonradan değiştirmek chunk dikişi bırakır | Kesin / Yüksek | Faz 9 sonrası worldgen dondurulur; M2'ye kadar test dünyaları kullan. **Durum (2026-11-20): DONDURULDU (kullanıcı onayı, Faz 9b kapısı).** Bundan sonra mevcut dünyaya geriye dönük worldgen değişikliği yapılmaz; denemeler yeni seed'lerde sürer. |
 | R11 | Performans (16 GB, RX 580): 20 biyom + 40 mob + yapılar | Orta / Orta | Chunky ön üretim, render distance 8-10, Sodium/Lithium; GameTest bütçeleri |
 | R12 | Kapsam çok büyük (≈ 45 oturum) | Yüksek / Yüksek | M1/M2/M3 kilometre taşları; kapsam kesme sırası (docs/07 sonu) |
 | R13 | Bağlam şişmesi (LucidRem project.md 3000 satır) | Orta / Orta | Faz başı journal, kısa PROGRESS.md, `/clear` disiplini |

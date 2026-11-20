@@ -1,0 +1,58 @@
+{
+  "_comment": "Faz 9b worldgen tek kaynağı (generator/biomes.py + generator/structures.py okur). Sayılar ilk deneme değerleridir: Chunky 5×1000 turu (kullanıcı kapısı) sonrası ayarlanıp dondurulur. havens: 16×16 chunk hücresi başına en çok 1 Haven ≈ 1000 chunk'ta 3-4 (S:M:L = 5:3:2).",
+  "region": {
+    "name": "overworld",
+    "weight": 3,
+    "target_surface_share": 0.25
+  },
+  "sets": {
+    "havens": {
+      "spacing": 16,
+      "separation": 6,
+      "salt": 91400101,
+      "spread": "linear"
+    },
+    "havens_valley": {
+      "spacing": 9,
+      "separation": 3,
+      "salt": 91400102,
+      "spread": "linear"
+    },
+    "ruins": {
+      "spacing": 20,
+      "separation": 8,
+      "salt": 91400103,
+      "spread": "linear"
+    },
+    "dungeons": {
+      "spacing": 24,
+      "separation": 9,
+      "salt": 91400104,
+      "spread": "linear"
+    },
+    "keeps": {
+      "spacing": 44,
+      "separation": 18,
+      "salt": 91400105,
+      "spread": "linear"
+    }
+  },
+  "bands": {
+    "t0_3": [
+      0,
+      3
+    ],
+    "t3_6": [
+      3,
+      6
+    ],
+    "t6_10": [
+      6,
+      10
+    ],
+    "t9_13": [
+      9,
+      13
+    ]
+  }
+}

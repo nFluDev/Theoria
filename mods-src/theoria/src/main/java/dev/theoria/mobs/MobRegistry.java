@@ -46,6 +46,7 @@ public final class MobRegistry {
                 .icon(() -> new ItemStack(HEART_CRYSTAL.get()))
                 .displayItems((params, output) -> {
                     output.accept(HEART_CRYSTAL.get());
+                    output.accept(dev.theoria.stats.StatsModule.OBLIVION_ORB.get()); // Faz 10: the other boss reward
                     EGGS.values().forEach(egg -> output.accept(egg.get()));
                 }).build());
         modBus.addListener(MobRegistry::onAttributes);

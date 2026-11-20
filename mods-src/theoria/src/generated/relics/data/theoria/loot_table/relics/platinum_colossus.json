@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/warlord_ring",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/heart_locket",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/mender_belt",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/watcher_circlet",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/phoenix_feather",
+          "weight": 6
+        }
+      ]
+    }
+  ]
+}

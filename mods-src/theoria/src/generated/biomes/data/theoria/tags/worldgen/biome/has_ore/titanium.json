@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "theoria:titan_peaks",
+    "theoria:orichalcum_sky",
+    "#minecraft:is_mountain"
+  ]
+}

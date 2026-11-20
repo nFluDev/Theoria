@@ -50,8 +50,10 @@ ZONE = dict(
     cap=13,               # kademe tavanı (Platin)
     band=1,               # yeni türün spawn bandı: tür kademesi ± band
 )
-# XP (docs/06 §5): kill XP = sınıf tabanı × xp_growth^kademe. 2,0^13 = 8192 → zombi sınıfı 5 XP × 8192 ≈ 41K (docs/06'daki "T13'te ≈ 50K"). Faz 10 ayarlar.
-XP_GROWTH = 2.0
+# XP (docs/06 §5): kill XP = sınıf tabanı × xp_growth^kademe. Faz 10 (2026-11-20) ayarı: 2,0 → 1,75. 2,0 ile referans oyuncu L50'ye ≈ 41 sa, L200'e ≈ 90 sa'da
+# varıyordu (seviye bütçeyi geçen kademeden hızlı büyür); 1,75 ile L50 ≈ 38 sa, L200 ≈ 114 sa (tools/balance/stats.py tempo modeli, docs/10 Q66).
+# 1,75^13 = 1444 → zombi sınıfı 5 XP × 1444 ≈ 7,2K.
+XP_GROWTH = 1.75
 XP_BASE = dict(weak=3, normal=5, strong=10, elite=20, boss=40)
 # Kalp Kristali (boss ödülü): her biri kalıcı +can; docs/06 §3 "kalp ödül eşyaları ≈ +44 can" → 11 adet.
 HEART_HP, HEART_MAX = 4, 11
@@ -201,7 +203,7 @@ def checks():
         all(zone_tier("overworld", d, 64) <= zone_tier("overworld", d + 100, 64) for d in range(0, 9000, 100)))
     add("boyut tabanları sıralı (overworld < nether < end)", ZONE["nether"] < ZONE["end"] <= ZONE["cap"])
     # XP
-    add("XP çarpanı kademeyle artar ve T13'te zombi sınıfı 20K–60K", all(xp_mult(t + 1) > xp_mult(t) for t in range(M.N - 1)) and 20_000 <= XP_BASE["normal"] * xp_mult(M.N - 1) <= 60_000,
+    add("XP çarpanı kademeyle artar ve T13'te zombi sınıfı 5K–15K", all(xp_mult(t + 1) > xp_mult(t) for t in range(M.N - 1)) and 5_000 <= XP_BASE["normal"] * xp_mult(M.N - 1) <= 15_000,
         f"T13 normal = {XP_BASE['normal'] * xp_mult(M.N - 1):.0f}")
     add("Kalp Kristali toplamı ≈ docs/06 §3 kalp ödülü (+44 can)", HEART_HP * HEART_MAX == 44)
     return out

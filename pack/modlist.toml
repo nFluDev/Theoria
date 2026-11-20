@@ -17,13 +17,15 @@ puzzles-lib     = "26.3.17"      # fantastic-wings zorunlu bağımlılığı (>=
 mezzconfig      = "0.6.11"       # jei zorunlu bağımlılığı
 
 [performans]
-sodium          = "0.9.3-beta.4"   # Vulkan destekli (kullanıcı instance'ında kanıtlı)
-sodium-extra    = "0.9.6-beta.3"
-reeses-sodium-options = "2.2.6-beta.3"
+# Sodium üçlüsü beta.1'e SABİT (2026-11-19, Faz 9b kapısı): Vitrail 0.13.0-beta (13 Eki) ile test edilmiş küme; beta.2-4 (7-8 Kas) + MoreCulling ile
+# dünya görüntüsü hitbox'tan geç güncelleniyordu / "ışınlanıyordu". Kullanıcının sorunsuz ChillCraft instance'ı bu kümede; beta.1'e inip MoreCulling'i kapatınca düzeldi.
+# Güncellemeden önce Vitrail sürümünü ve bu belirtiyi (docs/journal/f09-kapi.md) yeniden dene.
+sodium          = "0.9.3-beta.1"   # Vulkan destekli
+sodium-extra    = "0.9.6-beta.1"
+reeses-sodium-options = "2.2.6-beta.1"
 immediatelyfast = "1.17.1"
 badoptimizations= "2.4.1"
 scalablelux     = "0.3.0-alpha.0.17"
-moreculling     = "1.9.2"
 dynamic-fps     = "3.11.10"
 modernfix-mvus  = "5.27.23"
 ksyxis          = "1.4.6"
@@ -46,18 +48,34 @@ xaeros-world-map= "1.47.2"
 explorers-compass = "3.3.2"
 natures-compass = "3.3.1"
 lootr           = "1.25.42"
+# Faz 11 sonrası (2026-11-20, kullanıcı isteği): envanter QoL + yakınlaştırma. IPN = sıralama (orta tık / düğme), "hepsini taşı/al", kaydır-taşı; Mouse Tweaks ile birlikte çalışır.
+veinminer       = "2.14.0"          # FTB Ultimine Modrinth'te YOK (yalnız CurseForge); aynı işi yapan, 26.3 NeoForge'u olan alternatif (damarı tek seferde kır)
+ok-zoomer       = "19.0.0-beta.3"   # yakınlaştırma (zoomify Fabric API ister; ok-zoomer bağımlılıksız)
+inventory-profiles-next = "neoforge-26.3-2.3.8"
+libipn          = "neoforge-26.3-6.9.0"      # inventory-profiles-next zorunlu bağımlılığı
+just-enough-resources-jer = "1.11.0.64"      # JEI'da cevher/mob/loot nerede çıkar (ALPHA)
+
+[depolama]
+# Kullanıcı isteği (2026-11-20): Sophisticated ailesi artık varsayılan AÇIK (Faz 5'te opsiyonel-kapalıydı).
+sophisticated-core       = "26.3-1.5.40.2492"
+sophisticated-storage    = "26.3-1.5.134.2242"
+sophisticated-backpacks  = "26.3-3.26.22.2260"
+
+[teknoloji]
+ae2             = "26.3.2-alpha"     # ALPHA (Modrinth 18 Kas); ExtendedAE ve Create 26.3 NeoForge için YOK (Modrinth'te sürüm yok)
 
 [bagimlilik]
 # packwiz'in Modrinth "zorunlu bağımlılık" olarak kendiliğinden eklediği modlar; açıkça sabitlenir (check_pack.py: paketteki her mod burada olmak zorunda).
 balm            = "26.3.0.3"       # waystones
 shogi           = "26.3.0.3"       # waystones
-cloth-config    = "26.3.159"       # moreculling (+ opsiyonel better-combat)
 lithostitched   = "2.0.6"          # terralith
+guideme         = "26.3.7-alpha"   # ae2 (ALPHA)
+kotlin-lang-forge = "2.20.0-k2.4.21-3.1+neoforge"   # libipn / inventory-profiles-next
 
 [bagimlilik-opsiyonel]
 # Yalnızca bir opsiyonel modun bağımlılığı: onunla birlikte açılır/kapanır (packwiz [option], varsayılan KAPALI).
 player-animation-library = "1.2.9"   # better-combat
-sophisticated-core       = "1.5.33.2468"   # sophisticated-backpacks
+cloth-config             = "26.3.159"   # better-combat (eskiden moreculling'in de; moreculling pakette yok)
 
 [mac-yedek]
 # ADR-005: temel paket vanilla 26.3 (ctrlClickEmulatesRightClick:false) ile; Faz 5 kullanıcı testi başarısızsa eklenir.
@@ -71,10 +89,10 @@ dungeons-and-taverns = "6.1.0"
 [opsiyonel-test-edilecek]
 distanthorizons = "3.3.4"          # Faz 5: yüklenir ama KAPANIŞTA JVM asılı kalır (3 non-daemon "DH-Render Loader Thread", jstack kanıtı); Vulkan çizimi doğrulanamadı → kapalı kalır
 better-combat   = "3.2.2"
-sophisticated-backpacks = "3.26.19"
 
 [bilerek-yok]
-iris        = "Vulkan modunda çalışmıyor → Vitrail kullanılıyor (OpenGL'e düşersek yedek)"
+moreculling = "Sodium ≥ 0.9.3-beta.2 ister; Vitrail 0.13.0-beta ile bu Sodium'larda görüntü gecikiyor (2026-11-19) → Sodium beta.1'e sabit, MoreCulling yok"
+iris        ="Vulkan modunda çalışmıyor → Vitrail kullanılıyor (OpenGL'e düşersek yedek)"
 appleskin   = "kendi SAT göstergemiz var"
 colorful-hearts = "kendi HUD'umuzla çakışır (LucidRem dersi)"
 apotheosis  = "26.x yok; Kataliz sistemimiz yerine geçer"

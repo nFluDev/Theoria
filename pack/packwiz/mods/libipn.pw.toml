@@ -1,0 +1,13 @@
+name = "libIPN"
+filename = "libIPN-neoforge-26.3-6.9.0.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/onSQdWhM/versions/gMDIlFM0/libIPN-neoforge-26.3-6.9.0.jar"
+hash-format = "sha512"
+hash = "7f959439f404fb076878cd85d7ac1184449b6d1fcd6939c60db5f884b43ebe77469cb85393d47d1a033cbaf05db61df674e7f4cf35f14ecc1f5423bb6bb621f2"
+
+[update]
+[update.modrinth]
+mod-id = "onSQdWhM"
+version = "gMDIlFM0"

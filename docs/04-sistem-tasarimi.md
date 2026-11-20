@@ -17,7 +17,7 @@
 - **Durumlar:** hardcore, zehir, solma, donma → kat 0 vanilla durum sprite'ı; üst katlar o sırada palet yerine durum rengiyle (`tints.effect_*`). Açlık efekti → vanilla "hunger" sprite'ı. Emilim: kendi satırı, vanilla sarı emilim kalbi, oran = emilim / bu havuzun tepe değeri (verildiği anda dolu, hasarla orantılı erir).
 - **Vanilla efektleri korundu (karar D18):** hasar/iyileşmede kalpler yanıp söner (`*_blinking` sprite'ları; kaybedilen kısım 20 tick eski değerde, beyaz kalır), yenilenmede bir kalp 2 px kalkıp dalga olarak ilerler (5 ikona uyarlandı), düşük canda (can + emilim ≤ azami × %20; vanilla'da 4 HP) kalpler titrer, satürasyon 0'da açlık ikonları titrer. Kararlar saf fonksiyon (`HudEffects`, `HealthTracker`) ve Python'la eşit; değerler `hud.json` `effects`.
 - **Orta sayılar**: `ArmorSayısı` (satır A) ve `CanSayısı` (satır B) ikon sütunları arasındaki boşlukta (≈ 94 px) ortalı; ikisi **aynı ölçeği** paylaşır (alt alta iki punto çirkin durur). Biçim: `cur/max (+emilim)`, zırh `değer (+sertlik)`; 10 000'den büyükler 1 ondalıkla kısaltılır ("249,3B" tr / "249.3K" en — `theoria.hud.num.*` lang anahtarları). Sığmazsa önce ölçek `text_min_scale`'e (0,25) kadar küçülür, sonra metin kısalır (önce emilim, sonra azami). Metin hiç kırpılmaz (kırpılmış sayı yalan söyler).
-- **XP:** vanilla çubuk (`contextual_info_bar`) olduğu gibi kalır (locator ve binek zıplama çubuğuyla yuvayı paylaşır); yalnızca `experience_level` katmanı değişir: seviye sayısı **barın içine**, küçültülmüş ve ince siyah dış hatlı çizilir. Çubuk XP çubuğu olmadığında (locator / eğerli bindeğin zıplama çubuğu) seviye yazısı çizilmez.
+- **XP:** vanilla çubuk (`contextual_info_bar`) olduğu gibi kalır (locator ve binek zıplama çubuğuyla yuvayı paylaşır); yalnızca `experience_level` katmanı değişir: **vanilla seviye** sayısı **barın içine**, küçültülmüş ve ince siyah dış hatlı çizilir (2026-11-20, kullanıcı: XP çubuğunda vanilla seviye görünsün; **skill seviyesi Durum ekranında**). Çubuk XP çubuğu olmadığında (locator / eğerli bindeğin zıplama çubuğu) seviye yazısı çizilmez.
 - **Teknik:** kendi katmanımız `theoria:status_bars` vanilla `player_health` yuvasının hemen ardında; vanilla `player_health`, `armor_level`, `food_level` (ve survival HUD görünürken `vehicle_health`) `RenderGuiLayerEvent.Pre` ile iptal; her kare `Hud.leftHeight/rightHeight` 59'a (emilimde sol 69) ilerletilir. Görünürlük koşulu (`canHurtPlayer && !hud.isHidden`) katmanın içinde. Nötr sprite'lar `generator/hud.py`; renk = `blitSprite(…, argb)` çarpımı; kat 0 vanilla sprite aynen.
 - Doğrulama: `tools/check_hud.py` (sprite'lar var/nötr, model beklenenleri, özellik taramaları, Java ile eşitlenen vaka tabloları), `/theoria test hud` + GameTest `hud_model` (Java ≡ Python), `./gradlew runDevClient -PdevClient=hud` (gözetimsiz: 20/21/250 HP, zırh 310, seviye, emilim, zehir, binek, Arayüz Ölçeği 1-4, yaratıcı), `tools/hud_preview.py` (çevrimdışı önizleme PNG'leri; ekran yakalama yok). **Görsel son onay kullanıcıda.**
 
@@ -50,37 +50,55 @@
 - **Öntanımlı özellikler (Q34):** "doğuştan sanal büyüler" (`innate.csv`: Çelik Koruma I/Keskinlik I, Altın Yağma I, Elmas/Mitril Dayanıklılık II/III, Lonsdaleit Koruma II/Keskinlik II, Orikalkum Onarım II + element korumaları I, Platin Koruma III + element II); silinemez, parlama vermez, ref bütçesinden sayılır.
 - **Kısıt:** birleşik yumuşak tavanlar (Kritik Şansı ≤ 0,75, Yaşam Çalma ≤ 0,30, …); katalizör-maks oyuncu ref'i ezmez (savunma ×1,24, silah DPS ×2,05 — `catalysts.py --report`).
 
-## 5. Durum ekranı + seviye
-- **Açılış:** tuş (`K`, değiştirilebilir) + envanter/pause butonu. Anime tarzı: solda 3B oyuncu, ortada ana stat'lar çubuklarla, sağda dağıtılabilir puanlar (+/-), altta seviye ve XP ilerlemesi.
-- **Seviye:** ömür boyu toplanan XP (`long`; harcamaktan etkilenmez). L2 eşiği = **55 ham XP** (vanilla 5. seviye). **Tavan 9999 (karar D5).** Eğri: L≤200 → `R(L) = 55·(L−1)^2.2`; L>200 → seviye başı maliyet L ile doğrusal artar (tam tablo `docs/06 §5`: L200 ≈ 6,3M, L1000 ≈ 173M, L9999 ≈ 17,4 milyar). Mob XP'si kademeyle ölçeklenir; **Bilgelik büyüsü** (+%1600'e kadar) ve Bilgelik stat'ı ile bu sayılar ulaşılabilir kalır (Faz 2/8/10'da ayarlanır).
-- **9999 seviye = 39.992 beceri puanı** → her stat'ın yumuşak tavanı + azalan getirisi (Q3); ham ardışık toplama yok.
-- **Beceri puanı:** seviye başına 4. Önerilen stat'lar (hepsi *düz* bonus, çarpansız):
-  | Stat | Etki / puan |
-  |---|---|
-  | Güç (Strength) | +0,5 hasar — silah ve aletlerin çıktısına *eklenir* (kazı hızı +0,25) |
-  | Vitalite (Vitality) | +4 azami HP |
-  | Dayanıklılık (Endurance) | +2 düz zırh, +0,2 zırh sertliği |
-  | Çeviklik (Agility) | +0,4% hareket hızı (tavanlı) |
-  | Tokluk (Satiety) | +0,1 azami satürasyon, açlık düşüşü azalır |
-  | İsabet (Precision) | +0,3% kritik şans, +1% kritik hasar |
-  | Şans (Fortune) | +0,2 luck |
-  | Bilgelik (Wisdom) | +1% XP kazanımı (Bilgelik büyüsüyle toplanır) |
-  Tavan: seviye **9999**. Sıfırlama (respec): nadir item ile (Q6).
-- **Sunucu doğrular**, istemci sadece ister.
+## 5. Durum ekranı + seviye  ✅ Faz 10 (uygulandı; görünüş ve his kullanıcı onayında)
+- **Açılış:** **`K`** tuşu (Controls ▸ "Theoria" kategorisinde değiştirilebilir) ve ESC menüsünde **Kanatlar'ın yanında "Durum" düğmesi**. Envanter düğmesi yapılmadı (tarif çubuğu/efekt listesiyle çakışır; Q72). Ekran oyunu **durdurmaz**. Anime tarzı: solda 3B oyuncu (sürükleyip döndürülür), ortada her stat için bir çubuk (üstüne gelince ayrıntı), sağında `[−] sayı [+]`, altta seviye ve XP çubuğu, dağıtılabilir puan, **Uygula / Temizle / Bitti**.
+- **Seviye:** ömür boyu toplanan ham XP (`long`; `theoria:stats` attachment'ında; ölümde kalır). Oyuncunun **aldığı her vanilla XP puanı** (orb, fırın, `/xp add`) sayaca eklenir; büyü masası/örs/komutla **vanilla seviye harcamak seviyeyi düşürmez** (vanilla XP "para", Theoria seviyesi "ömür"). L2 eşiği = **55 ham XP** (vanilla 5. seviye). **Tavan 9999 (D5).** Eğri: parçalı kuvvet yasası, **L25 ≈ 12 sa · L50 ≈ 32 · L75 ≈ 68** (referans tempo; tam tablo `docs/06 §5`); sonrası seviye başı maliyet L ile doğrusal. XP çubuğundaki sayı **vanilla (harcanabilir) seviyedir**; skill seviyesi ve ilerlemesi Durum ekranındadır (K).
+- **Beceri puanı:** seviye başına **4** (2026-11-20, kullanıcı): ama **puan başı etki, tek-puanlık modelin %25'i** — 4 puanı tek stat'a verirsen eski tek puan kadar (×4 yığ), 4 ayrı stat'a dağıtırsan her biri %25 (ince ayar). Sunucu doğrular (`AllocatePointsPayload`: ya hep ya hiç, bilinmeyen stat/negatif/fazla puan = ret). Ekranda +/− yalnızca **hazırlıktır** (Shift = 10, Ctrl = 100); "Uygula" tek istek yollar. Harcanmış puan yalnız **Unutuş Küresi** ile geri gelir (seviye ve XP kalır): küre **üretilir** — `Ender Gözü ×4 + Elmas ×4 + End Kristali` (`EDE/DCD/EDE`; pahalı bilerek) — ve bosslar yalnızca %5 düşürür (Q85).
+- **Stat'lar (hepsi *düz* bonus, çarpansız) — yumuşak tavan (Q3, R17):** `etki(n) = tavan · n / (n + yarı)`, n = o stat'a konan puan; ilk puan eğimi `tavan/yarı`, L9999'daki 9.998 puanla bile tavana ulaşılmaz. Sayılar tek kaynak `tools/balance/stats.py` (`--report`):
+  | Stat | Etki | Tavan | 4 puan | 40 puan | 400 puan | 4.000 puan | 39.992 puan |
+  |---|---|--:|--:|--:|--:|--:|--:|
+  | Güç | saldırı hasarı | +50 | +0,14 | +1,39 | +11,1 | +37,0 | +48,3 |
+  |  | kazı hızı | +4 | +0,01 | +0,11 | +0,89 | +2,96 | +3,86 |
+  | Vitalite | azami can | +120 | +0,97 | +9,06 | +53,9 | +106,9 | +118,5 |
+  | Dayanıklılık | düz zırh | +100 | +0,61 | +5,80 | +38,1 | +86,0 | +98,4 |
+  |  | zırh sertliği | +4 | +0,02 | +0,23 | +1,52 | +3,44 | +3,94 |
+  |  | geri itme direnci | %50 | %0,3 | %2,9 | %19,0 | %43,0 | %49,2 |
+  | Çeviklik | hareket hızı | %30 | %1,2 | %8,6 | %24,0 | %29,3 | %29,9 |
+  | Tokluk | yemekle ek satürasyon | +6 | +0,16 | +1,26 | +4,36 | +5,78 | +5,98 |
+  |  | açlık düşüşü azalması | %50 | %1,0 | %8,3 | %33,3 | %47,6 | %49,8 |
+  | İsabet | kritik şansı | %35 | %0,3 | %2,6 | %15,6 | %31,1 | %34,6 |
+  |  | kritik hasarı | %100 | %0,8 | %7,4 | %44,4 | %88,9 | %98,8 |
+  | Şans | luck | +10 | +0,20 | +1,67 | +6,67 | +9,52 | +9,95 |
+  | Bilgelik | XP kazancı | %300 | %2 | %22 | %133 | %267 | %296 |
+  Eski taslak değerler (Vitalite +4 can/puan, Dayanıklılık +2 zırh/puan, Güç +0,5 hasar/puan…) bütçeyi L40'ta dolduruyordu; yenileri 12-16× küçük ve referans bütçeyle hizalı (`docs/06 §3`, Q67). Kritik/yemek satürasyonu **Kataliz'in aynı özniteliklerine** eklenir (`theoria:crit_chance`, `crit_damage`, `food_saturation`; ortak tavan `agg_caps`); Bilgelik stat'ı **Bilgelik büyüsünün toplamına** girer (aynı toplam tavanı %2400; yalnız öldürme + blok XP, ADR-006 Karar 8).
+- Tavan: seviye **9999**. Mob XP: `taban × 1,75^kademe` (`docs/06 §5`).
+- **Sunucu doğrular**, istemci sadece ister. Doğrulama: `tools/balance/stats.py --check` (+ `--break`), `/theoria test stats`, GameTest `stats_*` (16), `-PdevClient=stats` (ekran, düğme, tuş).
 
-## 6. Kozmetik
-- **Slotlar:** 4 zırh + 1 kanat/sırt gibi opsiyonel; Curios slot sistemiyle değil, **kendi `cosmetics` attachment'ı** + Durum/Kozmetik sekmesi (Curios'a bağımlı kalmamak için).
-- **Mantık:** kozmetik slotuna konan zırh parçası yalnızca *görünüm* sağlar (statlarını vermez). Slot boşsa gerçek giyilen zırh görünür.
-- **Gizleme:** istemci ayarları (Pause ▸ Paket Ayarları): `Kozmetikleri göster` / `Gerçek zırhı göster` / `Başkalarının kozmetiklerini göster`. "Hepsini kapat" → vanilla görünüm veya çıplak.
-- **Teknik zorluk:** zırh render katmanı 26.x'te yeniden yazıldı (equipment asset + render state). Faz 0 spike S3 kancayı belirler. Fallback: sadece kendi oyuncuda gizleme.
+## 6. Kozmetik  ✅ Faz 11 (uygulandı; görünüş kullanıcı onayında — karar kaydı **ADR-007**)
+- **Slotlar:** 4 zırh yuvası (başlık · göğüs · pantolon · bot) — Curios slot sistemiyle değil, **kendi `theoria:cosmetics` attachment'ı** (sunucu-otoriter, ölümde kalır, oyuncuyu gören **tüm istemcilere** eşzamanlı). Menüde sıradan slotlar olarak görünür (`CosmeticSlot` + `CosmeticContainer`): tıkla/shift-tık/sürükle çalışır, sunucu her yerleştirmeyi doğrular — yalnızca **o yuvanın zırhı** (`Equippable` yuvası eşleşir ve donanım dokusu var; yoksa vanilla zırh katmanı hiçbir şey çizmezdi). Beşinci "kanat/sırt" yuvası **yoktur**: kanat zaten ESC ▸ Kanatlar'da kozmetiktir (D14).
+- **Mantık:** kozmetik slotundaki parça **yalnızca görünüm** verir: ekipman yuvasında değildir → zırh, sertlik, büyü, nitelik **vermez** (GameTest `cosmetics_stat_neutral`). Slot boşsa gerçek giyilen zırh görünür.
+- **Görünüm kuralı (tek saf fonksiyon `CosmeticLook.resolve`):** giyilen göğüs parçası **elytra/kanat** (`DataComponents.GLIDER`) ise olduğu gibi çizilir (D15; göğüs alanı elytra ve pelerini de besler, boşaltmak ikisini bozar) · kozmetik doluysa ve izleyici gösteriyorsa kozmetik · yerel oyuncuda "gerçek zırhı göster" kapalıysa boş · yoksa giyilen.
+- **Üç istemci ayarı** (`theoria-client.toml`; Mods ▸ Theoria ▸ Config ve Curios Max'in **Kozmetik** sekmesinde): `Kozmetiklerimi göster` · `Başkalarının kozmetiklerini göster` · `Gerçek zırhımı göster` (yalnız kendi karakterim; elytra asla gizlenmez). **İlk ikisi kapalı + üçüncüsü açık = tam vanilla** (kuralın süpürme denetimi: `/theoria test cosmetics`). Başka oyuncunun giydiği zırh asla soyulmaz.
+- **Teknik:** tek `AvatarRenderStateModifier` (`CosmeticsClient`) — yerel oyuncu (önizleme ekranları dahil), uzak oyuncular ve her `RemotePlayer` için `head/chest/legs/feetEquipment`'ı değiştirir; mixin yok, kendi katmanımız yok (R9 fallback'i gerekmedi). Başka modların **kendi katmanında** çizdiği zırhlar (Geckolib vb.) bu yoldan geçmez; denenmedi (Faz 13 paket gözden geçirmesi).
 
-## 7. Curios Max
-- Curios API 17.0.1 slotları + envanterde zaten bir Curios butonu var. **Curios Max**: o butona tıklanınca (veya yeni buton) **tam ekran büyük ızgara** — slot türü sekmeleri (yüzük, kolye, kemer, bilezik, çanta…), kaydırma, arama, mümkün olduğunca fazla slot (datapack ile Curios slot tanımı).
-- Mixin yerine tercih edilen yol: `ScreenEvent` + kendi `CuriosMaxScreen`'i açmak, mevcut `CuriosScreen`'in menü verisini yeniden kullanmak.
-- **Relics (Faz 12):** Relics/Artifacts 26.x'te yok → kendi ~25 itemimiz: gece görüşü yüzüğü, sonsuz yemek, su altı nefesi, çift zıplama (kanatla çakışmayan), mıknatıs, hız botu, deli can kolyesi vb. (hepsi veri + küçük event).
+## 7. Curios Max  ✅ Faz 11 (uygulandı; görünüş kullanıcı onayında)
+- **Slotlar (veri):** `data/curios_slots.csv` → `generator/curios.py` → `data/theoria/curios/slots/<id>.json` + `entities/player.json`. Curios'un 11 ön ayar türü büyütüldü: yüzük 8 · kolye 3 · kemer 2 · bilezik 4 · nazarlık 5 · sırt 2 · kafa 1 · vücut 2 · eller 2 · ayak 2 · curio 4 = **35 slot** (DoD ≥ 30; `check_curios.py`, `/theoria test curios`). Curios slot türlerini oyuncuya kendiliğinden vermez (`Loaded 0 curio entities`) — `entities/player.json` verir.
+- **Ekran:** `CuriosMaxScreen` (316×224, oyunu **durdurmaz**): solda zırh | kozmetik zırh | 3B oyuncu (kozmetikler dünyada nasıl çiziliyorsa öyle); sağda slot türü sekmeleri (ikon), **Hepsi** ve **Kozmetik** sekmeleri, arama kutusu, 8×5 ızgara (taşarsa sayfa; tekerlek/▲▼); altta envanter. Sekme, sayfa ve arama **görünüm durumudur — sunucuya paket gitmez** (menü slotları sabit konumlu çakışan çiftler, `isActive()` sekmeye/sayfaya bakar). Arama: eşleşmeyen Curios slotlarını soluklaştırır (eşya adı veya slot türü adı).
+- **Menü:** `CuriosMaxMenu` — Curios'un kendi `CurioSlot`'larını taşır (doğrulama/olaylar/ikonlar Curios'unkiyle aynı); `CuriosMenu` yeniden kullanılmadı (slot konumu `final`, 48'lik sunucu-sayfası, 2×2 üretim ızgarası). Slot sayısı değişirse Curios'un `ICuriosMenu#resetSlots()` çağrısıyla yeniden kurulur.
+- **Açma:** Curios tuşu (J) ve envanterdeki Curios düğmesi Curios'un menüsünü açar; sunucu `PlayerContainerEvent.Open`'da onu **bizimkiyle değiştirir** (mixin yok; elde taşınan eşya yeni menüye geçer). `LOCAL` yapılandırmada `curios_max_screen = false` klasik ekranı geri getirir.
+- **Henüz yok:** Curios'un kendi kozmetik yığınları (`add_cosmetic`) — hiçbir slot türünde açık değil. Relic'ler (§9) avatar üzerinde çizilmez, bu yüzden slotların göz/gizle noktasının onlar için işlevi yok (`docs/10` Q95).
 
 ## 8. macOS giriş düzeltmeleri
 - Faz 5: önce hazır mod(lar) dene (Mac Input Fixes NeoForged 26.3; McMouser 26.2 build'ini 26.3'te dene).
 - Çalışmazsa `macos` paketi: `MouseHandler`'da Ctrl+tık→sağ tık çevirimini kapat; bırak-eşya anahtarı kontrolünde Ctrl/Cmd+Q'ya izin ver; ayar ekranına aç/kapa.
 - Test: Ctrl+tıkla sprint-vuruş, Ctrl+Q eşya bırak, Shift+scroll.
 - **Faz 5 sonucu (karar ADR-005'te aynen):** paket varsayılanı `options.txt` = `ctrlClickEmulatesRightClick:false` + `quitShortcuts:false` (`pack/packwiz/options.txt`, `preserve`), ek mod/mixin yok. Oyun içi kanıt: duman senaryosu `option → SDL ipucu` zincirini okur (`SDL_MAC_CTRL_CLICK_EMULATE_RIGHT_CLICK=0`). Mac Input Fixes 26.10.03 yedeği pakette **opsiyonel, varsayılan KAPALI** (`[mac-yedek]`; `make_instance.py --with mac-input-fixes-neoforged` ile denenir); kendi `dev.theoria.macos` paketi yazılmadı (kullanıcının fiziksel kontrol listesi sonucuna bağlı: `docs/journal/f05.md`).
+
+## 9. Relics  ✅ Faz 12 (uygulandı; görünüş/his kullanıcı onayında)
+- **Ne:** 25 Curios süsü — "OP item" ama bütçeli (`docs/05 §6` "OP itemler"): gece görüşü yüzüğü, **sonsuz yemek (Tükenmeyen Elma)**, mıknatıs, ateş/yıldırım/patlama/donma bağışıklığı, kritik/can çalma, ölümden dönüş (Anka Tüyü)… Tek kaynak **`data/relics.csv`** (kimlik, yuva, nadirlik, tür + parametreler, kaynaklar, ad/açıklama iki dilde, ikon `şekil/#metal/#taş`) ve `data/relic_sources.csv` (kutu/boss kaynakları ve şansları). **Yeni relic = bir satır**; Java yalnız 8 etki TÜRÜNÜ bilir.
+- **Türler (`generator/relics.py` doğrular):** `effect` (gizli mob etkisi) · `attribute` (nitelik değiştiricileri; `fmt` = pct/num/none) · `magnet` · `food` · `repair` · `immune` (hasar etiketi: yangın/patlama/donma/yıldırım, pay 0..1) · `reveal` (düşmanlar parlar) · `survive` (bekleme süreli ölümcül darbe kurtarma). Açıklamadaki `%s` sayısı türün gösterdiği değer sayısına eşit olmak zorunda (sayı iki yerde yazılmaz: ipucu CSV'den üretilir).
+- **Yuva ve etiket:** relic `#curios:<yuva>` etiketiyle yuvaya girer (üretilen `data/curios/tags/item/<yuva>.json`; `curio` yuvası `#curios:curio`). 25 relic 35 slotun hepsine sığar (`docs/10` Q91). Efekt kodu Curios'u **yalnız `dev.theoria.curios.WornCurios` kapısından** okur (ADR-007 K1: Curios'a dokunan tek paket kalır).
+- **Etki:** `dev.theoria.relics.RelicEffects` — saniyede bir "ne takılı" okunur, nitelik değiştiricileri (geçici, relic başına tek kimlik → aynı relic iki kez katlanmaz) ve gizli mob etkileri buna göre kurulur/kaldırılır; zamanlı türler (mıknatıs 2 tik, açlık/onarım/parlama kendi aralıklarında) `PlayerTickEvent`'te; tepkisel iki tür `RelicDamage`'de (`LivingIncomingDamageEvent`: bağışıklık payı; `LivingDamageEvent.Pre`: Anka Tüyü).
+- **Kaynak (loot):** boss her ölümde **bir** relic (ağırlıklı), sandıklarda yapı başına şans (Harabe %12 · Büyük Haven %6 · Zindan %35 · Kale %80); `neoforge:add_table` global loot değiştiricileri (`relics_<kaynak>.json`), `theoria:relics/<kaynak>` tabloları. Efsanevi relic yalnız Platin Devasa ve Kale.
+- **İpucu / JEI:** öğenin kendi ipucu (nadirlik rengi, açıklama, Curios yuvası, bulunduğu yerler) — JEI aynı ipucunu gösterir, JEI koduna gerek yok (CLAUDE.md: üçüncü taraf bağlama).
+- **Doğrulama:** `/theoria test relic [id]` (table + loot + 25 relic) · `tools/check_relics.py` (+ `--break` 14 ihlal) · GameTest `relic_*` (32) · istemci duman testi (25 relic ipucu çözüldü, 196 öğe modelli). Karar kaydı: `docs/10` B14 (Q91-Q99); ayrıntı `docs/journal/f12.md`.

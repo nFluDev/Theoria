@@ -181,7 +181,7 @@ def checks(d, vanilla=None):
     boss_heart = [b for b in sorted(bosses) if not any(r["entity"] == b and r["item"] == "theoria:heart_crystal" for r in d["mob_drops"])]
     add("her yeni boss Kalp Kristali düşürür", not boss_heart, f"kristalsiz: {boss_heart}")
     # 5) theoria: öğeleri tanımlı
-    known_theoria = {"theoria:heart_crystal", "theoria:carbon_dust"} | set(FORGE.values())
+    known_theoria = {"theoria:heart_crystal", "theoria:oblivion_orb", "theoria:carbon_dust"} | set(FORGE.values())
     known_theoria |= {m["ingredient"] for m in d["materials"] if m["ingredient"].startswith("theoria:")}
     known_theoria |= {"theoria:" + o["drop"] for o in d["ores"] if ":" not in o["drop"]}
     known_theoria |= {a["result"] for a in d["alloys"]}

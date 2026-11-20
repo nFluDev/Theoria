@@ -18,15 +18,15 @@ import org.joml.Vector3f;
  * {@code GuiGraphicsExtractor#entity}. The state comes from {@code createRenderState}, which also runs other mods' render-state
  * extensions (Fantastic Wings' wings, later cosmetics), so the preview shows what the world shows.
  */
-final class WingsPreview {
+public final class WingsPreview {
     /** Counted for the unattended scenario: previews that really reached the GUI renderer. */
-    static long draws;
+    public static long draws;
     private static boolean failureLogged;
 
     private WingsPreview() {}
 
     /** {@code yaw} 0° = back to the camera. Returns false (and draws nothing) if the render state could not be built. */
-    static boolean draw(GuiGraphicsExtractor g, LivingEntity entity, WingsLayout.Rect box, float yaw, float pitch) {
+    public static boolean draw(GuiGraphicsExtractor g, LivingEntity entity, WingsLayout.Rect box, float yaw, float pitch) {
         try {
             EntityRenderer<? super LivingEntity, ?> renderer = Minecraft.getInstance().getEntityRenderDispatcher().getRenderer(entity);
             EntityRenderState state = renderer.createRenderState(entity, 1.0F);

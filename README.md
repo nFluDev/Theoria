@@ -2,7 +2,7 @@
 
 Keşif ve güçlenme odaklı Minecraft modpack'i + sıfırdan yazılan modlar. Vulkan-hazır, NeoForge, Java 26.x.
 
-**Durum:** Faz 1 tamam (iskelet) → `STATUS/PROGRESS.md` · doğrulama: `python3 -I tools/preflight.py`
+**Durum:** sürüm adayı **1.0.0-rc.1** (Faz 0-13 uygulandı; v1.0 etiketi kullanıcının 20+ saatlik oyun testi ve görünüş onaylarına bağlı) → `STATUS/PROGRESS.md` · yayın: [docs/13-yayin.md](docs/13-yayin.md) · doğrulama: `python3 -I tools/preflight.py`
 
 ## Belge indeksi (okuma sırası)
 | Dosya | İçerik |
@@ -19,13 +19,14 @@ Keşif ve güçlenme odaklı Minecraft modpack'i + sıfırdan yazılan modlar. V
 | [docs/09-riskler.md](docs/09-riskler.md) | Riskler ve azaltma |
 | [docs/10-acik-sorular.md](docs/10-acik-sorular.md) | Başlamadan cevaplanacak sorular (varsayılanlarla) |
 | [docs/11-mod-matrisi.md](docs/11-mod-matrisi.md) | 26.2 / 26.3 için gerçek mod erişilebilirliği (Modrinth, 9 Kas 2026) |
-| [docs/adr/](docs/adr/) | Mimari kararlar (ADR-001..005, Faz 0 kanıtlarıyla) |
+| [docs/13-yayin.md](docs/13-yayin.md) | Faz 13: sürüm kimliği, yayın akışı, lisans notları, oyun testi kapısı |
+| [docs/adr/](docs/adr/) | Mimari kararlar (ADR-001..008; 001-005 Faz 0 kanıtlarıyla) |
 | [docs/journal/](docs/journal/) | Faz başına kısa günlük (yapılan · öğrenilen · kararlar) |
 | [prompts/](prompts/) | Her faz için başlangıç prompt'u + devir şablonu |
 
 ## Hızlı başlangıç
 ```
-cd /Users/naer/code/Theoria
+cd <depo klasörü>   # örn. ~/code/Theoria
 python3 -I tools/preflight.py          # veri denetimleri + derleme + GameTest'ler (yeşil olmalı)
 # yeni Claude Code oturumu: STATUS/PROGRESS.md → "Bir sonraki adım"daki prompt'u başlat
 ```

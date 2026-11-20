@@ -1,0 +1,40 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/miner_ring",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/magnet_ring",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/stone_belt",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/warding_bracelet",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/swan_feather",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/giants_grip",
+          "weight": 4
+        }
+      ]
+    }
+  ]
+}

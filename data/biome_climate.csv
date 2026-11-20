@@ -1,0 +1,39 @@
+biome,t,h,c,e,w,d,note
+ice_graveyard,-1:0.17,-1:1,-1.2:-0.455,-1:1,-1:1,surface,soğuk derin okyanus
+storm_islands,0.17:1,-1:1,-1.2:-0.455,-1:1,-1:1,surface,ılıman/ılık derin okyanus
+storm_coast,-1:1,-1:1,-0.455:-0.19,-1:1,-1:1,surface,okyanus sahanlığı (tüm sıcaklıklar)
+ice_graveyard,-1:-0.1,-1:1,-0.19:-0.11,-1:1,-1:1,surface,soğuk kıyı şeridi
+ash_desert,0.38:1,-1:0.05,-0.19:-0.11,-1:1,-1:1,surface,sıcak kuru kıyı
+tin_marsh,-0.1:1,0.05:1,-0.19:-0.11,-1:1,-1:1,surface,nemli kıyı = bataklık ağzı
+storm_coast,-0.1:0.38,-1:0.05,-0.19:-0.11,-1:1,-1:1,surface,ılıman kuru kıyı
+orichalcum_sky,-1:1,-1:1,0.3:1,-1:-0.78,-1:-0.55,surface,"uzak iç zirveler, negatif zirve yönü: tek gerçek y≥180 kaya (ölçüm)"
+titan_peaks,-1:1,-1:1,0.3:1,-1:-0.78,-0.55:1,surface,uzak iç zirveler
+iron_uplands,-1:0.1,-1:1,-0.11:0.3,-1:-0.78,-1:1,surface,yakın/orta iç sert kayalık
+cobalt_canyon,0.1:0.28,-1:1,-0.11:0.3,-1:-0.78,-1:1,surface,
+ember_rift,0.28:1,-1:1,-0.11:0.3,-1:-0.78,-1:1,surface,
+ice_graveyard,-1:-0.3,-1:1,-0.11:1,-0.78:-0.375,-1:1,surface,soğuk tepelik
+iron_uplands,-0.3:0.1,-1:1,-0.11:1,-0.78:-0.375,-1:1,surface,ılıman tepelik
+cobalt_canyon,0.1:0.28,-1:1,-0.11:1,-0.78:-0.375,-1:1,surface,ılık tepelik
+ember_rift,0.28:1,-1:1,-0.11:1,-0.78:-0.375,-1:1,surface,sıcak tepelik
+ice_graveyard,-1:-0.15,-1:1,-0.11:1,-0.375:1,-1:1,surface,soğuk ova (dalgalı + düz)
+ash_desert,0.38:1,-1:0.04,-0.11:1,-0.375:1,-1:1,surface,sıcak kuru ova
+steel_steppe,-0.15:0.38,-1:-0.08,-0.11:1,-0.375:0.05,-1:1,surface,kuru dalgalı
+copperwood,-0.15:0.38,-0.08:0.14,-0.11:1,-0.375:0.05,-1:1,surface,nemli dalgalı
+copperwood,0.38:1,0.04:0.14,-0.11:1,-0.375:0.05,-1:1,surface,sıcak nemli dalgalı
+shadow_forest,-0.15:1,0.14:1,-0.11:1,-0.375:0.05,-1:1,surface,çok nemli dalgalı
+steel_steppe,-0.15:0.38,-1:-0.08,-0.11:0.3,0.05:1,-1:1,surface,kuru düz
+tin_marsh,-0.15:1,0.2:1,-0.11:0.3,0.05:1,-1:1,surface,ıslak düz
+luminous_valley,0.12:0.38,-0.08:0.2,-0.11:0.3,0.05:1,-0.4:0.4,surface,"vadi (weirdness≈0), ılık"
+rune_vale,-0.15:0.12,-0.08:0.2,-0.11:0.3,0.05:1,-0.4:0.4,surface,"vadi, serin"
+ancient_ruins,-0.15:0.38,-0.08:0.2,-0.11:0.3,0.05:1,-1:-0.4,surface,vadi dışı düz (−)
+ancient_ruins,-0.15:0.38,-0.08:0.2,-0.11:0.3,0.05:1,0.4:1,surface,vadi dışı düz (+)
+luminous_valley,0.38:1,0.04:0.14,-0.11:1,0.05:1,-1:1,surface,sıcak nemli düz = vadi
+meteor_crater,-0.15:0.38,-1:-0.12,0.3:1,0.08:1,-1:1,surface,uzak iç kuru düz plato (ölçüm: bu sınıf bölgenin ≈ %2'si)
+steel_steppe,-0.15:0.38,-1:-0.12,0.3:1,0.05:0.08,-1:1,surface,uzak iç kuru düz (kenar)
+copperwood,-0.15:0.38,-0.12:0.14,0.3:1,0.05:1,-1:1,surface,uzak iç düz orman
+shadow_forest,-0.15:1,0.14:1,0.3:1,0.05:1,-1:1,surface,uzak iç düz nemli orman
+crystal_caves,-1:1,-1:1,0.3:1,-0.2:1,-1:1,0.2:0.9,"yeraltı: uzak iç, sakin arazi (y ≈ −30…+35)"
+mithril_rift,-1:1,-1:1,0.3:1,-1:-0.2,-1:1,0.2:1.3,"yeraltı: uzak iç, engebeli arazi (derinlikte mitril)"
+platinum_depths,-1:1,-1:1,-1.2:0.3,-1:1,-1:1,0.9:1.3,"en derin katman (y ≲ −45), kıyı/yakın iç"
+platinum_depths,-1:1,-1:1,0.3:1,-0.2:1,-1:1,0.9:1.3,"en derin katman, uzak iç sakin"
+luminous_valley,0.38:1,0.14:0.2,-0.11:0.3,0.05:1,-1:1,surface,"sıcak nemli düz = vadi (h 0.14-0.2, yakın/orta iç)"

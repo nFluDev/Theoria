@@ -166,14 +166,18 @@ final class MobTests {
                 h.assertTrue(Math.abs(rate - d.chance()) < 0.05, sp.id() + " " + d.item() + " dropped in " + rate + " of rolls, csv says " + d.chance());
                 rows++;
             }
-            for (String item : seen.keySet()) h.assertTrue(listed.contains(item), sp.id() + " dropped unlisted " + item);
+            // Faz 12: a boss also drops one relic (global loot modifier from data/relics.csv + relic_sources.csv, the relics' own single source — tested by relic_loot_modifiers)
+            for (String item : seen.keySet()) {
+                boolean relicOfThisBoss = dev.theoria.relics.RelicData.all().stream().anyMatch(d -> d.itemId().toString().equals(item) && d.sources().stream().anyMatch(x -> x.source().equals(sp.id())));
+                h.assertTrue(listed.contains(item) || relicOfThisBoss, sp.id() + " dropped unlisted " + item);
+            }
         }
         r.line("%d species × %d rolls: %d drop rows match mob_drops.csv (presence, counts, rate ±5 pt, nothing unlisted)", MobData.species().size(), rolls, rows);
         r.write();
         h.succeed();
     }
 
-    /** A tier-4 zombie is worth 5 × 2^4 = 80 XP; a plain zombie stays 5. Bilgelik (a separate item effect) is not involved. */
+    /** A tier-4 zombie is worth 5 × xp_growth^4 XP (1,75 since Faz 10: 47); a plain zombie stays 5. Bilgelik (a separate item effect) is not involved. */
     private static void xp(GameTestHelper h) {
         Dev.Report r = new Dev.Report("mobs_xp");
         ServerLevel level = arena(h);
@@ -191,10 +195,11 @@ final class MobTests {
             }
             h.runAfterDelay(2, () -> {
                 int total = level.getEntitiesOfClass(ExperienceOrb.class, new AABB(h.absoluteVec(new Vec3(8, 1, 10)), h.absoluteVec(new Vec3(8, 1, 10))).inflate(6)).stream().mapToInt(ExperienceOrb::getValue).sum();
-                r.line("tier 0 zombie (5 XP) + tier 4 zombie (80 XP) → %d XP in orbs", total);
+                int expected = 5 + MobHooks.scaledExperience(5, 4);
+                r.line("tier 0 zombie (5 XP) + tier 4 zombie (%d XP) → %d XP in orbs", MobHooks.scaledExperience(5, 4), total);
                 r.write();
                 FakePlayers.remove(player);
-                h.assertTrue(total == 5 + 80, "orbs carry " + total + " XP, expected 85");
+                h.assertTrue(total == expected, "orbs carry " + total + " XP, expected " + expected);
                 h.succeed();
             });
         } catch (RuntimeException e) {

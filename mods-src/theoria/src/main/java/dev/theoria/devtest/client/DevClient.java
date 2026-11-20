@@ -34,12 +34,13 @@ import org.lwjgl.sdl.SDLHints;
  * "smoke": payload → synced attachment → reply, /theoria commands, lang. "fps": {@link FpsBench}. "hud": {@link HudScenario} (Phase 3), "wings": {@link WingsScenario} (Phase 4), "catalyst": {@link CatalystScenario} (Phase 7b), "move": {@link MoveBench} (movement frame times / desync).
  */
 public final class DevClient {
-    static final String WORLD = "theoria-dev";
-    static final long SEED = 260309L;
+    /** -Dtheoria.dev.seed (gradle -PdevSeed=…): the multi-seed worldgen sweep (tools/worldgen_sweep.py) runs one world per seed; the default seed keeps the old world name. */
+    static final long SEED = Long.parseLong(System.getProperty("theoria.dev.seed", "260309"));
+    static final String WORLD = SEED == 260309L ? "theoria-dev" : "theoria-dev-" + SEED;
     private static final int PING = 1234;
 
     static final Dev.Report REPORT = new Dev.Report(
-            (Dev.CLIENT_MODE.equals("fps") ? "fps" : Dev.CLIENT_MODE.equals("move") ? "move" : Dev.CLIENT_MODE.equals("hud") ? "client_hud" : Dev.CLIENT_MODE.equals("wings") ? "client_wings" : Dev.CLIENT_MODE.equals("catalyst") ? "client_catalyst" : "client_smoke") + System.getProperty("theoria.dev.label", ""));
+            (Dev.CLIENT_MODE.equals("fps") ? "fps" : Dev.CLIENT_MODE.equals("move") ? "move" : Dev.CLIENT_MODE.equals("hud") ? "client_hud" : Dev.CLIENT_MODE.equals("wings") ? "client_wings" : Dev.CLIENT_MODE.equals("catalyst") ? "client_catalyst" : Dev.CLIENT_MODE.equals("worldgen") ? "client_worldgen" : Dev.CLIENT_MODE.equals("haven") ? "client_haven" : Dev.CLIENT_MODE.equals("stats") ? "client_stats" : Dev.CLIENT_MODE.equals("curios") ? "client_curios" : "client_smoke") + System.getProperty("theoria.dev.label", ""));
     private static boolean worldRequested;
     private static int ticks = -1;
     private static int pong = -1;
@@ -92,13 +93,17 @@ public final class DevClient {
                     info.backendName(), info.driverInfo(), info.name(), mc.getWindow().getWidth(), mc.getWindow().getHeight(),
                     mc.getWindow().isWindowFullscreen());
         }
-        if (Dev.CLIENT_MODE.equals("fps") || Dev.CLIENT_MODE.equals("move") || Dev.CLIENT_MODE.equals("hud") || Dev.CLIENT_MODE.equals("wings") || Dev.CLIENT_MODE.equals("catalyst")) {
+        if (Dev.CLIENT_MODE.equals("fps") || Dev.CLIENT_MODE.equals("move") || Dev.CLIENT_MODE.equals("hud") || Dev.CLIENT_MODE.equals("wings") || Dev.CLIENT_MODE.equals("catalyst") || Dev.CLIENT_MODE.equals("worldgen") || Dev.CLIENT_MODE.equals("haven") || Dev.CLIENT_MODE.equals("stats") || Dev.CLIENT_MODE.equals("curios")) {
             if (!renderReady(mc)) return;
             int t = ticks - readyAt; // scenario time starts when the world is on screen and frames flow
             if (Dev.CLIENT_MODE.equals("fps")) FpsBench.tick(mc, t);
             else if (Dev.CLIENT_MODE.equals("move")) MoveBench.tick(mc, t);
             else if (Dev.CLIENT_MODE.equals("hud")) HudScenario.tick(mc, t);
             else if (Dev.CLIENT_MODE.equals("catalyst")) CatalystScenario.tick(mc, t);
+            else if (Dev.CLIENT_MODE.equals("worldgen")) WorldgenScenario.tick(mc, t);
+            else if (Dev.CLIENT_MODE.equals("haven")) HavenScenario.tick(mc, t);
+            else if (Dev.CLIENT_MODE.equals("stats")) StatsScenario.tick(mc, t);
+            else if (Dev.CLIENT_MODE.equals("curios")) CuriosScenario.tick(mc, t);
             else WingsScenario.tick(mc, t);
         } else {
             smokeTick(mc);
@@ -159,6 +164,29 @@ public final class DevClient {
      * Phase 6: every item and block Theoria registers must have a baked model that is not the missing-model fallback, and a translated name
      * (a missing texture/model JSON shows up here; the log only warns). Equipment assets are checked by tools/check_gear.py (no client accessor).
      */
+    /**
+     * Phase 12: every relic's tooltip — the lines JEI shows too — resolves to real text on the real client: no raw lang key, no unfilled %s, and it carries rarity, description, Curios slot and source.
+     */
+    private static int relicTooltips(Minecraft mc) {
+        int bad = 0, relics = 0, lines = 0;
+        for (var def : dev.theoria.relics.RelicData.all()) {
+            relics++;
+            var stack = dev.theoria.relics.RelicItems.stack(def.id());
+            var tooltip = stack.getTooltipLines(net.minecraft.world.item.Item.TooltipContext.of(mc.level), mc.player, net.minecraft.world.item.TooltipFlag.NORMAL);
+            lines += tooltip.size();
+            if (tooltip.size() < 5) { REPORT.line("RELIC tooltip of %s has only %d lines", def.id(), tooltip.size()); bad++; }
+            for (var line : tooltip) {
+                String text = line.getString();
+                if (text.startsWith("theoria.") || text.startsWith("curios.") || text.startsWith("item.theoria") || text.startsWith("entity.theoria") || text.contains("%s")) {
+                    REPORT.line("RELIC unresolved tooltip line of %s: %s", def.id(), text);
+                    bad++;
+                }
+            }
+        }
+        REPORT.line("relic tooltips: %d relics, %d lines, all resolved; %d problems", relics, lines, bad);
+        return bad;
+    }
+
     private static boolean gearAssets(Minecraft mc) {
         var models = mc.getModelManager();
         var missing = models.getMissingModels();
@@ -189,6 +217,7 @@ public final class DevClient {
         }
         if (offered > 0) { REPORT.line("GEAR %d netherite gear stacks are still offered by creative tabs", offered); bad++; }
         if (total < 500) { REPORT.line("GEAR creative tabs look unbuilt (%d stacks)", total); bad++; }
+        bad += relicTooltips(mc);
         REPORT.line("gear assets: %d items and %d blocks have baked models and translated names; creative offers %d stacks, %d of them netherite gear; %d problems", items, blocks, total, offered, bad);
         return items > 0 && bad == 0;
     }

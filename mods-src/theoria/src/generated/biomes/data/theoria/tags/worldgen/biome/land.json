@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "theoria:tin_marsh",
+    "theoria:steel_steppe",
+    "theoria:copperwood",
+    "theoria:iron_uplands",
+    "theoria:luminous_valley",
+    "theoria:cobalt_canyon",
+    "theoria:ash_desert",
+    "theoria:ice_graveyard",
+    "theoria:ember_rift",
+    "theoria:storm_coast",
+    "theoria:shadow_forest",
+    "theoria:titan_peaks",
+    "theoria:ancient_ruins",
+    "theoria:rune_vale",
+    "theoria:meteor_crater",
+    "theoria:orichalcum_sky"
+  ]
+}

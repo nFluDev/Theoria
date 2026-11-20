@@ -11,7 +11,7 @@
     "band": 1
   },
   "xp": {
-    "growth": 2.0,
+    "growth": 1.75,
     "base": {
       "weak": 3,
       "normal": 5,

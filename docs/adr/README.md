@@ -11,6 +11,8 @@ Biçim: Bağlam · Karar · Kanıt · Sonuçlar · Sonraki fazlara yükümlülü
 | [ADR-004](ADR-004-enchant-tavani.md) | Büyü seviyesi: vanilla ≤255 + kendi component'imiz + `GetEnchantmentLevelEvent`; 255 üstü v1.0 dışı | Kabul 2026-11-09 · kapanış 2026-11-10 (**Karar 4 değişti**) | S4 |
 | [ADR-005](ADR-005-mac-giris.md) | macOS girişi: vanilla 26.3 (SDL3) + yedek Mac Input Fixes; McMouser elendi | Kabul 2026-11-09 · kapanış 2026-11-10 (kullanıcı onayı D12) | S7 |
 | [ADR-006](ADR-006-katalizor-sistemi.md) | Katalizör sistemi: `theoria:catalysts` şeması, yuva/seviye/tavanlar, sanal büyü, Netherite, Bilgelik XP kancası, maliyet merdiveni, masa UX | Kabul 2026-11-11 (Faz 7a; sayılar taslak: Q43-Q47) | `tools/balance/catalysts.py` |
+| [ADR-007](ADR-007-curios-max-ve-kozmetik.md) | Curios Max + kozmetik zırh: Curios'a tek derleme bağı, kendi menü/ekran (sunucusuz sekme/sayfa), `theoria:cosmetics` attachment, tek saf görünüm kuralı + tek render-state modifier, sunucu tarafı yönlendirme, slot verisi (CSV → JSON) | Kabul 2026-11-20 (Faz 11; sayılar taslak: Q76) | GameTest `cosmetics_*`/`curios_*`, `-PdevClient=curios` |
+| [ADR-008](ADR-008-kademe-genisletme-taslagi.md) | Kademe genişletmesi (28 adım, zor üretim, Lootr) — **TASLAK, onay bekliyor** (`docs/10` Q86-Q90) | Taslak 2026-11-20 | — |
 
 **Kanıt dosyaları:** [`kanit/`](kanit/) — spike çıktılarının kalıcı kopyaları (`build/spike-out/` ve Prism logları geçicidir): `s1_fps_*` (ADR-001), `s2_s3_s7_runs.log` (ADR-002/005; üç istemci çalıştırması + McMouser reddi), `s4_enchant_cap.txt` (ADR-004), `s5_mob_dump.txt`, `s6_damage_*.txt` (ADR-003).
 

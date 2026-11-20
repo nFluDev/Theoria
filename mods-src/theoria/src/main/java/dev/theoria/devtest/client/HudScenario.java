@@ -117,7 +117,7 @@ final class HudScenario {
         // The scenario reuses the persistent dev world (run-dev): whatever was left in it — a /give typed into the window while a run was
         // open (08:44, a diamond chestplate = +8 armor made two later steps FAIL), a horse's leather picked up — must not leak into the
         // armor / health expectations. Gear and inventory are cleared first.
-        List<String> reset = List.of("gamemode survival", "effect clear @s", "xp set @s 0 levels", "attribute @s minecraft:max_health base reset",
+        List<String> reset = List.of("gamemode survival", "effect clear @s", "xp set @s 0 levels", "theoria stats reset", "theoria stats level 1", "attribute @s minecraft:max_health base reset",
                 "attribute @s minecraft:armor base reset", "clear @s", "item replace entity @s armor.head with minecraft:air",
                 "item replace entity @s armor.chest with minecraft:air", "item replace entity @s armor.legs with minecraft:air",
                 "item replace entity @s armor.feet with minecraft:air", "ride @s dismount", "kill @e[tag=theoria_hud]");
@@ -145,7 +145,8 @@ final class HudScenario {
                         mc -> and(survival(mc, 59), mc.player.getMaxHealth() == 250f && mc.player.getArmorValue() == 310 && mc.player.getHealth() == 250f
                                 ? null : "expected 250/250 HP and 310 armor, got " + mc.player.getHealth() + "/" + mc.player.getMaxHealth() + ", " + mc.player.getArmorValue())),
                 new Step("xp_level_12", List.of("xp set @s 12 levels"), null, 16,
-                        mc -> and(survival(mc, 59), mc.player.experienceLevel == 12 && drewLevel() > 0 ? null : "level text did not draw (level " + mc.player.experienceLevel + ")")),
+                        mc -> and(survival(mc, 59), mc.player.experienceLevel == 12 && drewLevel() > 0 ? null
+                                : "level text did not draw (vanilla level " + mc.player.experienceLevel + ")")),
                 new Step("absorption", List.of("effect give @s minecraft:absorption 60 4"), null, 16,
                         mc -> and(survival(mc, 69), mc.player.getAbsorptionAmount() > 0 ? null : "no absorption")),
                 new Step("poison", List.of("effect clear @s", "effect give @s minecraft:poison 4 0"), null, 16,

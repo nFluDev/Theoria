@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "theoria:cobalt_canyon",
+    "theoria:crystal_caves",
+    "theoria:mithril_rift",
+    "theoria:platinum_depths",
+    "#c:is_badlands"
+  ]
+}

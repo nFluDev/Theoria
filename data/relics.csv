@@ -1,0 +1,43 @@
+# Relics (Faz 12) — single source: generator/relics.py turns this table into items, models, textures, lang, Curios tags, loot tables, loot modifiers and the jar JSON the game reads (theoria/relics.json).
+# A new relic = a new row. Java knows only the effect KINDS below; every number and every name lives here.
+#
+# slot    : a Curios slot type from data/curios_slots.csv (the item goes in through the Curios tag #curios:<slot>; the Curios "curio" slot takes #curios:curio).
+# rarity  : common | uncommon | rare | legendary (tooltip colour + creative-tab order; legendary only comes from bosses and keeps).
+# kind/params (key=value;key=value, a repeated modifier list is separated by '|'):
+#   effect    effect=<mob effect id>;amp=<amplifier>                     a hidden mob effect kept alive while worn (removed when unworn)
+#   attribute mod=<attribute>:<add|mult_base|mult_total>:<amount>[|…];fmt=<pct|num|none>   attribute modifiers while worn ("theoria:relic/<id>/<n>", one per relic: the same relic twice never stacks)
+#   magnet    radius=<blocks>;pull=<blocks per tick>                     pulls item entities toward the wearer; sneaking switches it off, items the wearer threw are left alone
+#   food      interval=<ticks>;food=<hunger points>;saturation=<s>      refills hunger on a timer while it is below full
+#   repair    interval=<ticks>;amount=<durability>                       mends the most worn piece of held/armor gear
+#   immune    damage=<damage type tag>;factor=<0..1>                     removes that share of damage of the tag (1 = immune): is_fire | is_explosion | is_freezing | is_lightning
+#   reveal    radius=<blocks>;interval=<ticks>;duration=<ticks>          hostile mobs in range glow
+#   survive   cooldown=<ticks>;heal=<fraction of max health>             once per cooldown a lethal hit is survived (item cooldown shown in the inventory)
+# sources: source:weight pairs separated by '|', the sources are the rows of data/relic_sources.csv (a chest table or a boss). Weight is relative inside one source.
+# art     : shape/#metal/#gem — the icon is drawn by generator/relic_art.py (ring pendant belt bracelet charm clover apple cloak pack circlet scale glove anklet feather).
+# desc_*  : one '%s' per value the kind shows (attribute: one per modifier unless fmt=none; magnet/reveal radius; food/repair seconds; immune percent; survive minutes then percent).
+id,slot,rarity,kind,params,sources,en,tr,desc_en,desc_tr,art
+night_vision_ring,ring,uncommon,effect,effect=minecraft:night_vision;amp=0,dungeon:8|ruin:5|keep:3,Night Vision Ring,Gece Görüşü Yüzüğü,Lets you see in the dark.,Karanlıkta görmeni sağlar.,ring/#c8c8d7/#6e46dc
+diver_ring,ring,uncommon,effect,effect=minecraft:water_breathing;amp=0,dungeon:6|ruin:4|keep:3,Diver's Ring,Dalgıç Yüzüğü,You can breathe underwater.,Su altında nefes alırsın.,ring/#bec8cd/#3c96e6
+ember_ring,ring,uncommon,effect,effect=minecraft:fire_resistance;amp=0,dungeon:6|keep:4|storm_drake:4,Ember Ring,Köz Yüzüğü,Fire and lava cannot hurt you.,Ateş ve lav sana zarar vermez.,ring/#aa8250/#f06e1e
+miner_ring,ring,uncommon,effect,effect=minecraft:haste;amp=0,dungeon:6|ruin:4|mud_king:5,Miner's Ring,Madenci Yüzüğü,You mine and work faster.,Daha hızlı kazar ve çalışırsın.,ring/#d7be46/#e6e6f0
+magnet_ring,ring,uncommon,magnet,radius=8;pull=0.35,ruin:6|dungeon:5|haven_large:6|mud_king:5,Magnet Ring,Mıknatıs Yüzüğü,Pulls nearby items toward you (%s blocks). Sneak to switch it off.,Yakındaki eşyaları sana çeker (%s blok). Kapatmak için çömel.,ring/#9696a5/#d2323c
+hunter_ring,ring,rare,attribute,mod=theoria:crit_chance:add:0.05;fmt=pct,keep:5|dungeon:2|storm_drake:4,Hunter's Ring,Avcı Yüzüğü,%s critical chance.,%s kritik şansı.,ring/#a06e46/#d23c32
+warlord_ring,ring,rare,attribute,mod=theoria:crit_damage:add:0.15;fmt=pct,keep:5|dungeon:2|platinum_colossus:4,Warlord's Ring,Savaş Beyi Yüzüğü,%s critical damage.,%s kritik hasar.,ring/#dcb93c/#be286e
+vampire_fang,necklace,rare,attribute,mod=theoria:life_steal:add:0.03;fmt=pct,keep:4|dungeon:2|storm_drake:3,Vampire Fang,Vampir Dişi,Heal for %s of the damage you deal.,Verdiğin hasarın %s kadarı can olarak döner.,pendant/#9696a0/#e1ebf0
+storm_talisman,necklace,rare,immune,damage=minecraft:is_lightning;factor=1.0,storm_drake:8|keep:2,Storm Talisman,Fırtına Tılsımı,Lightning damage is reduced by %s.,Yıldırım hasarı %s azalır.,pendant/#8296b9/#ffe066
+heart_locket,necklace,legendary,attribute,mod=minecraft:max_health:add:6;fmt=num,platinum_colossus:6|keep:2,Heart Locket,Kalp Madalyonu,Max health %s.,Azami can %s.,pendant/#e1be46/#e13246
+stone_belt,belt,uncommon,attribute,mod=minecraft:knockback_resistance:add:0.3;fmt=pct,dungeon:6|ruin:3|mud_king:6,Stone Belt,Taş Kemer,Knockback resistance %s.,Geri itme direnci %s.,belt/#828287/#aaafb4
+mender_belt,belt,rare,repair,interval=60;amount=1,keep:5|dungeon:3|platinum_colossus:3,Mender's Belt,Tamirci Kemeri,Mends your gear: 1 durability every %s seconds.,Eşyalarını onarır: %s saniyede 1 dayanıklılık.,belt/#b98c50/#5ac878
+quick_bracelet,bracelet,uncommon,attribute,mod=minecraft:attack_speed:add:0.15;fmt=num,dungeon:6|ruin:3,Swift Bracelet,Çevik Bilezik,Attack speed %s.,Saldırı hızı %s.,bracelet/#cdcdd7/#6edceb
+warding_bracelet,bracelet,rare,immune,damage=minecraft:is_explosion;factor=0.5,keep:4|dungeon:4|mud_king:3,Warding Bracelet,Koruyucu Bilezik,Explosion damage is reduced by %s.,Patlama hasarı %s azalır.,bracelet/#96a0aa/#f08c28
+frost_bracelet,bracelet,uncommon,immune,damage=minecraft:is_freezing;factor=1.0,ruin:5|dungeon:4,Frost Bracelet,Don Bileziği,Freezing damage is reduced by %s.,Donma hasarı %s azalır.,bracelet/#b4d7eb/#78c8ff
+swan_feather,charm,uncommon,attribute,mod=minecraft:fall_damage_multiplier:add:-1.0;fmt=none,ruin:6|dungeon:4|mud_king:4,Swan Feather,Kuğu Tüyü,You take no fall damage.,Düşme hasarı almazsın.,feather/#f0f0f5/#aac8e6
+lucky_clover,charm,uncommon,attribute,mod=minecraft:luck:add:1.0;fmt=num,haven_large:6|dungeon:4|ruin:4,Lucky Clover,Şans Yoncası,Luck %s.,Şans %s.,clover/#6e5028/#46be50
+eternal_apple,charm,rare,food,interval=100;food=1;saturation=1.0,keep:4|storm_drake:5|dungeon:2,Eternal Apple,Tükenmeyen Elma,Never go hungry: refills your hunger every %s seconds.,Asla acıkmazsın: açlığını %s saniyede bir doldurur.,apple/#e6be3c/#6ec85a
+wind_cloak,back,rare,attribute,mod=minecraft:movement_speed:mult_base:0.10;fmt=pct,storm_drake:6|keep:3,Wind Cloak,Rüzgâr Pelerini,Movement speed %s.,Hareket hızı %s.,cloak/#78bec8/#f0f0fa
+climber_pack,back,uncommon,attribute,mod=minecraft:safe_fall_distance:add:4;fmt=num,dungeon:5|ruin:4,Climber's Pack,Tırmanıcı Çantası,Safe fall distance %s blocks.,Güvenli düşüş mesafesi %s blok.,pack/#966941/#e1c85a
+watcher_circlet,head,rare,reveal,radius=16;interval=40;duration=60,keep:4|dungeon:3|platinum_colossus:3,Watcher's Circlet,Gözcü Diademi,Hostile creatures within %s blocks glow.,%s blok içindeki düşmanlar parlar.,circlet/#c8bed7/#46c8dc
+dragon_scale,body,rare,immune,damage=minecraft:is_fire;factor=1.0,storm_drake:6|keep:4,Dragon Scale,Ejder Pulu,"Fire, lava and burning damage are reduced by %s.","Ateş, lav ve yanma hasarı %s azalır.",scale/#cd462d/#ffbe3c
+giants_grip,hands,uncommon,attribute,mod=minecraft:block_interaction_range:add:1.0;fmt=num,dungeon:5|ruin:3|mud_king:4,Giant's Grip,Dev Kavrayışı,Block reach %s.,Blok erişimi %s.,glove/#966e50/#bebec8
+sure_foot_anklet,feet,uncommon,attribute,mod=minecraft:step_height:add:0.5;fmt=num,dungeon:5|ruin:4|haven_large:3,Sure-Foot Anklet,Keçi Halhalı,Step up whole blocks: step height %s.,Tam blokları adımlarsın: adım yüksekliği %s.,anklet/#a5875a/#64be6e
+phoenix_feather,curio,legendary,survive,cooldown=6000;heal=0.5,platinum_colossus:6|keep:1,Phoenix Feather,Anka Tüyü,Survive a deadly blow once every %s minutes and recover %s of your health.,Her %s dakikada bir ölümcül darbeden sağ çıkar ve canının %s kadarını geri alırsın.,feather/#f58c28/#ffd75a

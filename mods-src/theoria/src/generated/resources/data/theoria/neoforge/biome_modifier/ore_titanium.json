@@ -1,6 +1,6 @@
 {
   "type": "neoforge:add_features",
-  "biomes": "#minecraft:is_overworld",
+  "biomes": "#theoria:has_ore/titanium",
   "features": "theoria:ore_titanium",
   "step": "underground_ores"
 }

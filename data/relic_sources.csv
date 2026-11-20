@@ -1,0 +1,12 @@
+# Where relics come from (Faz 12) — generator/relics.py turns each row into a loot table (theoria:relics/<source>) + a global loot modifier that adds it to the target table.
+# type   : chest (a structure chest table, rolled once per chest) | boss (an entity loot table, rolled once per kill)
+# target : the loot table the modifier hooks (neoforge:add_table + neoforge:loot_table_id); Lootr turns the vanilla chest tables into per-player loot and still runs the modifier.
+# chance : probability that the roll happens at all (one relic per successful roll, picked by the relic weights in data/relics.csv); bosses always drop one.
+source,type,target,chance,note
+ruin,chest,theoria:chests/ruin,0.12,"ruins are common and shallow: relics are a pleasant surprise"
+haven_large,chest,theoria:chests/haven_large,0.06,"a large Haven rewards the journey with, rarely, a trinket"
+dungeon,chest,theoria:chests/dungeon,0.35,"several chests per dungeon: expect a relic or two per run"
+keep,chest,theoria:chests/keep,0.80,"keeps are the endgame chest: most chests hold one"
+mud_king,boss,theoria:entities/mud_king,1.0,"first boss: the early utility relics"
+storm_drake,boss,theoria:entities/storm_drake,1.0,"mid boss: fire, storm and speed"
+platinum_colossus,boss,theoria:entities/platinum_colossus,1.0,"last boss: the legendary relics"

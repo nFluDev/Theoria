@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "theoria:cobalt_canyon",
+    "theoria:ash_desert",
+    "theoria:ice_graveyard",
+    "theoria:ember_rift",
+    "theoria:storm_coast"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "theoria:tin_marsh",
+    "theoria:steel_steppe",
+    "theoria:copperwood",
+    "theoria:iron_uplands",
+    "theoria:luminous_valley",
+    "#c:is_swamp",
+    "#minecraft:is_hill",
+    "#c:is_plains"
+  ]
+}

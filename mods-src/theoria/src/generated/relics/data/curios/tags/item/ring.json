@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "theoria:relic/night_vision_ring",
+    "theoria:relic/diver_ring",
+    "theoria:relic/ember_ring",
+    "theoria:relic/miner_ring",
+    "theoria:relic/magnet_ring",
+    "theoria:relic/hunter_ring",
+    "theoria:relic/warlord_ring"
+  ]
+}

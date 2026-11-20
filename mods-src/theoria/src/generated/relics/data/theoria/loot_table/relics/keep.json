@@ -1,0 +1,89 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/night_vision_ring",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/diver_ring",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/ember_ring",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/hunter_ring",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/warlord_ring",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/vampire_fang",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/storm_talisman",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/heart_locket",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/mender_belt",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/warding_bracelet",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/eternal_apple",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/wind_cloak",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/watcher_circlet",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/dragon_scale",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "theoria:relic/phoenix_feather",
+          "weight": 1
+        }
+      ],
+      "condition": {
+        "type": "minecraft:random_chance",
+        "chance": 0.8
+      }
+    }
+  ]
+}

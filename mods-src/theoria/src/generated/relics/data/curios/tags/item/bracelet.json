@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "theoria:relic/quick_bracelet",
+    "theoria:relic/warding_bracelet",
+    "theoria:relic/frost_bracelet"
+  ]
+}

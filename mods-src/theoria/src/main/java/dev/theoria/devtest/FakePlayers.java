@@ -12,6 +12,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.network.CommonListenerCookie;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.network.registration.NetworkRegistry;
 
 /** Survival players for GameTests. {@code GameTestHelper#makeMockServerPlayerInLevel} is hard-coded CREATIVE (takes no damage). */
 final class FakePlayers {
@@ -22,9 +23,12 @@ final class FakePlayers {
         ServerLevel level = h.getLevel();
         MinecraftServer server = level.getServer();
         CommonListenerCookie cookie = CommonListenerCookie.createInitial(new GameProfile(UUID.randomUUID(), name), false);
-        ServerPlayer player = new ServerPlayer(server, level, cookie.gameProfile(), cookie.clientInformation());
+        // An anonymous subclass on purpose: NeoForge's config sync skips players whose class is not exactly ServerPlayer (that is how its own GameTestPlayer survives server ticks);
+        // a plain ServerPlayer that stays in the world across ticks crashes the server tick with "configsToSync should contain an entry" (docs/10 Q84).
+        ServerPlayer player = new ServerPlayer(server, level, cookie.gameProfile(), cookie.clientInformation()) {};
         Connection connection = new Connection(PacketFlow.SERVERBOUND);
         new EmbeddedChannel(connection);
+        NetworkRegistry.configureMockConnection(connection); // Faz 11: other mods (Curios) send their own payloads on login; a bare mock connection refuses every modded payload
         server.getPlayerList().placeNewPlayer(connection, player, cookie);
         player.setGameMode(GameType.SURVIVAL);
         player.connection.markClientLoaded(); // otherwise ServerPlayer#isInvulnerableTo is true for 60 ticks

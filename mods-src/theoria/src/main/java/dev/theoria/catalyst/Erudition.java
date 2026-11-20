@@ -36,16 +36,19 @@ public final class Erudition {
         return level <= t.eruditionPct().length ? t.eruditionPct()[level - 1] : t.eruditionPct()[t.eruditionPct().length - 1] + t.eruditionStep() * (level - t.eruditionPct().length);
     }
 
-    /** Summed and capped bonus (percent) of a player's gear. */
+    /**
+     * Summed and capped bonus (percent) of a player's gear PLUS the Wisdom stat (docs/04 §5: "Bilgelik büyüsüyle toplanır") — one sum, one total cap, so the stat can
+     * never push the multiplier past what the catalyst ladder allows.
+     */
     public static int totalPercent(Player player) {
+        int sum = dev.theoria.stats.StatsEffects.xpPercent(player);
         var lookup = player.level().registryAccess().lookup(Registries.ENCHANTMENT);
-        if (lookup.isEmpty()) return 0;
-        Holder<Enchantment> holder = lookup.get().get(KEY).orElse(null);
-        if (holder == null) return 0;
-        int sum = 0;
-        for (EquipmentSlot slot : SLOTS) {
-            ItemStack stack = player.getItemBySlot(slot);
-            if (!stack.isEmpty()) sum += percent(stack.getEnchantmentLevel(holder));
+        Holder<Enchantment> holder = lookup.isEmpty() ? null : lookup.get().get(KEY).orElse(null);
+        if (holder != null) {
+            for (EquipmentSlot slot : SLOTS) {
+                ItemStack stack = player.getItemBySlot(slot);
+                if (!stack.isEmpty()) sum += percent(stack.getEnchantmentLevel(holder));
+            }
         }
         return Math.min(sum, CatalystData.table().eruditionTotalCap());
     }
