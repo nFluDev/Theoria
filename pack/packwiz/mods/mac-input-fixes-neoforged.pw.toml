@@ -11,8 +11,3 @@ hash = "d13f1a3d3510dbaf90c2c6db97f18f9868685ec3a317666ecd8040bd3dc1f61718bdd9cc
 [update.modrinth]
 mod-id = "ac3bcWXA"
 version = "dG2rDxqc"
-
-[option]
-optional = true
-default = false
-description = "macOS giriş yedeği (ADR-005 Yedek 1): yalnızca Ctrl+tık / Ctrl+Q kontrol listesi başarısız olursa aç. Bkz. docs/adr/ADR-005."

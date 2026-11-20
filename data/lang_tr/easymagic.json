@@ -1,0 +1,10 @@
+{
+ "menu.easymagic.enchanting.experience.many": "%s Deneyim Puanı",
+ "menu.easymagic.enchanting.experience.one": "1 Deneyim Puanı",
+ "menu.easymagic.enchanting.reroll": "Büyüleri yeniden çek",
+ "menu.easymagic.enchanting.reroll.many": "%s Ametist Parçası",
+ "menu.easymagic.enchanting.reroll.one": "1 Ametist Parçası",
+ "tag.block.easymagic.unaltered_enchanting_tables": "Değiştirilmemiş Büyü Masaları",
+ "tag.item.easymagic.enchanting_catalysts": "Büyü Katalizörleri",
+ "tag.item.easymagic.reroll_catalysts": "Yeniden Çekme Katalizörleri"
+}

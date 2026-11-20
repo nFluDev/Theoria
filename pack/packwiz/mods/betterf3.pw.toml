@@ -1,0 +1,13 @@
+name = "BetterF3"
+filename = "BetterF3-20.0.0-NeoForge-26.3.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/8shC1gFX/versions/1rOnEBD0/BetterF3-20.0.0-NeoForge-26.3.jar"
+hash-format = "sha512"
+hash = "84218e4095728c31a0caae53105298a31e0bbe5830ecc2d892ebeaf459ff2b7623bcda5e4e478b320d3bd8413df9061a487fbecf921e4c64cd2352fcce18578c"
+
+[update]
+[update.modrinth]
+mod-id = "8shC1gFX"
+version = "1rOnEBD0"

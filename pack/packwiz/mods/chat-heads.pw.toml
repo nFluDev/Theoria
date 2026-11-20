@@ -1,0 +1,13 @@
+name = "Chat Heads"
+filename = "chat_heads-1.3.2-neoforge-26.3.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/Wb5oqrBJ/versions/pAj7Big8/chat_heads-1.3.2-neoforge-26.3.jar"
+hash-format = "sha512"
+hash = "df4233e5b26cfc0ed554d8147d5362c41561b10dc12ac3e9bdffa58c858a3ead63bc12b601dbaa9c913cf6820c727cf62046b67fa43b7807bc94830f8895f8e6"
+
+[update]
+[update.modrinth]
+mod-id = "Wb5oqrBJ"
+version = "pAj7Big8"

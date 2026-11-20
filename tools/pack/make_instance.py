@@ -49,7 +49,8 @@ def filtered_pack(tmp, keep):
     (packwiz-installer'ın -g kipi `default = false` seçeneklerini YOK SAYIP hepsini kurar; kesin kapalı kurulum için süzülür.)"""
     shutil.copytree(PACK, tmp)
     for f in list(tmp.glob("mods/*.pw.toml")) + list(tmp.glob("shaderpacks/*.pw.toml")):
-        if "[option]" in f.read_text(encoding="utf-8") and f.name[: -len(".pw.toml")] not in keep:
+        text = f.read_text(encoding="utf-8")
+        if "[option]" in text and "default = true" not in text and f.name[: -len(".pw.toml")] not in keep:   # default=true seçenekler (opsiyonel-acik) kurulur
             f.unlink()
     sh([str(BIN / "packwiz"), "refresh"], cwd=tmp, stdout=subprocess.DEVNULL)
 
@@ -251,8 +252,7 @@ def main():
             jvm += [f"-Dtheoria.dev.rd={a.rd}", f"-Dtheoria.dev.settle={a.settle}", f"-Dtheoria.dev.sample={a.sample}"]
             if a.fullscreen:
                 jvm.append("-Dtheoria.dev.fullscreen=true")
-    if "mac-input-fixes-neoforged" in a.extra:
-        jvm.append("--enable-native-access=macos_input_fixes")   # ADR-005: JDK uyarısı
+    jvm.append("--enable-native-access=macos_input_fixes")   # ADR-005: Mac Input Fixes artık temel pakette (Faz 13); JDK uyarısını susturur, macOS dışında etkisiz
     write_instance(inst, a.name, " ".join(jvm), a.scenario != "none", a.mem, size, a.scenario != "none")
     mods = sorted(p.name for p in (game / "mods").glob("*.jar"))
     print(f"instance hazır: {inst}  ({len(mods)} mod jar'ı; shader={a.shader}; senaryo={a.scenario})")

@@ -192,6 +192,16 @@ def check_relics():
     notes.append("relic'ler: check_relics.py OK (tablo, üretilen dosyalar, yuva kapasitesi, güç bütçesi, kaynaklar, varlıklar)")
 
 
+def check_lang_tr():
+    """Faz 13: generator/lang_tr.py --check — üçüncü taraf modların eksik Türkçe satırları (data/lang_tr) ↔ üretilen tr_tr.json dosyaları."""
+    result = subprocess.run([sys.executable, "-I", str(ROOT / "generator/lang_tr.py"), "--check"], capture_output=True, text=True)
+    lines = (result.stdout + result.stderr).strip().splitlines()
+    if result.returncode != 0:
+        err("generator/lang_tr.py --check kırmızı: " + " ".join(lines[:3]))
+        return
+    notes.append("Türkçe tamamlama (generator/lang_tr.py): " + (lines[-1] if lines else "güncel"))
+
+
 def check_world():
     """Faz 9b: tools/check_worldgen.py — biyom/iklim şeması + bölüntü, üreteçler güncel, cevher etiketleri, mob bandı, yapı NBT'leri (Haven mob'suz/ışık), loot."""
     result = subprocess.run([sys.executable, "-I", str(ROOT / "tools/check_worldgen.py")], capture_output=True, text=True)
@@ -236,7 +246,7 @@ def check_java_size():
     notes.append(f"java: en uzun dosya {longest[0]} ({longest[1]} satır)")
 
 
-for check in (check_lang, check_tiers, check_stats, check_gear, check_relics, check_world, check_json, check_java_size):
+for check in (check_lang, check_tiers, check_stats, check_gear, check_relics, check_lang_tr, check_world, check_json, check_java_size):
     check()
 for note in notes:
     print("  " + note)

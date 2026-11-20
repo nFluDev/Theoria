@@ -1,0 +1,18 @@
+{
+  "gui.jade.recipe_lookup_mods": "Desteklenen modlar: %s",
+  "gui.jade.show_recipes.desc": "Hedefin tariflerini tarif görüntüleyicide göster.",
+  "gui.jade.show_uses.desc": "Hedefin kullanımlarını tarif görüntüleyicide göster.",
+  "jade.access.block.upside_down": "Ters {0}",
+  "jade.access.entity.exposed": "Açıkta {0}",
+  "jade.access.entity.horse_markings": "Desenler: %s",
+  "jade.access.entity.oxidized": "Oksitlenmiş {0}",
+  "jade.access.entity.shearable": "Kırkılabilir {0}",
+  "jade.access.entity.weathered": "Aşınmış {0}",
+  "jade.lootTable": "Ganimet Tablosu: %s",
+  "jade.lootTableSeed": "Tohum: %s",
+  "jade.mobbreeding.fed": "Üreme Bekleme Süresi: Aşık",
+  "jade.mobgrowth.paused": "Duraklatıldı",
+  "jade.villagerRestock.limit": "Yeniden stok sınırına ulaşıldı, sonraki: %s",
+  "jade.villagerRestock.ready": "Yeniden stoklamaya hazır",
+  "jade.villagerRestock.time": "%s sonra yeniden stoklanır"
+}

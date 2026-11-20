@@ -31,6 +31,8 @@ sourceSets.main.resources {
     srcDir('src/generated/curios')
     // Phase 12: generator/relics.py (relic items, icons, Curios tags, loot tables + modifiers, theoria/relics.json)
     srcDir('src/generated/relics')
+    // Faz 13: generator/lang_tr.py — üçüncü taraf modların eksik Türkçe satırları (jar'a girer, modların kendi tr_tr.json'larıyla birleşir)
+    srcDir('src/generated/lang_tr')
 
     // Exclude common development only resources from finalized outputs
     exclude("**/*.bbmodel") // BlockBench project files

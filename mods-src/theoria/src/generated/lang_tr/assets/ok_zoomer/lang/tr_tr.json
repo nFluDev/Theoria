@@ -1,0 +1,13 @@
+{
+  "key.category.ok_zoomer.zoom": "Yakınlaştırma",
+  "key.ok_zoomer.decrease_zoom": "Yakınlaştırmayı Azalt",
+  "key.ok_zoomer.increase_zoom": "Yakınlaştırmayı Artır",
+  "key.ok_zoomer.reset_zoom": "Yakınlaştırmayı Sıfırla",
+  "key.ok_zoomer.zoom": "Yakınlaştır",
+  "modmenu.descriptionTranslation.ok_zoomer": "Güçlü, hafif ve oldukça özelleştirilebilir bir yakınlaştırma modu. Yakınlaştırma senin!",
+  "neoforge.screen.mods.info.description.ok_zoomer": "Güçlü, hafif ve oldukça özelleştirilebilir bir yakınlaştırma modu. Yakınlaştırma senin!",
+  "sound.ok_zoomer.zoom.scroll": "Yakınlaştırma kayıyor",
+  "sound.ok_zoomer.zoom.zoom_in": "Yakınlaştırma başlıyor",
+  "sound.ok_zoomer.zoom.zoom_out": "Yakınlaştırma bitiyor",
+  "tag.item.ok_zoomer.zoom_dependencies": "Yakınlaştırma Bağımlılıkları"
+}

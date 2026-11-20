@@ -18,8 +18,9 @@ UA = {"User-Agent": "theoria-pack-sync/0.1"}
 SHADERPACKS = {"complementary-reimagined"}
 SKIP_SECTIONS = {"meta", "bilerek-yok"}
 # Bu bölümlerdeki girişler pakete "isteğe bağlı, varsayılan KAPALI" olarak girer (packwiz [option]).
+OPTIONAL_DEFAULT_ON = {"opsiyonel-acik"}   # [option] optional=true, default=true: kurulumda işaretli gelir, kullanıcı kaldırabilir
 OPTIONAL = {
-    "mac-yedek": "macOS giriş yedeği (ADR-005 Yedek 1): yalnızca Ctrl+tık / Ctrl+Q kontrol listesi başarısız olursa aç. Bkz. docs/adr/ADR-005.",
+    "opsiyonel-acik": "Varsayılan AÇIK ama kapatılabilir (kurulum penceresinde işareti kaldır): modun kendi içinde aç/kapa anahtarı yok.",
     "opsiyonel-test-edilecek": "Opsiyonel; Vulkan altında denenmeden varsayılan açık değil (docs/journal/f05.md).",
     "bagimlilik-opsiyonel": "Bir opsiyonel modun bağımlılığı (better-combat / sophisticated-backpacks): ana moduyla birlikte aç/kapa.",
 }
@@ -71,7 +72,7 @@ def existing_metafiles():
 
 
 # Kullanıcının sonradan değiştirebileceği ayar dosyaları: packwiz-installer bunları yalnızca YOKSA yazar (index.toml `preserve = true`).
-PRESERVE = ["options.txt", "vitrail/pack.txt", "shaderpacks/ComplementaryReimagined_r5.9.3.zip.txt", "config/terralith.json"]
+PRESERVE = ["options.txt", "vitrail/pack.txt", "shaderpacks/ComplementaryReimagined_r5.9.3.zip.txt", "config/terralith.json", "config/inventoryprofilesnext/inventoryprofiles.json", "config/appleskin-client.toml"]
 
 
 def ensure_preserve():
@@ -86,11 +87,11 @@ def ensure_preserve():
     index.write_text(text, encoding="utf-8")
 
 
-def mark_optional(metafile, description):
+def mark_optional(metafile, description, default=False):
     text = metafile.read_text(encoding="utf-8")
     if "[option]" in text:
         text = re.sub(r"\n\[option\].*?(?=\n\[|\Z)", "", text, flags=re.S)
-    text = text.rstrip("\n") + f'\n\n[option]\noptional = true\ndefault = false\ndescription = {json.dumps(description, ensure_ascii=False)}\n'
+    text = text.rstrip("\n") + f'\n\n[option]\noptional = true\ndefault = {str(default).lower()}\ndescription = {json.dumps(description, ensure_ascii=False)}\n'
     metafile.write_text(text, encoding="utf-8")
 
 
@@ -134,7 +135,7 @@ def main():
                 pw("modrinth", "add", "--project-id", ver["project_id"], "--version-id", ver["id"], "-y")
         if section in OPTIONAL and not dry:
             have2 = existing_metafiles()
-            mark_optional(have2[ver["project_id"]][0], OPTIONAL[section])
+            mark_optional(have2[ver["project_id"]][0], OPTIONAL[section], section in OPTIONAL_DEFAULT_ON)
     if not dry:
         # packwiz, bir modu eklerken ZORUNLU BAĞIMLILIĞINI en yeni sürüme çekebilir (2026-11-19: sodium-extra eklenirken sabitlenen Sodium beta.1 → beta.5 oldu).
         # Bu yüzden eklemelerden sonra her girişin sürüm kimliği modlist'in çözdüğüyle karşılaştırılır; kayanlar yeniden sabitlenir.
@@ -149,7 +150,7 @@ def main():
             pw("modrinth", "add", "--project-id", ver["project_id"], "--version-id", ver["id"], "-y")
             changed += 1
             if section in OPTIONAL:
-                mark_optional(existing_metafiles()[ver["project_id"]][0], OPTIONAL[section])
+                mark_optional(existing_metafiles()[ver["project_id"]][0], OPTIONAL[section], section in OPTIONAL_DEFAULT_ON)
         pw("refresh")
         ensure_preserve()
         pw("refresh")   # pack.toml'daki index özetini yeniden hesaplar; preserve bayrakları korunur

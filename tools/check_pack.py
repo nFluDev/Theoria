@@ -28,9 +28,10 @@ import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SKIP = {"meta", "bilerek-yok"}
-OPTIONAL_SECTIONS = {"mac-yedek", "opsiyonel-test-edilecek", "bagimlilik-opsiyonel"}
+OPTIONAL_SECTIONS = {"opsiyonel-test-edilecek", "bagimlilik-opsiyonel", "opsiyonel-acik"}
+DEFAULT_ON_SECTIONS = {"opsiyonel-acik"}
 REQUIRED_SLUGS = {"vitrail-shaders", "sodium", "complementary-reimagined", "fantastic-wings", "jei", "curios"}
-PRESERVE = {"options.txt", "vitrail/pack.txt", "shaderpacks/ComplementaryReimagined_r5.9.3.zip.txt", "config/terralith.json"}
+PRESERVE = {"options.txt", "vitrail/pack.txt", "shaderpacks/ComplementaryReimagined_r5.9.3.zip.txt", "config/terralith.json", "config/inventoryprofilesnext/inventoryprofiles.json", "config/appleskin-client.toml"}
 
 
 def sha256(path):
@@ -89,8 +90,9 @@ def check(pack, modlist_path, online=False):
             err(f"{where}: dosya adı ({d.get('filename')}) sabitlenen sürümü '{pin}' içermiyor")
         opt = d.get("option")
         if section in OPTIONAL_SECTIONS:
-            if not opt or opt.get("optional") is not True or opt.get("default") is not False or not opt.get("description"):
-                err(f"{where}: [{section}] bölümünde → [option] optional=true, default=false, description gerekli")
+            want_default = section in DEFAULT_ON_SECTIONS
+            if not opt or opt.get("optional") is not True or opt.get("default") is not want_default or not opt.get("description"):
+                err(f"{where}: [{section}] bölümünde → [option] optional=true, default={str(want_default).lower()}, description gerekli")
         elif opt is not None:
             err(f"{where}: temel bölümde ([{section}]) [option] olmamalı")
 
@@ -164,7 +166,32 @@ def check(pack, modlist_path, online=False):
         err("ADR-005: options.txt quitShortcuts:false olmalı")
     mac = metas.get("mac-input-fixes-neoforged")
     if not mac:
-        err("ADR-005 Yedek 1: mac-input-fixes-neoforged metadosyası yok (opsiyonel, kapalı)")
+        err("ADR-005 (Faz 13): mac-input-fixes-neoforged temel pakette olmalı (Ctrl+tık / Ctrl+Q / Ctrl+Tab + kaydırma düzeltmeleri)")
+    elif "option" in mac[1]:
+        err("ADR-005 (Faz 13): mac-input-fixes-neoforged artık TEMEL paketin parçası, [option] olmamalı")
+    # --- 4a. Faz 13 QoL: AppleSkin HUD katmanları kapalı (kendi HUD'umuz), Carry On tuşu Ctrl+K
+    apple = pack / "config/appleskin-client.toml"
+    if not apple.exists():
+        err("Faz 13: config/appleskin-client.toml yok (AppleSkin HUD katmanları kapalı olmalı)")
+    else:
+        at = tomllib.loads(apple.read_text(encoding="utf-8")).get("client", {})
+        for key in ("showSaturationHudOverlay", "showFoodValuesHudOverlay", "showFoodExhaustionHudUnderlay", "showFoodHealthHudOverlay"):
+            if at.get(key) is not False:
+                err(f"Faz 13: AppleSkin {key} false olmalı (Theoria HUD'u ile çakışır)")
+    if options.get("key_key.carry.desc") != "key.keyboard.k:CONTROL":
+        err("Faz 13: options.txt key_key.carry.desc:key.keyboard.k:CONTROL olmalı (Carry On kolay tuşa bağlı olmasın)")
+    # --- 4b. Envanter sıralama (Faz 13): IPN'in sıralama tuşu varsayılan olarak R'dir; kullanıcı orta tık ister (SortScenario: -PdevClient=sort kanıtladı) ve profil arayüzü kapalı olmalı
+    ipn_file = pack / "config/inventoryprofilesnext/inventoryprofiles.json"
+    if not ipn_file.exists():
+        err("Faz 13: config/inventoryprofilesnext/inventoryprofiles.json yok (orta tık sıralama + profil arayüzü kapalı)")
+    else:
+        ipn = json.loads(ipn_file.read_text(encoding="utf-8"))
+        if ipn.get("Hotkeys", {}).get("sort_inventory", {}).get("main", {}).get("keys") != "BUTTON_3":
+            err("Faz 13: IPN sort_inventory orta tık (BUTTON_3) olmalı")
+        if ipn.get("GuiSettings", {}).get("enable_profiles_ui", {}).get("value") is not False:
+            err("Faz 13: IPN enable_profiles_ui false olmalı (envanterdeki profil düğmeleri istenmiyor)")
+        if ipn.get("ModSettings", {}).get("enable_profiles", {}).get("value") is not False:
+            err("Faz 13: IPN enable_profiles false olmalı")
     if "mcmouser" in metas:
         err("ADR-005: mcmouser 26.3'te yüklenmez — pakette olamaz")
 
@@ -201,8 +228,16 @@ MUTATIONS = [
      lambda p: (p / "options.txt").write_text((p / "options.txt").read_text().replace("ctrlClickEmulatesRightClick:false", "ctrlClickEmulatesRightClick:true"))),
     ("jei metadosyasının sha512'si bozuk biçimde (gerçek değerin doğruluğunu yalnızca --online sınar)", "özet",
      lambda p: (p / "mods/jei.pw.toml").write_text(re.sub(r'hash = "[0-9a-f]{128}"', 'hash = "deadbeef"', (p / "mods/jei.pw.toml").read_text()))),
-    ("Mac Input Fixes varsayılan AÇIK yapıldı", "opsiyonel kuralı",
-     lambda p: (p / "mods/mac-input-fixes-neoforged.pw.toml").write_text((p / "mods/mac-input-fixes-neoforged.pw.toml").read_text().replace("default = false", "default = true"))),
+    ("Mac Input Fixes yeniden opsiyonel yapıldı", "ADR-005",
+     lambda p: (p / "mods/mac-input-fixes-neoforged.pw.toml").write_text((p / "mods/mac-input-fixes-neoforged.pw.toml").read_text() + "\n[option]\noptional = true\ndefault = false\ndescription = \"x\"\n")),
+    ("IPN sıralama tuşu R'ye döndü (orta tık yok)", "orta tık",
+     lambda p: (p / "config/inventoryprofilesnext/inventoryprofiles.json").write_text((p / "config/inventoryprofilesnext/inventoryprofiles.json").read_text().replace("BUTTON_3", "R"))),
+    ("IPN profil arayüzü açık", "profil",
+     lambda p: (p / "config/inventoryprofilesnext/inventoryprofiles.json").write_text((p / "config/inventoryprofilesnext/inventoryprofiles.json").read_text().replace('"enable_profiles_ui": {\n            "value": false', '"enable_profiles_ui": {\n            "value": true'))),
+    ("AppleSkin HUD katmanı açıldı", "AppleSkin",
+     lambda p: (p / "config/appleskin-client.toml").write_text((p / "config/appleskin-client.toml").read_text().replace("showSaturationHudOverlay = false", "showSaturationHudOverlay = true"))),
+    ("Carry On tuşu kolay tuşa döndü", "Carry On",
+     lambda p: (p / "options.txt").write_text((p / "options.txt").read_text().replace("key_key.carry.desc:key.keyboard.k:CONTROL", "key_key.carry.desc:key.keyboard.left.shift"))),
     ("indirme bağlantısı Modrinth dışına", "alan adı",
      lambda p: (p / "mods/lithium.pw.toml").write_text((p / "mods/lithium.pw.toml").read_text().replace("https://cdn.modrinth.com", "https://example.com"))),
     ("vitrail/pack.txt başka pakete işaret ediyor", "shaderpack",

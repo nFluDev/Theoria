@@ -33,7 +33,10 @@ Kaynak: Modrinth API, `python3 -I tools/modmatrix/matrix.py --md` · **9 Kasım 
 | qol | explorers-compass | 3.3.0 (r) | 3.3.2 (r) | 3.3.2 | ok |
 | qol | natures-compass | 3.3.0 (r) | 3.3.1 (r) | 3.3.1 | ok |
 | qol | lootr | 1.24.41.124 (r) | 1.25.42.124 (r) | 1.25.42 | ok |
-| mac | mac-input-fixes-neoforged | — | 26.10.03-p (b, 10-03) | 26.10.03 | ok · **yedek** (ADR-005): 26.3'te yükleniyor; temel pakette yok |
+| qol | controlling | — | 26.3.4 (r, 10-09) | 26.3.4 | ok · Faz 13: Kontroller ekranında arama (searchables ister) |
+| qol | crafting-tweaks | — | 26.3.0.2 (r, 11-03) | 26.3.0.2 | ok · Faz 13: ızgara döndür/dengele/temizle (balm ister) |
+| qol | enchantment-descriptions | — | 26.3.0.2 (r, 09-27) | 26.3.0.2 | ok · Faz 13: büyü ipucuna açıklama (prickle ister) |
+| mac | mac-input-fixes-neoforged | — | 26.10.03-p (b, 10-03) | 26.10.03 | ok · **TEMEL pakette (Faz 13, 2026-11-20)**: yerel kitaplık yüklendi (dev log), macOS dışında etkisiz |
 | dunya | terralith | 2.6.4 (r) | 2.6.5+26.3 (r) | 2.6.5 | ok |
 | dunya | terrablender | 26.2.0.0.2 (b) | 26.3.0.0.9 (b) | 26.3.0.0.9 | ok |
 | dunya | dungeons-and-taverns | 5.3.2 (r) | 6.1.0 (r) | 6.1.0 | ok |

@@ -1,0 +1,16 @@
+{
+  "gui.sophisticatedcore.status.ender_linker.already_linked": "Depo zaten bağlı",
+  "gui.sophisticatedcore.status.ender_linker.endpoint_has_contents": "Deponun içinde eşya var",
+  "gui.sophisticatedcore.status.ender_linker.incompatible_endpoint": "Depo bu bağlı depo grubuyla uyumsuz",
+  "gui.sophisticatedcore.status.ender_linker.unsupported_endpoint": "Depo bağlanamaz",
+  "item.sophisticatedcore.ender_linker.tooltip.blank": "Uyumlu bir depoya sağ tıkla ya da onunla üret",
+  "item.sophisticatedcore.ender_linker.tooltip.bound": "Eklemek için bağlanmamış uyumlu bir depoya sağ tıkla ya da onunla üret",
+  "item.sophisticatedcore.ender_linker.tooltip.linker_target": "Bağlı: %s",
+  "item.sophisticatedcore.stack_upgrade_conversion.tooltip": "Dönüştürmek için takılı bir Yığın Yükseltmesine sağ tıkla",
+  "item.sophisticatedcore.storage.tooltip.fluid_xp": "%s xp seviyesi %s",
+  "item.sophisticatedcore.storage.tooltip.fluid_xp_with_capacity": "%s / %s xp seviyesi %s",
+  "item.sophisticatedcore.storage.tooltip.linked_storage_endpoint": "Bağlı Depo Ucu: %s",
+  "item.sophisticatedcore.storage.tooltip.linked_storage_group": "Bağlı Depo Grubu: %s",
+  "tooltip.sophisticatedcore.linked_storage.primary": "Ana Bağlı",
+  "tooltip.sophisticatedcore.linked_storage.secondary": "Bağlı"
+}

@@ -21,7 +21,7 @@ python3 -I tools/pack/make_instance.py         # Prism instance'ı "Theoria" (pa
 python3 -I tools/pack/make_instance.py --export   # pack/dist/Theoria-<sürüm>.mrpack (Prism ▸ Add Instance ▸ Import ile alınır)
 ```
 Mod ekleme: `modlist.toml`'a satır → `sync_packwiz.py` → packwiz'in kendiliğinden eklediği bağımlılıklar uyarı olarak çıkar (`check_pack.py` "modlist'te yok" der) → onları `[bagimlilik]` bölümüne sürümüyle yaz.
-Opsiyonel (varsayılan KAPALI, packwiz `[option]`): `[mac-yedek]`, `[opsiyonel-test-edilecek]`, `[bagimlilik-opsiyonel]`. Prism ön-başlatma komutuyla çalışan packwiz-installer GUI'si bunları sorar.
+Opsiyonel (varsayılan KAPALI, packwiz `[option]`): `[opsiyonel-test-edilecek]`, `[bagimlilik-opsiyonel]`. (Mac Input Fixes Faz 13'te temel pakete alındı: `[mac]`.) Prism ön-başlatma komutuyla çalışan packwiz-installer GUI'si bunları sorar.
 `make_instance.py` yalnızca istediğin instance'ın klasörüne yazar (varsayılan `Theoria`); `--with distanthorizons` gibi opsiyonelleri elle açık kurar; `-g` kipinde installer `default=false`'u yok sayıp **hepsini** kurduğu için araç kapalı olanları süzülmüş bir paket kopyasından kurar.
 
 ## Araçlar (git'te yok: `tools/bin/`)
@@ -32,4 +32,4 @@ Opsiyonel (varsayılan KAPALI, packwiz `[option]`): `[mac-yedek]`, `[opsiyonel-t
 ## Prism'e elle kurulum (kullanıcı)
 1. Prism ▸ Add Instance ▸ Import ▸ `pack/dist/Theoria-<sürüm>.mrpack` (NeoForge 26.3.0.101 ve 42 dosya gelir; Java 25'i Prism seçer).
 2. RAM: 4096 MB min / 6144 MB maks (S1'de ölçülen yapı).
-3. Opsiyoneller (DH, Better Combat, Sophisticated Backpacks, Mac Input Fixes) Prism'in içe aktarma penceresinde işaretlenmedikçe kurulmaz.
+3. Opsiyoneller (DH, Better Combat) Prism'in içe aktarma penceresinde işaretlenmedikçe kurulmaz.

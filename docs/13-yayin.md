@@ -23,7 +23,7 @@ python3 -I tools/pack/make_instance.py --export # pack/dist/Theoria-<sürüm>.mr
 
 ## 3. Lisans notları (hukuki görüş değil — yayın öncesi kontrol listesi)
 - **Theoria kodu:** `mod_license=All Rights Reserved` (gradle.properties). Başkasına dağıtılacaksa lisans seçimi yayıncının kararı (docs/09 R14).
-- **Mojang'dan türetilen dokular:** zırh `humanoid_baby` katmanı (vanilla demir bebek şablonundan boyanmış varyantlar, `docs/10` Q40) ve HUD'un nötr kalp/zırh/yemek sprite'ları. Bunlar Minecraft'ın dokularına dayanır; Minecraft Kullanım Yönergeleri ve EULA geçerlidir. Dağıtıma gidilecekse bu dokuların yeniden çizilmesi (ya da dağıtımda yalnız kod + bağlantı) tercih edilir. *Kullanıcı kararı bekliyor (açık: Q40).*
+- **Mojang'dan türetilen dokular (Q40 — KAPANDI: kullanıcı kararı 2026-11-20, "böyle kalsın"; risk bilerek kabul edildi, doku değişikliği yok):** üreteçler 26.3 istemci jar'ındaki vanilla dokuları okuyup **yeniden renklendirir** (`generator/vanilla.py` → `gear_art.py`, `catalysts.py`, `hud.py`): zırh katmanları (humanoid / leggings / `humanoid_baby`), alet-silah öğe dokuları, katalizör öğe dokuları, HUD'un nötr kalp/zırh/yemek sprite'ları (≈ 170 PNG, depoda ve jar'da). Mojang'ın dokusunun türevi oldukları için "içeriğin tamamı bana ait" beyanıyla yüklenen bir projede gri alan. Temiz yol: bu dokuları sıfırdan çizmek (relic ikonları böyle: `generator/relic_art.py`, vanilla dokusuz). Seçenekler ve karar `docs/10` Q40'ta (A seçildi).
 - **Üçüncü taraf modlar paketin içinde değil:** packwiz yalnızca Modrinth bağlantısı + sha512 tutar (`pack/packwiz/mods/*.pw.toml`); jar'lar kullanıcının makinesinde Modrinth'ten inip kurulur. `.mrpack` da aynı bağlantıları taşır. Her modun kendi lisansı geçerli; Curios (derleme bağı, ADR-007) ve TerraBlender (yansıma) dışında koda bağlı değiliz.
 - **Shader paketi:** Complementary Reimagined `shaderpacks/*.pw.toml` ile bağlantı olarak gelir; kendi lisansı.
 - **Yalnızca kendin oynuyorsan** bu maddelerin çoğu devreye girmez (R14).
@@ -33,12 +33,13 @@ python3 -I tools/pack/make_instance.py --export # pack/dist/Theoria-<sürüm>.mr
 - **Lootr altında gerçek relic/Kale düşüşü** denenmedi (Q93).
 - **GameTest zamanlama kırmızıları (Q58):** `gear_innate` / `catalyst_elements` tam takımda aralıklı kırmızı (zombi zamanlaması); küçük takımlarda yeşil.
 - **XP eğrisi L99→L100 %28 düşüş** (610 k → 441 k; kullanıcının L100/L200 bağlı noktaları, `docs/06 §5`). L200 sonrası uçurum düzeltildi (Faz 13 code-review).
+- **macOS: Ctrl basılıyken zıplanmıyor** (⌃Boşluk = macOS'un girdi kaynağı kısayolu, oyuna ulaşmaz; kod sorunu değil). Mac Input Fixes temel pakete alındı (Faz 13) ama Ctrl+Boşluk'u belgelemiyor → fiziksel test; olmazsa `ADR-005` "Ek" Çözüm A (terminal komutu) ya da B. Oyuncu dokümanına macOS notu olarak girecek.
 - Vanilla Ravager T13 ≈ 1,02 HTD sınır durumu (`docs/06 §4`).
 - Kademe genişletmesi (ADR-008) yazılmadı; onay bekliyor (Q86-Q90).
 
 ## 5. Kullanıcı kapısı (v1.0 için — kodla kapanmaz)
 1. **20+ saatlik oyun testi** (yeni survival dünya; Prism `Theoria` instance'ı). Not tutma biçimi aşağıda.
-2. Faz 3-8, 10-12 görünüş/his onayları (`STATUS/PROGRESS.md` "Bir sonraki adım" kontrol listeleri).
+2. Faz 3-8, 10-12 görünüş/his onayları: **20+ saatlik testin kapsamında sayılır** (kullanıcı kararı, 2026-11-20); ayrı kontrol listesi gezisi gerekmez — testte görsel/his sorunu çıkarsa not tablosuna yazılır.
 3. "Bilinen kritik hata yok" → not tablosunda hiçbir **KRİTİK** satır açık değil.
 4. Onaydan sonra: `git tag v1.0.0`, `.mrpack`, yayın yeri kararı (Modrinth / yalnız kendin).
 
@@ -47,3 +48,8 @@ python3 -I tools/pack/make_instance.py --export # pack/dist/Theoria-<sürüm>.mr
 |--:|---|---|---|---|
 | | | | | |
 Yeniden denge adımı: not → `tools/balance/*.py` sabiti → `python3 -I tools/balance/sim.py` (bantlar) → ilgili `--md` tablosu → `docs/06`. Worldgen donduruldu (R10): dünya notları yalnız yeni seed'lerde denenir.
+
+## 6. Yayın platformları: Modrinth + CurseForge (kullanıcı kararı: ikisinde de yayınlanacak)
+- **Theoria modu** iki platformda da ayrı bir proje olarak yüklenir (lisans "All Rights Reserved" olarak işaretlenir). Doku konusu kapandı (§3).
+- **Modpack** zor kısım: `.mrpack` yalnız Modrinth'teki dosyalara bağlanır (bizim 45 mod Modrinth'ten → uyumlu). **CurseForge modpack'i ise CurseForge proje/dosya kimlikleriyle** kurulur; paketteki her modun CurseForge'da karşılığı olmalı, yoksa jar'ı pakete gömmek yazarın dağıtım iznine bağlı. *Benim bilgim, doğrulanmadı:* hangi modların (Vitrail, Sodium beta.1 sabitleri, Curios 17.0.1, TerraBlender 26.3 …) CurseForge'da 26.3 sürümü olduğu **henüz kontrol edilmedi** — yapılacak iş: `modlist.toml` ↔ CurseForge eşleme tablosu (docs/12).
+- Her iki platformun içerik/lisans kuralları yükleme anında yeniden okunmalı; bu belge hukuki görüş değildir.

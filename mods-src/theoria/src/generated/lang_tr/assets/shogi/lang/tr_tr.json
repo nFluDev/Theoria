@@ -1,0 +1,6 @@
+{
+  "commands.shogi.cooldown.add.success": "%3$s oyuncuda %2$s bekleme süresine %1$s saniye eklendi.",
+  "commands.shogi.cooldown.reset.all.success": "%s oyuncunun tüm bekleme süreleri sıfırlandı.",
+  "commands.shogi.cooldown.reset.success": "%2$s oyuncuda %1$s ile eşleşen bekleme süreleri sıfırlandı.",
+  "commands.shogi.cooldown.set.success": "%3$s oyuncuda %1$s bekleme süresi %2$s saniyeye ayarlandı."
+}

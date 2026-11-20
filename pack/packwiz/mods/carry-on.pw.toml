@@ -1,0 +1,13 @@
+name = "Carry On"
+filename = "carryon-neoforge-26.3-2.12.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/joEfVgkn/versions/mkfNl8LX/carryon-neoforge-26.3-2.12.2.jar"
+hash-format = "sha512"
+hash = "5b6d04fbe0f0aaccfc39ada1c70ad2dc4646aea83b3aecba3cd710d1ed127efd999904cd2c80c470cea5a484f9ea2cf7de9230d28a3ba7f1dc84edf13501f819"
+
+[update]
+[update.modrinth]
+mod-id = "joEfVgkn"
+version = "mkfNl8LX"

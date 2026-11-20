@@ -1,0 +1,13 @@
+name = "Controlling"
+filename = "Controlling-neoforge-26.3-26.3.4.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/xv94TkTM/versions/k8C4cEvR/Controlling-neoforge-26.3-26.3.4.jar"
+hash-format = "sha512"
+hash = "c254af0386e1f8d6a5512cd7a25edeefbd02a404d51ec768326cc9f4ba800a57d2f3211046099f70edfb8593070a43d740e822c4ad60973d114d574cc1b61214"
+
+[update]
+[update.modrinth]
+mod-id = "xv94TkTM"
+version = "k8C4cEvR"

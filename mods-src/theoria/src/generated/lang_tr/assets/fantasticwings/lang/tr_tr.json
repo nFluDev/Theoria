@@ -1,0 +1,12 @@
+{
+  "commands.wings.give.failed": "Hedefe kanat uygulanamadı",
+  "commands.wings.give.success.multiple": "%s hedefe kanat uygulandı",
+  "commands.wings.give.success.single": "%s hedefine kanat uygulandı",
+  "commands.wings.take.failed": "Hedefte kaldırılacak kanat yok",
+  "commands.wings.take.success.multiple": "%s hedeften kanat kaldırıldı",
+  "commands.wings.take.success.single": "%s hedefinden kanat kaldırıldı",
+  "item.fantasticwings.bottled_bat_blood.description": "Kanatlarından kurtulmak için iç.",
+  "item.fantasticwings.bottled_wings.description": "Bir çift kanat çıkarmak için iç.",
+  "key.fantasticwings.toggle_flight": "Uçuşu Aç/Kapat",
+  "subtitles.item.armor.equip_wings": "Kanatlar hışırdıyor"
+}

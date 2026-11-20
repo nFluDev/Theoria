@@ -3,3 +3,4 @@ preferredGraphicsBackend:"vulkan"
 ctrlClickEmulatesRightClick:false
 quitShortcuts:false
 key_key.curios.open.desc:key.keyboard.j
+key_key.carry.desc:key.keyboard.k:CONTROL

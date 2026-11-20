@@ -1,0 +1,13 @@
+name = "Searchables"
+filename = "Searchables-neoforge-26.3-1.0.3.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/fuuu3xnx/versions/V62qRRhH/Searchables-neoforge-26.3-1.0.3.jar"
+hash-format = "sha512"
+hash = "6e502811734298c43dba32b38416ce93b6f10ceafe171512d7d332089737eea24d816ec00faf4a55db9996cbdcba40eac40aa22820078409c39073b9207e8c7f"
+
+[update]
+[update.modrinth]
+mod-id = "fuuu3xnx"
+version = "V62qRRhH"

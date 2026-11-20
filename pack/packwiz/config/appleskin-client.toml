@@ -1,0 +1,11 @@
+[client]
+	#Faz 13: Theoria'nın kendi HUD'u var (can/zırh/yemek/doygunluk); AppleSkin'in HUD katmanları vanilla çubuk konumlarına çizdiği için KAPALI. Yemek değerleri ipucunda kalır.
+	showFoodValuesInTooltip = true
+	showFoodValuesInTooltipAlways = true
+	showSaturationHudOverlay = false
+	showFoodValuesHudOverlay = false
+	showFoodValuesHudOverlayWhenOffhand = false
+	showFoodExhaustionHudUnderlay = false
+	showFoodHealthHudOverlay = false
+	showVanillaAnimationsOverlay = false
+	maxHudOverlayFlashAlpha = 0.65

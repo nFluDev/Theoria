@@ -1,0 +1,7 @@
+{
+  "curios.modifiers.slots.plus": "+%s %s Yuvası",
+  "curios.modifiers.slots.plus.multiple": "+%s %s Yuvası",
+  "curios.modifiers.slots.take": "%s %s Yuvası",
+  "curios.modifiers.slots.take.multiple": "%s %s Yuvası",
+  "curios.tooltip.inactive": "Devre Dışı"
+}

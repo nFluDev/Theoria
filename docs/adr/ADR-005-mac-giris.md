@@ -64,5 +64,21 @@ Kanıt etiketleri: **[log]** komut/log çıktısı · **[kaynak]** decompile edi
 - **Yedek 2 (`dev.theoria.macos`) yazılmadı** — Yedek 1 de gerekmeden temel karar fiziksel testte geçerse hiç gerekmez.
 - **Açık:** kontrol listesi (i)-(iii) kullanıcıda (M1 DoD); sonuç bu bölüme işlenir.
 
+## Ek (2026-11-20, kullanıcı playtest öncesi): Ctrl basılıyken zıplanmıyor (Ctrl+Boşluk)
+- **Belirti:** Ctrl basılı tutulurken Boşluk (zıplama) oyuna ulaşmıyor. Kullanıcının Theoria instance'ında `key.sneak = left.control`, `key.sprint = left.shift` (yani çömelirken zıplama = Ctrl+Boşluk; vanilla düzende koşarak zıplama aynı kombinasyon olurdu — kullanıcının eski instance'ı sprint'i Shift'e almıştı).
+- **Teşhis (kanıtın düzeyi: [log] sistem ayarı, davranış fiziksel girdiyle doğrulanmadı):** macOS'un global kısayolu **"Önceki girdi kaynağını seç" = ⌃Space** (`com.apple.symbolichotkeys` kayıt 60) **açık**; makinede iki girdi kaynağı etkin (Turkish-QWERTY-PC + Character Palette). Global kısayollar pencere sunucusunda işlenir, tuş oyuna hiç iletilmez → **Theoria/oyun kodunda düzeltilecek bir şey yok** (kodda zıplama/Ctrl yolu yok; Ctrl yalnız Curios Max/Durum ekranlarında).
+- **Çözüm A (kesin neden bu ise kesin çözüm — kullanıcı çalıştırır, ben sistem ayarına dokunmam):** Sistem Ayarları ▸ Klavye ▸ Klavye Kısayolları… ▸ Girdi Kaynakları'nda "Önceki girdi kaynağını seç" işaretini kaldır. Kullanıcı bu satırı arayüzde bulamadı (macOS sürümüne/girdi kaynaklarına göre gizlenebiliyor) → terminalden aynı kayıt kapatılır (geri almak için `<false/>` yerine `<true/>`):
+  ```
+  defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 60 '<dict><key>enabled</key><false/><key>value</key><dict><key>parameters</key><array><integer>32</integer><integer>49</integer><integer>262144</integer></array><key>type</key><string>standard</string></dict></dict>'
+  /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+  ```
+  Değişiklik görünmezse oturumu kapat-aç. (Kayıt 60 = ⌃Boşluk; 61 = ⌃⌥Boşluk ayrı.)
+- **Çözüm B (oyun içi, sistem ayarına dokunmadan):** Kontroller'de çömelme tuşunu Ctrl dışına al (ör. Sol Shift ya da C).
+- **Çözüm C (uygulandı, Faz 13):** **Mac Input Fixes** artık TEMEL pakette (`pack/modlist.toml [mac]`; Prism'de `--enable-native-access=macos_input_fixes`). Yerel kitaplık tuş olaylarını işletim sistemi düzeyinde yakalayıp Ctrl+tık, Ctrl+Q, Ctrl+Tab/Ctrl+Esc'i düzeltir (yukarı akış README'si); **Ctrl+Boşluk'u listelemiyor** — etkisi fiziksel testle görülecek (dev log: kitaplık yükleniyor, `[MacOSInputFixes] initializing macOS native hooks`). Çalışmazsa A (kanıtlı neden) ya da B.
+- **Doğrulama (kullanıcı):** oyunda Ctrl basılıyken Boşluk zıplatmalı. C ile zıplamıyorsa A'yı uygula; A ile de zıplamıyorsa neden kısayol değil (SDL/giriş katmanı) → B ve yeni inceleme.
+
+## Faz 13 değişikliği (2026-11-20)
+- **Yedek 1 → temel paket:** Mac Input Fixes 26.10.03 artık varsayılan AÇIK ve `[option]`'suz (`check_pack.py` bunu denetler; `--break` 10/10). macOS dışında etkisiz, yalnız istemci. Gerekçe: Ctrl+Boşluk sorunu (yukarıdaki Ek) ve üç madde kontrol listesi kullanıcıda hâlâ tam doğrulanmadı; modun maliyeti sıfır.
+
 ## Geri dönüş planı
 Karar 1 → 2 → 3 sırası (yukarıda). Her adım aynı 3 maddelik kontrol listesiyle doğrulanır.

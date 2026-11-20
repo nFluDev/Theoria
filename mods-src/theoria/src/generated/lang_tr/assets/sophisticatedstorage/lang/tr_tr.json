@@ -1,0 +1,19 @@
+{
+  "gui.sophisticatedstorage.linked_storage.primary": "Ana bağlı depo",
+  "gui.sophisticatedstorage.linked_storage.secondary": "Bağlı depo",
+  "gui.sophisticatedstorage.material": "Malzeme",
+  "gui.sophisticatedstorage.status.ender_linker.packed_storage": "Paketlenmiş depo bağlanamaz",
+  "gui.sophisticatedstorage.status.packing_tape_linked_storage": "Bağlı depo paketlenemez",
+  "gui.sophisticatedstorage.status.tier_upgrade_main_linked_storage_only": "Yalnızca ana bağlı deponun kademesi yükseltilebilir",
+  "gui.sophisticatedstorage.tank.empty": "Boş",
+  "gui.sophisticatedstorage.tank.xp_amount": "%s / %s xp seviyesi",
+  "gui.sophisticatedstorage.upgrades.buttons.do_not_refill_input": "Girdiyi Yeniden Doldurma",
+  "gui.sophisticatedstorage.upgrades.buttons.refill_input": "Girdiyi Yeniden Doldur",
+  "item.sophisticatedstorage.stack_upgrade_tier_1_plus_to_tier_2_conversion": "Yığın Yükseltmesi Dönüşümü: Kademe 1 Artı'dan Kademe 2'ye",
+  "item.sophisticatedstorage.stack_upgrade_tier_1_plus_to_tier_3_conversion": "Yığın Yükseltmesi Dönüşümü: Kademe 1 Artı'dan Kademe 3'e",
+  "item.sophisticatedstorage.stack_upgrade_tier_1_plus_to_tier_4_conversion": "Yığın Yükseltmesi Dönüşümü: Kademe 1 Artı'dan Kademe 4'e",
+  "item.sophisticatedstorage.stack_upgrade_tier_1_plus_to_tier_5_conversion": "Yığın Yükseltmesi Dönüşümü: Kademe 1 Artı'dan Kademe 5'e",
+  "item.sophisticatedstorage.stack_upgrade_tier_1_to_tier_1_plus_conversion": "Yığın Yükseltmesi Dönüşümü: Kademe 1'den Kademe 1 Artı'ya",
+  "item.sophisticatedstorage.tank.mode": "Kip: %s",
+  "item.sophisticatedstorage.tank.tooltip.capacity": "Kapasite: %s mB"
+}

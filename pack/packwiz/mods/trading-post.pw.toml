@@ -1,0 +1,13 @@
+name = "Trading Post"
+filename = "tradingpost-v26.3.0-mc26.3.x+neoforge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/8pcjMDgj/versions/unQKBEvp/tradingpost-v26.3.0-mc26.3.x%2Bneoforge.jar"
+hash-format = "sha512"
+hash = "4687fbb08a51402b202eb52c68a456d9a91fc7825337f38e3188adeab8b4a9a8d8a9d759f3effce8675a7bca963e7b57c6871bbad8481d02064eccab23cb7228"
+
+[update]
+[update.modrinth]
+mod-id = "8pcjMDgj"
+version = "unQKBEvp"

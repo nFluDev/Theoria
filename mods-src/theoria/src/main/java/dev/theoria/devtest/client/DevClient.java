@@ -40,7 +40,7 @@ public final class DevClient {
     private static final int PING = 1234;
 
     static final Dev.Report REPORT = new Dev.Report(
-            (Dev.CLIENT_MODE.equals("fps") ? "fps" : Dev.CLIENT_MODE.equals("move") ? "move" : Dev.CLIENT_MODE.equals("hud") ? "client_hud" : Dev.CLIENT_MODE.equals("wings") ? "client_wings" : Dev.CLIENT_MODE.equals("catalyst") ? "client_catalyst" : Dev.CLIENT_MODE.equals("worldgen") ? "client_worldgen" : Dev.CLIENT_MODE.equals("haven") ? "client_haven" : Dev.CLIENT_MODE.equals("stats") ? "client_stats" : Dev.CLIENT_MODE.equals("curios") ? "client_curios" : "client_smoke") + System.getProperty("theoria.dev.label", ""));
+            (Dev.CLIENT_MODE.equals("fps") ? "fps" : Dev.CLIENT_MODE.equals("move") ? "move" : Dev.CLIENT_MODE.equals("hud") ? "client_hud" : Dev.CLIENT_MODE.equals("wings") ? "client_wings" : Dev.CLIENT_MODE.equals("catalyst") ? "client_catalyst" : Dev.CLIENT_MODE.equals("worldgen") ? "client_worldgen" : Dev.CLIENT_MODE.equals("haven") ? "client_haven" : Dev.CLIENT_MODE.equals("stats") ? "client_stats" : Dev.CLIENT_MODE.equals("curios") ? "client_curios" : Dev.CLIENT_MODE.equals("sort") ? "client_sort" : "client_smoke") + System.getProperty("theoria.dev.label", ""));
     private static boolean worldRequested;
     private static int ticks = -1;
     private static int pong = -1;
@@ -93,7 +93,7 @@ public final class DevClient {
                     info.backendName(), info.driverInfo(), info.name(), mc.getWindow().getWidth(), mc.getWindow().getHeight(),
                     mc.getWindow().isWindowFullscreen());
         }
-        if (Dev.CLIENT_MODE.equals("fps") || Dev.CLIENT_MODE.equals("move") || Dev.CLIENT_MODE.equals("hud") || Dev.CLIENT_MODE.equals("wings") || Dev.CLIENT_MODE.equals("catalyst") || Dev.CLIENT_MODE.equals("worldgen") || Dev.CLIENT_MODE.equals("haven") || Dev.CLIENT_MODE.equals("stats") || Dev.CLIENT_MODE.equals("curios")) {
+        if (Dev.CLIENT_MODE.equals("fps") || Dev.CLIENT_MODE.equals("move") || Dev.CLIENT_MODE.equals("hud") || Dev.CLIENT_MODE.equals("wings") || Dev.CLIENT_MODE.equals("catalyst") || Dev.CLIENT_MODE.equals("worldgen") || Dev.CLIENT_MODE.equals("haven") || Dev.CLIENT_MODE.equals("stats") || Dev.CLIENT_MODE.equals("curios") || Dev.CLIENT_MODE.equals("sort")) {
             if (!renderReady(mc)) return;
             int t = ticks - readyAt; // scenario time starts when the world is on screen and frames flow
             if (Dev.CLIENT_MODE.equals("fps")) FpsBench.tick(mc, t);
@@ -104,6 +104,7 @@ public final class DevClient {
             else if (Dev.CLIENT_MODE.equals("haven")) HavenScenario.tick(mc, t);
             else if (Dev.CLIENT_MODE.equals("stats")) StatsScenario.tick(mc, t);
             else if (Dev.CLIENT_MODE.equals("curios")) CuriosScenario.tick(mc, t);
+            else if (Dev.CLIENT_MODE.equals("sort")) SortScenario.tick(mc, t);
             else WingsScenario.tick(mc, t);
         } else {
             smokeTick(mc);

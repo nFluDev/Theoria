@@ -54,6 +54,30 @@ ok-zoomer       = "19.0.0-beta.3"   # yakınlaştırma (zoomify Fabric API ister
 inventory-profiles-next = "neoforge-26.3-2.3.8"
 libipn          = "neoforge-26.3-6.9.0"      # inventory-profiles-next zorunlu bağımlılığı
 just-enough-resources-jer = "1.11.0.64"      # JEI'da cevher/mob/loot nerede çıkar (ALPHA)
+# Faz 13 (2026-11-20, kullanıcı: "QoL tam kurulmamış"): ChillCraft instance'ında 26.3'te çalıştığı bilinen, oynanışı/dengeyi değiştirmeyen saf-artı üçlü.
+controlling     = "26.3.4"                   # Kontroller ekranında arama çubuğu + çakışma süzgeci (searchables ister)
+crafting-tweaks = "26.3.0.2"   # çalışma tezgâhında ızgarayı döndür / dengele / temizle düğmeleri (balm ister)
+enchantment-descriptions = "26.3.0.2"        # büyü ipucunun altında ne yaptığını yazar (prickle ister)
+# Faz 13 (2026-11-20, kullanıcı listesi; ayrıntı + elenenler docs/12 §6): hepsi 26.3 NeoForge'da var, oynanışı bozmaz ya da ayarla kapatılır.
+lambdynamiclights = "4.13.0"                 # dinamik ışık: shader'sız/zayıf PC'ler için; shader açıkken ayardan kapatılır (Mods ▸ LambDynamicLights ▸ mode off)
+netherportalfix   = "26.3.0.1"               # Nether portal eşleme düzeltmesi
+shulkerboxtooltip = "5.4.3"                  # shulker içeriğini ipucunda gösterir
+betterf3          = "20.0.0"                 # okunur F3 ekranı (cloth-config ister)
+trashslot         = "26.3.0.2"               # envanterde çöp yuvası
+visual-workbench  = "26.3.0"                 # tezgâhtaki eşyalar blok üstünde görünür
+appleskin         = "3.0.10"                 # yemek değerleri ipucunda; HUD katmanları KAPALI (kendi HUD'umuz var, config/appleskin-client.toml)
+chat-heads        = "1.3.2"                  # sohbette oyuncu kafası (çok oyunculu)
+rightclickharvest = "4.7.1"                  # olgun ürüne sağ tık = hasat + yeniden dik (jamlib ister)
+carry-on          = "2.12.2"                 # sandık/mob taşı; tuş Ctrl+K (options.txt)
+tree-harvester    = "26.3.0-11.1"            # baltayla çömelip ağacı tek seferde kes (collective ister)
+double-doors     = "26.3.0-7.5"             # çift kapı/kepenk/çit kapısı tek tıkla birlikte açılır (collective ister); çömelince tekli
+corpse            = "1.1.22"                 # ölünce eşyalar cesette
+corpse-x-curios-api-compat = "4.2.1"         # Curios yuvaları da cesette (baguettelib ister)
+easy-anvils       = "26.3.1"
+easy-magic        = "26.3.1"
+trading-post      = "26.3.0"                 # tüm köylülerle tek blokta ticaret
+clumps            = "26.3.2"                 # XP kürelerini birleştirir
+sound-physics-remastered = "1.5.4"           # ses yankısı/engel (BETA)
 
 [depolama]
 # Kullanıcı isteği (2026-11-20): Sophisticated ailesi artık varsayılan AÇIK (Faz 5'te opsiyonel-kapalıydı).
@@ -71,15 +95,26 @@ shogi           = "26.3.0.3"       # waystones
 lithostitched   = "2.0.6"          # terralith
 guideme         = "26.3.7-alpha"   # ae2 (ALPHA)
 kotlin-lang-forge = "2.20.0-k2.4.21-3.1+neoforge"   # libipn / inventory-profiles-next
+searchables    = "1.0.3"        # controlling
+prickle        = "26.3.0.2"     # enchantment-descriptions
+cloth-config   = "26.3.159"     # better-combat (opsiyonel) + betterf3 (temel)
+supermartijn642s-config-lib = "1.1.8"   # durability-tooltip
+jamlib         = "2.3.3"        # rightclickharvest
+collective     = "26.3.0-8.87"  # tree-harvester
+baguettelib    = "2.0.8"        # corpse-x-curios-api-compat
+
+[opsiyonel-acik]
+# Varsayılan AÇIK, kurulum penceresinde kapatılabilir (modun kendi aç/kapa anahtarı yok).
+durability-tooltip = "1.2.0"            # dayanıklılık sayısı ipucunda (supermartijn642s-config-lib temel bağımlılık)
 
 [bagimlilik-opsiyonel]
 # Yalnızca bir opsiyonel modun bağımlılığı: onunla birlikte açılır/kapanır (packwiz [option], varsayılan KAPALI).
 player-animation-library = "1.2.9"   # better-combat
-cloth-config             = "26.3.159"   # better-combat (eskiden moreculling'in de; moreculling pakette yok)
 
-[mac-yedek]
-# ADR-005: temel paket vanilla 26.3 (ctrlClickEmulatesRightClick:false) ile; Faz 5 kullanıcı testi başarısızsa eklenir.
-mac-input-fixes-neoforged = "26.10.03"   # 26.3'te yüklendiği kanıtlı (S7)
+[mac]
+# ADR-005 + Faz 13 (2026-11-20, kullanıcı): artık TEMEL pakette (macOS dışında hiçbir şey yapmaz, yalnız istemci). Yerel kitaplıkla işletim sistemi düzeyinde
+# Ctrl+sol tık, Ctrl+Q, Ctrl+Tab/Ctrl+Esc, kaydırma düzeltmeleri. Ctrl+Boşluk (macOS girdi kaynağı kısayolu) için docs/adr/ADR-005 "Ek (2026-11-20)".
+mac-input-fixes-neoforged = "26.10.03"   # 26.3'te yüklendiği kanıtlı (S7); Prism'de --enable-native-access=macos_input_fixes (make_instance.py yazar)
 
 [dunya]
 terralith       = "2.6.5"
@@ -93,7 +128,6 @@ better-combat   = "3.2.2"
 [bilerek-yok]
 moreculling = "Sodium ≥ 0.9.3-beta.2 ister; Vitrail 0.13.0-beta ile bu Sodium'larda görüntü gecikiyor (2026-11-19) → Sodium beta.1'e sabit, MoreCulling yok"
 iris        ="Vulkan modunda çalışmıyor → Vitrail kullanılıyor (OpenGL'e düşersek yedek)"
-appleskin   = "kendi SAT göstergemiz var"
 colorful-hearts = "kendi HUD'umuzla çakışır (LucidRem dersi)"
 apotheosis  = "26.x yok; Kataliz sistemimiz yerine geçer"
 mcmouser    = "26.3'te FML reddediyor (minecraft [26.1,26.3)) — ADR-005"

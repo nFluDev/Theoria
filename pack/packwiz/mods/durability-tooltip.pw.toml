@@ -1,0 +1,18 @@
+name = "Durability Tooltip"
+filename = "durabilitytooltip-1.2.0-neoforge-mc26.3.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/smUP7V3r/versions/BUA3MJw4/durabilitytooltip-1.2.0-neoforge-mc26.3.jar"
+hash-format = "sha512"
+hash = "2953759b3521ac955a8136c615f6a470b84319d9559cbc0e39ec9729be31bd6cdfdeb5caadb9701800cad74f11fbc89abdd16743f9b7599689efbf4f10450fb3"
+
+[update]
+[update.modrinth]
+mod-id = "smUP7V3r"
+version = "BUA3MJw4"
+
+[option]
+optional = true
+default = true
+description = "Varsayılan AÇIK ama kapatılabilir (kurulum penceresinde işareti kaldır): modun kendi içinde aç/kapa anahtarı yok."
